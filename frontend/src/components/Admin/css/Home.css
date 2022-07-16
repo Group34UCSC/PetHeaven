@@ -1,0 +1,16 @@
+.img-fluid {
+    height: 250px;
+    width: 250px;
+  }
+
+  h2{
+    font-size: 25px;
+  }
+
+  p{
+    text-align: center;
+  }
+
+  .container{
+    background-color: #aba2c5;
+  }

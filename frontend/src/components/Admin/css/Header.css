@@ -1,0 +1,21 @@
+.nav-item{
+    margin-left:95px;
+    margin-right:60px;
+    font-size: 22px;
+  }
+
+.dropdown-item {
+  background-color: rgba(143, 130, 229, 0.918);
+}
+
+.navbar-brand {
+    font-size: 30px;
+}
+
+.navbar{
+  background-color:rgb(198, 147, 231);
+}
+
+a{
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
