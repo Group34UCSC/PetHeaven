@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 import '../css/Header.css';
 function Header(){
 
@@ -18,10 +20,10 @@ function Header(){
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link " aria-current="page" href="#">Home</a>
+              <Link to="/" class="nav-link " aria-current="page" href="#">Home</Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Notifications</a>
+              <Link to="/Notifications" class="nav-link" href="#">Notifications</Link>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">feedbacks & issues</a>
