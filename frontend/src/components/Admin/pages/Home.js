@@ -14,29 +14,29 @@ function Home() {
         <div className='row'>
             <div className='col-12 col-sm-6 col-lg-4'>
                 <h2 className='text-center mt-3'>CREATE ACCOUNTS</h2>
-                   <img src={create} className="mx-auto d-block img-fluid" alt=''></img>
-                <Link to="/Create">Create New accounts for the PET HEAVEN users</Link>
+                <Link to="/Create"> <img src={create} className="mx-auto d-block img-fluid" alt=''></img></Link>
+                <p>Create New accounts for the PET HEAVEN users</p>
             </div>
 
             <div className='col-12 col-sm-6 col-lg-4'>
                 <h2 className='text-center mt-3'>VIEW ACCOUNTS</h2>
-                <img src={view} className="mx-auto d-block img-fluid" alt=''></img>
-                <Link to="/View">View PET HEAVEN users accounts</Link>
+                <Link to="/View"><img src={view} className="mx-auto d-block img-fluid" alt=''></img></Link>
+                <p> View PET HEAVEN users accounts</p>
             </div>
       
 
            
             <div className='col-12 col-sm-6 col-lg-4'>
                 <h2 className='text-center mt-3'>DELETE ACCOUNTS</h2>
-                <img src={delete1} className="mx-auto d-block img-fluid" alt=''></img>
-                <Link to="/Delete">Delete PET HEAVEN user acconts from system</Link>
+                <Link to="/Delete"><img src={delete1} className="mx-auto d-block img-fluid" alt=''></img></Link>
+                 <p>Delete PET HEAVEN user acconts from system</p>
             </div>
 
            
             <div className='col-12 col-sm-6 col-lg-12'>
                 <h2 className='text-center mt-3'>UPDATE ACCOUNTS</h2>
-                <img src={update} className="mx-auto d-block img-fluid" alt=''></img>
-                <Link to="/Update">Update PET HEAVEN user accounts</Link>
+                <Link to="/Update"><img src={update} className="mx-auto d-block img-fluid" alt=''></img></Link>
+                <p>Update PET HEAVEN user accounts</p>
             </div>
 
         </div> 
