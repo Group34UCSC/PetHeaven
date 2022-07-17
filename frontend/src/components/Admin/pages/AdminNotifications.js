@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 
-function Notifications() {
+function AdminNotifications() {
     return (
      <div>
 
@@ -9,4 +9,4 @@ function Notifications() {
     );
   }
   
-  export default Notifications;
+  export default AdminNotifications;
