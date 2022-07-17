@@ -1,7 +1,7 @@
 import React,{useState} from "react";
-import '../css/Create.css';
+import '../css/AdminCreate.css';
 
-function Create() {
+function AdminCreate() {
     return (
      <div>
     <div className="subHeader">
@@ -72,7 +72,7 @@ function Create() {
     );
   }
   
-  export default Create;
+  export default AdminCreate;
 
 
 //   <div class="wrapper">

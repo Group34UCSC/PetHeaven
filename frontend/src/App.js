@@ -3,25 +3,29 @@ import { BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 
 
 import './App.css';
-import Create from './components/Admin/pages/Create';
-import Delete from './components/Admin/pages/Delete';
-import Header from './components/Admin/pages/Header';
 
-import Home from './components/Admin/pages/Home';
-import Notifications from './components/Admin/pages/Notifications';
+import AdminHeader from './components/Admin/pages/AdminHeader';
+import AdminHome from './components/Admin/pages/AdminHome';
+import AdminNotifications from './components/Admin/pages/AdminNotifications';
+import AdminCreate from './components/Admin/pages/AdminCreate';
+import AdminDelete from './components/Admin/pages/AdminDelete';
+import AdminUpdate from './components/Admin/pages/AdminUpdate';
+
+
 
 function App() {
   return (
  // admin   
 <Router>
 <div>
-   <Header />
+   <AdminHeader />
  
       <Routes>
-      <Route exact path='/Create' element={<Create />} />
-      <Route exact path='/Delete' element={<Delete />} />
-      <Route exact path='/Notifications' element={<Notifications />} />
-      <Route exact path='/' element={<Home />} />
+      <Route exact path='/Create' element={<AdminCreate />} />
+      <Route exact path='/Delete' element={<AdminDelete />} />
+      <Route exact path='/Update' element={<AdminUpdate />} />
+      <Route exact path='/Notifications' element={<AdminNotifications />} />
+      <Route exact path='/' element={<AdminHome />} />
       </Routes>
    
 </div>

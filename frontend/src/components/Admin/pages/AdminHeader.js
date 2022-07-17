@@ -4,8 +4,8 @@ import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro' 
 
-import '../css/Header.css';
-function Header(){
+import '../css/AdminHeader.css';
+function AdminHeader(){
 
     return(
      
@@ -49,4 +49,4 @@ function Header(){
     )
 }
 
-export default Header;
+export default AdminHeader;
