@@ -3,7 +3,15 @@ import { BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 
 
 import './App.css';
+//Home
+import Navbar from './components/includes/Navbar';
+import HomePage from './components/pages/HomePage';
+import AboutUs from './components/pages/AboutUs';
+import ContactUs from './components/pages/ContactUs';
+import Footer from './components/includes/Footer';
 
+
+//Admin
 import AdminHeader from './components/Admin/pages/AdminHeader';
 import AdminHome from './components/Admin/pages/AdminHome';
 import AdminNotifications from './components/Admin/pages/AdminNotifications';
@@ -13,23 +21,43 @@ import AdminUpdate from './components/Admin/pages/AdminUpdate';
 
 
 
+
+
 function App() {
   return (
- // admin   
-<Router>
-<div>
-   <AdminHeader />
+
+ //Homepage
+  <Router>
+
+      <div>
+        <Navbar/>
+
+        <Routes>
+            {/* Home */}
+            <Route exact path='/' element={<HomePage/>} />
+            <Route exact path='/about' element={<AboutUs/>} />
+            <Route exact path='/contact' element={<ContactUs/>} />
+
+
+          
+            {/* Admin */}
+            <Route exact path='/Create' element={<AdminCreate />} />
+            <Route exact path='/Delete' element={<AdminDelete />} />
+            <Route exact path='/Update' element={<AdminUpdate />} />
+            <Route exact path='/Notifications' element={<AdminNotifications />} />
+            <Route exact path='/' element={<AdminHome />} />
+        
+        </Routes>
+
+        <Footer/>
+        
+      </div>
+  </Router>
  
-      <Routes>
-      <Route exact path='/Create' element={<AdminCreate />} />
-      <Route exact path='/Delete' element={<AdminDelete />} />
-      <Route exact path='/Update' element={<AdminUpdate />} />
-      <Route exact path='/Notifications' element={<AdminNotifications />} />
-      <Route exact path='/' element={<AdminHome />} />
-      </Routes>
-   
-</div>
-</Router>
+ // admin   
+
+
+
 
 
 
