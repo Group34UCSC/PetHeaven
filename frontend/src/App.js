@@ -45,7 +45,7 @@ function App() {
             <Route exact path='/Delete' element={<AdminDelete />} />
             <Route exact path='/Update' element={<AdminUpdate />} />
             <Route exact path='/Notifications' element={<Notifications/>} />
-            <Route exact path='/' element={<AdminHome />} />
+            <Route exact path='/AdminHome' element={<AdminHome />} />
         
         </Routes>
 
