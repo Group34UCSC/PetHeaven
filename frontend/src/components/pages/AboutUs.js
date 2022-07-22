@@ -15,6 +15,8 @@ function AboutUs()
         </section>
         <section className="section bg-c-light border-bottom">
             <div className="container">
+                <div className="card shadow">
+                <div className="card-body">
                 <h5 className="main-heading">PetHeaven</h5>
                 <div className="underline"></div>
                 <p class="para">
@@ -28,12 +30,16 @@ function AboutUs()
                     each breed has a common disease with them. Through our application we update on
                     those diseases.
                 </p>
+                </div>
+                </div>
             </div>
             
         </section>
         <section className="section bg-c-light border-bottom border-top">
             <div className="container">
-                <div className="row">
+                <div className="card shadow">
+                    <div className="card-body">
+                    <div className="row">
                     <div className="col-md-12 mb-5">
                     <h5 className="main-heading">Vision and Mission</h5>
                         <div className="underline mx-float"></div>
@@ -46,13 +52,15 @@ function AboutUs()
                     platform. 
                     </p>
                 </div>
-                <div className="col-md-6 text-center">
+                <div className="col-md-6 text-center border-start">
                     <h6 className="main-heading">Our Mission</h6>
                     <p class="para">
                     Through that we are hoping to increase the interest on pet adoption within the
                     community and reduce the death rates of stray animals due to the accidents.
                     </p>
                 </div>
+                </div>
+                    </div>
                 </div>
                 
             </div>
