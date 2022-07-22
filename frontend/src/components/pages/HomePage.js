@@ -17,9 +17,9 @@ function HomePage()
                             <h3 className="main-heading">PetHeaven Services</h3>
                             <div className="underline mx-auto"></div>
                             <p>
-                                PetHeaven is an online web based system to facilitate services for animals specially <b>Cats and Dogs.</b> 
+                               <b> PetHeaven is an online web based system to facilitate services for animals specially <div className="yellow"> Cats and Dogs.</div></b> 
                             </p>
-                            <p><i>These are our services... </i></p>
+                            <p><b>These are our services... </b></p>
                         </div>
                     </div>
                 </div>
