@@ -22,7 +22,7 @@ function Navbar()
                 <Link to="/" class="nav-link active">Home</Link>
                 <Link to="/about" class="nav-link active">About Us</Link>
                 <Link to="/contact" class="nav-link active">Contact Us</Link>
-                <a href="#" class="nav-item nav-link">Notifications</a>
+                <Link to="/Notifications" class="nav-link active">Notifications</Link>
                 {/* <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Messages</a>
                     <div class="dropdown-menu">
