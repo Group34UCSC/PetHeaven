@@ -13,7 +13,7 @@ function Customerservices(){
                 </h2>
             </div>
 
-            <div class="row">
+            <div class="bg-c-light row">
                 <div class="col-sm-3  text-bg-success servicescard">
                     <div class="card-body text-success" id="servicecard">
                         <h1 class="card-title" id="desccardhead">Pharmacies <i class="fa-solid fa-capsules"></i></h1>
@@ -25,7 +25,7 @@ function Customerservices(){
                 <div class=" col-sm-3 text-bg-success servicescard">
                     <div class=" card-body text-success" id="servicecard">
                         <h1 class="card-title" id="desccardhead">Veteranians <i class="fa-solid fa-stethoscope"></i></h1>
-                        <h5 class="card-subtitle mb-2" id="desccardarea">Appoint doctor and channel your sick pets with pet heaven medical consultation service</h5>
+                        <h5 class="card-subtitle mb-2" id="desccardarea">Appoint doctor and channel your sick pets with consultation service</h5>
                         <button class="btn btn-secondary" id="reqbutton">Channel</button>
                     
                     </div>

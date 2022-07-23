@@ -13,7 +13,7 @@ function CustomerFindpet(){
     return(
             <div>
                 
-                <div class="border-bottom border-success searchpets">
+                <div class=" bg-c-light border-bottom border-success searchpets">
                     <p class="desc1">We have Dogs <i class="fa fa-dog"></i> and cats <i class="fa fa-cat"></i> who need space in your kind hearts. If you are interesting to adopt hit the request button and  
                     add a new member to your home. <i class="fa fa-home"></i>
                     </p>   
@@ -26,7 +26,7 @@ function CustomerFindpet(){
                 
                     
 
-                    <div class="dropdown">
+                    <div class=" bg-c-light dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                             Type
                         </button>
@@ -59,12 +59,12 @@ function CustomerFindpet(){
                         <form>
                             <div class="mb-3">
                                 <input type="text" class="form-control" id="petsearchbyname" aria-describedby="petsearch" placeholder="search pets by name"></input>
-                                <button type="submit" class="btn btn-success">Search <i class="fa-solid fa-magnifying-glass"></i></button>
+                                <button type="submit" class="btn btn-success " id="petsearchbtn">Search <i class="fa-solid fa-magnifying-glass"></i></button>
                             </div>
                         </form>
                     </div>
 
-                    <div class="row" id="findpetimgarea"> 
+                    <div class=" bg-c-light row" id="findpetimgarea"> 
                         <div class="col-sm-2 card">
                             <img src={puppy1} class="card-img-top" alt="Tommy"></img>
                             <div class="card-body">

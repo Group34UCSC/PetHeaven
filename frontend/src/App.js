@@ -50,7 +50,7 @@ function App() {
             <Route exact path='/Notifications' element={<Notifications/>} /> 
 
           
-             {/* Admin */}
+             Admin 
             <Route exact path='/Create' element={<AdminCreate />} /> 
             <Route exact path='/Delete' element={<AdminDelete />} />
             <Route exact path='/Update' element={<AdminUpdate />} />
