@@ -37,14 +37,13 @@ function App() {
             <Route exact path='/' element={<HomePage/>} />
             <Route exact path='/about' element={<AboutUs/>} />
             <Route exact path='/contact' element={<ContactUs/>} />
-
+            <Route exact path='/Notifications' element={<Notifications/>} />
 
           
             {/* Admin */}
             <Route exact path='/Create' element={<AdminCreate />} />
             <Route exact path='/Delete' element={<AdminDelete />} />
             <Route exact path='/Update' element={<AdminUpdate />} />
-            <Route exact path='/Notifications' element={<Notifications/>} />
             <Route exact path='/AdminHome' element={<AdminHome />} />
         
         </Routes>
