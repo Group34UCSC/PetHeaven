@@ -12,17 +12,17 @@ function Navbar()
       
     <div class="container-fluid">
     <img src={Logo} width="75px" height="75px"  alt="Services"/>
-        <a href="#" class="navbar-brand">PetHeaven</a>
+        <a href="#" class="navbar-brand"><div class="a1">PetHeaven</div></a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 
-                <Link to="/" class="nav-link active">Home</Link>
-                <Link to="/about" class="nav-link active">About Us</Link>
-                <Link to="/contact" class="nav-link active">Contact Us</Link>
-                <a href="#" class="nav-item nav-link">Notifications</a>
+                <Link to="/" class="nav-link active"><div class="b">Home</div></Link>
+                <Link to="/about" class="nav-link active"><div class="b">About Us</div></Link>
+                <Link to="/contact" class="nav-link active"><div class="b">Contact Us</div></Link>
+                <Link to="/Notifications" class="nav-link active"><div class="b">Notifications</div></Link>
                 {/* <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Messages</a>
                     <div class="dropdown-menu">
@@ -30,12 +30,12 @@ function Navbar()
                         <a href="#" class="dropdown-item">Sent</a>
                         <a href="#" class="dropdown-item">Drafts</a>
                     </div>
-                </div> */}
+               </div>  */}
                 
             </div>
             <div class="navbar-nav ms-auto">
-            <a href="#" class="nav-item nav-link">Sign Up</a>
-                <a href="#" class="nav-item nav-link">Sign In</a>
+            <a href="#" class="nav-item nav-link"><div class="b">SignUp</div></a>
+                <a href="#" class="nav-item nav-link"><div class="b">Sign in</div></a>
             </div>
         </div>
     </div>

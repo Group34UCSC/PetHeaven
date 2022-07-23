@@ -12,12 +12,12 @@ import Footer from './components/includes/Footer';
 
 
 //Admin
-import AdminHeader from './components/Admin/pages/AdminHeader';
-import AdminHome from './components/Admin/pages/AdminHome';
-import AdminNotifications from './components/Admin/pages/AdminNotifications';
-import AdminCreate from './components/Admin/pages/AdminCreate';
-import AdminDelete from './components/Admin/pages/AdminDelete';
-import AdminUpdate from './components/Admin/pages/AdminUpdate';
+import AdminHeader from './components/Actors/Admin/pages/AdminHeader';
+import AdminHome from './components/Actors/Admin/pages/AdminHome';
+import AdminCreate from './components/Actors/Admin/pages/AdminCreate';
+import AdminDelete from './components/Actors/Admin/pages/AdminDelete';
+import AdminUpdate from './components/Actors/Admin/pages/AdminUpdate';
+import Notifications from './components/pages/Notifications';
 
 
 
@@ -44,8 +44,8 @@ function App() {
             <Route exact path='/Create' element={<AdminCreate />} />
             <Route exact path='/Delete' element={<AdminDelete />} />
             <Route exact path='/Update' element={<AdminUpdate />} />
-            <Route exact path='/Notifications' element={<AdminNotifications />} />
-            <Route exact path='/' element={<AdminHome />} />
+            <Route exact path='/Notifications' element={<Notifications/>} />
+            <Route exact path='/AdminHome' element={<AdminHome />} />
         
         </Routes>
 
