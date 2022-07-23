@@ -16,7 +16,7 @@
 .topic{
     text-align: center;
     margin-top: 2%;
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 30px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -24,5 +24,5 @@
 .subHeader{
     margin-left: 6%;
     margin-right: 6%;
-    background-color: rgb(9, 246, 131);
+    background-color: rgba(8, 146, 79, 0.852);
 }
