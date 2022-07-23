@@ -11,39 +11,39 @@ import '../css/signup.css';
 function signup(){
     return(
 
-            <div class="row " id="signupform">
-                <div class="col-sm-6 column left"><img src={petdog} class="leftimg"></img></div>
-                <div class="col-sm-6 column right cardbody">
+            <div class="row " id="signuparea">
+                <div class="col-sm-6 column leftimg" ><img src={petdog} id="signuppetimg"></img></div>
+                <div class="col-sm-6 column rightform cardbody" > 
                     <h3 id="signupheader">Sign up Forum <i class="fa-solid fa-pen"></i></h3>
                     <form class="signupform">
                         <div id="signuprows">
-                            <label for="exampleFormControlInput1" class="form-label">Your Name</label>
+                            <label for="yourname" class="form-label" id="signupformlabels">Your Name</label>
                             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your name here"></input>
                         </div>
                         <div id="signuprows">
-                            <label for="username" class="form-label">UserName</label>
+                            <label for="username" class="form-label" id="signupformlabels">UserName</label>
                             <input class="form-control" id="usernameinput" rows="3" placeholder="Enter new User name here"></input>
                         </div>
 
                         <div  id="signuprows">
-                            <label for="Phone number" class="form-label">Phone number</label>
+                            <label for="Phone number" class="form-label" id="signupformlabels">Phone number</label>
                             <input type="phonenumber" class="form-control" id="phoneinput" placeholder="Enter your working Phone number here"></input>
                         </div>
                         <div id="signuprows">
-                            <label for="email" class="form-label">Email</label>
+                            <label for="email" class="form-label" id="signupformlabels">Email</label>
                             <input class="form-control" id="emailinput" rows="3" placeholder="Enter your active E-mail here"></input>
                         </div>
 
                         <div id="signuprows">
-                            <label for="Password" class="form-label">Enter Password</label>
+                            <label for="Password" class="form-label" id="signupformlabels">Enter Password</label>
                             <input type="password" class="form-control" id="passwordinput" placeholder="Enter your new Password here"></input>
                         </div>
                         <div  id="signuprows">
-                            <label for="confirmpassword" class="form-label">confirm password</label>
+                            <label for="confirmpassword" class="form-label" id="signupformlabels">confirm password</label>
                             <input class="form-control" id="confirmpassword" rows="3" placeholder="confirm your password here"></input>
                         </div>
                         <button type="submit" action="submit" class="btn btn-success" id="signupbtn">Submit <i class="fa-solid fa-check"></i></button>
-                        <button type="reset" action="reset" class="btn btn-danger">Reset <i class="fa-solid fa-xmark"></i></button>
+                        <button type="reset" action="reset" class="btn btn-danger" id="signupbtn">Reset <i class="fa-solid fa-xmark"></i></button>
                     </form>
                 </div>
                 
