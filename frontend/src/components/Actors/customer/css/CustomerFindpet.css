@@ -8,7 +8,8 @@
 .searchanimalsheader {
     font-size: 40px;
     margin-left: 300px;
-    margin-top: 100px;
+    margin-bottom: 200px;
+    margin-top: 200px;
     color: #052d20;
 }
 
@@ -38,7 +39,10 @@
 }
 
 .searchbardiv {
-    margin-top: 50px;
+    margin-left: 500px;
+    width: 50%;
+    margin-top: 150px;
+    margin-bottom: 150px;
 }
 
 
@@ -53,7 +57,7 @@
 }
 
 #petsearchbtn {
-    margin-left: 50px
+    margin-left: 400px
 }
 
 #findpetimgarea {
