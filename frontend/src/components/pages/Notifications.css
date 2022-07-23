@@ -1,4 +1,4 @@
-
+/* 
 .subHeader{
     margin-left: 6%;
     margin-right: 6%;
@@ -22,4 +22,16 @@ td {
 
 tr{
     text-align: center;
- } 
+ }  */
+
+
+ .bg-success
+{
+    background-color: blue;
+}
+
+.para
+{
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
