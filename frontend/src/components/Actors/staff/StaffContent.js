@@ -61,7 +61,7 @@ function AdminHome() {
                                 <div className="card-body">
                                     <h6>Pet Tool Store</h6>
                                     <div className="underline"></div>
-                                    <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
+                                    <p>PetHeaven is an online web based system </p>
                                 </div>
                             </div>
                         </div>
