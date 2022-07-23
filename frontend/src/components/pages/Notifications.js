@@ -1,7 +1,7 @@
 import React,{useState} from "react";
-import '../css/AdminNotifications.css'
+import './Notifications.css'
 
-function AdminNotifications() {
+function Notifications() {
     return (
       <div>
     <div className="subHeader">
@@ -11,24 +11,24 @@ function AdminNotifications() {
      <table class="table table-striped mt-3 mb-3">
   <thead>
     <tr>
-      <th scope="col">User name</th>
-      <th scope="col">Name</th>
-      <th scope="col">Notifications</th>
+      <th >User name</th>
+      <th >Name</th>
+      <th >Notifications</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">sasindu</th>
+      <td>sasindu</td>
       <td>Mark</td>
       <td>auto</td>
     </tr>
     <tr>
-      <th scope="row">Thisara</th>
+      <td>Thisara</td>
       <td>Jacob</td>
       <td>Thornton</td>
     </tr>
     <tr>
-      <th scope="row">Sandaruwan</th>
+      <td>Sandaruwan</td>
       <td>Larry</td>
       <td>the Bird</td>
     </tr>
@@ -39,4 +39,4 @@ function AdminNotifications() {
     );
   }
   
-  export default AdminNotifications;
+  export default Notifications;
