@@ -17,7 +17,7 @@ function AdminHome() {
                         <div class="admincard col-md-6">
                        
                             <div className="card shadow" id='cardone'>
-                            <img src={create} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
+                            <Link to="Create"><img src={create} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
                                 <div className="card-body">
                                     <h6>CREATE ACCOUNTS</h6>
                                     <div className="underline"></div>
@@ -31,7 +31,7 @@ function AdminHome() {
                         <div class="admincard col-md-6">
                        
                             <div className="card shadow" id='cardone'>
-                            <img src={delete1} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
+                            <Link to="Delete"><img src={delete1} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
                                 <div className="card-body">
                                     <h6>DELETE ACCOUNTS</h6>
                                     <div className="underline"></div>
@@ -44,7 +44,7 @@ function AdminHome() {
                         <div class="admincard col-md-6">
                        
                             <div className="card shadow" id='cardone'>
-                            <img src={update} className="w-50  border-bottom mx-auto d-block img-fluid" alt="Services"/>
+                            <Link to="Update"><img src={update} className="w-50  border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
                                 <div className="card-body">
                                     <h6>UPDATE ACCOUNTS</h6>
                                     <div className="underline"></div>
@@ -57,7 +57,7 @@ function AdminHome() {
                         <div class="admincard col-md-6">
                        
                             <div className="card shadow" id='cardone'>
-                            <img src={view} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
+                            <Link to="View"><img src={view} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
                                 <div className="card-body">
                                     <h6>VIEW ACCOUNTS</h6>
                                     <div className="underline"></div>
