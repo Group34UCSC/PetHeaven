@@ -7,20 +7,20 @@ import Pagination from  './pagination';
 function CustomerPharmacy(){
 
     return(
-        <div>
+        <div >
             <div>
                 
             </div>
-            <h3 class="searchpharmacyheading">Find all medicine <i class="fa-solid fa-pills"></i> need for your pet from our registered
+            <h3 class= "searchpharmacyheading">Find all medicine <i class="fa-solid fa-pills"></i> need for your pet from our registered
              online pharmacy <i class="fa-solid fa-prescription-bottle-medical"></i> shops and receive the medicines for your door steps on time</h3>
             <form>
-                <div class="mb-3">
+                <div class="mb-3" id="pharmacysearchdivs">
                     <label for="Pharmacyname" class="form-label">Search by name</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter of name your Pharmacy"></input>
                     <button class="btn btn-success">Search <i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3" id="pharmacysearchdivs">
                     <label for="Pharmacyname" class="form-label">Search by Medicine</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter of name your Medicine"></input>
                     <button class="btn btn-success">Search <i class="fa-solid fa-magnifying-glass"></i></button>
@@ -28,7 +28,7 @@ function CustomerPharmacy(){
             
             </form>
            
-            <div class="row"> 
+            <div class=" row"> 
                         <div class="col-sm-3" id="pharmarea">
                             <img src={phavectors} class="card-img-top"  id="imgpharm" alt="Tommy"></img>
                             <div class="card-body">

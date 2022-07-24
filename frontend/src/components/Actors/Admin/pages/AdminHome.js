@@ -15,7 +15,6 @@ function AdminHome() {
                 <div className="container">
                     <div className="row">
                         <div class="admincard col-md-6">
-                       
                             <div className="card shadow" id='cardone'>
                             <Link to="Create"><img src={create} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
                                 <div className="card-body">
@@ -25,8 +24,6 @@ function AdminHome() {
                                 </div>
                             </div>
                         </div>
-                       
-
 
                         <div class="admincard col-md-6">
                        
