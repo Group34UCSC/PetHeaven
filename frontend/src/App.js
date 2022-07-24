@@ -51,9 +51,9 @@ function App() {
 
         
              {/* Admin  */} 
-            <Route exact path='/Create' element={<AdminCreate />} /> 
-            <Route exact path='/Delete' element={<AdminDelete />} />
-            <Route exact path='/Update' element={<AdminUpdate />} />
+            <Route exact path='/AdminHome/Create' element={<AdminCreate />} /> 
+            <Route exact path='/AdminHome/Delete' element={<AdminDelete />} />
+            <Route exact path='/AdminHome/Update' element={<AdminUpdate />} />
             <Route exact path='/AdminHome' element={<AdminHome />} />   
               
             
