@@ -55,6 +55,7 @@ function App() {
             <Route exact path='/Delete' element={<AdminDelete />} />
             <Route exact path='/Update' element={<AdminUpdate />} />
             <Route exact path='/AdminHome' element={<AdminHome />} />   
+              
             
               {/*Customer */}
               {/* <Route exact path='/' element ={<CustomerFindpet/>} /> */}
