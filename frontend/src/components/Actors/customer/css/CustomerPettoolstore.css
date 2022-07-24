@@ -12,15 +12,14 @@
     color: #0b291f;
 }
 
-
-/* 
-.mb-3 {
+#pharmacysearchbars {
+    width: 60%;
     font-size: 40px;
     margin-top: 100px;
     text-align: center;
     align-items: center;
     margin-left: 500px;
-} */
+}
 
 #petstorecard {
     text-align: center;

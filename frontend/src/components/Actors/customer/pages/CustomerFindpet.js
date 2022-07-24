@@ -21,12 +21,12 @@ function CustomerFindpet(){
 
                 <CustomerFeaturedAnimals></CustomerFeaturedAnimals>
                 <h3 class="searchanimalsheader">Search pets <i class="fa-solid fa-paw"></i> from thousands of pets <i class="fa-solid fa-paw"></i>
-                 in our petheaven  who will be 
+                 in our petheaven  who will be<br></br>
                 perfect family member for you. Search cats and dogs with your favourite color and age  </h3>
                 
                     
 
-                    <div class="bg-c-light dropdown">
+                    <div class="dropdown" id ="findpetdropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                             Type
                         </button>
