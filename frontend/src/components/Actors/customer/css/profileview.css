@@ -15,9 +15,15 @@
     color: #198754;
 }
 
-.profilebtn {
+#profilebtns {
     margin-top: 50px;
-    margin-left: 850px;
+    margin-left: 60px;
+}
+
+#profilebtn {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 800px;
 }
 
 .profilecollapse {

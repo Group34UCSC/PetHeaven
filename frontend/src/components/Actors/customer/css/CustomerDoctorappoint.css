@@ -34,14 +34,14 @@
         align-items: center;
         margin-left: 300px;
     }
-    /* 
-.mb-3 {
-    font-size: 40px;
-    margin-top: 100px;
-    text-align: center;
-    align-items: center;
-    margin-left: 500px;
-} */
+    
+    #doctorsearchbar {
+        font-size: 40px;
+        margin-top: 100px;
+        text-align: center;
+        align-items: center;
+        margin-left: 500px;
+    }
     
     #docsearchbtn {
         margin-left: 300px;

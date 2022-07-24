@@ -13,9 +13,9 @@ function ProfilePage(){
     return(
         <div>
             <Profileview></Profileview>
-            <div class=" cardbody profilebtn"> 
-                <button class="btn btn-success " data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa-solid fa-pen-to-square" ></i>Edit profile</button>
-                <button class="btn btn-success " data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1"><i class="fa-solid fa-pen-to-square"></i>Change password</button>
+            <div class="cardbody" id="profilebtn"> 
+                <button class="btn btn-success " id="profilebtns" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa-solid fa-pen-to-square" ></i>Edit profile</button>
+                <button class="btn btn-success " id="profilebtns" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1"><i class="fa-solid fa-pen-to-square"></i>Change password</button>
             </div>
             <div class="row">
                 <div class="collapse column  profilecollapse col-md-6" id="collapseExample">
