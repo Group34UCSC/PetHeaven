@@ -32,6 +32,22 @@ import Signup from './components/Actors/customer/pages/signup';
 import CustomerChangePassword from './components/Actors/customer/pages/CustomerChangePassword';
 
 
+//Staff member
+import Staff from './components/Actors/staff/pages/Staff';
+import ViewPets from './components/Actors/staff/pages/ViewPets';
+import PostPet from './components/Actors/staff/pages/PostPet';
+import ViewPost from './components/Actors/staff/pages/ViewPost';
+import ViewAdoptee from './components/Actors/staff/pages/ViewAdoptee';
+import UpdateVaccination from './components/Actors/staff/pages/UpdateVaccination';
+import NotifyAdopter from './components/Actors/staff/pages/NotifyAdopter';
+import ViewDonation from './components/Actors/staff/pages/ViewDonation';
+import ViewFeedback from './components/Actors/staff/pages/ViewFeedback';
+
+
+
+
+
+
 
 function App() {
   return (
@@ -44,28 +60,42 @@ function App() {
 
         <Routes>
             
-            <Route exact path='/' element={<HomePage/>} />  
+            {/* <Route exact path='/' element={<HomePage/>} />  
             <Route exact path='/about' element={<AboutUs/>} />  
             <Route exact path='/contact' element={<ContactUs/>} /> 
-            <Route exact path='/Notifications' element={<Notifications/>} /> 
+            <Route exact path='/Notifications' element={<Notifications/>} />  */}
 
           
-             Admin 
+             {/* Admin 
             <Route exact path='/Create' element={<AdminCreate />} /> 
             <Route exact path='/Delete' element={<AdminDelete />} />
             <Route exact path='/Update' element={<AdminUpdate />} />
-            <Route exact path='/AdminHome' element={<AdminHome />} />  
+            <Route exact path='/AdminHome' element={<AdminHome />} />   */}
             
-              {/*Customer */}
-              {/* <Route exact path='/' element ={<CustomerFindpet/>} /> */}
-              {/* <Route exact path='/' element={<CustomerDoctorappoint/>}/>  */}
-              {/* <Route exact path='/' element ={<CustomerPharmacy/>}/> */}
-              {/* <Route exact path='/' element ={<CustomerPettoolstore/>}/> */}
-              {/* <Route exact path='/' element={<ProfilePage/>}/> */}
-              {/* <Route exact path='/' element={<CustomerAdoptRequest/>}/> */}
-              {/* <Route exact path='/' element ={<CustomerEditProfile/>}/> */}
-              {/* <Route exact path='/' element={<Signup/>} /> */}
-              {/* <Route exact path='/' element={<CustomerChangePassword/>}/> */}
+            
+            {/* Customer
+            <Route exact path='/' element ={<CustomerFindpet/>} />
+            <Route exact path='/' element={<CustomerDoctorappoint/>}/> 
+            <Route exact path='/' element ={<CustomerPharmacy/>}/>
+            <Route exact path='/' element ={<CustomerPettoolstore/>}/>
+            <Route exact path='/' element={<ProfilePage/>}/>
+            <Route exact path='/' element={<CustomerAdoptRequest/>}/>
+            <Route exact path='/' element ={<CustomerEditProfile/>}/>
+            <Route exact path='/' element={<Signup/>} />
+            <Route exact path='/' element={<CustomerChangePassword/>}/> */}
+
+            Staff
+            <Route exact path='/' element ={<Staff/>} />
+            <Route exact path='/viewpets' element ={<ViewPets/>} />
+            <Route exact path='/postpets' element ={<PostPet/>} />
+            <Route exact path='/viewpost' element ={<ViewPost/>} />
+            <Route exact path='/viewadoptee' element ={<ViewAdoptee/>} />
+            <Route exact path='/updatevaccination' element ={<UpdateVaccination/>} />
+            <Route exact path='/notifyadopter' element ={<NotifyAdopter/>} />
+            <Route exact path='/viewdonation' element ={<ViewDonation/>} />
+            <Route exact path='/viewfeedback' element ={<ViewFeedback/>} />
+           
+            
         
         </Routes>
 

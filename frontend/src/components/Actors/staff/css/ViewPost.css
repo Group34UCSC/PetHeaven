@@ -1,0 +1,28 @@
+.searchposts {
+    width: 38%;
+    position: relative;
+    display: flex;
+}
+
+.cardpadding{
+    padding-top: 10%;
+    text-align: center;
+}
+
+.underlineJusty{
+    margin-left: 25%;
+}
+
+.petName{
+    font-size: 25px;
+}
+
+.deleteBtn{
+    margin-bottom: 5%;
+}
+
+.toggleBtn{
+    margin-right: -26%;
+}
+
+

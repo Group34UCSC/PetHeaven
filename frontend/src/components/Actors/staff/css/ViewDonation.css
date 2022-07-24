@@ -1,0 +1,37 @@
+.donationcard{
+  margin-bottom: 1%;
+}
+
+.donationsearch{
+    width:127% 
+}
+
+/* @media (max-width: 576px) {
+    
+    .donationsearch{
+        width:597px  
+    }
+    
+} */
+
+.donationTable{
+    margin-top: 1%;
+    height: 600px;
+    overflow-y: scroll;
+}
+
+/* 
+.table-fixed{
+    width: 100%;
+}
+
+tbody{
+    overflow-y:auto;
+    width: 100%;
+    margin-top: 1%;
+    height: 400px;
+}
+
+thead,tbody,tr,td,th{
+    display:block;
+} */
