@@ -35,7 +35,7 @@ function Navbar()
             </div>
             <div class="navbar-nav ms-auto">
             <a href="#" class="nav-item nav-link"><div class="b"><i class="fa-solid fa-right-to-bracket"></i> Sign in</div></a>  
-            <a href="#" class="nav-item nav-link"><div class="b"> SignUp</div></a>
+            <a href="#" class="nav-item nav-link"><div class="b"><i class="fa-solid fa-user-plus"></i> SignUp</div></a>
             </div>
         </div>
     </div>
