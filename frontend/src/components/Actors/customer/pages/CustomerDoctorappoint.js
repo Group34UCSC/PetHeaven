@@ -14,7 +14,7 @@ function CustomerDoctorAppoint(){
             <h3 class="searchdoctorheading">Select best doctor for your pet among thousands of our registered qualified veteranians</h3>
 
             <form id="doctorform">
-                <div class=" col-sm mb-3">
+                <div class=" col-sm mb-3" id="doctorsearchbar">
                     <label for="doctorname" class="form-label">Search by name</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter of name your doctor"></input>
                 </div>

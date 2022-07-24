@@ -9,7 +9,7 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 import '../css/CustomerFeaturedAnimals.css';
 function CustomerFeaturedAnimals(){
     return(
-            <div class="bg-c-light container">
+            <div class= "container">
                 <h3 class="featuredanimalsheader">Featured Pets <i class="fa-solid fa-paw"></i></h3>
                 
                 

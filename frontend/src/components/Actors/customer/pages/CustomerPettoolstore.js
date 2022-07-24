@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 import '../css/CustomerPettoolstore.css';
-import pstorevectors from  '../images/petstore.jpg';
+import pstorevectors from  '../images/pettoolstore.jpg';
 import Pagination from  './pagination';
 function CustomerPettoolstore(){
 
@@ -14,13 +14,13 @@ function CustomerPettoolstore(){
             <h3 class="searchpharmacyheading">Find Every thing for your pet <i class="fa fa-paw"></i> from our online market where number of 
             registered shops <i class="fa fa-shop"></i> with everything to your pet <i class="fa fa-paw"></i> to sell</h3>
 
-            <div class="mb-3">
+            <div class="mb-3" id="pharmacysearchbars">
                 <label for="Pharmacyname" class="form-label">Search by name <i class="fa fa-magnifying-glass"></i></label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter of name your Pharmacy"></input>
                 <button class="btn btn-success">Search <i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3" id="pharmacysearchbars">
                 <label for="Pharmacyname" class="form-label">Search by Item <i class="fa fa-magnifying-glass"></i></label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter of name your Medicine"></input>
                 <button class="btn btn-success">Search <i class="fa-solid fa-magnifying-glass"></i></button>

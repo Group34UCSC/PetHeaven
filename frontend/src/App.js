@@ -9,6 +9,8 @@ import HomePage from './components/pages/HomePage';
 import AboutUs from './components/pages/AboutUs';
 import ContactUs from './components/pages/ContactUs';
 import Footer from './components/includes/Footer';
+import Notifications from './components/pages/Notifications';
+import Donate from './components/pages/Donate';
 
 
 //Admin
@@ -17,7 +19,7 @@ import AdminHome from './components/Actors/Admin/pages/AdminHome';
 import AdminCreate from './components/Actors/Admin/pages/AdminCreate';
 import AdminDelete from './components/Actors/Admin/pages/AdminDelete';
 import AdminUpdate from './components/Actors/Admin/pages/AdminUpdate';
-import Notifications from './components/pages/Notifications';
+import AdminView from './components/Actors/Admin/pages/AdminView';
 
 //customer
 
@@ -30,6 +32,7 @@ import CustomerAdoptRequest from './components/Actors/customer/pages/CustomerAdo
 import CustomerEditProfile from './components/Actors/customer/pages/CustomerEditProfile';
 import Signup from './components/Actors/customer/pages/signup';
 import CustomerChangePassword from './components/Actors/customer/pages/CustomerChangePassword';
+
 
 
 
@@ -48,12 +51,14 @@ function App() {
             <Route exact path='/about' element={<AboutUs/>} />  
             <Route exact path='/contact' element={<ContactUs/>} /> 
             <Route exact path='/Notifications' element={<Notifications/>} /> 
+            <Route exact path='/donation' element={<Donate/>} />
 
           
-             Admin 
-            <Route exact path='/Create' element={<AdminCreate />} /> 
-            <Route exact path='/Delete' element={<AdminDelete />} />
-            <Route exact path='/Update' element={<AdminUpdate />} />
+             {/* Admin  */}
+            <Route exact path='/AdminHome/Create' element={<AdminCreate />} /> 
+            <Route exact path='/AdminHome/Delete' element={<AdminDelete />} />
+            <Route exact path='/AdminHome/Update' element={<AdminUpdate />} />
+            <Route exact path='/AdminHome/View' element={<AdminView />} />
             <Route exact path='/AdminHome' element={<AdminHome />} />  
             
               {/*Customer */}

@@ -6,14 +6,16 @@
 }
 
 .searchanimalsheader {
+    text-align: center;
     font-size: 40px;
-    margin-left: 300px;
+    margin-left: 200px;
     margin-bottom: 200px;
     margin-top: 200px;
     color: #052d20;
 }
 
-.dropdown {
+#findpetdropdown {
+    margin-left: 200px;
     margin-top: 80px;
 }
 
@@ -39,7 +41,7 @@
 }
 
 .searchbardiv {
-    margin-left: 500px;
+    margin-left: 600px;
     width: 50%;
     margin-top: 150px;
     margin-bottom: 150px;
