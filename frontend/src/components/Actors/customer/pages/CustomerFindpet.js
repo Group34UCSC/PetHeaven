@@ -26,7 +26,7 @@ function CustomerFindpet(){
                 
                     
 
-                    <div class=" bg-c-light dropdown">
+                    <div class="bg-c-light dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                             Type
                         </button>
