@@ -10,6 +10,8 @@ import AboutUs from './components/pages/AboutUs';
 import ContactUs from './components/pages/ContactUs';
 import Footer from './components/includes/Footer';
 import Notifications from './components/pages/Notifications';
+import Donate from './components/pages/Donate';
+
 
 //Admin
 import AdminHeader from './components/Actors/Admin/pages/AdminHeader';
@@ -49,6 +51,7 @@ function App() {
             <Route exact path='/about' element={<AboutUs/>} />  
             <Route exact path='/contact' element={<ContactUs/>} /> 
             <Route exact path='/Notifications' element={<Notifications/>} /> 
+            <Route exact path='/donation' element={<Donate/>} />
 
           
              {/* Admin  */}
