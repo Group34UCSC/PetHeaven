@@ -44,22 +44,22 @@ function App() {
 
         <Routes>
             
-            {/* <Route exact path='/' element={<HomePage/>} />  
+            <Route exact path='/' element={<HomePage/>} />  
             <Route exact path='/about' element={<AboutUs/>} />  
             <Route exact path='/contact' element={<ContactUs/>} /> 
-            <Route exact path='/Notifications' element={<Notifications/>} />  */}
+            <Route exact path='/Notifications' element={<Notifications/>} />  
 
-{/*           
+        
             Admin 
             <Route exact path='/Create' element={<AdminCreate />} /> 
             <Route exact path='/Delete' element={<AdminDelete />} />
             <Route exact path='/Update' element={<AdminUpdate />} />
-            <Route exact path='/AdminHome' element={<AdminHome />} />   */}
+            <Route exact path='/AdminHome' element={<AdminHome />} />   
             
               {/*Customer */}
               {/* <Route exact path='/' element ={<CustomerFindpet/>} /> */}
               {/* <Route exact path='/' element={<CustomerDoctorappoint/>}/>  */}
-              <Route exact path='/' element ={<CustomerPharmacy/>}/>
+              {/*<Route exact path='/' element ={<CustomerPharmacy/>}/>*/}
               {/* <Route exact path='/' element ={<CustomerPettoolstore/>}/> */}
               {/* <Route exact path='/' element={<ProfilePage/>}/> */}
               {/* <Route exact path='/' element={<CustomerAdoptRequest/>}/> */}
