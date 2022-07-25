@@ -67,7 +67,7 @@ function App() {
               {/* <Route exact path='/' element ={<CustomerPharmacy/>}/> */}
               {/* <Route exact path='/' element ={<CustomerPettoolstore/>}/> */}
               {/* <Route exact path='/' element={<ProfilePage/>}/> */}
-              {/* // <Route exact path='/' element={<CustomerAdoptRequest/>}/> */}
+              {/* <Route exact path='/' element={<CustomerAdoptRequest/>}/> */}
               {/* <Route exact path='/' element ={<CustomerEditProfile/>}/> */}
               {/* <Route exact path='/' element={<Signup/>} /> */}
               {/* <Route exact path='/' element={<CustomerChangePassword/>}/> */}
@@ -78,7 +78,7 @@ function App() {
         
       </div>
   </Router>
- 
+
  // admin   
 
 
