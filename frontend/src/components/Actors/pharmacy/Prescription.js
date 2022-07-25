@@ -5,6 +5,7 @@ import './Prescription.css';
 
 function Prescription()
 {
+    // Adding medicine functions started here
     const [serviceList, setServiceList] = useState([{ service: "" }]);
 
   const handleServiceChange = (e, index) => {
@@ -23,20 +24,27 @@ function Prescription()
   const handleServiceAdd = () => {
     setServiceList([...serviceList, { service: "" }]);
   };
+//   Adding medicine functions ended here
 
+// Confirm and send buttons started here
   const[show,setShow]=useState(false);
   const[showBill,setShowBill]=useState(false);
-    
+// Confirm and send buttons ended here 
+
     return(
         <div>
+            {/* Medical Prescription topic started here */}
             <section className="py-4 ">
-            <div className="container">
-                <div className="row bg-success text-white"> 
-                    <div className="col-md-4 my-auto"></div>
-                    <h3 className="text-center">Medical Prescription</h3>
+                <div className="container">
+                    <div className="row bg-success text-white"> 
+                        <div className="col-md-4 my-auto"></div>
+                        <h3 className="text-center">Medical Prescription</h3>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            {/* Medical Prescription topic ended here */}
+
+        {/* Veterinary doctor details started here    */}
         <section className="section bg-c-light border-bottom">
             <div className="container">
                 <div className="card shadow">
@@ -46,6 +54,8 @@ function Prescription()
                 <h6 class="slmc">Veterinary Consultant</h6>
                 <h6 class="slmc">SLMC - 13245</h6>
                 <hr/>
+
+                {/* pet details started here */}
                 <p class="para">
                     Pet Name : Shaggy
                   
@@ -58,7 +68,10 @@ function Prescription()
                 <p class="para">
                     Weight : 4 kg
                 </p>
+                {/* pet details ended here */}
                 </div>
+
+                {/* prescription details started here */}
                 <div className="container mb-3">
                 <div className="card shadow">
                 <div className="card-body">
@@ -101,13 +114,17 @@ function Prescription()
                     </table>
                 </div>
                 </div>
+                {/* prescription details ended here */}
+
             </div>
                 </div>
                 
             </div>
             
         </section>
+        {/* Veterinary doctor details ended here  */}
 
+        {/* Repeat Prescription Form started here */}
         <section className="section bg-c-light border-bottom">
             <div className="container">
                 <div className="card shadow">
@@ -153,6 +170,8 @@ function Prescription()
                 </div> */}
                 <div className="form-field">
         <label htmlFor="service">Medicine List</label>
+
+        {/* Medicine input field started here */}
         {serviceList.map((singleService, index) => (
           <div key={index} className="services">
             <div className="first-division">
@@ -164,6 +183,8 @@ function Prescription()
                 onChange={(e) => handleServiceChange(e, index)}
                 required
               /> */}
+
+                {/* Medicine input parts started here */}
                <div className="form-group">
                 <div className="card">
                     <div className="card-body bg-c-light">
@@ -196,7 +217,7 @@ function Prescription()
                     </div>
                      
                 </div>
-                    
+                {/* Medicine input parts ended here */}
                     
                 </div>
 
@@ -223,6 +244,8 @@ function Prescription()
             </div>
           </div>
         ))}
+        {/* Medicine input field ended here */}
+
       </div>
       {/* <div className="output">
         <h2>Output</h2>
@@ -234,6 +257,8 @@ function Prescription()
           ))}
       </div> */}
       
+
+      {/* Confirm and reject buttons started here */}
       <div className="form-group py-3 row ">
             <div className="col-md-6">
                 <button onClick={()=>setShowBill(true)} type="button" id="submit-btn" className="btn shadow w-100 ">Confirm</button>
@@ -241,7 +266,8 @@ function Prescription()
             <div className="col-md-6">
                 <button onClick={()=>setShow(true)} type="button" id="reject-btn" className="btn shadow w-100 ">Reject</button>
             </div>
-            </div>
+      </div>
+    {/* Confirm and reject buttons started here */}
 
             
                 </div>
@@ -276,6 +302,7 @@ function Prescription()
             </div>
             
         </section>
+        {/* Repeat Prescription Form ended here */}
         
         {/* Reject order message started here */}
         <section className="section bg-c-light">
