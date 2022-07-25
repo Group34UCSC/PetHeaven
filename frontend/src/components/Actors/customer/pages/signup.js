@@ -42,7 +42,7 @@ function signup(){
                             <label for="confirmpassword" class="form-label" id="signupformlabels">confirm password</label>
                             <input class="form-control" id="confirmpassword" rows="3" placeholder="confirm your password here"></input>
                         </div>
-                        <button type="submit" action="submit" class="btn btn-success" id="signupbtn">Submit <i class="fa-solid fa-check"></i></button>
+                        <Link to ='findapet'><button type="submit" action="submit" class="btn btn-success" id="signupbtn">Submit <i class="fa-solid fa-check"></i></button></Link>
                         <button type="reset" action="reset" class="btn btn-danger" id="signupbtn">Reset <i class="fa-solid fa-xmark"></i></button>
                     </form>
                 </div>
