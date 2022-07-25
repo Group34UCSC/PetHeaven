@@ -1,78 +1,17 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import './PharmacyHome.css';
-// import {Link} from 'react-router-dom';
+import './PaidPrescription.css';
 
-import PaidPrescriptions from "./images/pres.jpg";
-import Inquiries from "./images/inquiry.jpg";
-import Inventory from "./images/inventory.png";
-
-
-
-function PharmacyHome()
+function PaidPrescription()
 {
     return(
         <div>
-            
-            {/* Topic started */}
+            {/* New prescription topic started  */}
             <section className="py-4 ">
             <div className="container">
                 <div className="row bg-success text-white"> 
                     <div className="col-md-4 my-auto"></div>
-                    <h3 className="text-center">Aradhana Pharmacy</h3>
-                </div>
-            </div>
-            </section>
-            {/* Topic ended */}
-
-
-            {/* 3 cards started */}
-            <section className="section bg-c-light border-top">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-4">
-                            <div className="card shadow">
-                            <Link to="/pharmacy/PaidPrescription" class="nav-link active">
-                            <img src={PaidPrescriptions} className="w-100 border-bottom" alt="Services"/>
-                                <div className="card-body">
-                                    <h6>Paid Prescriptions</h6>
-                                    <div className="underline"></div>
-                                    
-                                </div>
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="card shadow">
-                            <img src={Inquiries} className="w-100 border-bottom" alt="Services"/>
-                                <div className="card-body">
-                                    <h6>Inquiries</h6>
-                                    <div className="underline"></div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="card shadow">
-                            <img src={Inventory} className="w-100 border-bottom" alt="Services"/>
-                                <div className="card-body">
-                                    <h6>Inventory</h6>
-                                    <div className="underline"></div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* 3 cards ended */}
-
-            {/* New prescription topic started */}
-            <section className="py-4 ">
-            <div className="container">
-                <div className="row bg-success text-white"> 
-                    <div className="col-md-4 my-auto"></div>
-                    <h3 className="text-center">New Prescriptions</h3>
+                    <h3 className="text-center">Paid Prescriptions</h3>
                 </div>
             </div>
             </section>
@@ -85,7 +24,7 @@ function PharmacyHome()
                 <div className="card-body">
 
                     {/* Check availability name started */}
-                <h5 className="main-heading text-center">Check availability to confirm the order</h5>
+                <h5 className="main-heading text-center">To prepare the order</h5>
                 <div className="underline mx-auto"></div>
                 {/* Check availability name ended */}
                 
@@ -301,9 +240,9 @@ function PharmacyHome()
             
         </section>
         {/* Prescriptions ended */}
-
         </div>
-    );
+    )
 }
 
-export default PharmacyHome;
+export default PaidPrescription;
+
