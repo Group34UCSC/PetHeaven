@@ -68,25 +68,25 @@ function PaidPrescription()
         {/* First prescription started */}
         <div className="form-group mt-3">
                 <div className="card">
-                <Link to="/pharmacy/Prescription" class="nav-link active">
+                <Link to="/pharmacy/FinalizeOrder" class="nav-link active">
                     <div className="card-body bg-c-light">
                     <div className="row ">
                 <div class="col-md-2">
                     <label for="option" class="form-label">Prescription No</label>
-                        <h4 className="main-heading">5</h4>
+                        <h4 className="main-heading">1</h4>
                     
                     </div>
                     <div class="col-md-5">
                         <label for="option" class="form-label">Doctor details</label>
-                        <h4 className="main-heading">Dr. Amal Silva <sub>BVSc(Pera)</sub></h4>
+                        <h4 className="main-heading">Dr. Jagath Wijenayake <sub>BVSc(Pera)</sub></h4>
                         <h6 class="slmc">Veterinary Consultant</h6>
-                        <h6 class="slmc">SLMC - 13245</h6>
+                        <h6 class="slmc">SLMC - 56879</h6>
                     </div>
                     <div class="col-md-5">
                     <label for="option" class="form-label">Patient details</label> 
-                        <h4 className="main-heading">Shaggy</h4>
+                        <h4 className="main-heading">Rocky</h4>
                         <h6 class="slmc">Dog</h6>
-                        <h6 class="slmc">6 months</h6>
+                        <h6 class="slmc">1 year</h6>
                     </div>
                 </div>
                     </div>

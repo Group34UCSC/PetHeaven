@@ -23,6 +23,7 @@ import Notifications from './components/pages/Notifications';
 //Pharmacy
 import Prescription from './components/Actors/pharmacy/Prescription';
 import PaidPrescription from './components/Actors/pharmacy/PaidPrescription';
+import FinalizeOrder from './components/Actors/pharmacy/FinalizeOrder';
 
 function App() {
   return (
@@ -51,7 +52,8 @@ function App() {
             {/* Pharmacy */}
             <Route exact path='/pharmacy/Prescription' element={<Prescription />} />
             <Route exact path='/pharmacy/PaidPrescription' element={<PaidPrescription />} />
-            
+            <Route exact path='/pharmacy/FinalizeOrder' element={<FinalizeOrder />} />
+
         </Routes>
 
         <Footer/>
