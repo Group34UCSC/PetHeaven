@@ -1,0 +1,45 @@
+.servicescard {
+    margin-left: 110px;
+    margin-bottom: 100px;
+    width: 26%;
+    height: 55vh;
+    background-color: #00B97A;
+    color: #fff;
+}
+
+#servicedescription {
+    text-align: center;
+    padding-top: 120px;
+    margin-bottom: 100px;
+    color: #052d20;
+}
+
+#desccardhead {
+    color: #052d20;
+    text-align: center;
+}
+
+#desccardarea {
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-bottom: 150px;
+}
+
+#reqbutton {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    width: 150px;
+    height: 60px;
+}
+
+#servicecard {
+    margin-top: 50px;
+    height: 80%;
+    padding: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    color: #052d20;
+    background-color: white;
+}

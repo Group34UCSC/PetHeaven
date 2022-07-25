@@ -19,10 +19,10 @@ function Navbar()
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 
-                <Link to="/" class="nav-link active"><div class="b">Home</div></Link>
-                <Link to="/about" class="nav-link active"><div class="b">About Us</div></Link>
-                <Link to="/contact" class="nav-link active"><div class="b">Contact Us</div></Link>
-                <Link to="/Notifications" class="nav-link active"><div class="b">Notifications</div></Link>
+                <Link to="/" class="nav-link active"><div class="b"><i class="fa-solid fa-house"></i> Home</div></Link>
+                <Link to="/about" class="nav-link active"><div class="b"><i class="fa-solid fa-circle-info"></i> About Us</div></Link>
+                <Link to="/contact" class="nav-link active"><div class="b"><i class="fa-solid fa-phone"></i> Contact Us</div></Link>
+                <Link to="/Notifications" class="nav-link active"><div class="b"><i class="fa-solid fa-bell"></i> Notifications</div></Link>
                 {/* <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Messages</a>
                     <div class="dropdown-menu">
@@ -34,8 +34,8 @@ function Navbar()
                 
             </div>
             <div class="navbar-nav ms-auto">
-            <a href="#" class="nav-item nav-link"><div class="b">SignUp</div></a>
-                <a href="#" class="nav-item nav-link"><div class="b">Sign in</div></a>
+            <a href="#" class="nav-item nav-link"><div class="b"><i class="fa-solid fa-right-to-bracket"></i> Sign in</div></a>  
+            <a href="#" class="nav-item nav-link"><div class="b"><i class="fa-solid fa-user-plus"></i> SignUp</div></a>
             </div>
         </div>
     </div>

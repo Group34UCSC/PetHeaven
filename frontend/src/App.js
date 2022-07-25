@@ -9,6 +9,8 @@ import HomePage from './components/pages/HomePage';
 import AboutUs from './components/pages/AboutUs';
 import ContactUs from './components/pages/ContactUs';
 import Footer from './components/includes/Footer';
+import Notifications from './components/pages/Notifications';
+import Donate from './components/pages/Donate';
 
 
 //Admin
@@ -17,8 +19,19 @@ import AdminHome from './components/Actors/Admin/pages/AdminHome';
 import AdminCreate from './components/Actors/Admin/pages/AdminCreate';
 import AdminDelete from './components/Actors/Admin/pages/AdminDelete';
 import AdminUpdate from './components/Actors/Admin/pages/AdminUpdate';
-import Notifications from './components/pages/Notifications';
+import AdminView from './components/Actors/Admin/pages/AdminView';
 
+//customer
+
+import CustomerFindpet from './components/Actors/customer/pages/CustomerFindpet';
+import CustomerDoctorappoint from './components/Actors/customer/pages/CustomerDoctorappoint';
+import CustomerPharmacy from './components/Actors/customer/pages/CustomerPharmacy';
+import CustomerPettoolstore from './components/Actors/customer/pages/CustomerPettoolstore';
+import ProfilePage from './components/Actors/customer/pages/ProfilePage';
+import CustomerAdoptRequest from './components/Actors/customer/pages/CustomerAdoptRequest';
+import CustomerEditProfile from './components/Actors/customer/pages/CustomerEditProfile';
+import Signup from './components/Actors/customer/pages/signup';
+import CustomerChangePassword from './components/Actors/customer/pages/CustomerChangePassword';
 
 
 
@@ -33,18 +46,31 @@ function App() {
         <Navbar/>
 
         <Routes>
-            {/* Home */}
-            <Route exact path='/' element={<HomePage/>} />
-            <Route exact path='/about' element={<AboutUs/>} />
-            <Route exact path='/contact' element={<ContactUs/>} />
-            <Route exact path='/Notifications' element={<Notifications/>} />
+        
+            <Route exact path='/' element={<HomePage/>} />   
+            <Route exact path='/about' element={<AboutUs/>} />  
+            <Route exact path='/contact' element={<ContactUs/>} /> 
+            <Route exact path='/Notifications' element={<Notifications/>} /> 
+            <Route exact path='/donation' element={<Donate/>} />
 
           
-            {/* Admin */}
-            <Route exact path='/Create' element={<AdminCreate />} />
-            <Route exact path='/Delete' element={<AdminDelete />} />
-            <Route exact path='/Update' element={<AdminUpdate />} />
-            <Route exact path='/AdminHome' element={<AdminHome />} />
+             {/* Admin  */}
+            <Route exact path='/AdminHome/Create' element={<AdminCreate />} /> 
+            <Route exact path='/AdminHome/Delete' element={<AdminDelete />} />
+            <Route exact path='/AdminHome/Update' element={<AdminUpdate />} />
+            <Route exact path='/AdminHome/View' element={<AdminView />} />
+            <Route exact path='/AdminHome' element={<AdminHome />} />  
+            
+              {/*Customer */}
+              {/* <Route exact path='/' element ={<CustomerFindpet/>} /> */}
+              {/* <Route exact path='/' element={<CustomerDoctorappoint/>}/>  */}
+              {/* <Route exact path='/' element ={<CustomerPharmacy/>}/> */}
+              {/* <Route exact path='/' element ={<CustomerPettoolstore/>}/> */}
+              {/* <Route exact path='/' element={<ProfilePage/>}/> */}
+              {/* <Route exact path='/' element={<CustomerAdoptRequest/>}/> */}
+              {/* <Route exact path='/' element ={<CustomerEditProfile/>}/> */}
+              {/* <Route exact path='/' element={<Signup/>} /> */}
+              {/* <Route exact path='/' element={<CustomerChangePassword/>}/> */}
         
         </Routes>
 
@@ -52,7 +78,7 @@ function App() {
         
       </div>
   </Router>
- 
+
  // admin   
 
 
