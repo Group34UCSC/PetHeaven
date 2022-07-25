@@ -9,7 +9,7 @@ import HomePage from './components/pages/HomePage';
 import AboutUs from './components/pages/AboutUs';
 import ContactUs from './components/pages/ContactUs';
 import Footer from './components/includes/Footer';
-import Prescription from './components/Actors/pharmacy/Prescription';
+import PharmacyHome from './components/Actors/pharmacy/PharmacyHome';
 
 //Admin
 import AdminHeader from './components/Actors/Admin/pages/AdminHeader';
@@ -38,7 +38,7 @@ function App() {
             <Route exact path='/about' element={<AboutUs/>} />
             <Route exact path='/contact' element={<ContactUs/>} />
             <Route exact path='/Notifications' element={<Notifications/>} />
-            <Route exact path='/test' element={<Prescription/>} />
+            <Route exact path='/test' element={<PharmacyHome/>} />
             
           
             {/* Admin */}
