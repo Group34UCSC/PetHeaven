@@ -11,6 +11,7 @@ import ContactUs from './components/pages/ContactUs';
 import Footer from './components/includes/Footer';
 import Notifications from './components/pages/Notifications';
 import Donate from './components/pages/Donate';
+import PharmacyHome from './components/Actors/pharmacy/PharmacyHome';
 
 
 //Admin
@@ -33,8 +34,10 @@ import CustomerEditProfile from './components/Actors/customer/pages/CustomerEdit
 import Signup from './components/Actors/customer/pages/signup';
 import CustomerChangePassword from './components/Actors/customer/pages/CustomerChangePassword';
 
-
-
+//Pharmacy
+import Prescription from './components/Actors/pharmacy/Prescription';
+import PaidPrescription from './components/Actors/pharmacy/PaidPrescription';
+import FinalizeOrder from './components/Actors/pharmacy/FinalizeOrder';
 
 function App() {
   return (
@@ -52,7 +55,7 @@ function App() {
             <Route exact path='/contact' element={<ContactUs/>} /> 
             <Route exact path='/Notifications' element={<Notifications/>} /> 
             <Route exact path='/donation' element={<Donate/>} />
-
+            <Route exact path='/pharmacy' element={<PharmacyHome/>} />
           
              {/* Admin  */}
             <Route exact path='/AdminHome/Create' element={<AdminCreate />} /> 
@@ -60,6 +63,11 @@ function App() {
             <Route exact path='/AdminHome/Update' element={<AdminUpdate />} />
             <Route exact path='/AdminHome/View' element={<AdminView />} />
             <Route exact path='/AdminHome' element={<AdminHome />} />  
+
+            {/* Pharmacy */}
+            <Route exact path='/pharmacy/Prescription' element={<Prescription />} />
+            <Route exact path='/pharmacy/PaidPrescription' element={<PaidPrescription />} />
+            <Route exact path='/pharmacy/FinalizeOrder' element={<FinalizeOrder />} />
             
               {/*Customer */}
               {/* <Route exact path='/' element ={<CustomerFindpet/>} /> */}
