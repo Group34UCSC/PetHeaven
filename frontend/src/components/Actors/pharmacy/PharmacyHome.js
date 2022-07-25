@@ -14,7 +14,7 @@ function PharmacyHome()
     return(
         <div>
             
-            
+            {/* Topic started */}
             <section className="py-4 ">
             <div className="container">
                 <div className="row bg-success text-white"> 
@@ -23,9 +23,10 @@ function PharmacyHome()
                 </div>
             </div>
             </section>
-            <div>
-               
-            </div>
+            {/* Topic ended */}
+
+
+            {/* 3 cards started */}
             <section className="section bg-c-light border-top">
                 <div className="container">
                     <div className="row">
@@ -64,7 +65,9 @@ function PharmacyHome()
                     </div>
                 </div>
             </section>
+            {/* 3 cards ended */}
 
+            {/* New prescription topic started */}
             <section className="py-4 ">
             <div className="container">
                 <div className="row bg-success text-white"> 
@@ -73,17 +76,57 @@ function PharmacyHome()
                 </div>
             </div>
             </section>
+            {/* New prescription topic ended */}
            
+           {/* Prescriptions Started */}
             <section className="section bg-c-light border-bottom">
             <div className="container">
                 <div className="card shadow">
                 <div className="card-body">
+
+                    {/* Check availability name started */}
                 <h5 className="main-heading text-center">Check availability to confirm the order</h5>
                 <div className="underline mx-auto"></div>
-            
+                {/* Check availability name ended */}
                 
+                {/* Search bar started here */}
+                <div class="searchbardiv" >
+                    <form>
+                        <div className="form-group mt-3">
+                        <div className="card mb-4 ">
+                            <div className="card-body bg-c-light">
+                            <div className="row ml-4">
+
+                        {/* Search box started here         */}
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="petsearchbyname" aria-describedby="petsearch" placeholder="search prescriptions by prescription id or pet name"></input>
+                            
+                            </div>
+                        {/* Search box ended here          */}
+
+                        {/* Search button started here      */}
+                            <div class="col-md-2">
+                            <button type="submit" class="btn btn-success " id="petsearchbtn">Search <i class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        {/* Search box ended here      */}
+
+                        </div>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                        </div>
+                    </form>
+                </div>
+                {/* Search bar ended here */}
+
                 <div className="form-field">
+
+                    {/* Prescription list started  */}
         <label htmlFor="service">Prescription List</label>
+
+        {/* First prescription started */}
         <div className="form-group mt-3">
                 <div className="card">
                 <Link to="/pharmacy/Prescription" class="nav-link active">
@@ -113,7 +156,9 @@ function PharmacyHome()
                     
                     
                 </div>
+                {/* First prescription ended */}
 
+                {/* Second prescription started */}
                 <div className="form-group mt-3">
                     <div className="card">
                         <div className="card-body bg-c-light">
@@ -142,7 +187,9 @@ function PharmacyHome()
                     
                     
                 </div>
+                {/* Second prescription ended */}
 
+                {/* Third prescription started */}
                 <div className="form-group mt-3">
                     <div className="card">
                         <div className="card-body bg-c-light">
@@ -171,7 +218,9 @@ function PharmacyHome()
                     
                     
                 </div>
+                {/* Third prescription ended  */}
 
+                {/* Fourth prescription started  */}
                 <div className="form-group mt-3">
                 <div className="card">
                     <div className="card-body bg-c-light">
@@ -200,7 +249,9 @@ function PharmacyHome()
                     
                     
                 </div>
+                {/* Fourth prescription ended  */}
 
+                {/* Fifth prescription started  */}
                 <div className="form-group mt-3">
                     <div className="card">
                         <div className="card-body bg-c-light">
@@ -229,6 +280,7 @@ function PharmacyHome()
                     
                     
                 </div>
+                {/* Fifth prescription ended  */}
 
                
 
@@ -248,6 +300,8 @@ function PharmacyHome()
             </div>
             
         </section>
+        {/* Prescriptions ended */}
+
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import Slider from "../includes/Slider";
 import VetClinic from "../images/vet1.jpg";
 import Pharmacy from "../images/pharmacy1.jpg";
@@ -39,12 +40,14 @@ function HomePage()
                         </div>
                         <div className="col-md-4">
                             <div className="card shadow">
+                            <Link to="/test" class="nav-link active">
                             <img src={Pharmacy} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
                                     <h6>Pet Pharmacy</h6>
                                     <div className="underline"></div>
                                     <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
                                 </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-md-4">
