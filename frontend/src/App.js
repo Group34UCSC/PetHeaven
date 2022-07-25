@@ -50,7 +50,7 @@ function App() {
 
         <Routes>
         
-            {/* <Route exact path='/' element={<HomePage/>} />    */}
+            <Route exact path='/' element={<HomePage/>} />   
             <Route exact path='/about' element={<AboutUs/>} />  
             <Route exact path='/contact' element={<ContactUs/>} /> 
             <Route exact path='/Notifications' element={<Notifications/>} /> 
@@ -70,7 +70,7 @@ function App() {
             <Route exact path='/pharmacy/FinalizeOrder' element={<FinalizeOrder />} />
             
               {/*Customer */}
-              <Route exact path='/' element ={<CustomerFindpet/>} />
+              {/* <Route exact path='/' element ={<CustomerFindpet/>} /> */}
               {/* <Route exact path='/' element={<CustomerDoctorappoint/>}/>  */}
               {/* <Route exact path='/' element ={<CustomerPharmacy/>}/> */}
               {/* <Route exact path='/' element ={<CustomerPettoolstore/>}/> */}
