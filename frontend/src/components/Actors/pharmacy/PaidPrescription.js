@@ -29,7 +29,7 @@ function PaidPrescription()
                 {/* Check availability name ended */}
                 
                 {/* Search bar started here */}
-                <div class="searchbardiv" >
+                <div class="searchbar-div" >
                     <form>
                         <div className="form-group mt-3">
                         <div className="card mb-4 ">
@@ -38,14 +38,14 @@ function PaidPrescription()
 
                         {/* Search box started here         */}
                         <div class="col-md-10">
-                            <input type="text" class="form-control" id="petsearchbyname" aria-describedby="petsearch" placeholder="search prescriptions by prescription id or pet name"></input>
+                            <input type="text" class="form-control" id="petsearchby-name" aria-describedby="petsearch" placeholder="search prescriptions by prescription id or pet name"></input>
                             
                             </div>
                         {/* Search box ended here          */}
 
                         {/* Search button started here      */}
                             <div class="col-md-2">
-                            <button type="submit" class="btn btn-success " id="petsearchbtn">Search <i class="fa-solid fa-magnifying-glass"></i></button>
+                            <button type="submit" class="btn btn-success " id="petsearch-btn">Search <i class="fa-solid fa-magnifying-glass"></i></button>
                             </div>
                         {/* Search box ended here      */}
 

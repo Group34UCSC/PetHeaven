@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom';
 
 
 import create from '../img/create.jpg';
-import view from '../img/view1.jpg';
-import delete1 from '../img/delete01.jpg';
-import update from '../img/update01.jpg';
+import view from '../img/view.jpg';
+import delete1 from '../img/delete1.jpg';
+import update from '../img/update.jpg';
 import '../css/AdminHome.css';
 function AdminHome() {
   return (
@@ -15,24 +15,27 @@ function AdminHome() {
                 <div className="container">
                     <div className="row">
                         <div class="admincard col-md-6">
+                       
                             <div className="card shadow" id='cardone'>
-                            <Link to="Create"><img src={create} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
+                            <img src={delete1} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
                                 <div className="card-body">
-                                    <h6>CREATE ACCOUNTS</h6>
+                                    <h6>DELETE</h6>
                                     <div className="underline"></div>
-                                    <p>Create PetHeaven new user Accounts</p>
+                                    <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
                                 </div>
                             </div>
                         </div>
+                       
+
 
                         <div class="admincard col-md-6">
-                    
+                       
                             <div className="card shadow" id='cardone'>
-                            <Link to="Delete"><img src={delete1} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
+                            <img src={create} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
                                 <div className="card-body">
-                                    <h6>DELETE ACCOUNTS</h6>
+                                    <h6>CREATE</h6>
                                     <div className="underline"></div>
-                                    <p>Delete PetHeaven user Accounts</p>
+                                    <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
                                 </div>
                             </div>
                         </div>
@@ -41,11 +44,11 @@ function AdminHome() {
                         <div class="admincard col-md-6">
                        
                             <div className="card shadow" id='cardone'>
-                            <Link to="Update"><img src={update} className="w-50  border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
+                            <img src={update} className="w-50  border-bottom mx-auto d-block img-fluid" alt="Services"/>
                                 <div className="card-body">
-                                    <h6>UPDATE ACCOUNTS</h6>
+                                    <h6>Pet Tool Store</h6>
                                     <div className="underline"></div>
-                                    <p>Update PetHeaven user Accounts</p>
+                                    <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
                                 </div>
                             </div>
                         </div>
@@ -54,11 +57,11 @@ function AdminHome() {
                         <div class="admincard col-md-6">
                        
                             <div className="card shadow" id='cardone'>
-                            <Link to="View"><img src={view} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
+                            <img src={view} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
                                 <div className="card-body">
-                                    <h6>VIEW ACCOUNTS</h6>
+                                    <h6>Pet Tool Store</h6>
                                     <div className="underline"></div>
-                                    <p>View PetHeaven user Accounts</p>
+                                    <p>PetHeaven is an online web based system </p>
                                 </div>
                             </div>
                         </div>

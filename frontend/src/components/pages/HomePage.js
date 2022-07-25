@@ -18,7 +18,7 @@ function HomePage()
                             <h3 className="main-heading">PetHeaven Services</h3>
                             <div className="underline mx-auto"></div>
                             <p>
-                               <b> PetHeaven is an online web based system to facilitate services for animals specially <div className="yellow"> Cats and Dogs.</div></b> 
+                                <b> PetHeaven is an online web based system to facilitate services for animals specially <div className="yellow"> Cats and Dogs.</div></b> 
                             </p>
                             <p><b>These are our services... </b></p>
                         </div>
@@ -40,7 +40,7 @@ function HomePage()
                         </div>
                         <div className="col-md-4">
                             <div className="card shadow">
-                            <Link to="/test" class="nav-link active">
+                            <Link to="/pharmacy" class="nav-link active">
                             <img src={Pharmacy} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
                                     <h6>Pet Pharmacy</h6>

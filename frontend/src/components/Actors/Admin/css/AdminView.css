@@ -26,3 +26,21 @@
     margin-right: 6%;
     background-color: rgba(8, 146, 79, 0.852);
 }
+
+.adminviewtable{
+    background-color: #88a8b2;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+}
+
+
+
+table th {
+    height: 50px;
+    text-align: center;
+  }
+
+td {
+    text-align: center;
+  } 
