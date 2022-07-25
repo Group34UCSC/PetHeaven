@@ -277,6 +277,7 @@ function Prescription()
             
         </section>
         
+        {/* Reject order message started here */}
         <section className="section bg-c-light">
         {show?
             <div className="container">
@@ -306,7 +307,9 @@ function Prescription()
             </div>:null
 } 
         </section>
+        {/* Reject order message ended here */}
 
+        {/* Accept order message started here */}
         <section className="section bg-c-light border-bottom">
         {showBill?
             <div className="container">
@@ -386,6 +389,7 @@ function Prescription()
             </div>:null
 } 
         </section>
+        {/* Accept order message ended here */}
 
         
         </div>

@@ -1,11 +1,13 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import { useEffect, useState } from "react";
 import './FinalizeOrder.css';
 import SelectTableComponent from "./select-table.component";
 
 
 function FinalizeOrder()
 {
+    const[show,setShow]=useState(false);
     return(
         <div>
             <section className="py-4 ">
@@ -83,7 +85,16 @@ function FinalizeOrder()
                     </table> */}
 
                         <SelectTableComponent />
+                       
                 </div>
+               
+                </div>
+                <div className="col-md-2 mt-3 ">
+                            
+                    <button onClick={()=>setShow(true)} className="btn " id="complete-btn">
+                        Complete Order
+                    </button>
+            
                 </div>
             </div>
                 </div>
@@ -91,6 +102,38 @@ function FinalizeOrder()
             </div>
             
         </section>
+
+         {/* Reject order message started here */}
+         <section className="section bg-c-light">
+        {show?
+            <div className="container">
+                <div className="card shadow">
+                <div className="card-body">
+                <h4 className="main-heading">Aradhana Veterinary Pharmacy</h4>
+                <div className="underline"></div>
+                <h6 class="slmc">Regiter No - 23587</h6>
+                <hr/>
+                <p class="para">
+                    Your Prescription is <b>Completed</b>. You can take it now onwards. 
+                </p>
+                <p class="para">
+                    Thank You!
+                </p>
+                <hr/>
+                <div className="form-group py-3 row ">
+            <div className="col-md-2">
+                <button type="button" id="submit-btn" className="btn shadow w-100 ">Send</button>
+            </div>
+            <div className="col-md-2">
+                <button onClick={()=>setShow(false)} type="button" id="reject-btn" className="btn shadow w-100 ">Discard</button>
+            </div>
+            </div>
+                </div>
+                </div>
+            </div>:null
+} 
+        </section>
+        {/* Reject order message ended here */}
         </div>
     )
 }
