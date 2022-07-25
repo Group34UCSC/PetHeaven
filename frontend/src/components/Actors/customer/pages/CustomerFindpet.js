@@ -69,7 +69,7 @@ function CustomerFindpet(){
                             <img src={puppy1} class="card-img-top" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="petsearchbtn">Adopt pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                                <button type="button" class="btn btn-success" id="petadopthbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                             </div>
                             
                         </div>
@@ -78,7 +78,7 @@ function CustomerFindpet(){
                             <img src={puppy1} class="card-img-top" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="petsearchbtn">Adopt pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                                <button type="button" class="btn btn-success" id="petadopthbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                             </div>
                         </div>
 
@@ -86,7 +86,7 @@ function CustomerFindpet(){
                             <img src={puppy1} class="card-img-top" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="petsearchbtn">Adopt pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                                <button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                             </div>
                         </div>
 
@@ -94,7 +94,7 @@ function CustomerFindpet(){
                             <img src={puppy1} class="card-img-top" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="petsearchbtn">Adopt pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                                <button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                             </div>
                             
                         </div>
@@ -103,7 +103,7 @@ function CustomerFindpet(){
                             <img src={puppy1} class="card-img-top" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="petsearchbtn">Adopt pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                                <button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                             </div>
                         </div>
 
@@ -111,7 +111,7 @@ function CustomerFindpet(){
                             <img src={puppy1} class="card-img-top" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="petsearchbtn">Adopt pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                                <button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                             </div>
                         </div>
                     </div>
