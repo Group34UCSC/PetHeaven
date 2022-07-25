@@ -30,32 +30,32 @@ function CustomerPettoolstore(){
                         <div class="col-sm-3" id="petstorecard">
                             <img src={pstorevectors} class="card-img-top" id="pettoolstoreimg" alt="Tommy"></img>
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <button type="button" class="btn btn-success" id="channelbtn">Channel</button>
+                                <p class="card-text"></p>
+                                <button type="button" class="btn btn-success" id="petchannelbtn">Channel</button>
                             </div>
                         </div>
 
                         <div class="col-sm-3" id="petstorecard">
                             <img src={pstorevectors} class="card-img-top" id="pettoolstoreimg" alt="Tommy"></img>
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <button type="button" class="btn btn-success" id="channelbtn">Channel</button>
+                                <p class="card-text"></p>
+                                <button type="button" class="btn btn-success" id="petchannelbtn">Channel</button>
                             </div>
                         </div>
 
                         <div class="col-sm-3" id="petstorecard" >
                             <img src={pstorevectors} class="card-img-top" id="pettoolstoreimg" alt="Tommy"></img>
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <button type="button" class="btn btn-success" id="channelbtn">Channel</button>
+                                <p class="card-text"></p>
+                                <button type="button" class="btn btn-success" id="petchannelbtn">Channel</button>
                             </div>
                         </div>
 
                         <div class=" col-sm-3" id="petstorecard">
                             <img src={pstorevectors} class="card-img-top" id="pettoolstoreimg" alt="Tommy"></img>
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <button type="button" class="btn btn-success" id="channelbtn">Channel</button>
+                                <p class="card-text"></p>
+                                <button type="button" class="btn btn-success" id="petchannelbtn">Channel</button>
                             </div>
                         </div>
                 </div>

@@ -6,11 +6,11 @@ import '../css/CustomerServices.css';
 function Customerservices(){
     return(
         <div class="bg-c-light">
-            <div class= "row col-sm-12 fs-120 border-top border-success" id="servicedescription">
-                <h2>Pet Heaven is no only about pet adopting. You can get everything<br></br> 
+            <div class= "row col-sm-12 border-top border-success" id="servicedescription">
+                <h3>Pet Heaven is no only about pet adopting. You can get everything<br></br> 
                         you want for your pt <i class="fa-solid fa-paw"></i> from pet heaven.<br></br>
                     Checkout what PetHeaven offer for you and your pet <i class="fa-solid fa-paw"></i>
-                </h2>
+                </h3>
             </div>
 
             <div class="bg-c-light row">

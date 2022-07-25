@@ -22,11 +22,11 @@ function CustomerDoctorAppoint(){
             </form>
             
             
-            <div class="row"> 
+            <div class="row" id="doctorsearchcararea"> 
                         <div class="col-sm-3 card" id="doctorcard">
                             <img src={docvectors} class="card-img-top"  id="docproimg" alt="Tommy"></img>
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text"></p>
                                 <button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                             </div>
                         </div>
@@ -34,7 +34,7 @@ function CustomerDoctorAppoint(){
                         <div class="col-sm-3 card" id="doctorcard">
                             <img src={docvectors} class="card-img-top"  id="docproimg" alt="Tommy"></img>
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text"></p>
                                 <button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                             </div>
                         </div>
@@ -42,7 +42,7 @@ function CustomerDoctorAppoint(){
                         <div class="col-sm-3 card" id="doctorcard">
                             <img src={docvectors} class="card-img-top" id="docproimg" alt="Tommy"></img>
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text"></p>
                                 <button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                             </div>
                         </div>
@@ -50,7 +50,7 @@ function CustomerDoctorAppoint(){
                         <div class="col-sm-3 card" id="doctorcard">
                             <img src={docvectors} class="card-img-top"  id="docproimg" alt="Tommy"></img>
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text"></p>
                                 <button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                             </div>
                         </div>
