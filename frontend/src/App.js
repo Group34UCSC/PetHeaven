@@ -20,7 +20,8 @@ import AdminUpdate from './components/Actors/Admin/pages/AdminUpdate';
 import Notifications from './components/pages/Notifications';
 
 
-
+//Pharmacy
+import Prescription from './components/Actors/pharmacy/Prescription';
 
 
 function App() {
@@ -46,7 +47,9 @@ function App() {
             <Route exact path='/Delete' element={<AdminDelete />} />
             <Route exact path='/Update' element={<AdminUpdate />} />
             <Route exact path='/AdminHome' element={<AdminHome />} />
-        
+
+            {/* Pharmacy */}
+            <Route exact path='/pharmacy/Prescription' element={<Prescription />} />
         </Routes>
 
         <Footer/>
