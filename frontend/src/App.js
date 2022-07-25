@@ -46,7 +46,7 @@ function App() {
         <Navbar/>
 
         <Routes>
-
+        
             <Route exact path='/' element={<HomePage/>} />   
             <Route exact path='/about' element={<AboutUs/>} />  
             <Route exact path='/contact' element={<ContactUs/>} /> 
@@ -78,7 +78,7 @@ function App() {
         
       </div>
   </Router>
- 
+
  // admin   
 
 
