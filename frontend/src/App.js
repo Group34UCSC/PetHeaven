@@ -40,7 +40,7 @@ import PaidPrescription from './components/Actors/pharmacy/PaidPrescription';
 import FinalizeOrder from './components/Actors/pharmacy/FinalizeOrder';
 import AddStock from './components/Actors/pharmacy/inventory/AddStock';
 import ViewInventory from './components/Actors/pharmacy/inventory/ViewInventory';
-
+import ViewInquiry from './components/Actors/pharmacy/inquiries/ViewInquiry';
 
 function App() {
   return (
@@ -73,7 +73,8 @@ function App() {
             <Route exact path='/pharmacy/FinalizeOrder' element={<FinalizeOrder />} />
             <Route exact path='/pharmacy/inventory/AddStock' element={<AddStock />} />
             <Route exact path='/pharmacy/inventory/ViewInventory' element={<ViewInventory />} />
-
+            <Route exact path='/pharmacy/inquiries/ViewInquiry' element={<ViewInquiry />} />
+            
 
               {/*Customer */}
               {/* <Route exact path='/' element ={<CustomerFindpet/>} /> */}
