@@ -23,7 +23,6 @@ import AdminUpdate from './components/Actors/Admin/pages/AdminUpdate';
 import AdminView from './components/Actors/Admin/pages/AdminView';
 
 //customer
-import CustomerSubNavbar from './components/Actors/customer/pages/CustomerSubNavbar';
 import CustomerFindpet from './components/Actors/customer/pages/CustomerFindpet';
 import CustomerDoctorappoint from './components/Actors/customer/pages/CustomerDoctorappoint';
 import CustomerPharmacy from './components/Actors/customer/pages/CustomerPharmacy';
@@ -49,8 +48,8 @@ function App() {
         <Navbar/>
 
         <Routes>
-        
-            <Route exact path='/' element={<HomePage/>} />   
+      
+            <Route exact path='/' element={<HomePage/>} />    
             <Route exact path='/about' element={<AboutUs/>} />  
             <Route exact path='/contact' element={<ContactUs/>} /> 
             <Route exact path='/Notifications' element={<Notifications/>} /> 
@@ -71,14 +70,14 @@ function App() {
             
               {/*Customer */}
               {/* <Route exact path='/' element={<CustomerSubNavbar/>} /> */}
-              <Route exact path='/Signup/Customer/findapet' element ={<CustomerFindpet/>} />
-              <Route exact path='/Signup/Customer/findapet/channeldoctor' element={<CustomerDoctorappoint/>}/> 
-              <Route exact path='/Signup/Customer/findapet/findpharmacy' element ={<CustomerPharmacy/>}/>
-              <Route exact path='/Signup/Customer/findapet/findpettoolstore' element ={<CustomerPettoolstore/>}/>
-              <Route exact path='/Signup/Customer/findapet/profilepage' element={<ProfilePage/>}/>
-              <Route exact path='/Signup/Customer/findapet/adoptrequestform' element={<CustomerAdoptRequest/>}/>
+              <Route exact path='/Signup/findapet' element ={<CustomerFindpet/>} />
+              <Route exact path='/Signup/findapet/channeldoctor' element={<CustomerDoctorappoint/>}/> 
+              <Route exact path='/SignUp/findapet/findpharmacy' element ={<CustomerPharmacy/>}/>
+              <Route exact path='/SignUp/findapet/findpettoolstore' element ={<CustomerPettoolstore/>}/>
+              <Route exact path='/SignUp/findapet/myprofile' element={<ProfilePage/>}/>
+              <Route exact path='/SignUp/findapet/adoptrequestform' element={<CustomerAdoptRequest/>}/>
               {/* <Route exact path='/' element ={<CustomerEditProfile/>}/> */}
-              <Route exact path='/Signup/Customer' element={<Signup/>} />
+              <Route exact path='/Signup' element={<Signup/>} />
               {/* <Route exact path='/' element={<CustomerChangePassword/>}/> */}
         
         </Routes>

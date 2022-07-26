@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import puppy1 from '../images/puppy1.jfif';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
+import CustomersubNavbar from './CustomersubNavbar';
 import '../css/CustomerFindpet.css';
 import CustomerFeaturedAnimals from './CustomerFeaturedAnimals';
 import DoctorAppointment from './DoctorAppointment';
@@ -12,7 +13,7 @@ import Customerservices from './Customerservices';
 function CustomerFindpet(){
     return(
             <div>
-                
+                <CustomersubNavbar></CustomersubNavbar>
                 <div class=" bg-c-light border-bottom border-success searchpets">
                     <p class="desc1">We have Dogs <i class="fa fa-dog"></i> and cats <i class="fa fa-cat"></i> who need space in your kind hearts. If you are interesting to adopt hit the request button and  
                     add a new member to your home. <i class="fa fa-home"></i>
@@ -23,9 +24,6 @@ function CustomerFindpet(){
                 <h3 class="searchanimalsheader">Search pets <i class="fa-solid fa-paw"></i> from thousands of pets <i class="fa-solid fa-paw"></i>
                  in our petheaven  who will be<br></br>
                 perfect family member for you. Search cats and dogs with your favourite color and age  </h3>
-                
-                    
-
                     <div class="dropdown" id ="findpetdropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                             Type

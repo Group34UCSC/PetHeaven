@@ -4,10 +4,12 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 import '../css/CustomerPettoolstore.css';
 import pstorevectors from  '../images/pettoolstore.jpg';
 import Pagination from  './pagination';
+import CustomersubNavbar from './CustomersubNavbar';
 function CustomerPettoolstore(){
 
     return(
         <div>
+            <CustomersubNavbar></CustomersubNavbar>
             <div>
                 
             </div>
