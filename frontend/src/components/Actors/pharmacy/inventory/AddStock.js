@@ -29,6 +29,7 @@ function AddStock()
 
     return(
         <div>
+          {/* Inventory topic started here */}
         <section className="py-4 ">
         <div className="container">
             <div className="row bg-success text-white"> 
@@ -37,10 +38,9 @@ function AddStock()
             </div>
         </div>
         </section>
-        <div>
-           
-        </div>
-        {/* Repeat Prescription Form started here */}
+        {/* Inventory topic ended here */}
+
+        {/* New Stock Adding Form started here */}
         <section className="section bg-c-light border-bottom">
             <div className="container">
                 <div className="card shadow">
@@ -136,7 +136,7 @@ function AddStock()
                     
                 </div>
 
-              {serviceList.length - 1 === index && serviceList.length < 6 && (
+              {serviceList.length - 1 === index && serviceList.length < 15 && (
                 <button
                   type="button"
                   onClick={handleServiceAdd}
@@ -173,7 +173,7 @@ function AddStock()
       </div> */}
       
 
-      {/* Confirm and reject buttons started here */}
+      {/* Submit and View current availability buttons started here */}
       <div className="form-group py-3 row ">
             <div className="col-md-2">
                 <button type="button" id="submit-btn" className="btn shadow w-100 ">Submit</button>
@@ -184,7 +184,7 @@ function AddStock()
             </Link>
             </div>
       </div>
-    {/* Confirm and reject buttons started here */}
+    {/* Submit and View current availability buttons started here */}
 
             
                 </div>
@@ -219,7 +219,7 @@ function AddStock()
             </div>
             
         </section>
-        {/* Repeat Prescription Form ended here */}
+        {/* New Stock Adding Form ended here */}
     </div>
     )
 }

@@ -3,12 +3,13 @@
     background: #42ba96;
     outline: none;
     cursor: pointer;
+    width: 200px;
     font-weight: 500;
     border-radius: 2px;
     padding: 5px 10px;
     color: white;
     /* align-items: center; */
-    margin-left: 580px;
+    margin-left: 530px;
   }
   #complete-btn:hover
   {

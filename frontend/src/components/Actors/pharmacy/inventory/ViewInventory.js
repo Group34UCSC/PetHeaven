@@ -14,7 +14,7 @@ function ViewInventory()
             </div>
             </section>
             
-        {/* Veterinary doctor details started here    */}
+        {/* Medicine stock details started here    */}
         <section className="section bg-c-light border-bottom">
             <div className="container">
                 <div className="card shadow">
@@ -33,7 +33,7 @@ function ViewInventory()
 
                         {/* Search box started here         */}
                         <div class="col-md-10">
-                            <input type="text" class="form-control" id="petsearchby-name" aria-describedby="petsearch" placeholder="Search Medicine by Medicine Name"></input>
+                            <input type="text" class="form-control" id="petsearchby-name" aria-describedby="petsearch" placeholder="Search Medicine by Medicine Name or ID"></input>
                             
                             </div>
                         {/* Search box ended here          */}
@@ -61,7 +61,7 @@ function ViewInventory()
                 
                 </div>
 
-                {/* prescription details started here */}
+                {/* Stock details started here */}
                 <div className="container mb-3">
                 <div className="card shadow">
                 <div className="card-body">
@@ -71,7 +71,7 @@ function ViewInventory()
                             <tr>
                             <th scope="col"></th>
                             <th scope="col">Medicine Name</th>
-                            <th scope="col">Quantity</th>
+                            <th scope="col">Quantity(Units)</th>
                             <th scope="col">Unit Price(LKR)</th>
                             </tr>
                         </thead>
@@ -104,7 +104,7 @@ function ViewInventory()
                     </table>
                 </div>
                 </div>
-                {/* prescription details ended here */}
+                {/* Stock details ended here */}
 
             </div>
                 </div>
@@ -112,7 +112,7 @@ function ViewInventory()
             </div>
             
         </section>
-        {/* Veterinary doctor details ended here  */}   
+        {/* Medicine stock details ended here  */}   
         </div>
         
     );
