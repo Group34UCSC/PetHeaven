@@ -7,20 +7,20 @@
 
 .searchanimalsheader {
     text-align: center;
-    font-size: 40px;
-    margin-left: 200px;
-    margin-bottom: 200px;
+    font-size: 26px;
+    margin-left: 100px;
+    margin-bottom: 100px;
     margin-top: 200px;
     color: #052d20;
 }
 
 #findpetdropdown {
-    margin-left: 200px;
+    margin-left: 80px;
     margin-top: 80px;
 }
 
 #dropdownMenuButton {
-    margin-left: 380px;
+    margin-left: 230px;
     padding-top: 9px;
     padding-left: 35px;
     padding-right: 35px;
@@ -28,7 +28,7 @@
 
 .desc1 {
     font-weight: normal;
-    font-size: 46px;
+    font-size: 26px;
     color: #052d20;
     padding: 40px;
 }
@@ -41,10 +41,10 @@
 }
 
 .searchbardiv {
-    margin-left: 600px;
+    margin-left: 400px;
     width: 50%;
-    margin-top: 150px;
-    margin-bottom: 150px;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 
@@ -59,9 +59,14 @@
 }
 
 #petsearchbtn {
-    margin-left: 400px
+    margin-left: 300px
 }
 
 #findpetimgarea {
-    margin-left: 100px;
+    margin-left: 140px;
+    width: 83%;
+}
+
+#petadopthbtn {
+    margin-left: 10px;
 }
