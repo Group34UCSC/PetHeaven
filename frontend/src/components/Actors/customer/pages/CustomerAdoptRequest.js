@@ -3,12 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 import '../css/CustomerAdoptpet.css';
 import docvectors from  '../images/docvector.png';
-
+import CustomersubNavbar from './CustomersubNavbar';
 import Pagination from  './pagination';
 
 function CustomerAdoptRequest() {
     return(
         <div>
+            <CustomersubNavbar></CustomersubNavbar>
             <div  class="bg-c-light">
                 <h1 class="bg-c-light col-sm-12 requestheader">Adopt Request form</h1>
                 <h2 class="bg-c-light col-sm-12 requestdescription border-bottom border-success"> Fill this form with correct information.<br></br> PetHeaven team 
