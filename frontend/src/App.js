@@ -42,6 +42,9 @@ import UpdateVaccination from './components/Actors/staff/pages/UpdateVaccination
 import NotifyAdopter from './components/Actors/staff/pages/NotifyAdopter';
 import ViewDonation from './components/Actors/staff/pages/ViewDonation';
 import ViewFeedback from './components/Actors/staff/pages/ViewFeedback';
+import AddNewPet from './components/Actors/staff/pages/AddNewPet';
+import ViewAdopterRequests from './components/Actors/staff/pages/ViewAdopterRequests';
+
 
 
 
@@ -90,10 +93,14 @@ function App() {
             <Route exact path='/postpets' element ={<PostPet/>} />
             <Route exact path='/viewpost' element ={<ViewPost/>} />
             <Route exact path='/viewadoptee' element ={<ViewAdoptee/>} />
-            <Route exact path='/updatevaccination' element ={<UpdateVaccination/>} />
+            <Route exact path='/updatemedicalstatus' element ={<UpdateVaccination/>} />
             <Route exact path='/notifyadopter' element ={<NotifyAdopter/>} />
             <Route exact path='/viewdonation' element ={<ViewDonation/>} />
             <Route exact path='/viewfeedback' element ={<ViewFeedback/>} />
+            <Route exact path='/addnewpet' element ={<AddNewPet/>} />
+            <Route exact path='/viewadopterrequests' element ={<ViewAdopterRequests/>} />
+
+            
            
             
         

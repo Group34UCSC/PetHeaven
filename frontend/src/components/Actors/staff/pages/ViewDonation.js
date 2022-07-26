@@ -34,7 +34,7 @@ function ViewDonation(){
             </div>
           <div className="container donationTable">
             <div className="row ">
-              <table class="table table-hover table-fixed">
+              <table class="table  table-stripped table-hover">
                 <thead>
                   <tr>
 

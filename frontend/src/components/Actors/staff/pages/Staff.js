@@ -67,7 +67,7 @@ function Staff() {
             <div class="admincard col-md-3">
                        
               <div className="card shadow" id='cardone'>
-                <Link to="/updatevaccination" class="nav-link active">
+                <Link to="/updatemedicalstatus" class="nav-link active">
                   <img src={pet} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
                   <div className="card-body" id='cardTitle'>
                     <h6><b>UPDATE VACCINATION</b></h6>
@@ -108,7 +108,7 @@ function Staff() {
               <div className="card shadow" id='cardone'>
                 <Link to="/viewfeedback" class="nav-link active">
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    99+
+                    14+
                     <span class="visually-hidden">unread messages</span>
                   </span>
                   <img src={pet} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>

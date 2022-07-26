@@ -122,3 +122,23 @@ border-radius: 50%;
   cursor: pointer;
   font-size: 20px;
 }
+
+/* .viewPetImg{
+  width: 150%;
+  
+} */
+
+.medicalstatus{
+  margin-bottom: 8%;
+  height: 80px;
+  overflow-y: auto;
+}
+
+.editmedicalBtn{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.postpetBtn{
+  margin-bottom: 7%;
+}

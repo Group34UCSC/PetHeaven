@@ -44,9 +44,7 @@ function ViewPost(){
                         </div>  
                         
                         </div>
-                        <Link to="/viewpets" class="nav-link active">
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn">Delete Post <i class="fa-solid fa-trash"></i></button>
-                        </Link>
+                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
 
@@ -65,9 +63,7 @@ function ViewPost(){
                         </div>  
                         
                         </div>
-                        <Link to="/viewpets" class="nav-link active">
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn">Delete Post <i class="fa-solid fa-trash"></i></button>
-                        </Link>
+                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
 
@@ -86,9 +82,7 @@ function ViewPost(){
                         </div>  
                         
                         </div>
-                        <Link to="/viewpets" class="nav-link active">
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn">Delete Post <i class="fa-solid fa-trash"></i></button>
-                        </Link>
+                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
 
@@ -107,9 +101,7 @@ function ViewPost(){
                         </div>  
                         
                         </div>
-                        <Link to="/viewpets" class="nav-link active">
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn">Delete Post <i class="fa-solid fa-trash"></i></button>
-                        </Link>
+                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
 
@@ -128,9 +120,7 @@ function ViewPost(){
                         </div>  
                         
                         </div>
-                        <Link to="/viewpets" class="nav-link active">
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn">Delete Post <i class="fa-solid fa-trash"></i></button>
-                        </Link>
+                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
 
@@ -149,9 +139,7 @@ function ViewPost(){
                         </div>  
                         
                         </div>
-                        <Link to="/viewpets" class="nav-link active">
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn">Delete Post <i class="fa-solid fa-trash"></i></button>
-                        </Link>
+                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
 
@@ -170,9 +158,7 @@ function ViewPost(){
                         </div>  
                         
                         </div>
-                        <Link to="/viewpets" class="nav-link active">
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn">Delete Post <i class="fa-solid fa-trash"></i></button>
-                        </Link>
+                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
 
@@ -191,15 +177,44 @@ function ViewPost(){
                         </div>  
                         
                         </div>
-                        <Link to="/viewpets" class="nav-link active">
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn">Delete Post <i class="fa-solid fa-trash"></i></button>
-                        </Link>
+                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
              
             </div>
           </div>
         </section>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                               
+                                            
+                        <div className="card card-body shadow">
+                            <div className="row">
+                                <div className="col-md-12 border-left">
+                                    <div className="form-group confimtext">
+                                        <label className="mb-1 mt-1"><b>Are you sure to Delete ?</b></label>
+                                    </div>                  
+                                    <div className="form-group py-3">
+                                        <div class="container px-4 text-center">
+                                            <div class="row gx-5 ">
+                                                    <div class="col ">
+                                                        <Link to="/viewpets" class="nav-link active">
+                                                            <button type="button" className="btn btn-success shadow w-100 postPetBtn"><b>Yes  <i class="fa-solid fa-check"></i></b></button>
+                                                        </Link>
+                                                    </div>
+                                                    <div class="col ">
+                                                        <button type="button" className="btn btn-danger shadow w-100 postPetBtn" data-bs-dismiss="modal"><b>No <i class="fa-solid fa-times"></i></b></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>       
+                        </div>
+                    </div>
+                </div>
       </div>   
     )
 }
