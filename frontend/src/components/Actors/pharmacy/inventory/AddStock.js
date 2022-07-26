@@ -178,6 +178,9 @@ function AddStock()
             <div className="col-md-2">
                 <button type="button" id="submit-btn" className="btn shadow w-100 ">Submit</button>
             </div>
+            <div className="col-md-3">
+                <button type="button" id="view-btn" className="btn shadow w-100 ">View current availability</button>
+            </div>
       </div>
     {/* Confirm and reject buttons started here */}
 
