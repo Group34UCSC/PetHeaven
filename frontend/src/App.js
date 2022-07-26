@@ -38,6 +38,7 @@ import CustomerChangePassword from './components/Actors/customer/pages/CustomerC
 import Prescription from './components/Actors/pharmacy/Prescription';
 import PaidPrescription from './components/Actors/pharmacy/PaidPrescription';
 import FinalizeOrder from './components/Actors/pharmacy/FinalizeOrder';
+import AddStock from './components/Actors/pharmacy/inventory/AddStock';
 
 function App() {
   return (
@@ -68,7 +69,8 @@ function App() {
             <Route exact path='/pharmacy/Prescription' element={<Prescription />} />
             <Route exact path='/pharmacy/PaidPrescription' element={<PaidPrescription />} />
             <Route exact path='/pharmacy/FinalizeOrder' element={<FinalizeOrder />} />
-            
+            <Route exact path='/pharmacy/inventory/AddStock' element={<AddStock />} />
+
               {/*Customer */}
               {/* <Route exact path='/' element ={<CustomerFindpet/>} /> */}
               {/* <Route exact path='/' element={<CustomerDoctorappoint/>}/>  */}

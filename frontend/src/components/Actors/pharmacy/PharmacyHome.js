@@ -39,7 +39,7 @@ function PharmacyHome()
                                     <div className="underline"></div>
                                     
                                 </div>
-                                </Link>
+                            </Link>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -54,12 +54,14 @@ function PharmacyHome()
                         </div>
                         <div className="col-md-4">
                             <div className="card shadow">
+                            <Link to="/pharmacy/inventory/AddStock" class="nav-link active">
                             <img src={Inventory} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
                                     <h6>Inventory</h6>
                                     <div className="underline"></div>
                                     
                                 </div>
+                            </Link>
                             </div>
                         </div>
                     </div>
