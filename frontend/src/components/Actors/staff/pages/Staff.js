@@ -70,7 +70,7 @@ function Staff() {
                 <Link to="/updatemedicalstatus" class="nav-link active">
                   <img src={pet} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
                   <div className="card-body" id='cardTitle'>
-                    <h6><b>UPDATE VACCINATION</b></h6>
+                    <h6><b>UPDATE MEDICAL STATUS</b></h6>
                     <div className="underline"></div>
                   </div>
                 </Link>

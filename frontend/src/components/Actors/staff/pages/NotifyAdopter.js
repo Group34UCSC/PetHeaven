@@ -30,30 +30,32 @@ function NotifyAdopter() {
                                         
                                     </h6>
                                     <hr/>
-                                    <div className="form-group">
-                                        <label className="mb-1">Adopter Name</label>
-                                        <input type="text" className="form-control" placeholder="Adopter Name" required></input>
-                                    </div>
-                                    <div className="form-group">
-                                        <label className="mb-1 mt-1">Mobile Number</label>
-                                        <input type="text" className="form-control" placeholder="Adopter's Contact Number" required></input>
-                                    </div>
-                                    <div className="form-group">
-                                        <label className="mb-1">Message</label>
-                                        <textarea rows="4" className="form-control" placeholder="Enter Your Message" required></textarea>
-                                    </div>
-                                    <div className="form-group py-3">
-                                        <div class="container px-4 text-center">
-                                            <div class="row gx-5 ">
-                                                    <div class="col ">
-                                                        <button type="button" className="btn btn-success shadow w-100 postPetBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"><b>Send  <i class="fa-solid fa-paper-plane"></i></b></button>
-                                                    </div>
-                                                    <div class="col ">
-                                                        <button type="button" className="btn btn-danger shadow w-100 postPetBtn"><b>Discard <i class="fa-solid fa-times"></i></b></button>
-                                                    </div>
-                                                </div>
+                                    <form>
+                                        <div className="form-group">
+                                            <label className="mb-1">Adopter Name</label>
+                                            <input type="text" className="form-control" placeholder="Adopter Name" required></input>
                                         </div>
-                                    </div>
+                                        <div className="form-group">
+                                            <label className="mb-1 mt-1">Mobile Number</label>
+                                            <input type="text" className="form-control" placeholder="Adopter's Contact Number" required></input>
+                                        </div>
+                                        <div className="form-group">
+                                            <label className="mb-1">Message</label>
+                                            <textarea rows="4" className="form-control" placeholder="Enter Your Message" required></textarea>
+                                        </div>
+                                        <div className="form-group py-3">
+                                            <div class="container px-4 text-center">
+                                                <div class="row gx-5 ">
+                                                        <div class="col ">
+                                                            <button type="submit" className="btn btn-success shadow w-100 postPetBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"><b>Send  <i class="fa-solid fa-paper-plane"></i></b></button>
+                                                        </div>
+                                                        <div class="col ">
+                                                            <button type="reset" className="btn btn-danger shadow w-100 postPetBtn"><b>Discard <i class="fa-solid fa-times"></i></b></button>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </form>    
                                 </div>
                             </div>
                         </div>

@@ -16,8 +16,14 @@
 
 .donationTable{
     margin-top: 1%;
-    height: 600px;
+    height: 300px;
     overflow-y: scroll;
+}
+
+.amountcell{
+    /* text-align: end;
+    padding-left: 2%;
+    position: absolute; */
 }
 
 /* 

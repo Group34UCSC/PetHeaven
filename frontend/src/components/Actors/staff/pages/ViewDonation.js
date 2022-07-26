@@ -34,9 +34,10 @@ function ViewDonation(){
             </div>
           <div className="container donationTable">
             <div className="row ">
-              <table class="table  table-stripped table-hover">
+              {/* <table class="table  table-stripped table-hover"> */}
+              <table class="table table-stripped table-hover">
                 <thead>
-                  <tr>
+                  <tr className='text-center'>
 
                     <th scope="col">Date</th>
                     <th scope="col">Time</th>
@@ -45,13 +46,13 @@ function ViewDonation(){
                     <th scope="col">Amount(Rs)</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className='text-center'>
                   <tr>
                     <th scope="row">18.07.2020</th>
                     <td>15 : 42</td>
                     <td>A.P.H. Aththanayake</td>
                     <td>+94(78) 5814239</td>
-                    <td>70 000.00</td>
+                    <td className='amountcell'>70 000.00</td>
                   </tr>
                   <tr>
                     <th scope="row">18.07.2020</th>
