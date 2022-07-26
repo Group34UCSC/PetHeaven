@@ -124,8 +124,8 @@ function AddStock()
                     </div>
                     <div class="col-md-3">
                         <div className="form-group">
-                            <label className="mb-1">Available Quantity</label>
-                            <input type="text" className="form-control" ></input>
+                            <label className="mb-1">Unit Price</label>
+                            <input type="text" className="form-control" placeholder="Enter unit price"></input>
                         </div>
                     </div>
                 </div>
@@ -179,7 +179,9 @@ function AddStock()
                 <button type="button" id="submit-btn" className="btn shadow w-100 ">Submit</button>
             </div>
             <div className="col-md-3">
+            <Link to="/pharmacy/inventory/ViewInventory" class="nav-link active">
                 <button type="button" id="view-btn" className="btn shadow w-100 ">View current availability</button>
+            </Link>
             </div>
       </div>
     {/* Confirm and reject buttons started here */}
