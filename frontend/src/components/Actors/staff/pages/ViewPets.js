@@ -52,20 +52,10 @@ function ViewPets(){
                           <h6 className='ashtext'>Brown and White</h6>
                         </div>
 
-                        <div className='medicalstatus'>
-                          <h6 >01/05/2020 - Vaccinated for Rabies</h6>
-                          <h6 >06/06/2020 - Injured left leg from dogs bitten </h6>
-                          <h6 >10/06/2022 - Back to normal from left leg injury</h6>
-                          <h6 >10/06/2022 - Back to normal from left leg injury</h6>
-                          <h6 >10/06/2022 - Back to normal from left leg injury</h6>
-                          <h6 >10/06/2022 - Back to normal from left leg injury</h6>
-
-                          <Link to="/updatemedicalstatus" class="nav-link active d-grid gap-2 ">
-                            <button type="button" class="btn btn-success editmedicalBtn" id="adoptbtn">Update Medical Status <i class="fa-solid fa-edit"></i></button>
-                          </Link>
+                          <div class="d-grid gap-2 ">
+                            <button type="button" class="btn btn-success editmedicalBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
+                          </div>
                   
-                        </div>
-
                         <h6 >Shadow is a calm, innocent and child friendly puppy. Its Vaccinations are up to date. Also It is in good health. </h6>
                       </div>  
                       
@@ -271,7 +261,55 @@ function ViewPets(){
             </div>
           </div>
         </section>
-      </div>   
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                               
+                                            
+                          <div className="card card-body shadow">
+                           
+                              <div className="container donationTable">
+                                <div className="row ">
+                                  <table class="table table-stripped table-hover">
+                                    <thead>
+                                      <tr className='text-center'>
+
+                                        <th>
+                                          <button type="button" class="btn btn-success postpetBtn" id="adoptbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
+                                        </th>
+                                        <th>
+                                          <button type="button" class="btn btn-success postpetBtn" id="adoptbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
+                                        </th>
+                                        <th>
+                                          <button type="button" class="btn btn-success postpetBtn" id="adoptbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
+                                        </th>
+                                      
+                                      </tr>
+                                    </thead>
+                                    <tbody className='text-center'>
+                                      <tr>
+                                        <th scope="row">18.07.2020</th>
+                                        <td className='vaccineendalign'>Vaccinated for Rabies</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">18.07.2020</th>
+                                        <td className='vaccineendalign'>Vaccinated for Parainfluenza</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">18.07.2020</th>
+                                        <td className='vaccineendalign'>Vaccinated for Distemper</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
     )
 }
 
