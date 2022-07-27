@@ -48,14 +48,19 @@ function CustomerAdoptRequest() {
 
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
                     <label class="form-check-label" for="flexRadioDefault1">No</label>
-                </div>        
-    
+                </div> 
+
                 <div class="customerformrows row">
-                    <label for="inputfirst name" class="col-sm-12 col-form-label" id="reqformlabels">If yes enter their details</label>
-                    <div class="col-sm-10">
-                        <textarea type="textarea" class="form-control" id="inputfirstname"></textarea>
-                    </div>
+                    <label for="inputlast name" class="col-sm-12 col-form-label" id="reqformlabels">If yes enter type of the pet</label>
                 </div>
+                    
+                <div class="radiobtns">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
+                    <label class="form-check-label" for="flexRadioDefault1">Dog</label>
+
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
+                    <label class="form-check-label" for="flexRadioDefault1">cat</label>
+                </div>       
 
                 <div class="customerformrows row">
                     <label for="inputlast name" class="col-sm-12 col-form-label">Do you have any kids in your home</label>
@@ -66,47 +71,14 @@ function CustomerAdoptRequest() {
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
                         <label class="form-check-label" for="flexRadioDefault1">No</label>
                 </div>        
-                
+
                 <div class="customerformrows row">
-                    <label for="inputfirst name" class="col-sm-12 col-form-label" id="reqformlabels">If yes enter their details</label>
+                    <label for="inputfirst name" class="col-sm-12 col-form-label" id="reqformlabels">Any additional details</label>
                     <div class="col-sm-10">
                         <textarea type="textarea" class="form-control" id="inputfirstname"></textarea>
                     </div>
                 </div>
 
-                <div class="customerformrows row">
-                    <label for="inputlast name" class="col-sm-12 col-form-label" id="reqformlabels">Do you have any Elderly persons in your home</label>
-                </div>
-                <div class="radiobtns">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
-                    <label class="form-check-label" for="flexRadioDefault1">Yes</label>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
-                    <label class="form-check-label" for="flexRadioDefault1">No</label>
-                </div>        
-                
-                <div class="customerformrows row">
-                    <label for="inputfirst name" class="col-sm-12 col-form-label" id="reqformlabels">If yes enter their details</label>
-                    <div class="col-sm-10">
-                        <textarea type="textarea" class="form-control" id="inputfirstname"></textarea>
-                    </div>
-                </div>
-
-                <div class="customerformrows row">
-                    <label for="inputlast name" class="col-sm-12 col-form-label" id="reqformlabels">Do you have any long term diseased in your home</label>
-                </div>
-                <div class="radiobtns">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
-                    <label class="form-check-label" for="flexRadioDefault1">Yes</label>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
-                    <label class="form-check-label" for="flexRadioDefault1">No</label>
-                </div>        
-
-                <div class="customerformrows row">
-                    <label for="inputfirst name" class="col-sm-12 col-form-label" id="reqformlabels">If yes enter their details</label>
-                    <div class="col-sm-10">
-                        <textarea type="textarea" class="form-control" id="inputfirstname"></textarea>
-                    </div>
-                </div>
                 <div class="btnclass">
                     <button class="btn btn-success" type="submit" value="Submit">submit <i class="fa-solid fa-check"></i></button>
                     <button class="btn btn-danger" type="reset" value="Reset">Reset <i class="fa-solid fa-xmark"></i></button>

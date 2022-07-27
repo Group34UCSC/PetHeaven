@@ -3,7 +3,7 @@
     height: 100vh;
 } */
 
-.searchpharmacyheading {
+#searchpetstoreheading {
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -14,7 +14,7 @@
     color: #0b291f;
 }
 
-#pharmacysearchbars {
+#petstoresearchbars {
     width: 60%;
     font-size: 18px;
     margin-top: 50px;
@@ -22,6 +22,10 @@
     text-align: center;
     align-items: center;
     margin-left: 400px;
+}
+
+#petstoresearchbtn {
+    margin-top: 20px;
 }
 
 #petstorecard {
@@ -35,6 +39,7 @@
     margin-left: 40px;
 }
 
-#petchannelbtn {
+#petstorebtn {
     margin-left: 110px;
+    width: 100px;
 }

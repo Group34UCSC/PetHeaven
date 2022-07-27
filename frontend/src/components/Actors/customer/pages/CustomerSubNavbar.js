@@ -26,7 +26,7 @@ function Customersubnavbar(){
                     <a class="text-dark nav-link">Shopping <i class="fa-solid fa-cart-shopping"></i></a>
                 </li>
                 <li class="nav-item" id="custsubnaitem">
-                    <a class="text-dark nav-link" aria-current="page" href="#">Messages <i class="fa fa-message"></i></a>
+                    <Link to="/SignUp/findapet/messages"><a class="text-dark nav-link" aria-current="page" href="#">Messages <i class="fa fa-message"></i></a></Link>
                 </li>
                 <li class="nav-item" id="custsubnaitemprofile">
                     <Link to="/SignUp/findapet/myprofile"><a class="text-dark nav-link" aria-current="page" href="#">My profile <i class="fa fa-user"></i></a></Link>
