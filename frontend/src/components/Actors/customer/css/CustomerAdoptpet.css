@@ -1,22 +1,24 @@
 .requestheader {
+    font-size: 26px;
     text-align: center;
-    padding-top: 200px;
+    padding-top: 100px;
     color: #198754;
 }
 
 .requestdescription {
+    font-size: 20px;
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
 .requestform {
-    padding-top: 80px;
+    padding-top: 30px;
     color: #0c3427;
     width: 60%;
-    margin-left: 700px;
-    margin-right: 700px;
+    margin-left: 500px;
+    margin-right: 500px;
     background-color: white;
 }
 
@@ -34,11 +36,11 @@
 .col-form-label {
     width: 100%;
     margin-left: 50px;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .radiobtns {
-    font-size: 20px;
+    font-size: 14px;
     margin-left: 100px;
     margin-bottom: 20px
 }
