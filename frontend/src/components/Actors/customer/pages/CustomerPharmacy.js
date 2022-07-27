@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
+import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro' 
+import {Link} from 'react-router-dom'; 
 import '../css/CustomerPharmacy.css';
 import phavectors from  '../images/pharmacy.png';
 import Pagination from  './pagination';
@@ -32,7 +33,7 @@ function CustomerPharmacy(){
                             <img src={phavectors} class="card-img-top"  id="imgpharm" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="phachannelbtn">Channel</button>
+                                <Link to="pharmacystore"><button type="button" class="btn btn-success" id="phachannelbtn">visit <i class="fa fa-pills"></i></button></Link>
                             </div>
                         </div>
 
@@ -40,7 +41,7 @@ function CustomerPharmacy(){
                             <img src={phavectors} class="card-img-top"  id="imgpharm"  alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="phachannelbtn">Channel</button>
+                                <Link to="pharmacystore"><button type="button" class="btn btn-success" id="phachannelbtn">visit <i class="fa fa-pills"></i></button></Link>
                             </div>
                         </div>
 
@@ -48,7 +49,7 @@ function CustomerPharmacy(){
                             <img src={phavectors} class="card-img-top" id="imgpharm" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="phachannelbtn">Channel</button>
+                                <Link to="pharmacystore"><button type="button" class="btn btn-success" id="phachannelbtn">visit <i class="fa fa-pills"></i></button></Link>
                             </div>
                         </div>
 
@@ -56,7 +57,7 @@ function CustomerPharmacy(){
                             <img src={phavectors} class="card-img-top"  id="imgpharm" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="phachannelbtn">Channel</button>
+                                <Link to="pharmacystore"><button type="button" class="btn btn-success" id="phachannelbtn"> visit <i class="fa fa-pills"></i></button></Link>
                             </div>
                         </div>
                 </div>
