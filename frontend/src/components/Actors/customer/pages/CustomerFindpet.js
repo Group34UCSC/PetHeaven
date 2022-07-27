@@ -2,6 +2,10 @@
 import React,{useState} from 'react';
 import {Link} from 'react-router-dom';
 import puppy1 from '../images/puppy1.jfif';
+import puppy2 from '../images/puppy2.jfif';
+import puppy4 from '../images/puppy4.jpg';
+import kitties1 from '../images/kitties1.jfif';
+import kitties3 from '../images/kitties3.jfif';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 import CustomersubNavbar from './CustomersubNavbar';
@@ -10,6 +14,7 @@ import CustomerFeaturedAnimals from './CustomerFeaturedAnimals';
 import DoctorAppointment from './DoctorAppointment';
 import Pagination from './pagination';
 import Customerservices from './Customerservices';
+import Customerdocmessagetab from './CustomerDocmessagetab';
 function CustomerFindpet(){
     return(
             <div>
@@ -64,7 +69,7 @@ function CustomerFindpet(){
 
                     <div class=" bg-c-light row" id="findpetimgarea"> 
                         <div class="col-sm-2 card">
-                            <img src={puppy1} class="card-img-top" alt="Tommy"></img>
+                            <img src={puppy4} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
                                 <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadopthbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
@@ -73,7 +78,7 @@ function CustomerFindpet(){
                         </div>
 
                         <div class="col-sm-2 card">
-                            <img src={puppy1} class="card-img-top" alt="Tommy"></img>
+                            <img src={puppy1} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
                                 <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadopthbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
@@ -81,7 +86,7 @@ function CustomerFindpet(){
                         </div>
 
                         <div class="col-sm-2 card">
-                            <img src={puppy1} class="card-img-top" alt="Tommy"></img>
+                            <img src={puppy2} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
                                 <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
@@ -89,7 +94,7 @@ function CustomerFindpet(){
                         </div>
 
                         <div class="col-sm-2 card">
-                            <img src={puppy1} class="card-img-top" alt="Tommy"></img>
+                            <img src={kitties3} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
                                 <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
@@ -98,7 +103,7 @@ function CustomerFindpet(){
                         </div>
 
                         <div class="col-sm-2 card">
-                            <img src={puppy1} class="card-img-top" alt="Tommy"></img>
+                            <img src={puppy1} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
                                 <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
@@ -106,7 +111,7 @@ function CustomerFindpet(){
                         </div>
 
                         <div class="col-sm-2 card">
-                            <img src={puppy1} class="card-img-top" alt="Tommy"></img>
+                            <img src={kitties1} class="card-img-top" id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
                                 <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
@@ -115,6 +120,7 @@ function CustomerFindpet(){
                     </div>
                 <Pagination></Pagination>
                 <Customerservices></Customerservices>
+                <Customerdocmessagetab></Customerdocmessagetab>
             </div>
     )
         
