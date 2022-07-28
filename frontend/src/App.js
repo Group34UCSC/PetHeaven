@@ -32,11 +32,16 @@ import CustomerAdoptRequest from './components/Actors/customer/pages/CustomerAdo
 import CustomerEditProfile from './components/Actors/customer/pages/CustomerEditProfile';
 import Signup from './components/Actors/customer/pages/signup';
 import CustomerChangePassword from './components/Actors/customer/pages/CustomerChangePassword';
-
+import CustomerDoctormessages from './components/Actors/customer/pages/CustomerDoctormessages';
+import Customerpharmacypage from './components/Actors/customer/pages/Customerpharmacypage';
+import Customerpettoolstorepage from './components/Actors/customer/pages/Customerpettoolstorepage';
 //Pharmacy
 import Prescription from './components/Actors/pharmacy/Prescription';
 import PaidPrescription from './components/Actors/pharmacy/PaidPrescription';
 import FinalizeOrder from './components/Actors/pharmacy/FinalizeOrder';
+import AddStock from './components/Actors/pharmacy/inventory/AddStock';
+import ViewInventory from './components/Actors/pharmacy/inventory/ViewInventory';
+import ViewInquiry from './components/Actors/pharmacy/inquiries/ViewInquiry';
 
 function App() {
   return (
@@ -67,9 +72,15 @@ function App() {
             <Route exact path='/pharmacy/Prescription' element={<Prescription />} />
             <Route exact path='/pharmacy/PaidPrescription' element={<PaidPrescription />} />
             <Route exact path='/pharmacy/FinalizeOrder' element={<FinalizeOrder />} />
+            <Route exact path='/pharmacy/inventory/AddStock' element={<AddStock />} />
+            <Route exact path='/pharmacy/inventory/ViewInventory' element={<ViewInventory />} />
+            <Route exact path='/pharmacy/inquiries/ViewInquiry' element={<ViewInquiry />} />
             
+
               {/*Customer */}
-              {/* <Route exact path='/' element={<CustomerSubNavbar/>} /> */}
+              <Route exact path='/SignUp/findapet/findpharmacy/pharmacystore' element={<Customerpharmacypage/>} />
+              <Route exact path='//SignUp/findapet/findpettoolstore/petstore' element={<Customerpettoolstorepage/>} />
+              <Route exact path='/SignUp/findapet/messages' element={<CustomerDoctormessages/>}/>
               <Route exact path='/Signup/findapet' element ={<CustomerFindpet/>} />
               <Route exact path='/Signup/findapet/channeldoctor' element={<CustomerDoctorappoint/>}/> 
               <Route exact path='/SignUp/findapet/findpharmacy' element ={<CustomerPharmacy/>}/>
