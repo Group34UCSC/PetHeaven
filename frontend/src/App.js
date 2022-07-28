@@ -11,8 +11,9 @@ import ContactUs from './components/pages/ContactUs';
 import Footer from './components/includes/Footer';
 import Notifications from './components/pages/Notifications';
 import Donate from './components/pages/Donate';
-import PharmacyHome from './components/Actors/pharmacy/PharmacyHome';
 
+import PharmacyHome from './components/Actors/pharmacy/PharmacyHome';
+import PetToolStoreHome from './components/Actors/petstore/pages/PetToolStoreHome';
 
 //Admin
 import AdminHeader from './components/Actors/Admin/pages/AdminHeader';
@@ -35,6 +36,8 @@ import CustomerChangePassword from './components/Actors/customer/pages/CustomerC
 import CustomerDoctormessages from './components/Actors/customer/pages/CustomerDoctormessages';
 import Customerpharmacypage from './components/Actors/customer/pages/Customerpharmacypage';
 import Customerpettoolstorepage from './components/Actors/customer/pages/Customerpettoolstorepage';
+
+
 //Pharmacy
 import Prescription from './components/Actors/pharmacy/Prescription';
 import PaidPrescription from './components/Actors/pharmacy/PaidPrescription';
@@ -42,6 +45,12 @@ import FinalizeOrder from './components/Actors/pharmacy/FinalizeOrder';
 import AddStock from './components/Actors/pharmacy/inventory/AddStock';
 import ViewInventory from './components/Actors/pharmacy/inventory/ViewInventory';
 import ViewInquiry from './components/Actors/pharmacy/inquiries/ViewInquiry';
+
+// Pet Tool Store
+import AddEquipmentStock from './components/Actors/petstore/inventory/AddEquipmentStock';
+import ViewPetToolInventory from './components/Actors/petstore/inventory/ViewPetToolInventory';
+
+
 
 function App() {
   return (
@@ -60,6 +69,7 @@ function App() {
             <Route exact path='/Notifications' element={<Notifications/>} /> 
             <Route exact path='/donation' element={<Donate/>} />
             <Route exact path='/pharmacy' element={<PharmacyHome/>} />
+            <Route exact path='/PetToolStore' element={<PetToolStoreHome/>} />
 
              {/* Admin  */}
             <Route exact path='/AdminHome/Create' element={<AdminCreate />} /> 
@@ -75,7 +85,12 @@ function App() {
             <Route exact path='/pharmacy/inventory/AddStock' element={<AddStock />} />
             <Route exact path='/pharmacy/inventory/ViewInventory' element={<ViewInventory />} />
             <Route exact path='/pharmacy/inquiries/ViewInquiry' element={<ViewInquiry />} />
-            
+
+
+            {/* Pet Tool Store */}
+            <Route exact path='/petstore/inventory/AddEquipmentStock' element={<AddEquipmentStock/>} />
+            <Route exact path='/petstore/inventory/ViewPetToolInventory' element={<ViewPetToolInventory />} />
+
 
               {/*Customer */}
               <Route exact path='/SignUp/findapet/findpharmacy/pharmacystore' element={<Customerpharmacypage/>} />

@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from 'react-router-dom';
 import '../css/PetToolStoreHome.css';
 
-import PaidPrescriptions from "../images/order.jpg";
+import PaidPrescriptions from "../images/payment.png";
 import Inquiries from "../images/inquiry.jpg";
 import Inventory from "../images/inventory.png";
 
@@ -17,7 +17,7 @@ function PetToolStoreHome()
             <div className="container">
                 <div className="row bg-success text-white"> 
                     <div className="col-md-4 my-auto"></div>
-                    <h3 className="text-center">Aradhana Pharmacy</h3>
+                    <h3 className="text-center">Baw Baw Pets Paradise</h3>
                 </div>
             </div>
             </section>
@@ -33,7 +33,7 @@ function PetToolStoreHome()
                             <Link to="/pharmacy/PaidPrescription" class="nav-link active">
                             <img src={PaidPrescriptions} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
-                                    <h6>Paid Prescriptions</h6>
+                                    <h6>Paid Orders</h6>
                                     <div className="underline"></div>
                                     
                                 </div>
@@ -54,7 +54,7 @@ function PetToolStoreHome()
                         </div>
                         <div className="col-md-4">
                             <div className="card shadow">
-                            <Link to="/pharmacy/inventory/AddStock" class="nav-link active">
+                            <Link to="/petstore/inventory/AddEquipmentStock" class="nav-link active">
                             <img src={Inventory} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
                                     <h6>Inventory</h6>
@@ -72,9 +72,17 @@ function PetToolStoreHome()
             {/* New prescription topic started */}
             <section className="py-4 ">
             <div className="container">
+                <div className="d-flex justify-content-center mb-4">
+                    <Link to="/petstore/inventory/ViewInventory" class="nav-link active">
+                        <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button>
+                    </Link>
+                </div>
                 <div className="row bg-success text-white"> 
-                    <div className="col-md-4 my-auto"></div>
-                    <h3 className="text-center">New Prescriptions</h3>
+                  
+                    <div className="col-md-4 my-auto">
+                   
+                    </div>
+                    <h3 className="text-center">Posted Advertisements</h3>
                 </div>
             </div>
             </section>
