@@ -276,13 +276,13 @@ function ViewPets(){
                                       <tr className='text-center'>
 
                                         <th>
-                                          <button type="button" class="btn btn-success postpetBtn" id="adoptbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
+                                          <button type="button" class="btn btn-success postpetBtn" id="adoptbtn">Vaccinations <i class="fa-solid fa-newspaper"></i></button>
                                         </th>
                                         <th>
-                                          <button type="button" class="btn btn-success postpetBtn" id="adoptbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
+                                          <button type="button" class="btn btn-success postpetBtn" id="adoptbtn">Injuries <i class="fa-solid fa-newspaper"></i></button>
                                         </th>
                                         <th>
-                                          <button type="button" class="btn btn-success postpetBtn" id="adoptbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
+                                          <button type="button" class="btn btn-success postpetBtn" id="adoptbtn">Others <i class="fa-solid fa-newspaper"></i></button>
                                         </th>
                                       
                                       </tr>
