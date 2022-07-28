@@ -21,9 +21,14 @@
         text-align: center;
         margin-right: 300px;
         margin-left: 300px;
-        margin-top: 200px;
-        font-size: 40px;
+        margin-top: 120px;
+        font-size: 26px;
         color: #052d20;
+    }
+    
+    #doctorsearchcararea {
+        margin-left: 200px;
+        margin-right: 100px;
     }
     
     #doctorform {
@@ -34,31 +39,33 @@
         align-items: center;
         margin-left: 300px;
     }
-    /* 
-.mb-3 {
-    font-size: 40px;
-    margin-top: 100px;
-    text-align: center;
-    align-items: center;
-    margin-left: 500px;
-} */
     
-    #docsearchbtn {
-        margin-left: 300px;
-    }
-    
-    #channelbtn {
+    #doctorsearchbar {
+        font-size: 26px;
+        margin-top: 70px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
         margin-left: 100px;
     }
     
+    #docsearchbtn {
+        margin-left: 100px;
+    }
+    
+    #channelbtn {
+        margin-left: 9px;
+        align-items: center;
+        justify-content: center;
+    }
+    
     #doctorcard {
-        margin-top: 100px;
-        width: 20%;
-        margin-left: 83px;
+        margin-top: 60px;
+        width: 18%;
+        margin-left: 43px;
     }
     
     #docproimg {
-        margin-left: 50px;
         margin-top: 50px;
         width: 200px;
         height: 150px;
