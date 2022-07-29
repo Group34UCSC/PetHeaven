@@ -7,7 +7,8 @@ import CustomerDoctorCarousel from './Customerdoctorcarousel';
 import Pagination from  './pagination';
 import CustomersubNavbar from './Customersubnavbar';
 import Profile from '../images/profile.png';
-
+import medicinetin from '../images/medicinetin.jfif';
+import medicinebottle from '../images/medbottle.jfif';
 import '../css/Customerpharmacypage.css'
 import '../css/profileview.css';
 function Customerpharmacypage(){
@@ -69,7 +70,7 @@ function Customerpharmacypage(){
             <h3 class="featuredanimalsheader">Medicine stock <i class="fa-solid fa-paw"></i></h3>
             <div class="row cardbody featuredanimalarea" > 
                 <div class="col-md-2 card"  id="card1" >
-                    <img src={Profile} class="card-img-top" id="featuredimg" alt="Tommy"></img>
+                    <img src={medicinetin} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                     <div class="card-body">
                         <p class="card-text"></p>
                         <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
@@ -77,7 +78,7 @@ function Customerpharmacypage(){
                 </div>
 
                 <div class="col-md-2 card" id="card1">
-                    <img src={Profile} class="card-img-top" id="featuredimg" alt="Tommy"></img>
+                    <img src={medicinebottle} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                     <div class="card-body">
                         <p class="card-text"></p>
                         <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
@@ -85,7 +86,7 @@ function Customerpharmacypage(){
                 </div>
 
                 <div class="col-md-2 card" id="card1">
-                    <img src={Profile} class="card-img-top" id="featuredimg" alt="Tommy"></img>
+                    <img src={medicinetin} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                     <div class="card-body">
                         <p class="card-text"></p>
                         <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
@@ -93,7 +94,7 @@ function Customerpharmacypage(){
                 </div>
 
                 <div class="col-md-2 card" id="card1">
-                    <img src={Profile} class="card-img-top" id="featuredimg" alt="Tommy"></img>
+                    <img src={medicinebottle} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                     <div class="card-body">
                         <p class="card-text"></p>
                         <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
@@ -101,7 +102,7 @@ function Customerpharmacypage(){
                 </div>
 
                 <div class="col-md-2 card"  id="card1" >
-                    <img src={Profile} class="card-img-top" id="featuredimg" alt="Tommy"></img>
+                    <img src={medicinebottle} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                     <div class="card-body">
                         <p class="card-text"></p>
                         <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
@@ -109,7 +110,7 @@ function Customerpharmacypage(){
                 </div>
 
                 <div class="col-md-2 card" id="card1">
-                    <img src={Profile} class="card-img-top" id="featuredimg" alt="Tommy"></img>
+                    <img src={medicinebottle} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                     <div class="card-body">
                         <p class="card-text"></p>
                         <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>

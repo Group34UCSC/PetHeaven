@@ -110,6 +110,7 @@ function App() {
               {/* <Route exact path='/' element ={<CustomerEditProfile/>}/> */}
               <Route exact path='/Signup' element={<Signup/>} />
               {/* <Route exact path='/' element={<CustomerChangePassword/>}/> */}
+
         
         </Routes>
 
