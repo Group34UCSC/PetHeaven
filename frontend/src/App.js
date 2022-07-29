@@ -11,6 +11,8 @@ import ContactUs from './components/pages/ContactUs';
 import Footer from './components/includes/Footer';
 import Notifications from './components/pages/Notifications';
 import Donate from './components/pages/Donate';
+import SignUp from './components/pages/SignUp';
+import SignIn from './components/pages/SignIn';
 
 import PharmacyHome from './components/Actors/pharmacy/PharmacyHome';
 import PetToolStoreHome from './components/Actors/petstore/pages/PetToolStoreHome';
@@ -71,6 +73,9 @@ function App() {
             <Route exact path='/pharmacy' element={<PharmacyHome/>} />
             <Route exact path='/PetToolStore' element={<PetToolStoreHome/>} />
 
+            <Route exact path='/SignUp' element={<SignUp/>} />
+            <Route exact path='/SignIn' element={<SignIn/>} />
+            
              {/* Admin  */}
             <Route exact path='/AdminHome/Create' element={<AdminCreate />} /> 
             <Route exact path='/AdminHome/Delete' element={<AdminDelete />} />
