@@ -52,12 +52,14 @@ function HomePage()
                         </div>
                         <div className="col-md-4">
                             <div className="card shadow">
+                            <Link to="/PetToolStore" class="nav-link active">
                             <img src={PetToolStore} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
                                     <h6>Pet Tool Store</h6>
                                     <div className="underline"></div>
                                     <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
                                 </div>
+                            </Link>
                             </div>
                         </div>
                     </div>

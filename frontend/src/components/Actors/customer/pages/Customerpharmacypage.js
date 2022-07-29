@@ -5,7 +5,7 @@ import '../css/CustomerDoctorappoint.css';
 import docvectors from  '../images/docvector.png';
 import CustomerDoctorCarousel from './Customerdoctorcarousel';
 import Pagination from  './pagination';
-import CustomersubNavbar from './CustomersubNavbar';
+import CustomersubNavbar from './Customersubnavbar';
 import Profile from '../images/profile.png';
 import medicinetin from '../images/medicinetin.jfif';
 import medicinebottle from '../images/medbottle.jfif';
