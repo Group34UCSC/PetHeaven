@@ -1,28 +1,48 @@
 import React from "react";
-import './ViewInquiry.css';
+import {useRef, useEffect, useState } from "react"; 
+import {Link} from 'react-router-dom';
+import SignUpImg from "../images/signup.jpg";
+import './SignUp.css';
 
-function ViewInquiry()
+function SignUp()
 {
     return(
         <div>
-            <section className="py-4 ">
-            <div className="container">
-                <div className="row bg-success text-white"> 
-                    <div className="col-md-4 my-auto"></div>
-                    <h3 className="text-center">Inquiries</h3>
+            {/* <section className="py-4 ">
+                <div className="container">
+                    <div className="row bg-success text-white"> 
+                        <div className="col-md-4 my-auto"></div>
+                        <h3 className="text-center">Contact Us</h3>
+                    </div>
                 </div>
-            </div>
-            </section>
+            </section> */}
             <div>
                
             </div>
-            {/* <section className="section bg-c-light">
+            <section className="section bg-c-light">
                 <div className="container">
                     <div className="card shadow">
                         <div className="card-body">
                             <div className="row">
                                 <div className="col-md-6 border-left">
-                                    <h6>
+                                    
+                                {/* <img src={SignUpImg}  alt="Services"/> */}
+                                <div className="col-md-12">
+                            <div className="card shadow">
+                            <div className="card-body">
+                                    <div className="row bg-success text-white mb-3"> 
+                                        <div className="col-md-4 my-auto"></div>
+                                        <h3 className="text-center">Sign Up</h3>
+                                    </div>
+                                <h6>Already Sign Up?</h6>
+                                <Link to="/" class="nav-link active"><div>Sign In</div></Link>
+                                {/* <div className="underline"></div> */}
+                                                                
+                            </div>
+                            <img src={SignUpImg}  alt="Services"/>                               
+                            </div>
+                        </div>
+                                    {/* <h6>
                                         Leave Us a Message
                                     </h6>
                                     <hr/>
@@ -40,28 +60,28 @@ function ViewInquiry()
                                     </div>
                                     <div className="form-group py-3">
                                         <button type="button" className="btn btn-success shadow w-100 ">Send</button>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="col-md-6 border-start">
-                                    <h5 className="main-heading">Address Information</h5>
+                                    {/* <h5 className="main-heading">Address Information</h5>
                                     <div className="underline"></div>
                                     <p class="details">
                                     22 Palm Grove, Colombo 00300, Sri Lanka
                                     </p>
                                     <p class="details">+94 112 145 340</p>
                                     <p class="details">+94 112 145 341</p>
-                                    <p class="details">info@petheaven.com</p>
-                                    
+                                    <p class="details">info@petheaven.com</p> */}
+                                   
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-            </section> */}
+            </section>
         </div>
         
     );
 }
 
-export default ViewInquiry;
+export default SignUp;
