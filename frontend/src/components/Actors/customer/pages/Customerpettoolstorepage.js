@@ -6,7 +6,7 @@ import '../css/CustomerDoctorappoint.css';
 import docvectors from  '../images/docvector.png';
 import CustomerDoctorCarousel from './Customerdoctorcarousel';
 import Pagination from  './pagination';
-import CustomersubNavbar from './CustomersubNavbar';
+import CustomersubNavbar from './Customersubnavbar';
 import Profile from '../images/profile.png';
 import cage from '../images/cage.jfif';
 import pendants from '../images/pendants.jfif';
