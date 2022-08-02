@@ -5,16 +5,18 @@ import '../css/CustomerDoctorappoint.css';
 import docvectors from  '../images/docvector.png';
 import CustomerDoctorCarousel from './Customerdoctorcarousel';
 import Pagination from  './pagination';
+import CustomersubNavbar from './Customersubnavbar';
 function CustomerDoctorAppoint(){
 
     return(
         <div>
+            <CustomersubNavbar></CustomersubNavbar>
             <CustomerDoctorCarousel></CustomerDoctorCarousel>
 
             <h3 class="searchdoctorheading">Select best doctor for your pet among thousands of our registered qualified veteranians</h3>
 
             <form id="doctorform">
-                <div class=" col-sm mb-3">
+                <div class=" col-sm mb-3" id="doctorsearchbar">
                     <label for="doctorname" class="form-label">Search by name</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter of name your doctor"></input>
                 </div>
@@ -22,11 +24,11 @@ function CustomerDoctorAppoint(){
             </form>
             
             
-            <div class="row"> 
+            <div class="row" id="doctorsearchcararea"> 
                         <div class="col-sm-3 card" id="doctorcard">
                             <img src={docvectors} class="card-img-top"  id="docproimg" alt="Tommy"></img>
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text"></p>
                                 <button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                             </div>
                         </div>
@@ -34,7 +36,7 @@ function CustomerDoctorAppoint(){
                         <div class="col-sm-3 card" id="doctorcard">
                             <img src={docvectors} class="card-img-top"  id="docproimg" alt="Tommy"></img>
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text"></p>
                                 <button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                             </div>
                         </div>
@@ -42,7 +44,7 @@ function CustomerDoctorAppoint(){
                         <div class="col-sm-3 card" id="doctorcard">
                             <img src={docvectors} class="card-img-top" id="docproimg" alt="Tommy"></img>
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text"></p>
                                 <button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                             </div>
                         </div>
@@ -50,7 +52,7 @@ function CustomerDoctorAppoint(){
                         <div class="col-sm-3 card" id="doctorcard">
                             <img src={docvectors} class="card-img-top"  id="docproimg" alt="Tommy"></img>
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text"></p>
                                 <button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                             </div>
                         </div>

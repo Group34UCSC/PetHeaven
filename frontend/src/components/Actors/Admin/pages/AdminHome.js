@@ -26,7 +26,7 @@ function AdminHome() {
                         </div>
 
                         <div class="admincard col-md-6">
-                       
+                    
                             <div className="card shadow" id='cardone'>
                             <Link to="Delete"><img src={delete1} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
                                 <div className="card-body">

@@ -8,8 +8,8 @@ import texting from '../images/texting.jfif';
 function CustomerDoctorCarousel(){
 
     return(
-        <div>
-            <div id="carouselExampleCaptions" class="carousel slide" >
+        <div >
+            <div class="carousel slide" id="docappointcarousel" >
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>

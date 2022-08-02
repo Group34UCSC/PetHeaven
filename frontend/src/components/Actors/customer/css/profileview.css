@@ -8,16 +8,22 @@
 
 #profileviewcard {
     padding: 40px;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 #profilelabel {
     color: #198754;
 }
 
-.profilebtn {
-    margin-top: 50px;
-    margin-left: 850px;
+#profilebtns {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#profilebtn {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: 600px;
 }
 
 .profilecollapse {
@@ -25,5 +31,6 @@
 }
 
 #profiletable {
+    width: 80%;
     background-color: white;
 }

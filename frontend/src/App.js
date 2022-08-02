@@ -11,7 +11,11 @@ import ContactUs from './components/pages/ContactUs';
 import Footer from './components/includes/Footer';
 import Notifications from './components/pages/Notifications';
 import Donate from './components/pages/Donate';
+import SignUp from './components/pages/SignUp';
+import SignIn from './components/pages/SignIn';
 
+import PharmacyHome from './components/Actors/pharmacy/PharmacyHome';
+import PetToolStoreHome from './components/Actors/petstore/pages/PetToolStoreHome';
 
 //Admin
 import AdminHeader from './components/Actors/Admin/pages/AdminHeader';
@@ -22,7 +26,6 @@ import AdminUpdate from './components/Actors/Admin/pages/AdminUpdate';
 import AdminView from './components/Actors/Admin/pages/AdminView';
 
 //customer
-
 import CustomerFindpet from './components/Actors/customer/pages/CustomerFindpet';
 import CustomerDoctorappoint from './components/Actors/customer/pages/CustomerDoctorappoint';
 import CustomerPharmacy from './components/Actors/customer/pages/CustomerPharmacy';
@@ -32,7 +35,22 @@ import CustomerAdoptRequest from './components/Actors/customer/pages/CustomerAdo
 import CustomerEditProfile from './components/Actors/customer/pages/CustomerEditProfile';
 import Signup from './components/Actors/customer/pages/signup';
 import CustomerChangePassword from './components/Actors/customer/pages/CustomerChangePassword';
+import CustomerDoctormessages from './components/Actors/customer/pages/CustomerDoctormessages';
+import Customerpharmacypage from './components/Actors/customer/pages/Customerpharmacypage';
+import Customerpettoolstorepage from './components/Actors/customer/pages/Customerpettoolstorepage';
 
+
+//Pharmacy
+import Prescription from './components/Actors/pharmacy/Prescription';
+import PaidPrescription from './components/Actors/pharmacy/PaidPrescription';
+import FinalizeOrder from './components/Actors/pharmacy/FinalizeOrder';
+import AddStock from './components/Actors/pharmacy/inventory/AddStock';
+import ViewInventory from './components/Actors/pharmacy/inventory/ViewInventory';
+import ViewInquiry from './components/Actors/pharmacy/inquiries/ViewInquiry';
+
+// Pet Tool Store
+import AddEquipmentStock from './components/Actors/petstore/inventory/AddEquipmentStock';
+import ViewPetToolInventory from './components/Actors/petstore/inventory/ViewPetToolInventory';
 
 
 
@@ -46,31 +64,53 @@ function App() {
         <Navbar/>
 
         <Routes>
-            
-            <Route exact path='/' element={<HomePage/>} />  
+      
+            <Route exact path='/' element={<HomePage/>} />    
             <Route exact path='/about' element={<AboutUs/>} />  
             <Route exact path='/contact' element={<ContactUs/>} /> 
             <Route exact path='/Notifications' element={<Notifications/>} /> 
             <Route exact path='/donation' element={<Donate/>} />
+            <Route exact path='/pharmacy' element={<PharmacyHome/>} />
+            <Route exact path='/PetToolStore' element={<PetToolStoreHome/>} />
 
-          
+            <Route exact path='/SignUp' element={<SignUp/>} />
+            <Route exact path='/SignIn' element={<SignIn/>} />
+            
              {/* Admin  */}
             <Route exact path='/AdminHome/Create' element={<AdminCreate />} /> 
             <Route exact path='/AdminHome/Delete' element={<AdminDelete />} />
             <Route exact path='/AdminHome/Update' element={<AdminUpdate />} />
             <Route exact path='/AdminHome/View' element={<AdminView />} />
             <Route exact path='/AdminHome' element={<AdminHome />} />  
-            
+
+            {/* Pharmacy */}
+            <Route exact path='/pharmacy/Prescription' element={<Prescription />} />
+            <Route exact path='/pharmacy/PaidPrescription' element={<PaidPrescription />} />
+            <Route exact path='/pharmacy/FinalizeOrder' element={<FinalizeOrder />} />
+            <Route exact path='/pharmacy/inventory/AddStock' element={<AddStock />} />
+            <Route exact path='/pharmacy/inventory/ViewInventory' element={<ViewInventory />} />
+            <Route exact path='/pharmacy/inquiries/ViewInquiry' element={<ViewInquiry />} />
+
+
+            {/* Pet Tool Store */}
+            <Route exact path='/petstore/inventory/AddEquipmentStock' element={<AddEquipmentStock/>} />
+            <Route exact path='/petstore/inventory/ViewPetToolInventory' element={<ViewPetToolInventory />} />
+
+
               {/*Customer */}
-              {/* <Route exact path='/' element ={<CustomerFindpet/>} /> */}
-              {/* <Route exact path='/' element={<CustomerDoctorappoint/>}/>  */}
-              {/* <Route exact path='/' element ={<CustomerPharmacy/>}/> */}
-              {/* <Route exact path='/' element ={<CustomerPettoolstore/>}/> */}
-              {/* <Route exact path='/' element={<ProfilePage/>}/> */}
-              {/* <Route exact path='/' element={<CustomerAdoptRequest/>}/> */}
+              <Route exact path='/SignUp/findapet/findpharmacy/pharmacystore' element={<Customerpharmacypage/>} />
+              <Route exact path='//SignUp/findapet/findpettoolstore/petstore' element={<Customerpettoolstorepage/>} />
+              <Route exact path='/SignUp/findapet/messages' element={<CustomerDoctormessages/>}/>
+              <Route exact path='/Signup/findapet' element ={<CustomerFindpet/>} />
+              <Route exact path='/Signup/findapet/channeldoctor' element={<CustomerDoctorappoint/>}/> 
+              <Route exact path='/SignUp/findapet/findpharmacy' element ={<CustomerPharmacy/>}/>
+              <Route exact path='/SignUp/findapet/findpettoolstore' element ={<CustomerPettoolstore/>}/>
+              <Route exact path='/SignUp/findapet/myprofile' element={<ProfilePage/>}/>
+              <Route exact path='/SignUp/findapet/adoptrequestform' element={<CustomerAdoptRequest/>}/>
               {/* <Route exact path='/' element ={<CustomerEditProfile/>}/> */}
-              {/* <Route exact path='/' element={<Signup/>} /> */}
+              <Route exact path='/Signup' element={<Signup/>} />
               {/* <Route exact path='/' element={<CustomerChangePassword/>}/> */}
+
         
         </Routes>
 
@@ -78,7 +118,7 @@ function App() {
         
       </div>
   </Router>
- 
+
  // admin   
 
 
