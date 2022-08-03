@@ -35,6 +35,12 @@ import CustomerChangePassword from './components/Actors/customer/pages/CustomerC
 
 
 
+//Doctor
+import DoctorHome from './components/Actors/doctor/pages/DoctorHome';
+import DoctorViewPetHistory from './components/Actors/doctor/pages/DoctorViewPetHistory';
+
+
+
 
 function App() {
   return (
@@ -71,7 +77,13 @@ function App() {
               {/* <Route exact path='/' element ={<CustomerEditProfile/>}/> */}
               {/* <Route exact path='/' element={<Signup/>} /> */}
               {/* <Route exact path='/' element={<CustomerChangePassword/>}/> */}
-        
+
+
+
+            {/* Doctor   */}
+           <Route exact path='/DoctorHome' element={<DoctorHome/>} />
+           <Route exact path='/DoctorHome/History' element={<DoctorViewPetHistory/>} />
+           
         </Routes>
 
         <Footer/>

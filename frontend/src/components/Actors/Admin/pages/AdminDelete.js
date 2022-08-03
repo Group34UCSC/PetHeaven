@@ -25,6 +25,12 @@ function AdminDelete() {
           </div>
         </div>
       </div>
+
+      <div class="mb-3">
+          <label for="userName" class="form-label">UserName</label>
+          <input type="text" class="form-control" id="userName"/>
+    </div>
+   
   
           <div class="mb-3">
           <label for="option" class="form-label">User Type</label>
@@ -37,12 +43,6 @@ function AdminDelete() {
               <option value="5">Pharmacy</option>
           </select>
           </div>
-  
-   
-      <div class="mb-3">
-            <label for="userid" class="form-label">User ID</label>
-            <input type="text" class="form-control" id="userid"/>
-      </div>
   
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
