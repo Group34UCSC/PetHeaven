@@ -89,10 +89,10 @@ function FinalizeOrder()
                 </div>
                
                 </div>
-                <div className="col-md-2 mt-3 ">
+                <div className="d-flex justify-content-center mt-4 mb-3">
                             
                     <button onClick={()=>setShow(true)} className="btn " id="complete-btn">
-                        Complete Order
+                        <span>Complete Order</span>
                     </button>
             
                 </div>
