@@ -1,29 +1,29 @@
 /* body {
     min-height: 100vh;
     background-color: dodgerblue;
-}
+} */
 
-.App {
+/* .App {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh; 
   padding: 1rem 0.5rem;
-}
+} */
 
-section {
+#SignUpSection {
     width: 100%;
-    max-width: 420px;
-    min-height: 400px;
+    /* max-width: 420px;
+    min-height: 400px; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 1rem;
-    background-color: rgba(0,0,0,0.4);
+    /* background-color: rgba(0,0,0,0.4); */
 }
 
-form {
+#SignUpForm {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -31,16 +31,17 @@ form {
     padding-bottom: 1rem;
 }
 
-a, a:visited {
+/* a, a:visited {
     color: #fff;
-}
+} */
 
 input[type="text"],
+input[type="email"],
 input[type="password"],
 button,
 textarea {
-  font-family: 'Nunito', sans-serif;
-  font-size: 22px;
+  /* font-family: 'Nunito', sans-serif;
+  font-size: 22px; */
   padding: 0.25rem;
   border-radius: 0.5rem;
 }
@@ -48,6 +49,7 @@ textarea {
 label,
 button {
   margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 button {
@@ -97,4 +99,4 @@ button {
 
 .line {
     display: inline-block;
-} */
+}
