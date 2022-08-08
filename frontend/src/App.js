@@ -35,6 +35,7 @@ import CustomerChangePassword from './components/Actors/customer/pages/CustomerC
 import CustomerDoctormessages from './components/Actors/customer/pages/CustomerDoctormessages';
 import Customerpharmacypage from './components/Actors/customer/pages/Customerpharmacypage';
 import Customerpettoolstorepage from './components/Actors/customer/pages/Customerpettoolstorepage';
+
 //Pharmacy
 import Prescription from './components/Actors/pharmacy/Prescription';
 import PaidPrescription from './components/Actors/pharmacy/PaidPrescription';
@@ -42,6 +43,19 @@ import FinalizeOrder from './components/Actors/pharmacy/FinalizeOrder';
 import AddStock from './components/Actors/pharmacy/inventory/AddStock';
 import ViewInventory from './components/Actors/pharmacy/inventory/ViewInventory';
 import ViewInquiry from './components/Actors/pharmacy/inquiries/ViewInquiry';
+
+//Staff member
+import Staff from './components/Actors/staff/pages/Staff';
+import ViewPets from './components/Actors/staff/pages/ViewPets';
+import PostPet from './components/Actors/staff/pages/PostPet';
+import ViewPost from './components/Actors/staff/pages/ViewPost';
+import ViewAdoptee from './components/Actors/staff/pages/ViewAdoptee';
+import UpdateVaccination from './components/Actors/staff/pages/UpdateVaccination';
+import NotifyAdopter from './components/Actors/staff/pages/NotifyAdopter';
+import ViewDonation from './components/Actors/staff/pages/ViewDonation';
+import ViewFeedback from './components/Actors/staff/pages/ViewFeedback';
+import AddNewPet from './components/Actors/staff/pages/AddNewPet';
+import ViewAdopterRequests from './components/Actors/staff/pages/ViewAdopterRequests';
 
 function App() {
   return (
@@ -90,6 +104,19 @@ function App() {
               {/* <Route exact path='/' element ={<CustomerEditProfile/>}/> */}
               <Route exact path='/Signup' element={<Signup/>} />
               {/* <Route exact path='/' element={<CustomerChangePassword/>}/> */}
+
+            {/* Staff */}
+            <Route exact path='/' element ={<Staff/>} />
+            <Route exact path='/viewpets' element ={<ViewPets/>} />
+            <Route exact path='/postpets' element ={<PostPet/>} />
+            <Route exact path='/viewpost' element ={<ViewPost/>} />
+            <Route exact path='/viewadoptee' element ={<ViewAdoptee/>} />
+            <Route exact path='/updatemedicalstatus' element ={<UpdateVaccination/>} />
+            <Route exact path='/notifyadopter' element ={<NotifyAdopter/>} />
+            <Route exact path='/viewdonation' element ={<ViewDonation/>} />
+            <Route exact path='/viewfeedback' element ={<ViewFeedback/>} />
+            <Route exact path='/addnewpet' element ={<AddNewPet/>} />
+            <Route exact path='/viewadopterrequests' element ={<ViewAdopterRequests/>} />
 
         
         </Routes>
