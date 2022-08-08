@@ -1,6 +1,8 @@
 import React from "react";
 import {useRef, useEffect, useState } from "react"; 
 import {Link} from 'react-router-dom';
+
+
 // import {faCheck, faTimes, faInfoCircle} from "@fortawesome/react-fontawesome";
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -166,6 +168,23 @@ const SignUp = () => {
                                     <section id="SignUpSection">
                                         <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                                         <form id="SignUpForm">
+                                        {/* <div className="d-flex justify-content-center mb-4">
+                    <Link to="/petstore/inventory/ViewInventory" class="nav-link active">
+                        <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button>
+                    </Link>
+                </div> */}
+                                        <div id="dropDownMenu" className="mb-4">
+                                            <select class="form-control dropdown-toggle" data-bs-toggle="dropdown">
+                                                {/* <option selected>Select prescribed medicine</option> */}
+                                                <option value="1">Pet Adopter</option>
+                                                <option value="2">Veterinary Doctor</option>
+                                                <option value="3">Pharmacy</option>
+                                                <option value="4">Pet Tool Store</option>
+                                                <option value="5">Staff Member</option>
+                                            </select>
+                                        </div>
+
+                                  
                                             <label htmlFor="username">
                                                 Username:
                                                 <span className={validName ? "valid" : "hide"}>
@@ -184,6 +203,7 @@ const SignUp = () => {
                                                 autoComplete="off"
                                                 onChange={(e) => setUser(e.target.value)}
                                                 value={user}
+                                                placeholder="Enter Your User Name"
                                                 required
                                                 aria-invalid={validName ? "false" : "true"}
                                                 aria-describedby="uidnote"
@@ -214,6 +234,7 @@ const SignUp = () => {
                                                 autoComplete="off"
                                                 onChange={(e) => setEmail(e.target.value)}
                                                 value={email}
+                                                placeholder="Enter Your Email"
                                                 required
                                                 aria-invalid={validEmail ? "false" : "true"}
                                                 aria-describedby="uidnote"
@@ -236,6 +257,7 @@ const SignUp = () => {
                                                 id="password"
                                                 onChange={(e) => setPwd(e.target.value)}
                                                 value={pwd}
+                                                placeholder="Enter Your Password"
                                                 required
                                                 aria-invalid={validPwd ? "false" : "true"}
                                                 aria-describedby="pwdnote"
@@ -244,8 +266,7 @@ const SignUp = () => {
                                             />
                                             <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
                                                 <FontAwesomeIcon icon={faInfoCircle} />
-                                                8 to 24 characters.<br />
-                                                Must include uppercase and lowercase letters, a number and a special character.<br />
+                                                8 to 24 characters. Must include uppercase and lowercase letters, a number and a special character.
                                                 Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
                                             </p>
 
@@ -260,6 +281,7 @@ const SignUp = () => {
                                                 id="confirm_pwd"
                                                 onChange={(e) => setMatchPwd(e.target.value)}
                                                 value={matchPwd}
+                                                placeholder="Enter Your Password Again"
                                                 required
                                                 aria-invalid={validMatch ? "false" : "true"}
                                                 aria-describedby="confirmnote"
@@ -271,8 +293,10 @@ const SignUp = () => {
                                                 Must match the first password input field.
                                             </p>
 
-
-
+                                            <div className="d-flex justify-content-center">
+                                                <button className="mt-5"id="SignUpBtn" disabled={!validName || !validPwd || !validMatch || !validEmail ? true : false}>Sign Up</button>
+                                            </div>
+                                            
 
                                         </form>
                                     </section>
