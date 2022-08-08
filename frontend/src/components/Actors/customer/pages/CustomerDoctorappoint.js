@@ -5,7 +5,7 @@ import '../css/CustomerDoctorappoint.css';
 import docvectors from  '../images/docvector.png';
 import CustomerDoctorCarousel from './Customerdoctorcarousel';
 import Pagination from  './pagination';
-import CustomersubNavbar from './CustomersubNavbar';
+import CustomersubNavbar from './Customersubnavbar';
 function CustomerDoctorAppoint(){
 
     return(
