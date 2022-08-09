@@ -2,17 +2,23 @@
 import React,{useState} from 'react';
 import {Link} from 'react-router-dom';
 import puppy1 from '../images/puppy1.jfif';
+import puppy2 from '../images/puppy2.jfif';
+import puppy4 from '../images/puppy4.jpg';
+import kitties1 from '../images/kitties1.jfif';
+import kitties3 from '../images/kitties3.jfif';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
+import CustomersubNavbar from './Customersubnavbar';
 import '../css/CustomerFindpet.css';
 import CustomerFeaturedAnimals from './CustomerFeaturedAnimals';
 import DoctorAppointment from './DoctorAppointment';
 import Pagination from './pagination';
 import Customerservices from './Customerservices';
+import Customerdocmessagetab from './CustomerDocmessagetab';
 function CustomerFindpet(){
     return(
             <div>
-                
+                <CustomersubNavbar></CustomersubNavbar>
                 <div class=" bg-c-light border-bottom border-success searchpets">
                     <p class="desc1">We have Dogs <i class="fa fa-dog"></i> and cats <i class="fa fa-cat"></i> who need space in your kind hearts. If you are interesting to adopt hit the request button and  
                     add a new member to your home. <i class="fa fa-home"></i>
@@ -21,12 +27,9 @@ function CustomerFindpet(){
 
                 <CustomerFeaturedAnimals></CustomerFeaturedAnimals>
                 <h3 class="searchanimalsheader">Search pets <i class="fa-solid fa-paw"></i> from thousands of pets <i class="fa-solid fa-paw"></i>
-                 in our petheaven  who will be 
+                 in our petheaven  who will be<br></br>
                 perfect family member for you. Search cats and dogs with your favourite color and age  </h3>
-                
-                    
-
-                    <div class="bg-c-light dropdown">
+                    <div class="dropdown" id ="findpetdropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                             Type
                         </button>
@@ -66,57 +69,58 @@ function CustomerFindpet(){
 
                     <div class=" bg-c-light row" id="findpetimgarea"> 
                         <div class="col-sm-2 card">
-                            <img src={puppy1} class="card-img-top" alt="Tommy"></img>
+                            <img src={puppy4} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="petsearchbtn">Adopt pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                                <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadopthbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                             
                         </div>
 
                         <div class="col-sm-2 card">
-                            <img src={puppy1} class="card-img-top" alt="Tommy"></img>
+                            <img src={puppy1} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="petsearchbtn">Adopt pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                                <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadopthbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                         </div>
 
                         <div class="col-sm-2 card">
-                            <img src={puppy1} class="card-img-top" alt="Tommy"></img>
+                            <img src={puppy2} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="petsearchbtn">Adopt pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                                <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                         </div>
 
                         <div class="col-sm-2 card">
-                            <img src={puppy1} class="card-img-top" alt="Tommy"></img>
+                            <img src={kitties3} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="petsearchbtn">Adopt pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                                <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                             
                         </div>
 
                         <div class="col-sm-2 card">
-                            <img src={puppy1} class="card-img-top" alt="Tommy"></img>
+                            <img src={puppy1} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="petsearchbtn">Adopt pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                                <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                         </div>
 
                         <div class="col-sm-2 card">
-                            <img src={puppy1} class="card-img-top" alt="Tommy"></img>
+                            <img src={kitties1} class="card-img-top" id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                                <button type="button" class="btn btn-success" id="petsearchbtn">Adopt pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                                <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                         </div>
                     </div>
                 <Pagination></Pagination>
                 <Customerservices></Customerservices>
+                <Customerdocmessagetab></Customerdocmessagetab>
             </div>
     )
         

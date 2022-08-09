@@ -34,8 +34,8 @@ function CustomerEditProfile(){
                             <label for="email" class="form-label">Email</label>
                             <input class="form-control" id="emailinput" rows="3" placeholder="Enter your active E-mail here"></input>
                         </div>
-                        <button type="submit" action="submit" class="btn btn-success" id="signupbtn">Submit <i class="fa-solid fa-check"></i></button>
-                        <button type="reset" action="reset" class="btn btn-danger">Reset <i class="fa-solid fa-xmark"></i></button>
+                        <button type="submit" action="submit" class="btn btn-success" id="customereditprofiles">Submit <i class="fa-solid fa-check"></i></button>
+                        <button type="reset" action="reset" class="btn btn-danger" id="customereditprofiles">Reset <i class="fa-solid fa-xmark"></i></button>
                 </form>
             </div>
             

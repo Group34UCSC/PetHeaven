@@ -40,7 +40,7 @@ function Navbar()
         </div>
     </div>
 </nav>
-   
+
     // <div className="navbar-dark bg-dark shadow">
     //   <div className="container">
     //     <div className="row">
