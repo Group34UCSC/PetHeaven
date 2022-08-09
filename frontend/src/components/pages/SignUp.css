@@ -47,10 +47,12 @@
     width: 200px;
 }
 
-input[type="text"],
+/* input[type="text"],
 input[type="email"],
-input[type="password"],
-textarea {
+input[type="password"], */
+
+
+.inputFields{
   /* font-family: 'Nunito', sans-serif;
   font-size: 22px; */
   /* padding: 0.25rem;
@@ -69,17 +71,21 @@ textarea {
     font-weight: 300 !important;
 }
 
-input[type="text"]:hover,
+/* input[type="text"]:hover,
 input[type="email"]:hover,
-input[type="password"]:hover,
-textarea 
+input[type="password"]:hover, */
+
+
+.inputFields 
 {
     padding-bottom: 6px;
     border-bottom: 2px solid #42ba96;
     transition: 0.5s;
 }
 
-label
+/* label */
+
+.labels
  {
   margin-top: 0.5rem;
   margin-bottom: 0.2rem;

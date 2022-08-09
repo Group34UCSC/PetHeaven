@@ -185,7 +185,7 @@ const SignUp = () => {
                                         </div>
 
                                   
-                                            <label htmlFor="username">
+                                            <label htmlFor="username" class="labels">
                                                 Username:
                                                 <span className={validName ? "valid" : "hide"}>
                                                     <FontAwesomeIcon icon={faCheck} />
@@ -196,7 +196,7 @@ const SignUp = () => {
                                                 {/* <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
                                                 <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} /> */}
                                             </label>
-                                            <input
+                                            <input class="inputFields"
                                                 type="text"
                                                 id="username"
                                                 ref={userRef}
@@ -216,7 +216,7 @@ const SignUp = () => {
                                             </p>
 
 
-                                            <label htmlFor="emailre">
+                                            <label htmlFor="emailre" class="labels">
                                                 Email:
                                                 <span className={validEmail ? "valid" : "hide"}>
                                                     <FontAwesomeIcon icon={faCheck} />
@@ -227,7 +227,7 @@ const SignUp = () => {
                                                 {/* <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
                                                 <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} /> */}
                                             </label>
-                                            <input
+                                            <input class="inputFields"
                                                 type="email"
                                                 id="emailre"
                                                 ref={userRef}
@@ -247,12 +247,12 @@ const SignUp = () => {
                                             </p>
 
 
-                                            <label htmlFor="password">
+                                            <label htmlFor="password" class="labels">
                                             Password:
                                                 <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
                                                 <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
                                             </label>
-                                            <input
+                                            <input class="inputFields"
                                                 type="password"
                                                 id="password"
                                                 onChange={(e) => setPwd(e.target.value)}
@@ -271,12 +271,12 @@ const SignUp = () => {
                                             </p>
 
 
-                                            <label htmlFor="confirm_pwd">
+                                            <label htmlFor="confirm_pwd" class="labels">
                                                 Confirm Password:
                                                 <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
                                                 <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
                                             </label>
-                                            <input
+                                            <input class="inputFields"
                                                 type="password"
                                                 id="confirm_pwd"
                                                 onChange={(e) => setMatchPwd(e.target.value)}
