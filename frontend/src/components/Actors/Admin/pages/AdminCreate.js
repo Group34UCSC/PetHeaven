@@ -26,7 +26,13 @@ function AdminCreate() {
       </div>
     </div>
 
-           
+    <div class="mb-3">
+          <label for="userName" class="form-label">UserName</label>
+          <input type="text" class="form-control" id="userName"/>
+    </div>
+   
+
+
     <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
@@ -46,11 +52,6 @@ function AdminCreate() {
         </select>
         </div>
 
- 
-    <div class="mb-3">
-          <label for="userid" class="form-label">User ID</label>
-          <input type="text" class="form-control" id="userid"/>
-    </div>
 
       <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>

@@ -53,6 +53,12 @@ import AddEquipmentStock from './components/Actors/petstore/inventory/AddEquipme
 import ViewPetToolInventory from './components/Actors/petstore/inventory/ViewPetToolInventory';
 
 
+//Doctor
+import DoctorHome from './components/Actors/doctor/pages/DoctorHome';
+import DoctorViewPetHistory from './components/Actors/doctor/pages/DoctorViewPetHistory';
+
+
+
 
 function App() {
   return (
@@ -111,6 +117,12 @@ function App() {
               <Route exact path='/Signup' element={<Signup/>} />
               {/* <Route exact path='/' element={<CustomerChangePassword/>}/> */}
 
+
+
+            {/* Doctor   */}
+           <Route exact path='/DoctorHome' element={<DoctorHome/>} />
+           <Route exact path='/DoctorHome/History' element={<DoctorViewPetHistory/>} />
+           
         
         </Routes>
 
