@@ -8,7 +8,7 @@ import kitties1 from '../images/kitties1.jfif';
 import kitties3 from '../images/kitties3.jfif';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
-import CustomersubNavbar from './CustomersubNavbar';
+import CustomersubNavbar from './Customersubnavbar';
 import '../css/CustomerFindpet.css';
 import CustomerFeaturedAnimals from './CustomerFeaturedAnimals';
 import DoctorAppointment from './DoctorAppointment';
