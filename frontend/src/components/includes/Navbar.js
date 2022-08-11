@@ -34,8 +34,8 @@ function Navbar()
                 
             </div>
             <div class="navbar-nav ms-auto">
-            <a href="#" class="nav-item nav-link"><div class="b"><i class="fa-solid fa-right-to-bracket"></i> Sign in</div></a>  
-            <a href="#" class="nav-item nav-link"><div class="b"><i class="fa-solid fa-user-plus"></i> SignUp</div></a>
+            <Link to="SignIn" class="nav-item nav-link"><div class="b"><i class="fa-solid fa-right-to-bracket"></i> Sign in</div></Link>  
+            <Link to="SignUp" class="nav-item nav-link"><div class="b"><i class="fa-solid fa-user-plus"></i> SignUp</div></Link> 
             </div>
         </div>
     </div>
