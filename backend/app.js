@@ -1,14 +1,18 @@
 const express = require('express');
-const PetAdopterRoute = require('./routes/PetAdopterRoute');
+const cors = require('cors');
+// const PetAdopterRoute = require('./routes/PetAdopterRoute');
+const SignUpRoute = require('./routes/SignUpRoute');
 const errorHandler = require('./utils/errorHandler');
 
 const app = express();
 
 app.use(express.json());
 
-app.use("/PetAdopter",PetAdopterRoute);
+app.use("/SignUp",SignUpRoute);
+// app.use("/PetAdopter",PetAdopterRoute);
 
 
+app.use(cors());
 app.use(errorHandler);
 
 // app.get("/",(req,res,next)=>
