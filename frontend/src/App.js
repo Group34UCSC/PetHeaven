@@ -14,6 +14,7 @@ import Donate from './components/pages/Donate';
 import SignUp from './components/pages/SignUp';
 import SignIn from './components/pages/SignIn';
 
+
 import PharmacyHome from './components/Actors/pharmacy/PharmacyHome';
 import PetToolStoreHome from './components/Actors/petstore/pages/PetToolStoreHome';
 
@@ -51,6 +52,12 @@ import ViewInquiry from './components/Actors/pharmacy/inquiries/ViewInquiry';
 // Pet Tool Store
 import AddEquipmentStock from './components/Actors/petstore/inventory/AddEquipmentStock';
 import ViewPetToolInventory from './components/Actors/petstore/inventory/ViewPetToolInventory';
+
+
+//Doctor
+import DoctorHome from './components/Actors/doctor/pages/DoctorHome';
+import DoctorViewPetHistory from './components/Actors/doctor/pages/DoctorViewPetHistory';
+
 
 
 
@@ -98,19 +105,25 @@ function App() {
 
 
               {/*Customer */}
-              <Route exact path='/SignUp/findapet/findpharmacy/pharmacystore' element={<Customerpharmacypage/>} />
-              <Route exact path='//SignUp/findapet/findpettoolstore/petstore' element={<Customerpettoolstorepage/>} />
-              <Route exact path='/SignUp/findapet/messages' element={<CustomerDoctormessages/>}/>
-              <Route exact path='/Signup/findapet' element ={<CustomerFindpet/>} />
-              <Route exact path='/Signup/findapet/channeldoctor' element={<CustomerDoctorappoint/>}/> 
-              <Route exact path='/SignUp/findapet/findpharmacy' element ={<CustomerPharmacy/>}/>
-              <Route exact path='/SignUp/findapet/findpettoolstore' element ={<CustomerPettoolstore/>}/>
-              <Route exact path='/SignUp/findapet/myprofile' element={<ProfilePage/>}/>
-              <Route exact path='/SignUp/findapet/adoptrequestform' element={<CustomerAdoptRequest/>}/>
+              <Route exact path='/findapet/findpharmacy/pharmacystore' element={<Customerpharmacypage/>} />
+              <Route exact path='/findapet/findpettoolstore/petstore' element={<Customerpettoolstorepage/>} />
+              <Route exact path='/findapet/messages' element={<CustomerDoctormessages/>}/>
+              <Route exact path='/findapet' element ={<CustomerFindpet/>} />
+              <Route exact path='/findapet/channeldoctor' element={<CustomerDoctorappoint/>}/> 
+              <Route exact path='/findapet/findpharmacy' element ={<CustomerPharmacy/>}/>
+              <Route exact path='/findapet/findpettoolstore' element ={<CustomerPettoolstore/>}/>
+              <Route exact path='/findapet/myprofile' element={<ProfilePage/>}/>
+              <Route exact path='/findapet/adoptrequestform' element={<CustomerAdoptRequest/>}/>
               {/* <Route exact path='/' element ={<CustomerEditProfile/>}/> */}
-              <Route exact path='/Signup' element={<Signup/>} />
+              {/* <Route exact path='/Signup' element={<Signup/>} /> */}
               {/* <Route exact path='/' element={<CustomerChangePassword/>}/> */}
 
+
+
+            {/* Doctor   */}
+           <Route exact path='/DoctorHome' element={<DoctorHome/>} />
+           <Route exact path='/DoctorHome/History' element={<DoctorViewPetHistory/>} />
+           
         
         </Routes>
 

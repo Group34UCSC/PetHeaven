@@ -1,6 +1,7 @@
 import React from "react";
 import {useRef, useEffect, useState } from "react"; 
 import {Link} from 'react-router-dom';
+import Axios from 'axios';
 
 
 // import {faCheck, faTimes, faInfoCircle} from "@fortawesome/react-fontawesome";
@@ -108,6 +109,16 @@ const SignUp = () => {
 
 // function SignUp()
 // {
+const submitData = () => {
+    Axios.post("http://localhost:5000/user/Signup",{
+        user:user,
+        email:email,
+        password:pwd,
+    }).then(() => {
+        alert("successfully added!");
+    });
+};
+ 
     return(
         <div>
             {/* <section className="py-4 ">
@@ -294,7 +305,7 @@ const SignUp = () => {
                                             </p>
 
                                             <div className="d-flex justify-content-center">
-                                                <button className="mt-5"id="SignUpBtn" disabled={!validName || !validPwd || !validMatch || !validEmail ? true : false}>Sign Up</button>
+                                                <button className="mt-5"id="SignUpBtn" onsubmit="submitData()" disabled={!validName || !validPwd || !validMatch || !validEmail ? true : false}>Sign Up</button>
                                             </div>
                                             
 
