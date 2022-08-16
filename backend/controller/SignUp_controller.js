@@ -1,3 +1,4 @@
+// console.log("backend");
 const {isEmpty}  = require('../utils/is_empty');
 const Joi = require('@hapi/joi');
 const JWT = require('jsonwebtoken');
@@ -8,6 +9,8 @@ const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 const AppError = require('../utils/appError');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 const CLIENT_URL = "http://localhost:3000/";
 
 
@@ -35,6 +38,9 @@ const CLIENT_URL = "http://localhost:3000/";
 
 
 // })
+
+
+
 
 exports.User_SignIn = (req, res, next)=>
 {
@@ -72,20 +78,22 @@ exports.User_SignIn = (req, res, next)=>
 
 
 exports.User_SignUp = (req,res,next)=>{
+   
     if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
     // res.status(200).json({
     //     data: "Hi controller"
     // });
 
     try{
+      console.log("ggss");
         const { error } = SIGNUP_MODEL.validate(req.body);
 
         if( error ) return next(new AppError(error.details[0].message,400)) ;
 
-        conn.query(CHECK_EMAIL , [req.body.Email], async(err, data, feilds) =>{
+        conn.query(CHECK_EMAIL , [req.body.email], async(err, data, feilds) =>{
            if( err ) return next(new AppError(err,500)) ;
            if( data.length ) return  next(new AppError("Email already used!",400)) ;
-
+            console.log(req.body.email);
 
          //   const JWT_ACC_ACTIVATE = accountactivatekey123;
          //   const token = jwt.sign([eq.body.name,req.body.email,req.body.rank],JWT_ACC_ACTIVATE,{expiresIn:'20m'})
@@ -116,7 +124,7 @@ exports.User_SignUp = (req,res,next)=>{
 
            
            const salt = await bcrypt.genSalt(10);
-           const hashedValue = await bcrypt.hash(req.body.Password, salt);
+           const hashedValue = await bcrypt.hash(req.body.pwd, salt);
            const email_token = crypto.randomBytes(64).toString('hex');
 
            //send verification mail to user
@@ -156,14 +164,23 @@ exports.User_SignUp = (req,res,next)=>{
          // })
 
 
-           conn.query(REGISTER_USER, [ [ hashedValue, req.body.Email , req.body.User_name, req.body.User_type, req.body.Email_verify, email_token, req.body.Profole_picture ]], (err,data,feilds)=>{
-              if( err ) return next(new AppError(err,500));
+         //   conn.query(REGISTER_USER, [ [ req.body.Password, req.body.Email , req.body.User_name, req.body.User_type, req.body.Email_verify, email_token, req.body.Profole_picture ]], (err,data,feilds)=>{
+         //      if( err ) return next(new AppError(err,500));
   
-              res.status(201).json({
-                 data: "User Registration Success!"
-              })
-           })
+         //      res.status(201).json({
+         //         data: "User Registration Success!"
+         //      })
+         //   })
   
+
+           conn.query(REGISTER_USER, [ [ hashedValue, req.body.email , req.body.user, req.body.email,  email_token, email_token, req.body.user ]], (err,data,feilds)=>{
+            if( err ) return next(new AppError(err,500));
+
+            res.status(201).json({
+               data: "User Registration Success!"
+            })
+         })
+
           
         })
      }
