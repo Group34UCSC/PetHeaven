@@ -6,7 +6,7 @@ import '../css/CustomerDoctorappoint.css';
 import docvectors from  '../images/docvector.png';
 import CustomerDoctorCarousel from './Customerdoctorcarousel';
 import Pagination from  './pagination';
-import CustomersubNavbar from './CustomersubNavbar';
+import CustomerSubNavbar from './CustomerSubNavbar';
 import Profile from '../images/profile.png';
 import cage from '../images/cage.jfif';
 import pendants from '../images/pendants.jfif';
@@ -19,7 +19,7 @@ import '../css/profileview.css';
 function Customerpettoolstorepage(){
     return (
         <div>
-            <CustomersubNavbar></CustomersubNavbar>
+            <CustomerSubNavbar></CustomerSubNavbar>
             <div id="pharmacyprofilearea">
                 <div class="card" id="profileviewcard">
                     <div class="row">

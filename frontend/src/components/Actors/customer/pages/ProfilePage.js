@@ -5,14 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 import Profileview from './Profileview';
 import '../css/doctorAppointment.css';
-import CustomersubNavbar from './CustomersubNavbar';
+import CustomerSubNavbar from './CustomerSubNavbar';
 import CustomerEditProfile from './CustomerEditProfile';
 import CustomerChangePassword from './CustomerChangePassword';
 
 function ProfilePage(){
     return(
         <div>
-            <CustomersubNavbar></CustomersubNavbar>
+            <CustomerSubNavbar></CustomerSubNavbar>
             <Profileview></Profileview>
             <div class="cardbody" id="profilebtn"> 
                 <button class="btn btn-success " id="profilebtns" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa-solid fa-pen-to-square" ></i>Edit profile</button>

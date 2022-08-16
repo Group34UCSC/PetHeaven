@@ -3,13 +3,13 @@ import {Link} from 'react-router-dom';
 import puppy1 from '../images/puppy1.jfif';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
-import '../css/CustomersubNavbar.css';
+import '../css/Customersubnavbar.css';
 import CustomerFeaturedAnimals from './CustomerFeaturedAnimals';
 import DoctorAppointment from './DoctorAppointment';
 import Pagination from './pagination';
 import Customerservices from './Customerservices';
 
-function CustomersubNavbar(){
+function CustomerSubNavbar(){
     return(
         <div class="bg-light" id="subnavarea">
             <ul class="nav nav-pills nav-fill">
@@ -39,4 +39,4 @@ function CustomersubNavbar(){
     )
 }
 
-export default CustomersubNavbar;
+export default CustomerSubNavbar;

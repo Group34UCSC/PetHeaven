@@ -68,31 +68,31 @@ function App() {
 
         <Routes>
       
-            <Route exact path='/' element={<HomePage/>} />    
+            {/* <Route exact path='/' element={<HomePage/>} />    
             <Route exact path='/about' element={<AboutUs/>} />  
             <Route exact path='/contact' element={<ContactUs/>} /> 
             <Route exact path='/Notifications' element={<Notifications/>} /> 
             <Route exact path='/donation' element={<Donate/>} />
-            <Route exact path='/pharmacy' element={<PharmacyHome/>} />
+            <Route exact path='/pharmacy' element={<PharmacyHome/>} /> */}
 
              {/* Admin  */}
-            <Route exact path='/AdminHome/Create' element={<AdminCreate />} /> 
+            {/* <Route exact path='/AdminHome/Create' element={<AdminCreate />} /> 
             <Route exact path='/AdminHome/Delete' element={<AdminDelete />} />
             <Route exact path='/AdminHome/Update' element={<AdminUpdate />} />
             <Route exact path='/AdminHome/View' element={<AdminView />} />
-            <Route exact path='/AdminHome' element={<AdminHome />} />  
+            <Route exact path='/AdminHome' element={<AdminHome />} />   */}
 
             {/* Pharmacy */}
-            <Route exact path='/pharmacy/Prescription' element={<Prescription />} />
+            {/* <Route exact path='/pharmacy/Prescription' element={<Prescription />} />
             <Route exact path='/pharmacy/PaidPrescription' element={<PaidPrescription />} />
             <Route exact path='/pharmacy/FinalizeOrder' element={<FinalizeOrder />} />
             <Route exact path='/pharmacy/inventory/AddStock' element={<AddStock />} />
             <Route exact path='/pharmacy/inventory/ViewInventory' element={<ViewInventory />} />
-            <Route exact path='/pharmacy/inquiries/ViewInquiry' element={<ViewInquiry />} />
+            <Route exact path='/pharmacy/inquiries/ViewInquiry' element={<ViewInquiry />} /> */}
             
 
               {/*Customer */}
-              <Route exact path='/SignUp/findapet/findpharmacy/pharmacystore' element={<Customerpharmacypage/>} />
+              {/* <Route exact path='/SignUp/findapet/findpharmacy/pharmacystore' element={<Customerpharmacypage/>} />
               <Route exact path='//SignUp/findapet/findpettoolstore/petstore' element={<Customerpettoolstorepage/>} />
               <Route exact path='/SignUp/findapet/messages' element={<CustomerDoctormessages/>}/>
               <Route exact path='/Signup/findapet' element ={<CustomerFindpet/>} />
@@ -100,9 +100,9 @@ function App() {
               <Route exact path='/SignUp/findapet/findpharmacy' element ={<CustomerPharmacy/>}/>
               <Route exact path='/SignUp/findapet/findpettoolstore' element ={<CustomerPettoolstore/>}/>
               <Route exact path='/SignUp/findapet/myprofile' element={<ProfilePage/>}/>
-              <Route exact path='/SignUp/findapet/adoptrequestform' element={<CustomerAdoptRequest/>}/>
+              <Route exact path='/SignUp/findapet/adoptrequestform' element={<CustomerAdoptRequest/>}/> */}
               {/* <Route exact path='/' element ={<CustomerEditProfile/>}/> */}
-              <Route exact path='/Signup' element={<Signup/>} />
+              {/* <Route exact path='/Signup' element={<Signup/>} /> */}
               {/* <Route exact path='/' element={<CustomerChangePassword/>}/> */}
 
             {/* Staff */}

@@ -8,7 +8,7 @@ import kitties1 from '../images/kitties1.jfif';
 import kitties3 from '../images/kitties3.jfif';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
-import CustomersubNavbar from './CustomersubNavbar';
+import CustomerSubNavbar from './CustomerSubNavbar';
 import '../css/CustomerFindpet.css';
 import CustomerFeaturedAnimals from './CustomerFeaturedAnimals';
 import DoctorAppointment from './DoctorAppointment';
@@ -18,7 +18,7 @@ import Customerdocmessagetab from './CustomerDocmessagetab';
 function CustomerFindpet(){
     return(
             <div>
-                <CustomersubNavbar></CustomersubNavbar>
+                <CustomerSubNavbar></CustomerSubNavbar>
                 <div class=" bg-c-light border-bottom border-success searchpets">
                     <p class="desc1">We have Dogs <i class="fa fa-dog"></i> and cats <i class="fa fa-cat"></i> who need space in your kind hearts. If you are interesting to adopt hit the request button and  
                     add a new member to your home. <i class="fa fa-home"></i>

@@ -6,7 +6,9 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 import '../css/ViewAdoptee.css';
 
 
-import dog from '../img/dog.jpg';
+import ad1 from '../img/ad1.jpg';
+import ad2 from '../img/ad2.jpg';
+import ad3 from '../img/ad3.jpg';
 
 function ViewAdoptee(){
     return(
@@ -42,25 +44,26 @@ function ViewAdoptee(){
             </div>
           <div className="container">
             <div className="row">
+
               <div class="admincard col-md-4">       
                 <div className="card shadow" id='cardone'>
-                    <img src={dog} className="w-50 border-bottom  d-block img-fluid" alt="Services"/>
+                    <img src={ad1} className="imgcover rounded" alt="Services"/>
                     <div className="card-body" id='cardTitle'>
                       <div className="petdetail">
                         <div className='maindetails'>
-                          <h6 className="petName"><b>Shadow</b></h6>
+                          <h6 className="petName"><b>Daisy</b></h6>
                           <div className="underline"></div>
                           <h6 className='ashtext'>Mix Breed</h6>
-                          <h6 className='ashtext'>Male</h6>
-                          <h6 className='ashtext'>2 Months</h6>
-                          <h6 className='ashtext'>Brown and White</h6>
+                          <h6 className='ashtext'>Female</h6>
+                          <h6 className='ashtext'>3 Months</h6>
+                          <h6 className='ashtext'>Brown, Black, White</h6>
                         </div>
-
+                        
                         <div className='adopterdetail'></div>
-                          <h6 >Adopter Name  : <span className='adopterlink' data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-user"></i> P.K.S.Samarasinghe</span></h6>
-                          <h6 >Address       : No 56, James Rd, Kadawatha</h6>
-                          <h6 >Contact No    : 0718896233</h6>
-                          <h6 >Adoptted Date : 20.07.2022</h6>
+                          <h6 >Adopter Name  : <span className='adopterlink' data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-user"></i> L.H.S.P. Kahandawa</span></h6>
+                          <h6 >Address       : No 180, Jasen Rd, Maravila</h6>
+                          <h6 >Contact No    : 0717818933</h6>
+                          <h6 >Adoptted Date : 30.07.2022</h6>
                           <h6 >Adoptted Age  : 2 months</h6>
                       </div>  
                       
@@ -73,24 +76,24 @@ function ViewAdoptee(){
 
               <div class="admincard col-md-4">       
                 <div className="card shadow" id='cardone'>
-                    <img src={dog} className="w-50 border-bottom  d-block img-fluid" alt="Services"/>
+                    <img src={ad2} className="imgcover rounded" alt="Services"/>
                     <div className="card-body" id='cardTitle'>
                       <div className="petdetail">
                         <div className='maindetails'>
-                          <h6 className="petName"><b>Shadow</b></h6>
+                          <h6 className="petName"><b>Roudy</b></h6>
                           <div className="underline"></div>
                           <h6 className='ashtext'>Mix Breed</h6>
                           <h6 className='ashtext'>Male</h6>
-                          <h6 className='ashtext'>2 Months</h6>
-                          <h6 className='ashtext'>Brown and White</h6>
+                          <h6 className='ashtext'>1 Year</h6>
+                          <h6 className='ashtext'>Brown, Black</h6>
                         </div>
                         
                         <div className='adopterdetail'></div>
-                          <h6 >Adopter Name  : <span className='adopterlink' data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-user"></i> P.K.S.Samarasinghe</span></h6>
-                          <h6 >Address       : No 56, James Rd, Kadawatha</h6>
-                          <h6 >Contact No    : 0718896233</h6>
-                          <h6 >Adoptted Date : 20.07.2022</h6>
-                          <h6 >Adoptted Age  : 2 months</h6>
+                          <h6 >Adopter Name  : <span className='adopterlink' data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-user"></i> J.J.L.S. Adhikari</span></h6>
+                          <h6 >Address       : No 486, Araliya Street, Yakwila</h6>
+                          <h6 >Contact No    : 0718896325</h6>
+                          <h6 >Adoptted Date : 18.02.2022</h6>
+                          <h6 >Adoptted Age  : 6 months</h6>
                       </div>  
                       
                     </div>
@@ -102,110 +105,23 @@ function ViewAdoptee(){
 
               <div class="admincard col-md-4">       
                 <div className="card shadow" id='cardone'>
-                    <img src={dog} className="w-50 border-bottom  d-block img-fluid" alt="Services"/>
+                    <img src={ad3} className="imgcover rounded" alt="Services"/>
                     <div className="card-body" id='cardTitle'>
                       <div className="petdetail">
                         <div className='maindetails'>
-                          <h6 className="petName"><b>Shadow</b></h6>
+                          <h6 className="petName"><b>Duggy</b></h6>
                           <div className="underline"></div>
-                          <h6 className='ashtext'>Mix Breed</h6>
-                          <h6 className='ashtext'>Male</h6>
+                          <h6 className='ashtext'>Normal</h6>
+                          <h6 className='ashtext'>Female</h6>
                           <h6 className='ashtext'>2 Months</h6>
-                          <h6 className='ashtext'>Brown and White</h6>
+                          <h6 className='ashtext'>Brown, White</h6>
                         </div>
                         
                         <div className='adopterdetail'></div>
                           <h6 >Adopter Name  : <span className='adopterlink' data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-user"></i> P.K.S.Samarasinghe</span></h6>
                           <h6 >Address       : No 56, James Rd, Kadawatha</h6>
                           <h6 >Contact No    : 0718896233</h6>
-                          <h6 >Adoptted Date : 20.07.2022</h6>
-                          <h6 >Adoptted Age  : 2 months</h6>
-                      </div>  
-                      
-                    </div>
-                  <Link to="/notifyadopter" class="nav-link active d-grid gap-2">
-                    <button type="button" class="btn btn-success notifyBtn" id="adoptbtn">Notify Adopter <i class="fa-solid fa-bell"></i></button>
-                  </Link>
-                </div>
-              </div>
-
-              <div class="admincard col-md-4">       
-                <div className="card shadow" id='cardone'>
-                    <img src={dog} className="w-50 border-bottom  d-block img-fluid" alt="Services"/>
-                    <div className="card-body" id='cardTitle'>
-                      <div className="petdetail">
-                        <div className='maindetails'>
-                          <h6 className="petName"><b>Shadow</b></h6>
-                          <div className="underline"></div>
-                          <h6 className='ashtext'>Mix Breed</h6>
-                          <h6 className='ashtext'>Male</h6>
-                          <h6 className='ashtext'>2 Months</h6>
-                          <h6 className='ashtext'>Brown and White</h6>
-                        </div>
-                        
-                        <div className='adopterdetail'></div>
-                          <h6 >Adopter Name  : <span className='adopterlink' data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-user"></i> P.K.S.Samarasinghe</span></h6>
-                          <h6 >Address       : No 56, James Rd, Kadawatha</h6>
-                          <h6 >Contact No    : 0718896233</h6>
-                          <h6 >Adoptted Date : 20.07.2022</h6>
-                          <h6 >Adoptted Age  : 2 months</h6>
-                      </div>  
-                      
-                    </div>
-                  <Link to="/notifyadopter" class="nav-link active d-grid gap-2">
-                    <button type="button" class="btn btn-success notifyBtn" id="adoptbtn">Notify Adopter <i class="fa-solid fa-bell"></i></button>
-                  </Link>
-                </div>
-              </div>
-
-              <div class="admincard col-md-4">       
-                <div className="card shadow" id='cardone'>
-                    <img src={dog} className="w-50 border-bottom  d-block img-fluid" alt="Services"/>
-                    <div className="card-body" id='cardTitle'>
-                      <div className="petdetail">
-                        <div className='maindetails'>
-                          <h6 className="petName"><b>Shadow</b></h6>
-                          <div className="underline"></div>
-                          <h6 className='ashtext'>Mix Breed</h6>
-                          <h6 className='ashtext'>Male</h6>
-                          <h6 className='ashtext'>2 Months</h6>
-                          <h6 className='ashtext'>Brown and White</h6>
-                        </div>
-                        
-                        <div className='adopterdetail'></div>
-                          <h6 >Adopter Name  : <span className='adopterlink' data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-user"></i> P.K.S.Samarasinghe</span></h6>
-                          <h6 >Address       : No 56, James Rd, Kadawatha</h6>
-                          <h6 >Contact No    : 0718896233</h6>
-                          <h6 >Adoptted Date : 20.07.2022</h6>
-                          <h6 >Adoptted Age  : 2 months</h6>
-                      </div>  
-                      
-                    </div>
-                  <Link to="/notifyadopter" class="nav-link active d-grid gap-2">
-                    <button type="button" class="btn btn-success notifyBtn" id="adoptbtn">Notify Adopter <i class="fa-solid fa-bell"></i></button>
-                  </Link>
-                </div>
-              </div>
-
-              <div class="admincard col-md-4">       
-                <div className="card shadow" id='cardone'>
-                    <img src={dog} className="w-50 border-bottom  d-block img-fluid" alt="Services"/>
-                    <div className="card-body" id='cardTitle'>
-                      <div className="petdetail">
-                        <div className='maindetails'>
-                          <h6 className="petName"><b>Shadow</b></h6>
-                          <div className="underline"></div>
-                          <h6 className='ashtext'>Mix Breed</h6>
-                          <h6 className='ashtext'>Male</h6>
-                          <h6 className='ashtext'>2 Months</h6>
-                          <h6 className='ashtext'>Brown and White</h6>
-                        </div>
-                        
-                        <div className='adopterdetail'></div>
-                          <h6 >Adopter Name  : <span className='adopterlink' data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-user"></i> P.K.S.Samarasinghe</span></h6>
-                          <h6 >Address       : No 56, James Rd, Kadawatha</h6>
-                          <h6 >Contact No    : 0718896233</h6>
-                          <h6 >Adoptted Date : 20.07.2022</h6>
+                          <h6 >Adoptted Date : 20.01.2022</h6>
                           <h6 >Adoptted Age  : 2 months</h6>
                       </div>  
                       
