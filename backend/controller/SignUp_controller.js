@@ -1,4 +1,3 @@
-// console.log("backend");
 const {isEmpty}  = require('../utils/is_empty');
 const Joi = require('@hapi/joi');
 const JWT = require('jsonwebtoken');
