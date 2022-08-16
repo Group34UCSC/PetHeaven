@@ -220,7 +220,7 @@ const SignUp = () => {
                                                 <h3 className="text-center">Sign Up</h3>
                                             </div>
                                         <h6>Already Sign Up?</h6>
-                                        <Link to="/SignUp" class="nav-link active"><div>Sign In</div></Link>
+                                        <Link to="/SignIn" class="nav-link active"><div>Sign In</div></Link>
                                         {/* <div className="underline"></div> */}
                                                                         
                                         </div>
