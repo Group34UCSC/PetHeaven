@@ -1,12 +1,13 @@
 import React from "react";
 import Slider from "../includes/Slider";
-
+import Navbar from "../includes/Navbar";
 import './Donate.css';
 
 function Donate()
 {
     return(
         <div>
+          <Navbar/>
             <Slider/>
            
             {/* form */}

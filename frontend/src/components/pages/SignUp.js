@@ -2,7 +2,7 @@ import React from "react";
 import {useRef, useEffect, useState } from "react"; 
 import {Link} from 'react-router-dom';
 import Axios from 'axios';
-
+import Navbar from "../includes/Navbar";
 
 
 // import {faCheck, faTimes, faInfoCircle} from "@fortawesome/react-fontawesome";
@@ -199,7 +199,7 @@ const SignUp = () => {
                     </div>
                 </div>
             </section> */}
-            
+            <Navbar/>
             <section className="section bg-c-light" >
                 <div className="container">
                     <div className="card shadow">

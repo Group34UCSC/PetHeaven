@@ -12,6 +12,7 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SignUpImg from "../../../images/cat.jpeg";
 import '../css/AdminCreate.css';
+import NavbarUsers from "../../../includes/NavbarUsers";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
@@ -189,8 +190,10 @@ const AdminCreate = () => {
 // };
  
     return(
+     
         <>
         <div>
+        <NavbarUsers/>
             {/* <section className="py-4 ">
                 <div className="container">
                     <div className="row bg-success text-white"> 
