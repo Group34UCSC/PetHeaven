@@ -5,8 +5,23 @@ import '../css/CustomerAdoptpet.css';
 import docvectors from  '../images/docvector.png';
 import CustomersubNavbar from './Customersubnavbar';
 import Pagination from  './pagination';
+import axios from 'axios';
 
 function CustomerAdoptRequest() {
+    const [name,setName]=useState("")
+
+    async function postName(e) {
+        e.preventDefault()
+
+        try{
+            await axios.post("http://localhost:3000/PetAdopter/findapet/adoptrequestform" , {
+                name
+        })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return(
         <div>
             <CustomersubNavbar></CustomersubNavbar>
@@ -16,72 +31,78 @@ function CustomerAdoptRequest() {
                 will send you a notification whether you can take this pet or not</h2>
             </div>
             
-            <form class=" requestform " id="requestform">
-                <div class="customerformrows row">
-                    <label for="inputfirst name" class="col-sm-12 col-form-label " id="reqformlabels">Full name</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="formarea form-control" id="inputfirstname"></input>
-                    </div>
-                </div>
+            <form  onSubmit ={postName} method ="POST" class="requestform card" id="requestform">
+                <div class="row">
+                    <div class="column left">
+                        <div class="customerformrows row">
+                            <label for="inputfirst name" class="col-sm-12 col-form-label " id="reqformlabels">Full name</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="name" value={name} onChange={(e) =>setName(e.target.value)} class="formarea form-control" id="inputfirstname"></input>
+                            </div>
+                        </div>
 
-                <div class="customerformrows row">
-                    <label for="inputlast name" class="col-sm-12 col-form-label" id="reqformlabels">Phone number</label>
-                    <div class="col-sm-10">
-                        <input type="phonenumber" class="formarea form-control" id="phonenumber"></input>
-                    </div>
-                </div>
+                        <div class="customerformrows row">
+                            <label for="inputlast name" class="col-sm-12 col-form-label" id="reqformlabels">Phone number</label>
+                            <div class="col-sm-10">
+                                <input type="phonenumber" class="formarea form-control" id="phonenumber"></input>
+                            </div>
+                        </div>
 
-                <div class="customerformrows row">
-                    <label for="inputfirst name" class="col-sm-12 col-form-label" id="reqformlabels">Your rough monthly income</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="formarea form-control" id="inputfirstname"></input>
-                    </div>
-                </div>
+                        <div class="customerformrows row">
+                            <label for="inputfirst name" class="col-sm-12 col-form-label" id="reqformlabels">Your rough monthly income</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="formarea form-control" id="inputfirstname"></input>
+                            </div>
+                        </div>
 
-                <div class="customerformrows row">
-                    <label for="inputlast name" class="col-sm-12 col-form-label" id="reqformlabels">Do you have any pets in your home currently</label>
-                </div>
+                        <div class="customerformrows row">
+                            <label for="inputlast name" class="col-sm-12 col-form-label" id="reqformlabels">Do you have any pets in your home currently</label>
+                        </div>
                     
-                <div class="radiobtns">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
-                    <label class="form-check-label" for="flexRadioDefault1">Yes</label>
+                        <div class="radiobtns">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
+                            <label class="form-check-label" for="flexRadioDefault1">Yes</label>
 
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
-                    <label class="form-check-label" for="flexRadioDefault1">No</label>
-                </div> 
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
+                            <label class="form-check-label" for="flexRadioDefault1">No</label>
+                        </div> 
 
-                <div class="customerformrows row">
-                    <label for="inputlast name" class="col-sm-12 col-form-label" id="reqformlabels">If yes enter type of the pet</label>
-                </div>
+                        <div class="customerformrows row">
+                            <label for="inputlast name" class="col-sm-12 col-form-label" id="reqformlabels">If yes enter type of the pet</label>
+                        </div>
                     
-                <div class="radiobtns">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
-                    <label class="form-check-label" for="flexRadioDefault1">Dog</label>
+                        <div class="radiobtns">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
+                            <label class="form-check-label" for="flexRadioDefault1">Dog</label>
 
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
-                    <label class="form-check-label" for="flexRadioDefault1">cat</label>
-                </div>       
-
-                <div class="customerformrows row">
-                    <label for="inputlast name" class="col-sm-12 col-form-label">Do you have any kids in your home</label>
-                </div>
-                <div class="radiobtns">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
-                    <label class="form-check-label" for="flexRadioDefault1">Yes</label>
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
-                        <label class="form-check-label" for="flexRadioDefault1">No</label>
-                </div>        
-
-                <div class="customerformrows row">
-                    <label for="inputfirst name" class="col-sm-12 col-form-label" id="reqformlabels">Any additional details</label>
-                    <div class="col-sm-10">
-                        <textarea type="textarea" class="form-control" id="inputfirstname"></textarea>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
+                            <label class="form-check-label" for="flexRadioDefault1">cat</label>
+                        </div>      
                     </div>
-                </div>
 
-                <div class="btnclass">
-                    <button class="btn btn-success" type="submit" value="Submit">submit <i class="fa-solid fa-check"></i></button>
-                    <button class="btn btn-danger" type="reset" value="Reset">Reset <i class="fa-solid fa-xmark"></i></button>
+                    <div class="column right">
+                        <div class="customerformrows row">
+                            <label for="inputlast name" class="col-sm-12 col-form-label">Do you have any kids in your home</label>
+                        </div>
+                        <div class="radiobtns">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
+                            <label class="form-check-label" for="flexRadioDefault1">Yes</label>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
+                            <label class="form-check-label" for="flexRadioDefault1">No</label>
+                        </div>        
+
+                        <div class="customerformrows row">
+                            <label for="inputfirst name" class="col-sm-12 col-form-label" id="reqformlabels">Any additional details</label>
+                            <div class="col-sm-10">
+                                <textarea type="textarea" class="form-control" id="inputfirstname"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="btnclass">
+                            <button class="btn btn-success" type="submit" value="Submit">submit <i class="fa-solid fa-check"></i></button>
+                            <button class="btn btn-danger" type="reset" value="Reset">Reset <i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>

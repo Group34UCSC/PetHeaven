@@ -18,7 +18,7 @@ function CustomerFeaturedAnimals(){
                 
                     <div class="row cardbody featuredanimalarea" > 
                         <div class="col-md-3 card"  id="card1" >
-                            
+                                <h4 class="text-danger petname">Tommy</h4>
                                 <img src={puppy2} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                                 <div class="card-body">
                                     <p class="card-text"></p>
@@ -27,15 +27,16 @@ function CustomerFeaturedAnimals(){
                         </div>
 
                         <div class="col-md-3 card" id="card1">
+                            <h4 class="text-danger petname">Jill</h4>
                             <img src={puppy1} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
                                 <button type="button" class="btn btn-success " id="adoptbtn">Adopt pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                                
                             </div>
                         </div>
 
                         <div class="col-md-3 card" id="card1">
+                            <h4 class="text-danger petname">Nika</h4>
                             <img src={kitty1} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
@@ -45,6 +46,7 @@ function CustomerFeaturedAnimals(){
                         </div>
 
                         <div class="col-md-3 card" id="card1">
+                            <h4 class="text-danger petname">Pachii</h4>
                             <img src={bulldog} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>

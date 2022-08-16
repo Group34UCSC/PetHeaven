@@ -105,15 +105,15 @@ function App() {
 
 
               {/*Customer */}
-              <Route exact path='/findapet/findpharmacy/pharmacystore' element={<Customerpharmacypage/>} />
-              <Route exact path='/findapet/findpettoolstore/petstore' element={<Customerpettoolstorepage/>} />
-              <Route exact path='/findapet/messages' element={<CustomerDoctormessages/>}/>
-              <Route exact path='/findapet' element ={<CustomerFindpet/>} />
-              <Route exact path='/findapet/channeldoctor' element={<CustomerDoctorappoint/>}/> 
-              <Route exact path='/findapet/findpharmacy' element ={<CustomerPharmacy/>}/>
-              <Route exact path='/findapet/findpettoolstore' element ={<CustomerPettoolstore/>}/>
-              <Route exact path='/findapet/myprofile' element={<ProfilePage/>}/>
-              <Route exact path='/findapet/adoptrequestform' element={<CustomerAdoptRequest/>}/>
+              <Route exact path='petadopter/findpharmacy/pharmacystore' element={<Customerpharmacypage/>} />
+              <Route exact path='petadopter/findpettoolstore/petstore' element={<Customerpettoolstorepage/>} />
+              <Route exact path='petadopter/messages' element={<CustomerDoctormessages/>}/>
+              <Route exact path='petadopter/' element ={<CustomerFindpet/>} />
+              <Route exact path='petadopter/channeldoctor' element={<CustomerDoctorappoint/>}/> 
+              <Route exact path='petadopter/findpharmacy' element ={<CustomerPharmacy/>}/>
+              <Route exact path='petadopter/findpettoolstore' element ={<CustomerPettoolstore/>}/>
+              <Route exact path='petadopter/myprofile' element={<ProfilePage/>}/>
+              <Route exact path='petadopter/adoptrequestform' element={<CustomerAdoptRequest/>}/>
               {/* <Route exact path='/' element ={<CustomerEditProfile/>}/> */}
               {/* <Route exact path='/Signup' element={<Signup/>} /> */}
               {/* <Route exact path='/' element={<CustomerChangePassword/>}/> */}

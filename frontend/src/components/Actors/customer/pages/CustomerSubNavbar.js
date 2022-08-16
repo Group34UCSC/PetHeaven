@@ -14,23 +14,23 @@ function CustomersubNavbar(){
         <div class="bg-light" id="subnavarea">
             <ul class="nav nav-pills nav-fill">
                 <li class="nav-item" id="custsubnaitem">
-                <Link to="/findapet"><a class="bg-warning nav-link active" aria-current="page" href="#">Find pets<i class="fa fa-dog"></i></a></Link>
+                <Link to="petadopter/findapet"><a class="bg-warning nav-link active" aria-current="page" href="#">Find pets<i class="fa fa-dog"></i></a></Link>
                 </li>
                 <li class="nav-item" id="custsubnaitem">
-                <Link to="/findapet/findpettoolstore"><a class="text-dark nav-link" href="#">Veteranians<i class="fa fa-stethoscope"></i></a></Link>
+                <Link to="petadopter/findapet/channeldoctor"><a class="text-dark nav-link" href="#">Veteranians<i class="fa fa-stethoscope"></i></a></Link>
                 </li>
                 <li class="nav-item" id="custsubnaitem">
-                <Link to="/findapet/findpharmacy"><a class="text-dark nav-link" href="#">Pharmacies <i class="fa-solid fa-prescription-bottle-medical"></i></a></Link>
+                <Link to="petadopter/findapet/findpharmacy"><a class="text-dark nav-link" href="#">Pharmacies <i class="fa-solid fa-prescription-bottle-medical"></i></a></Link>
                 </li>
                 <li class="nav-item" id="custsubnaitem">
                     <a class="text-dark nav-link">Shopping <i class="fa-solid fa-cart-shopping"></i></a>
                 </li>
                 <li class="nav-item" id="custsubnaitem">
-                    <Link to="/findapet/messages"><a class="text-dark nav-link" aria-current="page" href="#">Messages <i class="fa fa-message"></i></a></Link>
+                    <Link to="petadopter/findapet/messages"><a class="text-dark nav-link" aria-current="page" href="#">Messages <i class="fa fa-message"></i></a></Link>
                 </li>
 
                 <li class="nav-item" id="custsubnaitemprofile">
-                    <Link to="/findapet/myprofile"><a class="text-dark nav-link" aria-current="page" href="#">My profile <i class="fa fa-user"></i></a></Link>
+                    <Link to="petadopter/findapet/myprofile"><a class="text-dark nav-link" aria-current="page" href="#">My profile <i class="fa fa-user"></i></a></Link>
                 </li>
                 
             </ul>

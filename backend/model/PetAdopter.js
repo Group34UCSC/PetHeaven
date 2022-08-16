@@ -9,3 +9,15 @@ exports.PETADOPTER_MODEL = Joi.object({
     password: Joi.string().min(6).required()
  
  })
+
+exports.PETADOPTER_ADOPTREQUESTMODEL= Joi.object({
+    RequestID: Joi.string(),
+    fullname: Joi.string().required(),
+    phonenumber: Joi.string().required(),
+    income:Joi.number().integer().required(),
+    isanyPet: Joi.number().integer().required(),
+    typeofPet: Joi.string().required(),
+    kidsinHome: Joi.number().integer().required(),
+    additionalDetails: Joi.string().required(),
+  
+ })

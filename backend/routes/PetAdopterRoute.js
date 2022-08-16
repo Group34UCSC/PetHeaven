@@ -16,4 +16,8 @@ PetAdopterRoute.post("/",PetAdopter_controller.PetAdopter_register);
 // student_route.post("/", student_controller.student_register)
 // student_route.get("/", student_controller.student_login)
 
+
+PetAdopterRoute.post('/findapet/adoptrequestform',PetAdopter_controller.PetAdopter_adoptRequest);
+
+PetAdopterRoute.get('/findapet',PetAdopter_controller.PetAdopter_Findapet);
 module.exports = PetAdopterRoute;
