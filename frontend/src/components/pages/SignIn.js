@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../includes/Navbar";
 import {useRef, useEffect, useState } from "react"; 
 import {Link} from 'react-router-dom';
 
@@ -110,6 +111,7 @@ const SignIn = () => {
 // {
     return(
         <div>
+            <Navbar/>
             {/* <section className="py-4 ">
                 <div className="container">
                     <div className="row bg-success text-white"> 

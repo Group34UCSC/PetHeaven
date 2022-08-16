@@ -1,10 +1,12 @@
 import React from "react";
 import './AboutUs.css';
+import Navbar from "../includes/Navbar";
 
 function AboutUs()
 {
     return(
         <div>
+            <Navbar/>
             <section className="py-4 ">
             <div className="container">
                 <div className="row bg-success text-white"> 
