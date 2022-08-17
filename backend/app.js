@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 // const PetAdopterRoute = require('./routes/PetAdopterRoute');
 const SignUpRoute = require('./routes/SignUpRoute');
 const errorHandler = require('./utils/errorHandler');
@@ -10,6 +11,8 @@ const errorHandler = require('./utils/errorHandler');
 
 app.use(express.json());
 app.use(cors());
+app.use(cookieParser());
+
 // parse request data content type application/x-www-form-rulencoded
 app.use(bodyParser.urlencoded({extended: false}));
 // app.use(cookieParser());

@@ -9,7 +9,9 @@ const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 const AppError = require('../utils/appError');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const { Cookie } = require('express-session');
 const CLIENT_URL = "http://localhost:3000/";
 
 
@@ -43,6 +45,8 @@ const CLIENT_URL = "http://localhost:3000/";
 
 exports.User_SignIn = (req, res, next)=>
 {
+  
+   console.log("GGS");
    if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
 
    try{
@@ -55,13 +59,22 @@ exports.User_SignIn = (req, res, next)=>
          const isMatched = await bcrypt.compare(req.body.Password, data[0].Password);
          if(!isMatched) return  next(new AppError("Email or Password Invalid!",401)) ;
 
-         const token = JWT.sign( {User_name: data[0].User_name, User_ID: data[0].User_ID}, "ucscucscucsc", {expiresIn: "1d"});
+         const token = JWT.sign( {User_name: data[0].User_name, User_ID: data[0].User_ID,User_type: data[0].User_type}, "sandaruwang", {expiresIn: "1d"});
+         
+         console.log(token);
 
-         res.header("auth-token",token).status(200).json({
-            data: "Welcome to PetHeaven! ",
-            token: token
-         })
-                
+         res.status(202).cookie("auth-token",token, {
+            sameSite: 'strict',
+            path : "/",
+            httpOnly : false,
+            secure: true,
+         }).send(token)
+
+         // res.header("auth-token",token).status(200).json({
+         //    data: "Welcome to PetHeaven! ",
+         //    token: token,
+         // })
+           
       })
    }
    catch( err )
@@ -84,7 +97,7 @@ exports.User_SignUp = (req,res,next)=>{
     // });
 
     try{
-      console.log("ggss");
+      // console.log("ggss");
         const { error } = SIGNUP_MODEL.validate(req.body);
 
         if( error ) return next(new AppError(error.details[0].message,400)) ;

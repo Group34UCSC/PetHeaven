@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router,Route,Routes} from 'react-router-dom';
-
+import {withCookies} from 'react-cookie';
+import jwt_decode from 'jwt-decode';
 
 import './App.css';
 //Home
@@ -61,7 +62,28 @@ import DoctorViewPetHistory from './components/Actors/doctor/pages/DoctorViewPet
 
 
 
-function App() {
+// function App() {
+class App extends Component{
+
+ render(){
+  const {cookies} = this.props;
+  
+  console.log(cookies.get('auth-token'));
+  const verify_token = cookies.get('auth-token');
+
+  if(verify_token)
+  {
+    const users = jwt_decode(verify_token);
+
+    window.loggedUserType = users.type;
+    window.loggedUserId = users.id;
+  }
+  else
+  {
+    window.loggedUserType = null;
+    window.loggedUserId = null;
+  }
+
   return (
 
  //Homepage
@@ -159,8 +181,9 @@ function App() {
 
 
 
-
-  );
+  
+  )
+ }
 }
-
-export default App;
+// export withCookies(App);
+export default withCookies(App)
