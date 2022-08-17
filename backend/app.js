@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 // const PetAdopterRoute = require('./routes/PetAdopterRoute');
 const SignUpRoute = require('./routes/SignUpRoute');
 const errorHandler = require('./utils/errorHandler');
+const AdminRoute = require('./routes/AdminRoute');
 
 
 
@@ -23,6 +24,12 @@ app.use(bodyParser.json());
 
 app.use("/SignUp",SignUpRoute);
 // app.use("/PetAdopter",PetAdopterRoute);
+
+
+
+
+//admin
+app.use("/Admin",AdminRoute);
 
 
 // app.use(cors());

@@ -80,7 +80,7 @@ const AdminCreate = () => {
         try {
           const body = { user, email, pwd };
           const response = await fetch(
-            "http://localhost:5000/SignUp",
+            "http://localhost:5000/Admin/Create",
             {
               method: "POST",
               headers: {
@@ -92,7 +92,7 @@ const AdminCreate = () => {
           console.log(response);
         }
         catch (err) {
-            console.log("Falil");
+            console.log("Falil12");
           }
       
     }
@@ -194,15 +194,7 @@ const AdminCreate = () => {
         <>
         <div>
         <NavbarUsers/>
-            {/* <section className="py-4 ">
-                <div className="container">
-                    <div className="row bg-success text-white"> 
-                        <div className="col-md-4 my-auto"></div>
-                        <h3 className="text-center">Contact Us</h3>
-                    </div>
-                </div>
-            </section> */}
-            
+           
             <section className="section bg-c-light" >
                 <div className="container">
                     <div className="card shadow">
@@ -227,25 +219,7 @@ const AdminCreate = () => {
                                     <img src={SignUpImg}  alt="Services"/>                               
                                     </div>
                                     </div>
-                                        {/* <h6>
-                                            Leave Us a Message
-                                        </h6>
-                                        <hr/>
-                                        <div className="form-group">
-                                            <label className="mb-1">Name</label>
-                                            <input type="text" className="form-control" placeholder="Enter Your Name"></input>
-                                        </div>
-                                        <div className="form-group">
-                                            <label className="mb-1 mt-1">Email</label>
-                                            <input type="text" className="form-control" placeholder="Enter Your Email"></input>
-                                        </div>
-                                        <div className="form-group">
-                                            <label className="mb-1">Message</label>
-                                            <textarea rows="4" className="form-control" placeholder="Enter Your Message"></textarea>
-                                        </div>
-                                        <div className="form-group py-3">
-                                            <button type="button" className="btn btn-success shadow w-100 ">Send</button>
-                                        </div> */}
+                                      
                                     </div>
 
                                 
