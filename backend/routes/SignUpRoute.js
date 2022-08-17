@@ -4,9 +4,9 @@ const SignUpRoute = express.Router();
 const SignUp_controller = require('../controller/SignUp_controller');
 SignUpRoute.post("/",SignUp_controller.User_SignUp);
 
-SignUpRoute.route("/")
-    .post( SignUp_controller.User_SignUp)
-    .get( SignUp_controller.User_SignIn)
+// SignUpRoute.route("/")
+//     .post( SignUp_controller.User_SignUp)
+//     .get( SignUp_controller.User_SignIn)
 
 // const student_controller = require('../controllers/student_controller');
 

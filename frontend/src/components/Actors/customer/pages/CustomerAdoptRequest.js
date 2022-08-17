@@ -5,10 +5,12 @@ import '../css/CustomerAdoptpet.css';
 import docvectors from  '../images/docvector.png';
 import CustomersubNavbar from './Customersubnavbar';
 import Pagination from  './pagination';
+import NavbarUsers from '../../../includes/NavbarUsers';
 
 function CustomerAdoptRequest() {
     return(
         <div>
+            
             <CustomersubNavbar></CustomersubNavbar>
             <div  class="bg-c-light">
                 <h1 class="bg-c-light col-sm-12 requestheader">Adopt Request form</h1>

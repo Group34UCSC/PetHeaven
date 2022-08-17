@@ -4,7 +4,7 @@ import './Notifications.css'
 function Notifications() {
     return (
 
-<div>
+<div> 
             <section className="py-4 ">
             <div className="container">
                 <div className="row bg-success text-white"> 
