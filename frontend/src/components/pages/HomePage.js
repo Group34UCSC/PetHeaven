@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 import Slider from "../includes/Slider";
-import CustomerFeaturedAnimals from '../Actors/customer/pages/CustomerFeaturedAnimals';
+import Navbar from "../includes/Navbar";
 import VetClinic from "../images/vet1.jpg";
 import Pharmacy from "../images/pharmacy1.jpg";
 import PetToolStore from "../images/petTool.jpg";
@@ -11,6 +11,7 @@ function HomePage()
 {
     return(
         <div>
+            <Navbar/>
             <Slider/>
             <section className="section">
                 <div className="container">
@@ -66,8 +67,7 @@ function HomePage()
                     </div>
                 </div>
             </section>
-            <CustomerFeaturedAnimals></CustomerFeaturedAnimals>
-            {/* <section className="section">
+            <section className="section">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 text-center">
@@ -143,7 +143,7 @@ function HomePage()
                     </div>
                 </div>
                 
-            </section> */}
+            </section>
         </div>
     );
 }

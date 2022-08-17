@@ -1,50 +1,41 @@
 const express = require('express');
+const app = express();
+const cors = require('cors');
+const bodyParser = require('body-parser');
 const PetAdopterRoute = require('./routes/PetAdopterRoute');
+const SignUpRoute = require('./routes/SignUpRoute');
 const StaffMemberRoute = require('./routes/staffMemberRoute');
 const errorHandler = require('./utils/errorHandler');
 
-const app = express();
+
 
 app.use(express.json());
+app.use(cors());
+// parse request data content type application/x-www-form-rulencoded
+app.use(bodyParser.urlencoded({extended: false}));
+// app.use(cookieParser());
 
+// app.use(cors({
+//     origin: 'http://localhost:5000', 
+//     credentials: true,
+// }));
+app.use(bodyParser.json()); 
 
-app.use((req,res,next)=>{
-    console.log(req.url);
-    console.log(req.method);
-    next()
-}) 
-app.options('/PetAdopter/findapet/adoptrequestform',async(req,res,next)=>
-{
-    console.log("check data");
-    let {name} =req.body
-    console.log(name)
-    // console.log( req.body.name);
-    // console.log( req.body.age);
-    // res.status(200).json({
-    //     data:"hi machan",
-    //     asd:'asdgd'
-    // })
-
-})
-
-// app.use("/PetAdopter",PetAdopterRoute);
 app.use('/staffmember',StaffMemberRoute);
+app.use("/SignUp",SignUpRoute);
+app.use("/PetAdopter",PetAdopterRoute);
 
+
+// app.use(cors());
 app.use(errorHandler);
 
-app.get("/",(req,res,next)=>
-{
-    console.log("Sandaruwan Gamage");
-})
-
-
-
-// app.get('/findapet',(req,res,next)=>
+// app.get("/",(req,res,next)=>
 // {
-//     console.log('thisara');
+//     console.log("Sandaruwan Gamage");
 // })
 
-const PORT = 3000;
+
+const PORT = 5000;
 
 app.listen(PORT,()=>
 {

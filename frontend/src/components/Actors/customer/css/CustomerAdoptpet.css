@@ -14,13 +14,12 @@
 }
 
 .requestform {
-    padding: 30px;
-    font-size: 12px;
+    padding-top: 30px;
     color: #0c3427;
     width: 60%;
-    margin-left: 100px;
-    margin-bottom: 100px;
-    background-color: rgb(160, 1, 1);
+    margin-left: 500px;
+    margin-right: 500px;
+    background-color: white;
 }
 
 #formarea {
@@ -28,7 +27,7 @@
 }
 
 .customerformrows {
-    width: 100%;
+    width: 70%;
     margin-left: 50px;
     margin-bottom: 10px;
     font-size: 20px;
@@ -41,7 +40,7 @@
 }
 
 .radiobtns {
-    font-size: 12px;
+    font-size: 14px;
     margin-left: 100px;
     margin-bottom: 20px
 }

@@ -7,10 +7,12 @@ import view from '../img/view1.jpg';
 import delete1 from '../img/delete01.jpg';
 import update from '../img/update01.jpg';
 import '../css/AdminHome.css';
+import NavbarUsers from '../../../includes/NavbarUsers';
 function AdminHome() {
   return (
 
 <div>
+    <NavbarUsers/>
 <section className="section bg-c-light border-top">
                 <div className="container">
                     <div className="row">

@@ -12,7 +12,7 @@ exports.Staffmemberpostpet=(req,res,next) => {
     if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
  
     try{
-       console.log(req.body.name);
+      
         const { error } = STAFFMEMBERPOSTPET_MODEL.validate(req.body);
 
  

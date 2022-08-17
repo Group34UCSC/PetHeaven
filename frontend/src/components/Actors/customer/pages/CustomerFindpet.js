@@ -69,57 +69,51 @@ function CustomerFindpet(){
 
                     <div class=" bg-c-light row" id="findpetimgarea"> 
                         <div class="col col-sm-2 card">
-                            <h4 class="text-danger petname">Jill</h4>
                             <img src={puppy4} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
-                            <div class="petage  card-body">
-                                <p>2 months</p>
+                            <div class="card-body">
+                                <p class="card-text"></p>
                                 <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadopthbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                             
                         </div>
 
                         <div class="col col-sm-2 card">
-                            <h4 class="text-danger petname">Joggi</h4>
                             <img src={puppy1} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
-                            <div class="petage card-body">
-                                <p>2 months</p>
+                            <div class="card-body">
+                                <p class="card-text"></p>
                                 <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadopthbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                         </div>
 
                         <div class="col col-sm-2 card">
-                            <h4 class="text-danger petname">Blacky</h4>
                             <img src={puppy2} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
-                            <div class="petage card-body">
-                                <p>2 months</p>
+                            <div class="card-body">
+                                <p class="card-text"></p>
                                 <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                         </div>
 
                         <div class="col col-sm-2 card">
-                            <h4 class="text-danger petname">Jenn</h4>
                             <img src={kitties3} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
-                            <div class="petage card-body">
-                                <p>2 months</p>
+                            <div class="card-body">
+                                <p class="card-text"></p>
                                 <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                             
                         </div>
 
                         <div class="col-sm-2 card">
-                            <h4 class="text-danger petname">Ocky</h4>
                             <img src={puppy1} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
-                            <div class="petage card-body">
-                                <p>2 months</p>
+                            <div class="card-body">
+                                <p class="card-text"></p>
                                 <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                         </div>
 
                         <div class="col-sm-2 card">
-                            <h4 class="text-danger petname">Phil</h4>
                             <img src={kitties1} class="card-img-top" id="findpetimgs" alt="Tommy"></img>
-                            <div class="petage card-body">
-                                <p>2 months</p>
+                            <div class="card-body">
+                                <p class="card-text"></p>
                                 <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                         </div>
