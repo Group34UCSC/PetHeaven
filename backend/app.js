@@ -2,8 +2,9 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-// const PetAdopterRoute = require('./routes/PetAdopterRoute');
+const PetAdopterRoute = require('./routes/PetAdopterRoute');
 const SignUpRoute = require('./routes/SignUpRoute');
+const StaffMemberRoute = require('./routes/staffMemberRoute');
 const errorHandler = require('./utils/errorHandler');
 
 
@@ -20,9 +21,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 // }));
 app.use(bodyParser.json()); 
 
-
+app.use('/staffmember',StaffMemberRoute);
 app.use("/SignUp",SignUpRoute);
-// app.use("/PetAdopter",PetAdopterRoute);
+app.use("/PetAdopter",PetAdopterRoute);
 
 
 // app.use(cors());
