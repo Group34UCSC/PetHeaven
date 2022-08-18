@@ -57,9 +57,10 @@ import ViewPetToolInventory from './components/Actors/petstore/inventory/ViewPet
 //Doctor
 import DoctorHome from './components/Actors/doctor/pages/DoctorHome';
 import DoctorViewPetHistory from './components/Actors/doctor/pages/DoctorViewPetHistory';
-
-
-
+import DoctorInbox from './components/Actors/doctor/pages/DoctorInbox';
+import DoctorPrescription from './components/Actors/doctor/pages/DoctorPrescription';
+import DoctorPrescriptionUser from './components/Actors/doctor/pages/DoctorPrescriptionUser';
+import DoctorConsultation from './components/Actors/doctor/pages/DoctorConsultation';
 
 function App() {
   return (
@@ -123,6 +124,10 @@ function App() {
             {/* Doctor   */}
            <Route exact path='/DoctorHome' element={<DoctorHome/>} />
            <Route exact path='/DoctorHome/History' element={<DoctorViewPetHistory/>} />
+           <Route exact path='/DoctorHome/Inbox' element={<DoctorInbox/>} />
+           <Route exact path='/DoctorHome/Prescription' element={<DoctorPrescription/>} />
+           <Route exact path='/DoctorHome/Prescription/DoctorPrescriptionUser' element={<DoctorPrescriptionUser/>} />
+           <Route exact path='/DoctorHome/DoctorConsultation' element={<DoctorConsultation/>} />
            
         
         </Routes>

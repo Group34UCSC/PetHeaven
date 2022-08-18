@@ -28,7 +28,7 @@ function DoctorHome() {
                         <div class="admincard col-md-6">
                        
                             <div className="card shadow" id='cardone'>
-                            <Link to="Consultations"><img src={delete1} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
+                            <Link to="DoctorConsultation"><img src={delete1} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
                                 <div className="card-body">
                                     <h6>VIEW CONSULTATIONS</h6>
                                     <div className="underline"></div>

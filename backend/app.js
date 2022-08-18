@@ -31,6 +31,7 @@ app.use("/PetAdopter",PetAdopterRoute);
 
 //admin
 app.use("/Admin",AdminRoute);
+// app.delete("/Admin",AdminRoute);
 
 
 // app.use(cors());
