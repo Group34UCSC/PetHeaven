@@ -155,8 +155,18 @@ function PetToolStoreHome()
                             
                             <img src={Bathroom} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
-                                    <h4 id="price">Rs. 1630</h4>
-                                    <div className="mb-2 mt-3 ">
+                                <div className="form-group row ">
+                                        <div className="col-md-7">
+                                            <h4 id="price">Rs. 1630</h4>
+                                        </div>
+                                        <div className="col-md-5">
+                                        <Link to="/petstore/advertisement/MoreDetails" class="nav-link active">
+                                            <button type="button" id="view-btn" className="btn shadow w-100 ">See More</button>
+                                        </Link>
+                                        </div>
+                                </div>
+                                    {/* <h4 id="price">Rs. 1630</h4> */}
+                                    <div className="mb-2 mt-2 ">
                                         <Link to="/petstore/EditAdvertisement" class="nav-link active">
                                             {/* <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button> */}
                                             <button type="button" id="submit-btn" className="btn shadow w-100 ">Edit</button>
@@ -173,8 +183,18 @@ function PetToolStoreHome()
                             </div>
                             <img src={Grooming} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
-                                <h4 id="price">Rs. 890</h4>
-                                    <div className="mb-2 mt-3 ">
+                                <div className="form-group row ">
+                                        <div className="col-md-7">
+                                            <h4 id="price">Rs. 890</h4>
+                                        </div>
+                                        <div className="col-md-5">
+                                        <Link to="/petstore/advertisement/MoreDetails" class="nav-link active">
+                                            <button type="button" id="view-btn" className="btn shadow w-100 ">See More</button>
+                                        </Link>
+                                        </div>
+                                </div>
+                                {/* <h4 id="price">Rs. 890</h4> */}
+                                    <div className="mb-2 mt-2 ">
                                         <Link to="/petstore/EditAdvertisement" class="nav-link active">
                                             {/* <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button> */}
                                             <button type="button" id="submit-btn" className="btn shadow w-100 ">Edit</button>
@@ -192,8 +212,18 @@ function PetToolStoreHome()
                             </div>
                             <img src={FurnitureCage} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
-                                <h4 id="price">Rs. 15200</h4>
-                                    <div className="mb-2 mt-3 ">
+                                <div className="form-group row ">
+                                        <div className="col-md-7">
+                                            <h4 id="price">Rs. 15200</h4>
+                                        </div>
+                                        <div className="col-md-5">
+                                        <Link to="/petstore/advertisement/MoreDetails" class="nav-link active">
+                                            <button type="button" id="view-btn" className="btn shadow w-100 ">See More</button>
+                                        </Link>
+                                        </div>
+                                </div>
+                                {/* <h4 id="price">Rs. 15200</h4> */}
+                                    <div className="mb-2 mt-2 ">
                                         <Link to="/petstore/EditAdvertisement" class="nav-link active">
                                             {/* <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button> */}
                                             <button type="button" id="submit-btn" className="btn shadow w-100 ">Edit</button>
@@ -222,8 +252,21 @@ function PetToolStoreHome()
                             </div>
                             <img src={TractionBelt} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
-                                <h4 id="price">Rs. 780</h4>
-                                    <div className="mb-2 mt-3 ">
+
+                                <div className="form-group row ">
+                                        <div className="col-md-7">
+                                            <h4 id="price">Rs. 780</h4>
+                                        </div>
+                                        <div className="col-md-5">
+                                        <Link to="/petstore/advertisement/MoreDetails" class="nav-link active">
+                                            <button type="button" id="view-btn" className="btn shadow w-100 ">See More</button>
+                                        </Link>
+                                        </div>
+                                </div>
+
+
+                                {/* <h4 id="price">Rs. 780</h4> */}
+                                    <div className="mb-2 mt-2 ">
                                         <Link to="/petstore/EditAdvertisement" class="nav-link active">
                                             {/* <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button> */}
                                             <button type="button" id="submit-btn" className="btn shadow w-100 ">Edit</button>
@@ -274,3 +317,4 @@ function PetToolStoreHome()
 }
 
 export default PetToolStoreHome;
+

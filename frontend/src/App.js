@@ -55,6 +55,8 @@ import AddEquipmentStock from './components/Actors/petstore/inventory/AddEquipme
 import ViewPetToolInventory from './components/Actors/petstore/inventory/ViewPetToolInventory';
 import PostAdvertisement from './components/Actors/petstore/pages/PostAdvertisement';
 import EditAdvertisement from './components/Actors/petstore/pages/EditAdvertisement';
+import MoreDetails from './components/Actors/petstore/pages/MoreDetails';
+
 
 //Doctor
 import DoctorHome from './components/Actors/doctor/pages/DoctorHome';
@@ -127,6 +129,8 @@ class App extends Component{
             <Route exact path='/petstore/inventory/ViewPetToolInventory' element={<ViewPetToolInventory />} />
             <Route exact path='/petstore/addNewEquipment' element={<PostAdvertisement />} />
             <Route exact path='/petstore/EditAdvertisement' element={<EditAdvertisement />} />
+            <Route exact path='/petstore/advertisement/MoreDetails' element={<MoreDetails />} />
+            
             
               {/*Customer */}
               <Route exact path='/findapet/findpharmacy/pharmacystore' element={<Customerpharmacypage/>} />

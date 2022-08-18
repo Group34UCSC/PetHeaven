@@ -9,7 +9,7 @@ function ViewPetToolInventory()
             <div className="container">
                 <div className="row bg-success text-white"> 
                     <div className="col-md-4 my-auto"></div>
-                    <h3 className="text-center">Current Status of P Inventory</h3>
+                    <h3 className="text-center">Current Status of Inventory</h3>
                 </div>
             </div>
             </section>
