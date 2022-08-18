@@ -30,6 +30,7 @@ app.use("/SignUp",SignUpRoute);
 
 //admin
 app.use("/Admin",AdminRoute);
+// app.delete("/Admin",AdminRoute);
 
 
 // app.use(cors());

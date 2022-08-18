@@ -3,7 +3,7 @@ const {isEmpty}  = require('../utils/is_empty');
 const Joi = require('@hapi/joi');
 const JWT = require('jsonwebtoken');
 const conn = require('../service/db_service');
-const {CHECK_EMAIL,REGISTER_USER} = require('../query/Admin');
+const {CHECK_EMAIL,REGISTER_USER, DELETE_USER} = require('../query/Admin');
 const { SIGNUP_MODEL} = require('../model/Admin');
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
@@ -58,3 +58,32 @@ exports.Create_Accounts = (req,res,next)=>{
 
 {/* <a href="http://localhost:3000/SignUp/{$token}">CLICK TO ACTIVATE YOUR ACCOUNT</a>
                   <a href="' . CLIENT_URL . 'SignUp/activation' . '/' . {[req.body.email]} . '/' . {$token} . '">CLICK TO ACTIVATE YOUR ACCOUNT</a>'; */}
+
+
+ 
+                  
+                  exports.Delete_Accounts = (req,res,next)=>{
+ 
+                     if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
+                     console.log(req.body.email)
+                     try{
+                      
+                            conn.query(DELETE_USER,[req.body.email ], (err,data,feilds)=>{
+                             if( err ) return next(new AppError(err,500));
+                 
+                             res.status(201).json({
+                                data: "User Delete Success!"
+                             })
+                 
+                            })
+                   
+                           
+                      
+                      }
+                      catch( err )
+                      {
+                         res.status(500).json({
+                            error: err
+                         })
+                      }
+                 }
