@@ -80,9 +80,9 @@ const AdminDelete = () => {
         try {
           const body = { user, email, pwd };
           const response = await fetch(
-            "http://localhost:5000/SignUp",
+            "http://localhost:5000/Admin/Delete",
             {
-              method: "POST",
+              method: "DELETE",
               headers: {
                 "Content-type": "application/json"
               },
@@ -98,110 +98,14 @@ const AdminDelete = () => {
     }
         
           
-    
 
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
-    //   const data = { username: user, email: email, password: pwd };
-    //     console.log(data);
-    //     Axios.post("http://localhost:5000/SignUp", {
-
-    //                   User_name : user,
-    //                   Email: email, 
-    //                   Password: pwd,
-    //                 })
-    //                 // .then((response) => {
-    //                 //   if(response.data.error) {
-    //                 //     alert(response.data.error);}
-    //                 //   else{alert("successfully Logged in!");
-    //                 //   }
-    //                 // });
-
-
-    // };
-
-
-    // const handleSubmit = async (e) => {
-    //     console.log("Sasidu");
-    //     e.preventDefault();
-    //     // if button enabled with JS hack
-    //     const v1 = USER_REGEX.test(user);
-    //     const v2 = PWD_REGEX.test(pwd);
-    //     const v3 = EMAIL_REGEX.test(email);
-    //     if (!v1 || !v2 || !v3) {
-    //         setErrMsg("Invalid Entry");
-    //         return;
-    //     }
-    //     try {
-    //         const response = await Axios.post(REGISTER_URL,
-    //             JSON.stringify({ user, pwd, email }),
-    //             {
-    //                 headers: { 'Content-Type': 'application/json' },
-    //                 withCredentials: true
-    //             }
-    //         );
-    //         // console.log(response?.data);
-    //         // console.log(response?.accessToken);
-    //         // console.log(JSON.stringify(response))
-    //         setSuccess(true);
-    //         //clear state and controlled inputs
-    //         //need value attrib on inputs for this
-    //         setUser('');
-    //         setEmail('');
-    //         setPwd('');
-    //         setMatchPwd('');
-    //     } catch (err) {
-    //         // if (!err?.response) {
-    //         //     setErrMsg('No Server Response');
-    //         // } else if (err.response?.status === 409) {
-    //         //     setErrMsg('Username Taken');
-    //         // } else {
-    //         //     setErrMsg('Registration Failed')
-    //         // }
-    //         // errRef.current.focus();
-    //     }
-    // }
-    // const handleSubmit = () => {
-    //     console.log(user);
-    // }
- 
-
-
-
-// function SignUp()
-// {
-
-//  const   handleSubmit = (value) => {
-//         this.props.sendNewMessage(value);
-//         console.log(value)
-//       }
-
-      
-// const submitData = (user) => {
-//     console.log(user);
-//     Axios.post("http://localhost:5000/Signup",{
-//         user:user,
-//         email:email,
-//         password:pwd,
-//     }).then(() => {
-//         alert("successfully added!");
-//     });
-// };
- 
     return(
      
         <>
         <div>
         <NavbarUsers/>
-            {/* <section className="py-4 ">
-                <div className="container">
-                    <div className="row bg-success text-white"> 
-                        <div className="col-md-4 my-auto"></div>
-                        <h3 className="text-center">Contact Us</h3>
-                    </div>
-                </div>
-            </section> */}
+           
             
             <section className="section bg-c-light" >
                 <div className="container">

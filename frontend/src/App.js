@@ -57,7 +57,8 @@ import ViewPetToolInventory from './components/Actors/petstore/inventory/ViewPet
 //Doctor
 import DoctorHome from './components/Actors/doctor/pages/DoctorHome';
 import DoctorViewPetHistory from './components/Actors/doctor/pages/DoctorViewPetHistory';
-
+import DoctorInbox from './components/Actors/doctor/pages/DoctorInbox';
+import DoctorPrescription from './components/Actors/doctor/pages/DoctorPrescription';
 
 
 
@@ -123,6 +124,8 @@ function App() {
             {/* Doctor   */}
            <Route exact path='/DoctorHome' element={<DoctorHome/>} />
            <Route exact path='/DoctorHome/History' element={<DoctorViewPetHistory/>} />
+           <Route exact path='/DoctorHome/Inbox' element={<DoctorInbox/>} />
+           <Route exact path='/DoctorHome/Prescription' element={<DoctorPrescription/>} />
            
         
         </Routes>
