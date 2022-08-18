@@ -18,6 +18,8 @@ function DoctorConsultation() {
      <div> 
 
      <DoctorViewPetHistory />
+     <DoctorViewPetHistory />
+     <DoctorViewPetHistory />
 
 <div class="row m-md-5 m-3 ">
         <div class="col-lg-4 bg-blue py-5 px-5">
