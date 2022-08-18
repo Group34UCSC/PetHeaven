@@ -8,7 +8,9 @@ import kitties1 from '../images/kitties1.jfif';
 import kitties3 from '../images/kitties3.jfif';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
-import CustomerSubNavbar from './CustomerSubNavbar';
+
+import CustomersubNavbar from './Customersubnavbar';
+
 import '../css/CustomerFindpet.css';
 import CustomerFeaturedAnimals from './CustomerFeaturedAnimals';
 import DoctorAppointment from './DoctorAppointment';
@@ -68,7 +70,7 @@ function CustomerFindpet(){
                     </div>
 
                     <div class=" bg-c-light row" id="findpetimgarea"> 
-                        <div class="col-sm-2 card">
+                        <div class="col col-sm-2 card">
                             <img src={puppy4} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
@@ -77,7 +79,7 @@ function CustomerFindpet(){
                             
                         </div>
 
-                        <div class="col-sm-2 card">
+                        <div class="col col-sm-2 card">
                             <img src={puppy1} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
@@ -85,7 +87,7 @@ function CustomerFindpet(){
                             </div>
                         </div>
 
-                        <div class="col-sm-2 card">
+                        <div class="col col-sm-2 card">
                             <img src={puppy2} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>
@@ -93,7 +95,7 @@ function CustomerFindpet(){
                             </div>
                         </div>
 
-                        <div class="col-sm-2 card">
+                        <div class="col col-sm-2 card">
                             <img src={kitties3} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
                             <div class="card-body">
                                 <p class="card-text"></p>

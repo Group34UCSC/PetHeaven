@@ -9,14 +9,14 @@ function ViewInquiry()
             <div className="container">
                 <div className="row bg-success text-white"> 
                     <div className="col-md-4 my-auto"></div>
-                    <h3 className="text-center">Contact Us</h3>
+                    <h3 className="text-center">Inquiries</h3>
                 </div>
             </div>
             </section>
             <div>
                
             </div>
-            <section className="section bg-c-light">
+            {/* <section className="section bg-c-light">
                 <div className="container">
                     <div className="card shadow">
                         <div className="card-body">
@@ -58,7 +58,7 @@ function ViewInquiry()
                     </div>
                 </div>
 
-            </section>
+            </section> */}
         </div>
         
     );

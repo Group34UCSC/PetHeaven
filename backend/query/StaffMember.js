@@ -1,0 +1,1 @@
+exports.POST_PET="INSERT INTO pet VALUES (NULL,?)";

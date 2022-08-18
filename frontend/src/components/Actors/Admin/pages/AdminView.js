@@ -1,9 +1,12 @@
 import React,{useState} from "react";
+import NavbarUsers from "../../../includes/NavbarUsers";
 import '../css/AdminView.css';
 
 function AdminView() {
     return (
+     
         <div>
+           <NavbarUsers/>
         <div className="subHeader">
         <div className="topic">VIEW USER ACCOUNT</div>
         </div>

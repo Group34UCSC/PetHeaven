@@ -5,7 +5,9 @@ import {Link} from 'react-router-dom';
 import '../css/CustomerPharmacy.css';
 import phavectors from  '../images/pharmacy.png';
 import Pagination from  './pagination';
-import CustomerSubNavbar from './CustomerSubNavbar';
+
+import CustomersubNavbar from './Customersubnavbar';
+
 function CustomerPharmacy(){
 
     return(

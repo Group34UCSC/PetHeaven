@@ -11,8 +11,12 @@ import ContactUs from './components/pages/ContactUs';
 import Footer from './components/includes/Footer';
 import Notifications from './components/pages/Notifications';
 import Donate from './components/pages/Donate';
-import PharmacyHome from './components/Actors/pharmacy/PharmacyHome';
+import SignUp from './components/pages/SignUp';
+import SignIn from './components/pages/SignIn';
 
+
+import PharmacyHome from './components/Actors/pharmacy/PharmacyHome';
+import PetToolStoreHome from './components/Actors/petstore/pages/PetToolStoreHome';
 
 //Admin
 import AdminHeader from './components/Actors/Admin/pages/AdminHeader';
@@ -44,6 +48,7 @@ import AddStock from './components/Actors/pharmacy/inventory/AddStock';
 import ViewInventory from './components/Actors/pharmacy/inventory/ViewInventory';
 import ViewInquiry from './components/Actors/pharmacy/inquiries/ViewInquiry';
 
+
 //Staff member
 import Staff from './components/Actors/staff/pages/Staff';
 import ViewPets from './components/Actors/staff/pages/ViewPets';
@@ -57,6 +62,19 @@ import ViewFeedback from './components/Actors/staff/pages/ViewFeedback';
 import AddNewPet from './components/Actors/staff/pages/AddNewPet';
 import ViewAdopterRequests from './components/Actors/staff/pages/ViewAdopterRequests';
 
+// Pet Tool Store
+import AddEquipmentStock from './components/Actors/petstore/inventory/AddEquipmentStock';
+import ViewPetToolInventory from './components/Actors/petstore/inventory/ViewPetToolInventory';
+
+
+//Doctor
+import DoctorHome from './components/Actors/doctor/pages/DoctorHome';
+import DoctorViewPetHistory from './components/Actors/doctor/pages/DoctorViewPetHistory';
+import DoctorInbox from './components/Actors/doctor/pages/DoctorInbox';
+import DoctorPrescription from './components/Actors/doctor/pages/DoctorPrescription';
+import DoctorPrescriptionUser from './components/Actors/doctor/pages/DoctorPrescriptionUser';
+import DoctorConsultation from './components/Actors/doctor/pages/DoctorConsultation';
+
 function App() {
   return (
 
@@ -64,7 +82,7 @@ function App() {
   <Router>
 
       <div>
-        <Navbar/>
+      
 
         <Routes>
       
@@ -73,8 +91,16 @@ function App() {
             <Route exact path='/contact' element={<ContactUs/>} /> 
             <Route exact path='/Notifications' element={<Notifications/>} /> 
             <Route exact path='/donation' element={<Donate/>} />
+
             <Route exact path='/pharmacy' element={<PharmacyHome/>} /> */}
 
+            <Route exact path='/pharmacy' element={<PharmacyHome/>} />
+            <Route exact path='/PetToolStore' element={<PetToolStoreHome/>} />
+
+
+            <Route exact path='/SignUp' element={<SignUp/>} />
+            <Route exact path='/SignIn' element={<SignIn/>} />
+            
              {/* Admin  */}
             {/* <Route exact path='/AdminHome/Create' element={<AdminCreate />} /> 
             <Route exact path='/AdminHome/Delete' element={<AdminDelete />} />
@@ -88,6 +114,7 @@ function App() {
             <Route exact path='/pharmacy/FinalizeOrder' element={<FinalizeOrder />} />
             <Route exact path='/pharmacy/inventory/AddStock' element={<AddStock />} />
             <Route exact path='/pharmacy/inventory/ViewInventory' element={<ViewInventory />} />
+
             <Route exact path='/pharmacy/inquiries/ViewInquiry' element={<ViewInquiry />} /> */}
             
 
@@ -101,6 +128,26 @@ function App() {
               <Route exact path='/SignUp/findapet/findpettoolstore' element ={<CustomerPettoolstore/>}/>
               <Route exact path='/SignUp/findapet/myprofile' element={<ProfilePage/>}/>
               <Route exact path='/SignUp/findapet/adoptrequestform' element={<CustomerAdoptRequest/>}/> */}
+
+            <Route exact path='/pharmacy/inquiries/ViewInquiry' element={<ViewInquiry />} />
+
+
+            {/* Pet Tool Store */}
+            <Route exact path='/petstore/inventory/AddEquipmentStock' element={<AddEquipmentStock/>} />
+            <Route exact path='/petstore/inventory/ViewPetToolInventory' element={<ViewPetToolInventory />} />
+
+
+              {/*Customer */}
+              <Route exact path='/findapet/findpharmacy/pharmacystore' element={<Customerpharmacypage/>} />
+              <Route exact path='/findapet/findpettoolstore/petstore' element={<Customerpettoolstorepage/>} />
+              <Route exact path='/findapet/messages' element={<CustomerDoctormessages/>}/>
+              <Route exact path='/findapet' element ={<CustomerFindpet/>} />
+              <Route exact path='/findapet/channeldoctor' element={<CustomerDoctorappoint/>}/> 
+              <Route exact path='/findapet/findpharmacy' element ={<CustomerPharmacy/>}/>
+              <Route exact path='/findapet/findpettoolstore' element ={<CustomerPettoolstore/>}/>
+              <Route exact path='/findapet/myprofile' element={<ProfilePage/>}/>
+              <Route exact path='/findapet/adoptrequestform' element={<CustomerAdoptRequest/>}/>
+
               {/* <Route exact path='/' element ={<CustomerEditProfile/>}/> */}
               {/* <Route exact path='/Signup' element={<Signup/>} /> */}
               {/* <Route exact path='/' element={<CustomerChangePassword/>}/> */}
@@ -118,6 +165,13 @@ function App() {
             <Route exact path='/addnewpet' element ={<AddNewPet/>} />
             <Route exact path='/viewadopterrequests' element ={<ViewAdopterRequests/>} />
 
+            {/* Doctor   */}
+           <Route exact path='/DoctorHome' element={<DoctorHome/>} />
+           <Route exact path='/DoctorHome/History' element={<DoctorViewPetHistory/>} />
+           <Route exact path='/DoctorHome/Inbox' element={<DoctorInbox/>} />
+           <Route exact path='/DoctorHome/Prescription' element={<DoctorPrescription/>} />
+           <Route exact path='/DoctorHome/Prescription/DoctorPrescriptionUser' element={<DoctorPrescriptionUser/>} />
+           <Route exact path='/DoctorHome/DoctorConsultation' element={<DoctorConsultation/>} />
         
         </Routes>
 
