@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import '../css/PostAdvertisement.css';
+import '../css/EditAdvertisement.css';
 
-function PostAdvertisement()
+function EditAdvertisement()
 {
     return(
         <div>
@@ -10,7 +10,7 @@ function PostAdvertisement()
             <div className="container col-md-8">
                 <div className="row bg-success text-white"> 
                     <div className="col-md-4 my-auto"></div>
-                    <h3 className="text-center">New Advertisement</h3>
+                    <h3 className="text-center">Edit Advertisement</h3>
                 </div>
             </div>
             </section>
@@ -27,7 +27,7 @@ function PostAdvertisement()
 
                                 </div>
                                 <div className="col-md-10 ">
-                                    <h5 className="main-heading text-center">To Post a New Advertisement</h5>
+                                    <h5 className="main-heading text-center">To Edit a Posted Advertisement</h5>
                                 <div className="underline mx-auto"></div>
                                     
                                     <div className="form-group ">
@@ -51,9 +51,9 @@ function PostAdvertisement()
                                         <button type="button" className="btn btn-success shadow w-100 ">Send</button>
                                     </div> */}
                                     <div className="d-flex justify-content-center mb-3 mt-4 ">
-                                        <Link to="/petstore/addNewEquipment" class="nav-link active">
+                                        <Link to="" class="nav-link active">
                                             {/* <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button> */}
-                                            <button type="button" id="submit-btn" className="btn shadow w-100 ">Post</button>
+                                            <button type="button" id="submit-btn" className="btn shadow w-100 ">Confirm Edit</button>
                                         </Link>
                                     </div>
                                     
@@ -76,4 +76,4 @@ function PostAdvertisement()
     );
 }
 
-export default PostAdvertisement;
+export default EditAdvertisement;
