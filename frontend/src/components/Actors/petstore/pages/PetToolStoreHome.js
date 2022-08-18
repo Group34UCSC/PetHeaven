@@ -73,7 +73,7 @@ function PetToolStoreHome()
             <section className="py-4 ">
             <div className="container">
                 <div className="d-flex justify-content-center mb-4">
-                    <Link to="/petstore/inventory/ViewInventory" class="nav-link active">
+                    <Link to="/petstore/addNewEquipment" class="nav-link active">
                         <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button>
                     </Link>
                 </div>
