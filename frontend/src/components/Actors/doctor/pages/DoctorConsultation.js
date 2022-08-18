@@ -15,7 +15,7 @@ import DoctorViewPetHistory from "./DoctorViewPetHistory";
 function DoctorConsultation() {
     return(
      
-     <div> <NavbarUsers />
+     <div> 
 
      <DoctorViewPetHistory />
 
