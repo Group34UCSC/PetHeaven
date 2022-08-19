@@ -5,12 +5,14 @@ import {Link} from 'react-router-dom';
 import '../css/CustomerPharmacy.css';
 import phavectors from  '../images/pharmacy.png';
 import Pagination from  './pagination';
+
 import CustomersubNavbar from './Customersubnavbar';
+
 function CustomerPharmacy(){
 
     return(
         <div >
-            <CustomersubNavbar></CustomersubNavbar>
+            <CustomerSubNavbar></CustomerSubNavbar>
             <div>
                 <p class= "searchpharmacyheading">Find all medicine <i class="fa-solid fa-pills"></i> need for your pet <i class="fa fa-paw"></i> from our registered
                 online pharmacy <i class="fa-solid fa-prescription-bottle-medical"></i> shops and receive the medicines for your door steps on time <i class="fa fa-clock"></i></p>

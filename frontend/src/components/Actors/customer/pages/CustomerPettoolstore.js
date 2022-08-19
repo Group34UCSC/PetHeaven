@@ -5,12 +5,14 @@ import '../css/CustomerPettoolstore.css';
 import {Link} from 'react-router-dom';
 import pstorevectors from  '../images/pettoolstore.jpg';
 import Pagination from  './pagination';
+
 import CustomersubNavbar from './Customersubnavbar';
+
 function CustomerPettoolstore(){
 
     return(
         <div>
-            <CustomersubNavbar></CustomersubNavbar>
+            <CustomerSubNavbar></CustomerSubNavbar>
             <div>
             petstore               
             </div>
