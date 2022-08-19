@@ -31,7 +31,7 @@ function ViewFeedback(){
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                How can I contact the owner of this chrity organization. Our organization happy to help this charity organization. We are expect to donate and also we are hope to do another programs. Can I contact the Head of this charity organization.
+                                How can I contact the owner of this chrity organization. Our organization happy to help your charity organization. We are expect to donate and also we are hope to do another programs. Can I contact the Head of this charity organization.
                             </div>
                         
                             <button type="button" class="btn btn-success replyBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply <i class="fa-solid fa-reply"></i></button>
@@ -46,7 +46,7 @@ function ViewFeedback(){
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                How can I contact the owner of this chrity organization. Our organization happy to help this charity organization. We are expect to donate and also we are hope to do another programs. Can I contact the Head of this charity organization.
+                                How can I contact the owner of this chrity organization. Our organization happy to help your charity organization. We are expect to donate and also we are hope to do another programs. Can I contact the Head of this charity organization.
                             </div>
                                 <button type="button" class="btn btn-success replyBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply <i class="fa-solid fa-reply"></i></button>
                             </div>
@@ -59,7 +59,7 @@ function ViewFeedback(){
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                            How can I contact the owner of this chrity organization. Our organization happy to help this charity organization. We are expect to donate and also we are hope to do another programs. Can I contact the Head of this charity organization.
+                            How can I contact the owner of this chrity organization. Our organization happy to help your charity organization. We are expect to donate and also we are hope to do another programs. Can I contact the Head of this charity organization.
                             </div>
                                 <button type="button" class="btn btn-success replyBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply <i class="fa-solid fa-reply"></i></button>
                             </div>
