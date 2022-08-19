@@ -5,8 +5,12 @@
 }
 
 .cardpadding{
-    padding-top: 10%;
+    /* padding-top: 10%; */
     text-align: center;
+}
+
+.petcardimg{
+    height: 210px;
 }
 
 .underlineJusty{
@@ -25,6 +29,9 @@
 .toggleBtn{
     margin-right: -26%;
 }
+
+
+
 
 
 

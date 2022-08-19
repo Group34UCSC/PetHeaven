@@ -2,7 +2,9 @@ import React,{useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 import '../css/CustomerDoctormessages.css';
+
 import CustomerSubNavbar from './Customersubnavbar';
+
 import dogvaccine from "../images/catmedic.png";
 import doctorcalls from '../images/doctorcalls.jpg';
 import texting from '../images/texting.jfif';

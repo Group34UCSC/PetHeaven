@@ -9,7 +9,7 @@ import DoctorAppointment from './DoctorAppointment';
 import Pagination from './pagination';
 import Customerservices from './Customerservices';
 
-function CustomersubNavbar(){
+function CustomerSubNavbar(){
     return(
         <div class="bg-light" id="subnavarea">
             <ul class="nav nav-pills nav-fill">
@@ -39,4 +39,4 @@ function CustomersubNavbar(){
     )
 }
 
-export default CustomersubNavbar;
+export default CustomerSubNavbar;

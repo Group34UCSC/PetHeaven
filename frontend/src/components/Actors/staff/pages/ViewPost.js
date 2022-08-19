@@ -5,6 +5,9 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 import '../css/ViewPost.css';
 
 import dog from '../img/dog.jpg';
+import dog2 from '../img/d4.jpg';
+import dog3 from '../img/d3.jpg';
+import dog5 from '../img/d5.jpg';
 
 function ViewPost(){
     return(
@@ -29,9 +32,9 @@ function ViewPost(){
             </div>
           <div className="container">
             <div className="row">
-                <div class="admincard col-md-3">     
+            <div class="admincard col-md-3">     
                     <div className="card shadow cardpadding" id='cardone'>
-                        <img src={dog} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
+                        <img src={dog} className="card-img-top petcardimg" alt="Services"/>
                         <div className="card-body" id='cardTitle'>
                         <div className="petdetail">
                             <h6 className="petName"><b>Shadow</b></h6>
@@ -50,16 +53,16 @@ function ViewPost(){
 
                 <div class="admincard col-md-3">     
                     <div className="card shadow cardpadding" id='cardone'>
-                        <img src={dog} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
+                        <img src={dog2} className="card-img-top petcardimg" alt="Services"/>
                         <div className="card-body" id='cardTitle'>
                         <div className="petdetail">
-                            <h6 className="petName"><b>Shadow</b></h6>
+                            <h6 className="petName"><b>Browny</b></h6>
                             <div className="underline underlineJusty"></div>
-                            <h6 >Mix Breed</h6>
+                            <h6 >Normal</h6>
                             <h6 >Male</h6>
-                            <h6 >2 Months</h6>
-                            <h6 >Brown and White</h6>
-                            <h6>Shadow is a calm, innocent and child friendly puppy. Its Vaccinations are up to date. Also It is in good health. </h6>
+                            <h6 >4 Years</h6>
+                            <h6 >Brown</h6>
+                            <h6>Browny is a blowzy animal. Also it is best for security. Its Vaccinations are up to date. Also It is in good health. </h6>
                         </div>  
                         
                         </div>
@@ -69,16 +72,16 @@ function ViewPost(){
 
                 <div class="admincard col-md-3">     
                     <div className="card shadow cardpadding" id='cardone'>
-                        <img src={dog} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
+                        <img src={dog3} className="card-img-top petcardimg" alt="Services"/>
                         <div className="card-body" id='cardTitle'>
                         <div className="petdetail">
-                            <h6 className="petName"><b>Shadow</b></h6>
+                            <h6 className="petName"><b>Shaily</b></h6>
                             <div className="underline underlineJusty"></div>
-                            <h6 >Mix Breed</h6>
-                            <h6 >Male</h6>
-                            <h6 >2 Months</h6>
-                            <h6 >Brown and White</h6>
-                            <h6>Shadow is a calm, innocent and child friendly puppy. Its Vaccinations are up to date. Also It is in good health. </h6>
+                            <h6 >Normal</h6>
+                            <h6 >Female</h6>
+                            <h6 >3 Months</h6>
+                            <h6 >Brown, White, Black</h6>
+                            <h6>Shaily is a qute and calm. It is a child friendly puppy. Its Vaccinations are up to date. Also It is in good health. </h6>
                         </div>  
                         
                         </div>
@@ -88,16 +91,16 @@ function ViewPost(){
 
                 <div class="admincard col-md-3">     
                     <div className="card shadow cardpadding" id='cardone'>
-                        <img src={dog} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
+                        <img src={dog5} className="card-img-top petcardimg" alt="Services"/>
                         <div className="card-body" id='cardTitle'>
                         <div className="petdetail">
-                            <h6 className="petName"><b>Shadow</b></h6>
+                            <h6 className="petName"><b>Blacky</b></h6>
                             <div className="underline underlineJusty"></div>
                             <h6 >Mix Breed</h6>
                             <h6 >Male</h6>
-                            <h6 >2 Months</h6>
-                            <h6 >Brown and White</h6>
-                            <h6>Shadow is a calm, innocent and child friendly puppy. Its Vaccinations are up to date. Also It is in good health. </h6>
+                            <h6 >2 Years</h6>
+                            <h6 >White, Light Brown</h6>
+                            <h6>Blacky is a innocent pet. It is child friendly, playful. Its Vaccinations are up to date. Also It is in good health. </h6>
                         </div>  
                         
                         </div>
@@ -105,81 +108,7 @@ function ViewPost(){
                     </div>
                 </div>
 
-                <div class="admincard col-md-3">     
-                    <div className="card shadow cardpadding" id='cardone'>
-                        <img src={dog} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
-                        <div className="card-body" id='cardTitle'>
-                        <div className="petdetail">
-                            <h6 className="petName"><b>Shadow</b></h6>
-                            <div className="underline underlineJusty"></div>
-                            <h6 >Mix Breed</h6>
-                            <h6 >Male</h6>
-                            <h6 >2 Months</h6>
-                            <h6 >Brown and White</h6>
-                            <h6>Shadow is a calm, innocent and child friendly puppy. Its Vaccinations are up to date. Also It is in good health. </h6>
-                        </div>  
-                        
-                        </div>
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
-                    </div>
-                </div>
-
-                <div class="admincard col-md-3">     
-                    <div className="card shadow cardpadding" id='cardone'>
-                        <img src={dog} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
-                        <div className="card-body" id='cardTitle'>
-                        <div className="petdetail">
-                            <h6 className="petName"><b>Shadow</b></h6>
-                            <div className="underline underlineJusty"></div>
-                            <h6 >Mix Breed</h6>
-                            <h6 >Male</h6>
-                            <h6 >2 Months</h6>
-                            <h6 >Brown and White</h6>
-                            <h6>Shadow is a calm, innocent and child friendly puppy. Its Vaccinations are up to date. Also It is in good health. </h6>
-                        </div>  
-                        
-                        </div>
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
-                    </div>
-                </div>
-
-                <div class="admincard col-md-3">     
-                    <div className="card shadow cardpadding" id='cardone'>
-                        <img src={dog} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
-                        <div className="card-body" id='cardTitle'>
-                        <div className="petdetail">
-                            <h6 className="petName"><b>Shadow</b></h6>
-                            <div className="underline underlineJusty"></div>
-                            <h6 >Mix Breed</h6>
-                            <h6 >Male</h6>
-                            <h6 >2 Months</h6>
-                            <h6 >Brown and White</h6>
-                            <h6>Shadow is a calm, innocent and child friendly puppy. Its Vaccinations are up to date. Also It is in good health. </h6>
-                        </div>  
-                        
-                        </div>
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
-                    </div>
-                </div>
-
-                <div class="admincard col-md-3">     
-                    <div className="card shadow cardpadding" id='cardone'>
-                        <img src={dog} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/>
-                        <div className="card-body" id='cardTitle'>
-                        <div className="petdetail">
-                            <h6 className="petName"><b>Shadow</b></h6>
-                            <div className="underline underlineJusty"></div>
-                            <h6 >Mix Breed</h6>
-                            <h6 >Male</h6>
-                            <h6 >2 Months</h6>
-                            <h6 >Brown and White</h6>
-                            <h6>Shadow is a calm, innocent and child friendly puppy. Its Vaccinations are up to date. Also It is in good health. </h6>
-                        </div>  
-                        
-                        </div>
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
-                    </div>
-                </div>
+                
              
             </div>
           </div>

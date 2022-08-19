@@ -6,6 +6,7 @@ const PetAdopterRoute = require('./routes/PetAdopterRoute');
 const SignUpRoute = require('./routes/SignUpRoute');
 const StaffMemberRoute = require('./routes/staffMemberRoute');
 const errorHandler = require('./utils/errorHandler');
+const AdminRoute = require('./routes/AdminRoute');
 
 
 
@@ -24,6 +25,13 @@ app.use(bodyParser.json());
 app.use('/staffmember',StaffMemberRoute);
 app.use("/SignUp",SignUpRoute);
 app.use("/PetAdopter",PetAdopterRoute);
+
+
+
+
+//admin
+app.use("/Admin",AdminRoute);
+// app.delete("/Admin",AdminRoute);
 
 
 // app.use(cors());

@@ -5,12 +5,16 @@ import '../css/CustomerDoctorappoint.css';
 import docvectors from  '../images/docvector.png';
 import CustomerDoctorCarousel from './Customerdoctorcarousel';
 import Pagination from  './pagination';
+<<<<<<< HEAD
+import CustomerSubNavbar from './CustomerSubNavbar';
+=======
 import CustomersubNavbar from './Customersubnavbar';
+>>>>>>> 32444d99e30598aa06ce81c3f9403cd0b78e2c68
 function CustomerDoctorAppoint(){
 
     return(
         <div>
-            <CustomersubNavbar></CustomersubNavbar>
+            <CustomerSubNavbar></CustomerSubNavbar>
             <CustomerDoctorCarousel></CustomerDoctorCarousel>
 
             <h3 class="searchdoctorheading">Select best doctor for your pet among thousands of our registered qualified veteranians</h3>
