@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 // const PetAdopterRoute = require('./routes/PetAdopterRoute');
 const SignUpRoute = require('./routes/SignUpRoute');
+const PetStoreRoute = require('./routes/PetStoreRoute');
 const errorHandler = require('./utils/errorHandler');
 
 
@@ -25,7 +26,8 @@ app.use(bodyParser.json());
 
 
 app.use("/SignUp",SignUpRoute);
-// app.use("/PetAdopter",PetAdopterRoute);
+app.use("/petstore",PetStoreRoute);
+
 
 
 // app.use(cors());
