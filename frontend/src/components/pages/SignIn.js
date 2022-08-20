@@ -2,7 +2,8 @@ import React from "react";
 import {useRef, useEffect, useState } from "react"; 
 import {Link, Navigate} from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-
+import Axios from 'axios';
+import jwt_decode from 'jwt-decode'; 
 
 // import {faCheck, faTimes, faInfoCircle} from "@fortawesome/react-fontawesome";
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +13,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SignUpImg from "../images/signup.jpg";
 import './SignIn.css';
 
+
+// Axios.defaults.withCredentials = true;
 // const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -112,63 +115,136 @@ const SignIn = () => {
 // {
 
     // import HomePage from './components/pages/HomePage';
-    
-    const HandleSignIn = async e => {
-        e.preventDefault();
-        try {
-          const body = {  Email, Password };
-          const response = await fetch(
-            "http://localhost:5000/SignUp",
-            {
-              method: "POST",
-              headers: {
-                "Content-type": "application/json"
-              },
-              body: JSON.stringify(body)
-            }
-          );
-          console.log(response);
-          if(response.data.error)
-          {
-            alert(response.data.error);
-          }
-          else
-          {
-            if(window.loggedUserType=="Customer")
-            {
-                console.log("Customer dashboard called",window.loggedUserType);
-                Navigate("/");
-            }
-            else if(window.loggedUserType=="Admin")
-            {
-                console.log("Admin dashboard called",window.loggedUserType);
-                Navigate("/AdminHome");
-            }
-            else if(window.loggedUserType=="Pharmacy")
-            {
-                console.log("Pharmacy dashboard called",window.loggedUserType);
-                Navigate("/pharmacy");
-            }
-            else if(window.loggedUserType=="PetStore")
-            {
-                console.log("PetToolStoreHome dashboard called",window.loggedUserType);
-                Navigate("/PetToolStoreHome");
-            }
-            else if(window.loggedUserType=="Staff")
-            {
-                console.log("Staff dashboard called",window.loggedUserType);
-                Navigate("/");
-            }
-          }
-        //   Navigate("/");
-        }
-        catch (err) {
-            console.log("Falil");
-          }
+  
+    // const HandleSignIn = async e => {
+    //     e.preventDefault();
+    //     try {
+    //       const body = {  Email, Password };
+    //       const response = await fetch(
+    //         "http://localhost:5000/SignUp",
+    //         {
+    //           method: "POST",
+            
+
+    //           headers: {
+    //             "Content-type": "application/json"
+    //           },
+    //           body: JSON.stringify(body)
+    //         }
+    //       );
+    //       console.log(response.data);
+        
+        
+       
+
+    //     //   Navigate("/");
+
+    //     //   if(response.data.error)
+    //     //   {
+    //     //     alert(response.data.error);
+    //     //   }
+        
+          
+    //     }
+    //     catch (err) {
+    //         console.log("Falil");
+    //       }
       
+    // }
+
+    const HandleSignIn = (e) => {
+        e.preventDefault()
+      const data = { Email: Email, Password: Password};
+        console.log(data);
+        Axios.post("http://localhost:5000/SignUp", {
+
+                      Email: Email,
+                      Password: Password,
+                    })
+                    .then((response) => {
+                        console.log(response.data)
+                        
+                      if(response.data.error) {
+                        alert(response.data.error);}
+                      else{
+                        // alert("successfully Logged in!");
+                        const token = response.data;
+                        console.log(token);
+                        sessionStorage.setItem("token", token);
+                        let sessionToken = sessionStorage.getItem("token");
+                        console.log("Appjs",sessionToken);
+
+                        if(sessionToken)
+                            {
+                                const users = jwt_decode(sessionToken);
+                                console.log(users);
+                                window.loggedUserType = users.User_type;
+                                window.loggedUserId = users.User_ID;
+                                Navigate("/");
+                                console.log(users.User_type);
+
+                                if(window.loggedUserType=="Customer")
+                                {
+                                    console.log("Customer dashboard called",window.loggedUserType);
+                                    Navigate("/");
+                                }
+                                else if(window.loggedUserType=="Admin")
+                                {
+                                    console.log("Admin dashboard called",window.loggedUserType);
+                                    Navigate("/AdminHome");
+                                }
+                                else if(window.loggedUserType=="Doctor")
+                                {
+                                    console.log("Doctor dashboard called",window.loggedUserType);
+                                    Navigate("/DoctorHome");
+                                }
+                                else if(window.loggedUserType=="Pharmacy")
+                                {
+                                    console.log("Pharmacy dashboard called",window.loggedUserType);
+                                    Navigate("/pharmacy");
+                                }
+                                else if(window.loggedUserType=="PetStore")
+                                {
+                                    console.log("PetToolStoreHome dashboard called",window.loggedUserType);
+                                    Navigate("/PetToolStore");
+                                }
+                                else if(window.loggedUserType=="Staff")
+                                {
+                                    console.log("Staff dashboard called",window.loggedUserType);
+                                    Navigate("/");
+                                }
+
+
+
+                            }
+                            else
+                            {
+                                window.loggedUserType = null;
+                                window.loggedUserId = null;
+                            }
+                            }
+                           
+                            });
+
+
+    };
+
+    const logout = (e) =>{
+        sessionStorage.removeItem("token");
+
+        // window.loggedUserType = null;
+        // window.loggedUserId = null;
+
+
+        Navigate("/");
+        
+
     }
 
+   
+   
 
+    
     return(
         <div>
             {/* <section className="py-4 ">

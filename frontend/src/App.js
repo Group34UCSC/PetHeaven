@@ -69,23 +69,25 @@ import DoctorViewPetHistory from './components/Actors/doctor/pages/DoctorViewPet
 class App extends Component{
 
  render(){
-  const {cookies} = this.props;
+  let sessionToken = sessionStorage.getItem("token");
+  console.log("Appjs",sessionToken);
+  // const {cookies} = this.props;
   
-  console.log(cookies.get('auth-token'));
-  const verify_token = cookies.get('auth-token');
+  // console.log(cookies.get('auth-token'));
+  // const verify_token = cookies.get('auth-token');
 
-  if(verify_token)
-  {
-    const users = jwt_decode(verify_token);
+  // if(verify_token)
+  // {
+  //   const users = jwt_decode(verify_token);
 
-    window.loggedUserType = users.type;
-    window.loggedUserId = users.id;
-  }
-  else
-  {
-    window.loggedUserType = null;
-    window.loggedUserId = null;
-  }
+  //   window.loggedUserType = users.type;
+  //   window.loggedUserId = users.id;
+  // }
+  // else
+  // {
+  //   window.loggedUserType = null;
+  //   window.loggedUserId = null;
+  // }
 
   return (
 

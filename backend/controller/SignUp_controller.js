@@ -15,6 +15,7 @@ const { Cookie } = require('express-session');
 const CLIENT_URL = "http://localhost:3000/";
 
 
+
 // const MAILGUN_APIKEY = "ef0c7a47b01cf05dea0b7f9b056001fe-2bab6b06-863a116e";
 
 
@@ -46,10 +47,11 @@ const CLIENT_URL = "http://localhost:3000/";
 exports.User_SignIn = (req, res, next)=>
 {
   
-   console.log("GGS");
+   
    if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
 
    try{
+      console.log("GGS");
       const { error } = SIGNIN_MODEL.validate(req.body);
       if( error ) return next(new AppError(error.details[0].message,400)) ;
       conn.query(CHECK_EMAIL , [req.body.Email ], async(err, data, feilds) =>{
@@ -59,9 +61,9 @@ exports.User_SignIn = (req, res, next)=>
          const isMatched = await bcrypt.compare(req.body.Password, data[0].Password);
          if(!isMatched) return  next(new AppError("Email or Password Invalid!",401)) ;
 
-         const token = JWT.sign( {User_name: data[0].User_name, User_ID: data[0].User_ID,User_type: data[0].User_type}, "sandaruwang", {expiresIn: "1d"});
+         const token = JWT.sign( {User_name: data[0].User_name, User_ID: data[0].User_ID,User_type: data[0].User_type}, "sandaruwang", {expiresIn: "20m"});
          
-         console.log(token);
+         
 
          res.status(202).cookie("auth-token",token, {
             sameSite: 'strict',
@@ -70,10 +72,14 @@ exports.User_SignIn = (req, res, next)=>
             secure: true,
          }).send(token)
 
-         // res.header("auth-token",token).status(200).json({
+         
+
+         // res.header("auth-token",token).status(200).send({
          //    data: "Welcome to PetHeaven! ",
          //    token: token,
          // })
+
+         console.log(token);
            
       })
    }

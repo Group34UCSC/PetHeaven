@@ -17,3 +17,4 @@ exports.SIGNUP_MODEL = Joi.object({
    Password: Joi.string().min(6).required()
  
  })
+ 
