@@ -1,10 +1,12 @@
 import React from "react";
+import Navbar from "../includes/Navbar";
 import './ContactUs.css';
 
 function ContactUs()
 {
     return(
         <div>
+            <Navbar />
             <section className="py-4 ">
             <div className="container">
                 <div className="row bg-success text-white"> 

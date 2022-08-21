@@ -84,7 +84,7 @@ function AddEquipmentStock()
                     
                 </div> */}
                 <div className="form-field">
-        <label htmlFor="service">Medicine List</label>
+        <label htmlFor="service">Equipment List</label>
 
         {/* Medicine input field started here */}
         {serviceList.map((singleService, index) => (
@@ -105,16 +105,16 @@ function AddEquipmentStock()
                     <div className="card-body bg-c-light">
                     <div className="row ">
                 <div class="col-md-6">
-                    <label for="option" class="form-label">Medicine</label>
-                    <select class="form-control" id="inputGroupSelect02">
-                        <option selected>Select medicine to be added</option>
+                    <label for="option" class="form-label">Item</label>
+                    {/* <select class="form-control" id="inputGroupSelect02">
+                        <option selected>Select item to be added</option>
                         <option value="1">Cotrimaxazole 480 mg</option>
                         <option value="2">Metronidazole 400 mg</option>
                         <option value="3">Promethazine 10 mg</option>
                         <option value="4">Ezo omeprazole 20 mg</option>
                         <option value="5">Metronidazole 200 mg</option>
-                    </select>
-                    
+                    </select> */}
+                     <input type="text" className="form-control" placeholder="Enter the title of item"></input>
                     </div>
                     <div class="col-md-3">
                         <div className="form-group">
@@ -142,7 +142,7 @@ function AddEquipmentStock()
                   onClick={handleServiceAdd}
                   className="add-btn"
                 >
-                  <span>+Add a Medicine</span>
+                  <span>+Add New Equipment</span>
                 </button>
               )}
             </div>

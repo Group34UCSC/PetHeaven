@@ -2,6 +2,7 @@ const Joi = require('@hapi/joi');
 
 exports.SIGNUP_MODEL = Joi.object({
    //  User_ID: Joi.string(),
+    type: Joi.string(),
     pwd: Joi.string().min(6).required(),
     email: Joi.string().email().required(),
     user: Joi.string().min(3).max(100).required(),

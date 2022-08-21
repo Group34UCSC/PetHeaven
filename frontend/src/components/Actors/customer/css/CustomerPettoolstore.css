@@ -3,6 +3,11 @@
     height: 100vh;
 } */
 
+#pettoolstorearea {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
 #searchpetstoreheading {
     align-items: center;
     justify-content: center;
@@ -15,7 +20,7 @@
 }
 
 #petstoresearchbars {
-    width: 60%;
+    width: 50%;
     font-size: 18px;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -30,16 +35,12 @@
 
 #petstorecard {
     text-align: center;
-    margin-left: 102px;
-    width: 16%;
 }
 
 #pettoolstoreimg {
     margin-top: 80px;
-    margin-left: 40px;
 }
 
 #petstorebtn {
-    margin-left: 110px;
     width: 100px;
 }

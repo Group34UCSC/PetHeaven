@@ -1,10 +1,11 @@
 import React,{useState} from "react";
 import './Notifications.css'
-
+import Navbar from "../includes/Navbar";
 function Notifications() {
     return (
 
 <div>
+    <Navbar/>
             <section className="py-4 ">
             <div className="container">
                 <div className="row bg-success text-white"> 

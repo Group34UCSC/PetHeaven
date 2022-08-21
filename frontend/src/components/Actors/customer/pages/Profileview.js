@@ -24,22 +24,22 @@ function Profileview(){
                                 <tbody>
                                     <tr>
                                         <th id="profilelabel">Your Name</th>
-                                        <td>A.B Silva</td>
+                                        <td id="profileitem">A.B Silva</td>
                                         
                                     </tr>
                                     <tr>
                                         <th id="profilelabel">User Name</th>
-                                        <td>ABsilva@69</td>
+                                        <td id="profileitem">ABsilva@69</td>
                                         
                                     </tr>
                                     <tr>
                                         <th id="profilelabel">Telephone number</th>
-                                        <td>011-2347890</td>
+                                        <td id="profileitem">011-2347890</td>
                                     </tr>
 
                                     <tr>
                                         <th id="profilelabel">Email</th>
-                                        <td>absilva@gmail.com</td>
+                                        <td id="profileitem">absilva@gmail.com</td>
                                     </tr>
                                 </tbody>
                             </table>

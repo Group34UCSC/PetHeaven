@@ -156,7 +156,7 @@ const SignIn = () => {
         e.preventDefault()
       const data = { Email: Email, Password: Password};
         console.log(data);
-        Axios.post("http://localhost:5000/SignUp", {
+        Axios.post("http://localhost:5000/SignUp/Authentication", {
 
                       Email: Email,
                       Password: Password,
@@ -183,10 +183,10 @@ const SignIn = () => {
                                 Navigate("/");
                                 console.log(users.User_type);
 
-                                if(window.loggedUserType=="Customer")
+                                if(window.loggedUserType=="Pet Adopter")
                                 {
                                     console.log("Customer dashboard called",window.loggedUserType);
-                                    Navigate("/");
+                                    Navigate("/petadopter");
                                 }
                                 else if(window.loggedUserType=="Admin")
                                 {
@@ -208,10 +208,10 @@ const SignIn = () => {
                                     console.log("PetToolStoreHome dashboard called",window.loggedUserType);
                                     Navigate("/PetToolStore");
                                 }
-                                else if(window.loggedUserType=="Staff")
+                                else if(window.loggedUserType=="Staff Member")
                                 {
                                     console.log("Staff dashboard called",window.loggedUserType);
-                                    Navigate("/");
+                                    Navigate("/staffmember");
                                 }
 
 

@@ -1,4 +1,5 @@
 .searchpets {
+    background-color: #42ba96;
     margin-left: 100px;
     margin-right: 100px;
     padding: 5%;
@@ -8,14 +9,12 @@
 .searchanimalsheader {
     text-align: center;
     font-size: 26px;
-    margin-left: 100px;
     margin-bottom: 100px;
     margin-top: 200px;
     color: #052d20;
 }
 
 #findpetdropdown {
-    margin-left: 80px;
     margin-top: 80px;
 }
 
@@ -49,8 +48,18 @@
 
 #findpetimgs {
     margin-top: 30px;
-    width: 100%;
-    height: 60%;
+    width: 80%;
+    height: 40%;
+}
+
+.petage {
+    text-align: center;
+    font-size: 18px;
+}
+
+.petname {
+    padding-top: 12px;
+    text-align: center;
 }
 
 

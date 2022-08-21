@@ -1,5 +1,6 @@
 import React from "react";
 import '../css/MoreDetails.css';
+import Bathroom from "../images/bathroom.jpg";
 
 function MoreDetails()
 {
@@ -41,22 +42,49 @@ function MoreDetails()
                     <div className="card-body">
                     <div className="row">
                     <div className="col-md-12 mb-5">
-                    <h5 className="main-heading">Vision and Mission</h5>
+                    <h5 className="main-heading">Dog bath brush</h5>
                         <div className="underline mx-float"></div>
                     </div>
                     <div className="col-md-6 text-center">
-                    <h6 className="main-heading">Our Vision</h6>
+                    <div className="card shadow">
+                        <div className="card-body">
+                        <img id ="image" src={Bathroom} className="w-100 border-bottom" alt="Services"/>
+                        </div>
+                    </div>
+                    {/* <h6 className="main-heading">Our Vision</h6>
                     <p class="para">
                     Our vision is to create a web based system for facilitating services for animals,
                     mainly cats and dogs, around the island to perform the adoption process using one
                     platform. 
-                    </p>
+                    </p> */}
                 </div>
                 <div className="col-md-6 text-center border-start">
-                    <h6 className="main-heading">Our Mission</h6>
-                    <p class="para">
-                    Through that we are hoping to increase the interest on pet adoption within the
-                    community and reduce the death rates of stray animals due to the accidents.
+                    <p id="header" class="fw-bold">Dog Bath Brush - Soft Silicone Dog Shampoo Brush, Pet Grooming Bath Massage Brush Shampoo Dispenser, Dog Brush Dog Shower Pet Bath Brush, Long Short Haired Dogs and Bath for Cats (Lightblue)</p>
+                    <p class="para text-start">
+                    Brand  :	Cookfree
+                    </p>
+                    <p class="para text-start">
+                    Hair Type :	All, Dry, Normal Material	Silicone
+                    </p>
+                    <p class="para text-start">
+                    Material :	Silicone
+                    </p>
+                    <p class="para text-start">
+                    Benefits : Quick refunds on orders under
+                    </p>
+                    <p class="para text-start" >
+                    Color : Lightblue
+                    </p>
+                    <p class="para text-start">
+                    Customization:
+                                    Customized logo(Min. Order 5000 pieces)
+                                    Customized packaging(Min. Order 5000 pieces)
+                                    Graphic customization(Min. Order 5000 pieces)
+                    </p>
+                    
+
+                    <p class="para text-start">
+                        Shipping: Online
                     </p>
                 </div>
                 </div>

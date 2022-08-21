@@ -83,6 +83,7 @@ function Prescription()
                             <th scope="col">Medicine Name</th>
                             <th scope="col">Dosage</th>
                             <th scope="col">Duration</th>
+                            <th scope="col">Current Availability</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -91,30 +92,45 @@ function Prescription()
                             <td>Cotrimaxazole 480 mg</td>
                             <td>1 tab bd</td>
                             <td>5/365</td>
+                            <td>489</td>
                             </tr>
                             <tr>
                             <th scope="row">2</th>
                             <td>Metronidazole 400 mg</td>
                             <td>1 tab bd</td>
                             <td>5/365</td>
+                            <td>237</td>
                             </tr>
                             <tr>
                             <th scope="row">3</th>
                             <td>Promethazine 10 mg</td>
                             <td>1.5 tab bd</td>
                             <td>5/365</td>
+                            <td>328</td>
                             </tr>
                             <tr>
                             <th scope="row">4</th>
                             <td>Ezo omeprazole 20 mg</td>
                             <td>1 tab bd</td>
                             <td>5/365</td>
+                            <td>489</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 </div>
                 {/* prescription details ended here */}
+
+                {/* Confirm and reject buttons started here */}
+      <div className="form-group py-3 row ">
+            <div className="col-md-6">
+                <button onClick={()=>setShowBill(true)} type="button" id="submit-btn" className="btn shadow w-100 ">Confirm</button>
+            </div>
+            <div className="col-md-6">
+                <button onClick={()=>setShow(true)} type="button" id="reject-btn" className="btn shadow w-100 ">Reject</button>
+            </div>
+      </div>
+    {/* Confirm and reject buttons started here */}
 
             </div>
                 </div>
@@ -125,7 +141,7 @@ function Prescription()
         {/* Veterinary doctor details ended here  */}
 
         {/* Repeat Prescription Form started here */}
-        <section className="section bg-c-light border-bottom">
+        {/* <section className="section bg-c-light border-bottom">
             <div className="container">
                 <div className="card shadow">
                 <div className="card-body">
@@ -133,7 +149,7 @@ function Prescription()
                 <h6 class="slmc" className="text-center">Check availability to confirm the order</h6>
                 <div className="underline mx-auto"></div>
             
-                {/* <div className="form-group">
+                <div className="form-group">
                 <div className="card">
                     <div className="card-body bg-c-light">
                     <div className="row ">
@@ -167,24 +183,24 @@ function Prescription()
                 </div>
                     
                     
-                </div> */}
+                </div>
                 <div className="form-field">
         <label htmlFor="service">Medicine List</label>
 
-        {/* Medicine input field started here */}
+        Medicine input field started here
         {serviceList.map((singleService, index) => (
           <div key={index} className="services">
             <div className="first-division">
-              {/* <input
+              <input
                 name="service"
                 type="text"
                 id="service"
                 value={singleService.service}
                 onChange={(e) => handleServiceChange(e, index)}
                 required
-              /> */}
+              />
 
-                {/* Medicine input parts started here */}
+                Medicine input parts started here
                <div className="form-group">
                 <div className="card">
                     <div className="card-body bg-c-light">
@@ -217,7 +233,7 @@ function Prescription()
                     </div>
                      
                 </div>
-                {/* Medicine input parts ended here */}
+                Medicine input parts ended here
                     
                 </div>
 
@@ -244,10 +260,10 @@ function Prescription()
             </div>
           </div>
         ))}
-        {/* Medicine input field ended here */}
+        Medicine input field ended here
 
       </div>
-      {/* <div className="output">
+      <div className="output">
         <h2>Output</h2>
         {serviceList &&
           serviceList.map((singleService, index) => (
@@ -255,10 +271,10 @@ function Prescription()
               {singleService.service && <li>{singleService.service}</li>}
             </ul>
           ))}
-      </div> */}
+      </div>
       
 
-      {/* Confirm and reject buttons started here */}
+      Confirm and reject buttons started here
       <div className="form-group py-3 row ">
             <div className="col-md-6">
                 <button onClick={()=>setShowBill(true)} type="button" id="submit-btn" className="btn shadow w-100 ">Confirm</button>
@@ -267,7 +283,7 @@ function Prescription()
                 <button onClick={()=>setShow(true)} type="button" id="reject-btn" className="btn shadow w-100 ">Reject</button>
             </div>
       </div>
-    {/* Confirm and reject buttons started here */}
+    Confirm and reject buttons started here
 
             
                 </div>
@@ -275,7 +291,7 @@ function Prescription()
                 </div>
         
                 
-                {/* <form className="Prescription" autoComplete="off">
+                <form className="Prescription" autoComplete="off">
                     <div className="form-field">
                         <label htmlFor="service">
                             service
@@ -297,11 +313,11 @@ function Prescription()
                     <div className="output">
                         <h2>Out put</h2>
                     </div>
-                </form> */}
+                </form>
                 
             </div>
             
-        </section>
+        </section> */}
         {/* Repeat Prescription Form ended here */}
         
         {/* Reject order message started here */}

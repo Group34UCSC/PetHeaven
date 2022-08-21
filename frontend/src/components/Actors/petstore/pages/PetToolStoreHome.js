@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from 'react-router-dom';
 import '../css/PetToolStoreHome.css';
 
-import PaidPrescriptions from "../images/payment.png";
+import PaidOrders from "../images/payment.png";
 import Inquiries from "../images/inquiry.jpg";
 import Inventory from "../images/inventory.png";
 
@@ -36,8 +36,8 @@ function PetToolStoreHome()
                     <div className="row">
                         <div className="col-md-4">
                             <div className="card shadow">
-                            <Link to="/pharmacy/PaidPrescription" class="nav-link active">
-                            <img src={PaidPrescriptions} className="w-100 border-bottom" alt="Services"/>
+                            <Link to="/petstore/PaidOrders" class="nav-link active">
+                            <img src={PaidOrders} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
                                     <h6>Paid Orders</h6>
                                     <div className="underline"></div>
@@ -48,7 +48,7 @@ function PetToolStoreHome()
                         </div>
                         <div className="col-md-4">
                             <div className="card shadow">
-                            <Link to="/pharmacy/inquiries/ViewInquiry" class="nav-link active">
+                            <Link to="/petstore/inquiries/ViewInquiry" class="nav-link active">
                             <img src={Inquiries} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
                                     <h6>Inquiries</h6>

@@ -18,7 +18,7 @@ exports.PostNewAdvertisement=(req,res,next) => {
     //  console.log("Sasinduwaa 111");
 //    console.log(req.body.Title);
     
-    conn.query(POST_NEW_EQUIPMENT, [[ req.body.Title,req.body.Image,req.body.Description]], (err,data,fields)=>{
+    conn.query(POST_NEW_EQUIPMENT, [[ req.body.Title,req.body.Price,req.body.Image,req.body.Description]], (err,data,fields)=>{
        if(err) return next(new AppError(err,500));
        console.log("Sasinduwaa 111");
        res.status(201).json({
