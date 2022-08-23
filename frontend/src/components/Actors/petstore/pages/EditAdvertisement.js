@@ -1,11 +1,13 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import NavbarUsers from "../../../includes/NavbarUsers";
 import '../css/EditAdvertisement.css';
 
 function EditAdvertisement()
 {
     return(
         <div>
+            <NavbarUsers/>
             <section className="py-4 ">
             <div className="container col-md-8">
                 <div className="row bg-success text-white"> 

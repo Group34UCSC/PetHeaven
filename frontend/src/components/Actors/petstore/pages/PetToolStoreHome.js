@@ -11,13 +11,14 @@ import Grooming from "../images/DogGrooming.jpg";
 import FurnitureCage from "../images/FurnitureCage.jpg";
 import PetCage from "../images/PetCage.jpg";
 import TractionBelt from "../images/TractionBelt.jpg";
+import NavbarUsers from "../../../includes/NavbarUsers";
 
 
 function PetToolStoreHome()
 {
     return(
         <div>
-            
+            <NavbarUsers/>
             {/* Topic started */}
             <section className="py-4 ">
             <div className="container">

@@ -1,15 +1,18 @@
 const express = require('express');
-const req = require('express/lib/request');
 
 const AdminRoute = express.Router();
 const Admin_controller = require('../controller/Admin_controller');
-AdminRoute.post("/",Admin_controller.Admin_createAccounts);
+AdminRoute.post("/Create",Admin_controller.Create_Accounts);
+AdminRoute.post("/Delete",Admin_controller.Delete_Accounts);
+AdminRoute.get("/View",Admin_controller.View_Accounts);
 
-
+// SignUpRoute.route("/")
+//     .post( SignUp_controller.User_SignUp)
+//     .get( SignUp_controller.User_SignIn)
 
 // const student_controller = require('../controllers/student_controller');
 
-// AdminRoute.route("/")
+// PetAdopterRoute.route("/")
 //     .post( student_controller.student_register)
 //     .get( student_controller.student_login)
 

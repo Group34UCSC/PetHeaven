@@ -6,6 +6,7 @@ import './PharmacyHome.css';
 import PaidPrescriptions from "./images/pres.jpg";
 import Inquiries from "./images/inquiry.jpg";
 import Inventory from "./images/inventory.png";
+import NavbarUsers from "../../includes/NavbarUsers";
 
 
 
@@ -13,7 +14,7 @@ function PharmacyHome()
 {
     return(
         <div>
-            
+            <NavbarUsers/>
             {/* Topic started */}
             <section className="py-4 ">
             <div className="container">

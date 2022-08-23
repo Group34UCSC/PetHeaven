@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import NavbarUsers from "../../includes/NavbarUsers";
 import './Prescription.css';
 
 
@@ -33,6 +34,7 @@ function Prescription()
 
     return(
         <div>
+            <NavbarUsers/>
             {/* Medical Prescription topic started here */}
             <section className="py-4 ">
                 <div className="container">

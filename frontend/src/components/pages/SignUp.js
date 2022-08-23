@@ -1,6 +1,6 @@
 import React from "react";
 import {useRef, useEffect, useState } from "react"; 
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import Axios from 'axios';
 
 
@@ -14,12 +14,16 @@ import SignUpImg from "../images/signup.jpg";
 import './SignUp.css';
 import Navbar from "../includes/Navbar";
 
+import { useNavigate } from "react-router-dom";
+
+
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 const REGISTER_URL = "http://localhost:5000/SignUp";
 const SignUp = () => {
+    const Navigate = useNavigate();
     const userRef = useRef();
     const errRef = useRef();
 
@@ -44,6 +48,7 @@ const SignUp = () => {
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
 
+    const [buttontext,setButtontext]=useState('Sign up');
     useEffect(() => {
         userRef.current.focus();
     }, [])
@@ -78,7 +83,10 @@ const SignUp = () => {
     
 
       const handleSubmit = async e => {
+        
+
         e.preventDefault();
+        // setButtontext('... We sent mail for you');
         try {
           const body = {type, user, email, pwd };
           const response = await fetch(
@@ -89,9 +97,12 @@ const SignUp = () => {
                 "Content-type": "application/json"
               },
               body: JSON.stringify(body)
-            }
+
+              }
+              
           );
           console.log(response);
+        //   Navigate("/OTPverify");
         }
         catch (err) {
             console.log("Falil");
@@ -223,7 +234,7 @@ const SignUp = () => {
                                                 <h3 className="text-center">Sign Up</h3>
                                             </div>
                                         <h6>Already Sign Up?</h6>
-                                        <Link to="/SignUp" class="nav-link active"><div>Sign In</div></Link>
+                                        <Link to="/SignIn" class="nav-link active"><div>Sign In</div></Link>
                                         {/* <div className="underline"></div> */}
                                                                         
                                         </div>
@@ -274,7 +285,7 @@ const SignUp = () => {
                                             <select value={type} onChange={(e)=>setType(e.target.value)} class="form-control dropdown-toggle" data-bs-toggle="dropdown">
                                                 {/* <option selected>Select prescribed medicine</option> */}
                                                 <option value = "Pet Adopter">Pet Adopter</option>
-                                                <option value="Vetenary Doctor">Veterinary Doctor</option>
+                                                <option value="Doctor">Doctor</option>
                                                 <option value="pharmacy">Pharmacy</option>
                                                 <option value="Pet Tool Store">Pet Tool Store</option>
                                                 <option value="Staff Member">Staff Member</option>
@@ -392,8 +403,9 @@ const SignUp = () => {
 
                                                 {console.log(user)}
                                             <div className="d-flex justify-content-center">
-
-                                                <button className="mt-5"id="SignUpBtn" onClick={handleSubmit} >Sign Up</button>
+                                            
+                                                <button className="mt-5"id="SignUpBtn" onClick={handleSubmit} >{buttontext}</button>
+                                            
                                             </div>
                                             
 

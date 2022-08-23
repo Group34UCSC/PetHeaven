@@ -11,7 +11,7 @@ function NavbarUsers()
     <nav class="navbar navbar-expand-lg navbar-light bg-success bg-gradient ">
       
     <div class="container-fluid">
-        <img src={Logo} width="75px" height="75px"  alt="Services"/>
+    <img src={Logo} width="75px" height="75px"  alt="Services"/>
         <a href="#" class="navbar-brand"><div class="a1">PetHeaven</div></a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -36,6 +36,7 @@ function NavbarUsers()
             <div class="navbar-nav ms-auto">
             {/* <Link to="SignIn" class="nav-item nav-link"><div class="b"><i class="fa-solid fa-right-to-bracket"></i> Sign in</div></Link>   */}
             <Link to="SignUp" class="nav-item nav-link"><div class="b"><i class="fa-solid fa-user-gear"></i> Profile</div></Link> 
+            <Link to="/SignIn" class="nav-item nav-link"><div class="b"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</div></Link> 
             </div>
         </div>
     </div>

@@ -147,7 +147,7 @@ exports.User_SignUp = (req,res,next)=>{
            const salt = await bcrypt.genSalt(10);
            const hashedValue = await bcrypt.hash(req.body.pwd, salt);
            const email_token = crypto.randomBytes(64).toString('hex');
-
+           const otp = Math.floor(10000 + Math.random() * 90000);
    
 
 
@@ -162,7 +162,7 @@ exports.User_SignUp = (req,res,next)=>{
           var mailOptions = {
             from: 'hpet497@gmail.com',
             to: req.body.email,
-            subject: 'Sending Email using Node.js',
+            subject: 'PetHeaven OTP Verification',
             html: `<html>
             <head>
               <style type="text/css">
@@ -199,14 +199,14 @@ exports.User_SignUp = (req,res,next)=>{
           
                         <h1>Welcome to <b>PetHeaven</b>!</h1>
           
-                        <p>Thank you for signing up. Please click on given link to activate your new PetHeaven Account :</p>
+                        <p>Thank you for signing up. This is our 5 digit otp code.</p>
           
-                        <h2><h2>
-                        <a href 
-          
+                        <h2>`+ otp+`<h2>
+                        
+                        <p>In order to complete the sign-up process, please enter your OTP</p>
                                   
                         <br />
-                        Thanks!
+                        Thank You!
                         <br />
           
                         <strong>www.PetHeaven.lk</strong>
@@ -232,7 +232,7 @@ exports.User_SignUp = (req,res,next)=>{
           });
   
 
-           conn.query(REGISTER_USER, [ [ hashedValue, req.body.email , req.body.user, req.body.type,  email_token, email_token, req.body.user ]], (err,data,feilds)=>{
+           conn.query(REGISTER_USER, [ [ hashedValue, req.body.email , req.body.user, req.body.type,  email_token, email_token, req.body.user,0 ]], (err,data,feilds)=>{
             if( err ) return next(new AppError(err,500));
 
             res.status(201).json({

@@ -15,6 +15,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import NavbarUsers from "../../../includes/NavbarUsers";
 
 const TITLE_REGEX = RegExp(
     /^[A-z][A-z0-9-_]{3,23}$/
@@ -141,6 +142,7 @@ HandlePost = (e) => {
             return(
                 <>
                 <div>
+                    <NavbarUsers/>
                     <section className="py-4 ">
                     <div className="container col-md-8">
                         <div className="row bg-success text-white"> 

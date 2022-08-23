@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from 'react-router-dom';
 import { useEffect, useState } from "react";
 import './AddEquipmentStock.css';
+import NavbarUsers from "../../../includes/NavbarUsers";
 
 function AddEquipmentStock()
 {
@@ -29,6 +30,7 @@ function AddEquipmentStock()
 
     return(
         <div>
+          <NavbarUsers/>
           {/* Inventory topic started here */}
         <section className="py-4 ">
         <div className="container">

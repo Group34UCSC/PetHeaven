@@ -7,8 +7,9 @@ const cookieParser = require('cookie-parser');
 const SignUpRoute = require('./routes/SignUpRoute');
 const PetStoreRoute = require('./routes/PetStoreRoute');
 const errorHandler = require('./utils/errorHandler');
-
-
+const AdminRoute = require('./routes/AdminRoute');
+const PetAdopterRoute=require('./routes/PetAdopterRoute');
+const staffMemberRoute=require('./routes/staffMemberRoute');
 
 app.use(express.json());
 app.use(cors());
@@ -24,10 +25,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 // }));
 app.use(bodyParser.json()); 
 
-
+app.use("/Admin",AdminRoute);
+app.use('/petadopter',PetAdopterRoute);
 app.use("/SignUp",SignUpRoute);
 app.use("/petstore",PetStoreRoute);
-
+app.use('/staffmember',staffMemberRoute);
 
 
 // app.use(cors());

@@ -1,11 +1,13 @@
 import React from "react";
 import './ViewInquiry.css';
 import {Link} from 'react-router-dom';
+import NavbarUsers from "../../../includes/NavbarUsers";
 
 function ViewInquiry()
 {
     return(
         <div>
+            <NavbarUsers/>
             <section className="py-4 ">
             <div className="container">
                 <div className="row bg-success text-white"> 

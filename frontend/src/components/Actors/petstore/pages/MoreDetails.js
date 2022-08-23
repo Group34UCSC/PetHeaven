@@ -1,4 +1,5 @@
 import React from "react";
+import NavbarUsers from "../../../includes/NavbarUsers";
 import '../css/MoreDetails.css';
 import Bathroom from "../images/bathroom.jpg";
 
@@ -6,6 +7,7 @@ function MoreDetails()
 {
     return(
         <div>
+            <NavbarUsers/>
             <section className="py-4 ">
             <div className="container">
                 <div className="row bg-success text-white"> 

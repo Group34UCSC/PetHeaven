@@ -1,66 +1,94 @@
-import React,{useState} from "react";
-import '../css/AdminDelete.css';
+import React,{useEffect,useState} from "react";
+import NavbarUsers from "../../../includes/NavbarUsers";
+
+import '../css/AdminView.css';
 
 function AdminDelete() {
-    return (
-      <div>
-      <div className="subHeader">
-      <div className="topic">DELETE ACCOUNT</div>
-      </div>
-       
-        
-      <div className='containerCreate'>
-       <form>
-      <div class="row mb-4">
-        <div class="col">
-          <div class="mb-3">
-            <label for="firstName" class="form-label">First name</label>
-            <input type="text" class="form-control" id="firstName"/>
-          </div>
-        </div>
-        <div class="col">
-        <div class="mb-3">
-            <label for="lastName" class="form-label">Last name</label>
-            <input type="text" class="form-control" id="lastName"/>
-          </div>
-        </div>
-      </div>
 
-      <div class="mb-3">
-          <label for="userName" class="form-label">UserName</label>
-          <input type="text" class="form-control" id="userName"/>
-    </div>
-   
+
+ 
+  const [users, setUser] = useState([])
+  const [User_name, setName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [User_type, setuserType] = useState("");
+  const [User_ID,setUserId]=useState(null)
+
+
+
+
+  useEffect(()=>{
+   getUsers();
+  },[])
   
-          <div class="mb-3">
-          <label for="option" class="form-label">User Type</label>
-          <select class="form-control" id="inputGroupSelect02">
-              <option selected>Choose...</option>
-              <option value="1">Customer</option>
-              <option value="2">Doctor</option>
-              <option value="3">Staff Member</option>
-              <option value="4">Pet Store</option>
-              <option value="5">Pharmacy</option>
-          </select>
-          </div>
+  function getUsers(){
+    fetch("http://localhost:5000/Admin/View").then((result)=>{
+        result.json().then((resp)=>{
+          // console.warn(resp)
+          
+          setUser(resp)
+          setName(resp[0].User_name)
+          setuserType(resp[0].User_type)
+          setEmail(resp[0].Email)
+          setUserId(resp[0].User_ID)
+
+        })
+      })
+  }
+
+console.warn(users)
+function UpdateUser(User_ID)
+{
+    // let item=users[User_ID-1];
+    // setUserId(item.User_ID)
+    // setName(item.User_name)
+    // setEmail(item.Email)
+    // setuserType(item.User_type)
+       
+}
+
+
+
   
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1"/>
-        </div>
-  
-        <div class="mb-3">
-            <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword2"/>
-        </div>
-  
-        
-              <button type="Delete" class="btn btn-primary">Delete</button>
-        </form>
-  
-       </div>
-  
-       </div>
+    return (
+     
+        <div>
+            <NavbarUsers />
+         
+         <div class="adminviewtable">
+
+         <table class="table view">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">User Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+  {
+          users.map((item,i)=>
+            <tr key={i}>
+            <td>{item.User_ID}</td>
+          <td>{item.User_name}</td>
+          <td>{item.Email}</td>
+            <td>{item.User_type}</td>
+            <td><button type="button" class="btn btn-danger" onClick={()=>UpdateUser(item.User_ID)}>Delete</button></td>
+          </tr>
+          )
+        }
+
+
+  </tbody>
+</table>
+
+</div>
+</div>
+
+
+
+         
      
     );
   }

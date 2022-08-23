@@ -5,12 +5,15 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 import '../css/ViewAdopterRequests.css';
 
 import dog from '../img/dog.jpg';
+import NavbarUsers from '../../../includes/NavbarUsers';
+
 
 function ViewAdopterRequests(){
         return(
             <div>
+            <NavbarUsers/>
             <section className="section bg-c-light border-top">
-                <h3 class="pageTitle">Feedback  <i class="fa-solid fa-comments"></i></h3>
+                <h3 class="pageTitle">Adopter Requests  <i class="fa-solid fa-comments"></i></h3>
                 <div class="container text-center">
                     <div class="row">
                         <div class="col">
@@ -41,58 +44,57 @@ function ViewAdopterRequests(){
                                                 <i class="fa-solid fa-grin-alt"></i><b> Request to adopt pet.....</b>
                                                 </h6>
                                                 <hr/>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Full Name</label>
-                                                    <input type="text" className="form-control" placeholder=""></input>
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Full Name</label>
+                                                    <input type="text" className="form-control " placeholder="" value="H.P.T.K. Kasthuriarachchi"></input>
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Contact Number</label>
-                                                    <input type="tel" className="form-control" placeholder="" pattern="[0-9]{3}-[0-9]{2}[0-9]{3}"></input>
+
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Contact Number</label>
+                                                    <input type="tel" className="form-control" placeholder="" pattern="[0-9]{3}-[0-9]{2}[0-9]{3}" value="0786925033"></input>
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Address</label>
-                                                    <input type="text" className="form-control" placeholder=""></input>
+
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Rough Monthly Income</label>
+                                                    <input type="income" className="form-control" min="0.00" max="" step="0.01" value="95000"></input>
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Age</label>
-                                                    <input type="num" className="form-control" placeholder=""></input>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Rough Monthly Income</label>
-                                                    <input type="income" className="form-control" min="0.00" max="" step="0.01" ></input>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Purpose</label>
+
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Any pets in your home currently</label>
                                                     <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Select Purpose</option>
-                                                        <option value="1">For security purposes</option>
-                                                        <option value="2">Reduce stress</option>
-                                                        <option value="2">Reduce loneliness for elder</option>
-                                                        <option value="2">Reduce loneliness for kid</option>
-                                                        <option value="2">Encorage exercise and playfullness</option>
+                                                        <option selected>Yes</option>
+                                                        <option value="1">Yes</option>
+                                                        <option value="1">No</option>
                                                     </select>
+                                                     
                                                 </div>
+                                                
+                                                
                                             
                                             </div>
                                             <div className="col-md-6 border-start">
+
                                                 
-                                                <div className="form-group">
-                                                    <label className="mb-1">Currently have pets' details</label>
-                                                    <textarea rows="2" className="form-control" placeholder=""></textarea>
+                                                
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">If yes enter type of the pet</label>
+                                                    <input type="num" className="form-control" placeholder="" value="Cat"></input>
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Kids details</label>
-                                                    <textarea rows="2" className="form-control" placeholder=""></textarea>
+
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Any kids in your home</label>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>No</option>
+                                                        <option value="1">Yes</option>
+                                                        <option value="1">No</option>
+                                                    </select>
+                                                     
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Elders details</label>
-                                                    <textarea rows="2" className="form-control" placeholder=""></textarea>
+                                                
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Currently have pets' details</label>
+                                                    <textarea rows="2" className="form-control" placeholder="" value="Have a kitten"></textarea>
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Long term diseases</label>
-                                                    <textarea rows="2" className="form-control" placeholder=""></textarea>
-                                                </div>
-                                               
                                                 <div className='acceptMargin'>
                                                     <div class="row gx-5 ">
                                                         <div class="col ">
@@ -117,7 +119,7 @@ function ViewAdopterRequests(){
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <i class="fa-solid fa-user"></i><b>H.P.T.K. Kasthuriarachchi</b> 
+                                <i class="fa-solid fa-user"></i><b>K.S.I.M. Rathnayake</b> 
                             </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -131,56 +133,56 @@ function ViewAdopterRequests(){
                                                 <i class="fa-solid fa-grin-alt"></i><b> Request to adopt pet.....</b>
                                                 </h6>
                                                 <hr/>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Full Name</label>
-                                                    <input type="text" className="form-control" placeholder=""></input>
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Full Name</label>
+                                                    <input type="text" className="form-control " placeholder="" value="K.S.I.M. Rathnayake"></input>
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Contact Number</label>
-                                                    <input type="tel" className="form-control" placeholder="" pattern="[0-9]{3}-[0-9]{2}[0-9]{3}"></input>
+
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Contact Number</label>
+                                                    <input type="tel" className="form-control" placeholder="" pattern="[0-9]{3}-[0-9]{2}[0-9]{3}" value="0788963147"></input>
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Address</label>
-                                                    <input type="text" className="form-control" placeholder=""></input>
+
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Rough Monthly Income</label>
+                                                    <input type="income" className="form-control" min="0.00" max="" step="0.01" value="250000"></input>
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Age</label>
-                                                    <input type="num" className="form-control" placeholder=""></input>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Rough Monthly Income</label>
-                                                    <input type="income" className="form-control" min="0.00" max="" step="0.01" ></input>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Purpose</label>
+
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Any pets in your home currently</label>
                                                     <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Select Purpose</option>
-                                                        <option value="1">For security purposes</option>
-                                                        <option value="2">Reduce stress</option>
-                                                        <option value="2">Reduce loneliness for elder</option>
-                                                        <option value="2">Reduce loneliness for kid</option>
-                                                        <option value="2">Encorage exercise and playfullness</option>
+                                                        <option selected>Yes</option>
+                                                        <option value="1">Yes</option>
+                                                        <option value="1">No</option>
                                                     </select>
+                                                     
                                                 </div>
+                                                
+                                                
                                             
                                             </div>
                                             <div className="col-md-6 border-start">
+
                                                 
-                                                <div className="form-group">
-                                                    <label className="mb-1">Currently have pets' details</label>
-                                                    <textarea rows="2" className="form-control" placeholder=""></textarea>
+                                                
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">If yes enter type of the pet</label>
+                                                    <input type="num" className="form-control" placeholder="" value="Dog"></input>
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Kids details</label>
-                                                    <textarea rows="2" className="form-control" placeholder=""></textarea>
+
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Any kids in your home</label>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>Yes</option>
+                                                        <option value="1">Yes</option>
+                                                        <option value="1">No</option>
+                                                    </select>
+                                                     
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Elders details</label>
-                                                    <textarea rows="2" className="form-control" placeholder=""></textarea>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Long term diseases</label>
-                                                    <textarea rows="2" className="form-control" placeholder=""></textarea>
+                                                
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Currently have pets' details</label>
+                                                    <textarea rows="2" className="form-control" placeholder="" value="Have a 2 years Mixed breed dog"></textarea>
                                                 </div>
                                                
                                                 <div className='acceptMargin'>
@@ -206,7 +208,7 @@ function ViewAdopterRequests(){
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                <i class="fa-solid fa-user"></i><b>H.P.T.K. Kasthuriarachchi</b> 
+                                <i class="fa-solid fa-user"></i><b>A.P.L.M. Adikari</b> 
                             </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -220,58 +222,57 @@ function ViewAdopterRequests(){
                                                 <i class="fa-solid fa-grin-alt"></i><b> Request to adopt pet.....</b>
                                                 </h6>
                                                 <hr/>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Full Name</label>
-                                                    <input type="text" className="form-control" placeholder=""></input>
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Full Name</label>
+                                                    <input type="text" className="form-control " placeholder="" value="A.P.L.M. Adikari"></input>
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Contact Number</label>
-                                                    <input type="tel" className="form-control" placeholder="" pattern="[0-9]{3}-[0-9]{2}[0-9]{3}"></input>
+
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Contact Number</label>
+                                                    <input type="tel" className="form-control" placeholder="" pattern="[0-9]{3}-[0-9]{2}[0-9]{3}" value="0788347833"></input>
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Address</label>
-                                                    <input type="text" className="form-control" placeholder=""></input>
+
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Rough Monthly Income</label>
+                                                    <input type="income" className="form-control" min="0.00" max="" step="0.01" value="500000"></input>
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Age</label>
-                                                    <input type="num" className="form-control" placeholder=""></input>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Rough Monthly Income</label>
-                                                    <input type="income" className="form-control" min="0.00" max="" step="0.01" ></input>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Purpose</label>
+
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Any pets in your home currently</label>
                                                     <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Select Purpose</option>
-                                                        <option value="1">For security purposes</option>
-                                                        <option value="2">Reduce stress</option>
-                                                        <option value="2">Reduce loneliness for elder</option>
-                                                        <option value="2">Reduce loneliness for kid</option>
-                                                        <option value="2">Encorage exercise and playfullness</option>
+                                                        <option selected>Yes</option>
+                                                        <option value="1">Yes</option>
+                                                        <option value="1">No</option>
                                                     </select>
+                                                     
                                                 </div>
+                                                
+                                                
                                             
                                             </div>
                                             <div className="col-md-6 border-start">
+
                                                 
-                                                <div className="form-group">
-                                                    <label className="mb-1">Currently have pets' details</label>
-                                                    <textarea rows="2" className="form-control" placeholder=""></textarea>
+                                                
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">If yes enter type of the pet</label>
+                                                    <input type="num" className="form-control" placeholder="" value="Cat"></input>
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Kids details</label>
-                                                    <textarea rows="2" className="form-control" placeholder=""></textarea>
+
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Any kids in your home</label>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>No</option>
+                                                        <option value="1">Yes</option>
+                                                        <option value="1">No</option>
+                                                    </select>
+                                                     
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Elders details</label>
-                                                    <textarea rows="2" className="form-control" placeholder=""></textarea>
+                                                
+                                                <div className="form-group requestformfield">
+                                                    <label className="mb-1 inputanswercolor">Currently have pets' details</label>
+                                                    <textarea rows="2" className="form-control" placeholder="" value="Have a cat"></textarea>
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className="mb-1">Long term diseases</label>
-                                                    <textarea rows="2" className="form-control" placeholder=""></textarea>
-                                                </div>
-                                               
                                                 <div className='acceptMargin'>
                                                     <div class="row gx-5 ">
                                                         <div class="col ">

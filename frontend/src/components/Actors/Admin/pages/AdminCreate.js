@@ -1,6 +1,8 @@
 import React from "react";
 import {useRef, useEffect, useState } from "react"; 
 import {Link} from 'react-router-dom';
+import Axios from 'axios';
+
 
 
 // import {faCheck, faTimes, faInfoCircle} from "@fortawesome/react-fontawesome";
@@ -8,13 +10,15 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SignUpImg from "../../../images/signup.jpg";
+import SignUpImg from "../../../images/cat.jpeg";
 import '../css/AdminCreate.css';
+import NavbarUsers from "../../../includes/NavbarUsers";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
+const REGISTER_URL = "http://localhost:5000/SignUp";
 const AdminCreate = () => {
     const userRef = useRef();
     const errRef = useRef();
@@ -23,6 +27,8 @@ const AdminCreate = () => {
     const [validName, setValidName] = useState(false);
     const [userFocus, setUserFocus] = useState(false);
 
+    const [type,setType]=useState('Pet Adopter')
+    const [buttontext,setButtontext]=useState('Create');
     const [email, setEmail] = useState('');
     const [validEmail, setValidEmail] = useState(false);
     const [emailFocus, setEmailFocus] = useState(false);
@@ -66,118 +72,186 @@ const AdminCreate = () => {
 
     useEffect(() => {
         setErrMsg('');
-    }, [user, pwd, matchPwd, email])
+    }, [user,type,pwd,matchPwd,email])
+
+
+    
+
+      const handleSubmit = async e => {
+        e.preventDefault();
+        setButtontext('Created..');
+        try {
+          const body = { user,type,email,pwd };
+          const response = await fetch(
+            "http://localhost:5000/Admin/Create",
+            {
+              method: "POST",
+              headers: {
+                "Content-type": "application/json"
+              },
+              body: JSON.stringify(body)
+            }
+          );
+          console.log(response);
+        }
+        catch (err) {
+            console.log("Falil12");
+          }
+      
+    }
+        
+          
+    
+
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
+    //   const data = { username: user, email: email, password: pwd };
+    //     console.log(data);
+    //     Axios.post("http://localhost:5000/SignUp", {
+
+    //                   User_name : user,
+    //                   Email: email, 
+    //                   Password: pwd,
+    //                 })
+    //                 // .then((response) => {
+    //                 //   if(response.data.error) {
+    //                 //     alert(response.data.error);}
+    //                 //   else{alert("successfully Logged in!");
+    //                 //   }
+    //                 // });
+
+
+    // };
+
 
     // const handleSubmit = async (e) => {
+    //     console.log("Sasidu");
     //     e.preventDefault();
     //     // if button enabled with JS hack
     //     const v1 = USER_REGEX.test(user);
     //     const v2 = PWD_REGEX.test(pwd);
-    //     if (!v1 || !v2) {
+    //     const v3 = EMAIL_REGEX.test(email);
+    //     if (!v1 || !v2 || !v3) {
     //         setErrMsg("Invalid Entry");
     //         return;
     //     }
     //     try {
-    //         const response = await axios.post(REGISTER_URL,
-    //             JSON.stringify({ user, pwd }),
+    //         const response = await Axios.post(REGISTER_URL,
+    //             JSON.stringify({ user, pwd, email }),
     //             {
     //                 headers: { 'Content-Type': 'application/json' },
     //                 withCredentials: true
     //             }
     //         );
-    //         console.log(response?.data);
-    //         console.log(response?.accessToken);
-    //         console.log(JSON.stringify(response))
+    //         // console.log(response?.data);
+    //         // console.log(response?.accessToken);
+    //         // console.log(JSON.stringify(response))
     //         setSuccess(true);
     //         //clear state and controlled inputs
     //         //need value attrib on inputs for this
     //         setUser('');
+    //         setEmail('');
     //         setPwd('');
     //         setMatchPwd('');
     //     } catch (err) {
-    //         if (!err?.response) {
-    //             setErrMsg('No Server Response');
-    //         } else if (err.response?.status === 409) {
-    //             setErrMsg('Username Taken');
-    //         } else {
-    //             setErrMsg('Registration Failed')
-    //         }
-    //         errRef.current.focus();
+    //         // if (!err?.response) {
+    //         //     setErrMsg('No Server Response');
+    //         // } else if (err.response?.status === 409) {
+    //         //     setErrMsg('Username Taken');
+    //         // } else {
+    //         //     setErrMsg('Registration Failed')
+    //         // }
+    //         // errRef.current.focus();
     //     }
     // }
+    // const handleSubmit = () => {
+    //     console.log(user);
+    // }
+ 
+
+
 
 // function SignUp()
 // {
+
+//  const   handleSubmit = (value) => {
+//         this.props.sendNewMessage(value);
+//         console.log(value)
+//       }
+
+      
+// const submitData = (user) => {
+//     console.log(user);
+//     Axios.post("http://localhost:5000/Signup",{
+//         user:user,
+//         email:email,
+//         password:pwd,
+//     }).then(() => {
+//         alert("successfully added!");
+//     });
+// };
+ 
     return(
+     
+        <>
         <div>
-            {/* <section className="py-4 ">
-                <div className="container">
-                    <div className="row bg-success text-white"> 
-                        <div className="col-md-4 my-auto"></div>
-                        <h3 className="text-center">Contact Us</h3>
-                    </div>
-                </div>
-            </section> */}
-            <div>
-               
-            </div>
+        <NavbarUsers/>
+           
             <section className="section bg-c-light" >
                 <div className="container">
                     <div className="card shadow">
                         <div className="card-body">
                             <div className="row">
-                                <div className="col-md-6 border-left">
+
+                                
+                                
+
+                                    <div className="col-md-6 border-left">
+                                                                        
+                                    {/* <img src={SignUpImg}  alt="Services"/> */}
+                                    <div className="col-md-12">
+                                    <div className="card shadow">
+                                        <div className="card-body">
+                                            <div className="row bg-success text-white mb-3"> 
+                                                <div className="col-md-4 my-auto"></div>
+                                                <h3 className="text-center">CREATE ACCOUNTS</h3>
+                                            </div>
                                     
-                                {/* <img src={SignUpImg}  alt="Services"/> */}
-                                <div className="col-md-12">
-                            <div className="card shadow">
-                            <div className="card-body">
-                                    <div className="row bg-success text-white mb-3"> 
-                                        <div className="col-md-4 my-auto"></div>
-                                        <h3 className="text-center">CREATE ACCOUNTS</h3>
+                                        </div>
+                                    <img src={SignUpImg}  alt="Services"/>                               
                                     </div>
-                               
-                            </div>
-                            <img src={SignUpImg}  alt="Services"/>                               
-                            </div>
-                        </div>
-                                    {/* <h6>
-                                        Leave Us a Message
-                                    </h6>
-                                    <hr/>
-                                    <div className="form-group">
-                                        <label className="mb-1">Name</label>
-                                        <input type="text" className="form-control" placeholder="Enter Your Name"></input>
                                     </div>
-                                    <div className="form-group">
-                                        <label className="mb-1 mt-1">Email</label>
-                                        <input type="text" className="form-control" placeholder="Enter Your Email"></input>
+                                      
                                     </div>
-                                    <div className="form-group">
-                                        <label className="mb-1">Message</label>
-                                        <textarea rows="4" className="form-control" placeholder="Enter Your Message"></textarea>
-                                    </div>
-                                    <div className="form-group py-3">
-                                        <button type="button" className="btn btn-success shadow w-100 ">Send</button>
-                                    </div> */}
-                                </div>
-                                <div className="col-md-6 border-start">
+
+                                
+
+                                    <div className="col-md-6 border-start">
+                                    {/* { success? (
+                                    <section>
+                                        <h2>Successfully Registered!</h2>
+
+                                    </section>
+
+                                    ):( */}
+
                                     <section id="SignUpSection">
                                         <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                                        <form id="SignUpForm">
+                                        <form id="SignUpForm" >
                                         {/* <div className="d-flex justify-content-center mb-4">
                     <Link to="/petstore/inventory/ViewInventory" class="nav-link active">
                         <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button>
                     </Link>
                 </div> */}
                                         <div id="dropDownMenu" className="mb-4">
-                                            <select class="form-control dropdown-toggle" data-bs-toggle="dropdown">
+                                            <select value={type} onChange={(e)=>setType(e.target.value)} class="form-control dropdown-toggle" data-bs-toggle="dropdown">
                                                 {/* <option selected>Select prescribed medicine</option> */}
-                                                <option value="1">Pet Adopter</option>
-                                                <option value="2">Veterinary Doctor</option>
-                                                <option value="3">Pharmacy</option>
-                                                <option value="4">Pet Tool Store</option>
-                                                <option value="5">Staff Member</option>
+                                                <option value="Pet Adopter">Pet Adopter</option>
+                                                <option value="Veterinary Doctor">Veterinary Doctor</option>
+                                                <option value="Pharmacy">Pharmacy</option>
+                                                <option value="Pet Tool Store">Pet Tool Store</option>
+                                                <option value="Staff Member">Staff Member</option>
                                             </select>
                                         </div>
 
@@ -290,15 +364,26 @@ const AdminCreate = () => {
                                                 Must match the first password input field.
                                             </p>
 
+                                                {console.log(user)}
                                             <div className="d-flex justify-content-center">
-                                                <button className="mt-5"id="SignUpBtn" disabled={!validName || !validPwd || !validMatch || !validEmail ? true : false}>Sign Up</button>
+
+                                                <button className="mt-5"id="SignUpBtn" onClick={handleSubmit} >{buttontext}</button>
                                             </div>
                                             
 
                                         </form>
                                     </section>
-                                   
+                                {/* //    )}  */}
+
                                 </div>
+
+                                
+
+                                
+                                
+                                
+                                
+
                             </div>
                         </div>
                     </div>
@@ -306,8 +391,14 @@ const AdminCreate = () => {
 
             </section>
         </div>
-        
+        // </>
     );
 }
 
 export default AdminCreate;
+
+// onSubmit={submitData(user)}
+
+// onSubmit={handleSubmit} 
+// disabled={!validName || !validPwd || !validMatch || !validEmail ? true : false}
+// onClick={handleSubmit}

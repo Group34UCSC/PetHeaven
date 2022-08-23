@@ -12,6 +12,7 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SignUpImg from "../images/signup.jpg";
 import './SignIn.css';
+import Navbar from "../includes/Navbar";
 
 
 // Axios.defaults.withCredentials = true;
@@ -198,12 +199,12 @@ const SignIn = () => {
                                     console.log("Doctor dashboard called",window.loggedUserType);
                                     Navigate("/DoctorHome");
                                 }
-                                else if(window.loggedUserType=="Pharmacy")
+                                else if(window.loggedUserType=="pharmacy")
                                 {
                                     console.log("Pharmacy dashboard called",window.loggedUserType);
                                     Navigate("/pharmacy");
                                 }
-                                else if(window.loggedUserType=="PetStore")
+                                else if(window.loggedUserType=="Pet Tool Store")
                                 {
                                     console.log("PetToolStoreHome dashboard called",window.loggedUserType);
                                     Navigate("/PetToolStore");
@@ -247,6 +248,7 @@ const SignIn = () => {
     
     return(
         <div>
+            <Navbar/>
             {/* <section className="py-4 ">
                 <div className="container">
                     <div className="row bg-success text-white"> 

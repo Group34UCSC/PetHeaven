@@ -14,18 +14,28 @@ import Notifications from './components/pages/Notifications';
 import Donate from './components/pages/Donate';
 import SignUp from './components/pages/SignUp';
 import SignIn from './components/pages/SignIn';
-
+import OTP from './components/pages/otp';
 
 import PharmacyHome from './components/Actors/pharmacy/PharmacyHome';
 import PetToolStoreHome from './components/Actors/petstore/pages/PetToolStoreHome';
 
 //Admin
+// import AdminHeader from './components/Actors/Admin/pages/AdminHeader';
+// import AdminHome from './components/Actors/Admin/pages/AdminHome';
+// import AdminCreate from './components/Actors/Admin/pages/AdminCreate';
+// import AdminDelete from './components/Actors/Admin/pages/AdminDelete';
+// import AdminUpdate from './components/Actors/Admin/pages/AdminUpdate';
+// import AdminView from './components/Actors/Admin/pages/AdminView';
+
 import AdminHeader from './components/Actors/Admin/pages/AdminHeader';
 import AdminHome from './components/Actors/Admin/pages/AdminHome';
 import AdminCreate from './components/Actors/Admin/pages/AdminCreate';
 import AdminDelete from './components/Actors/Admin/pages/AdminDelete';
 import AdminUpdate from './components/Actors/Admin/pages/AdminUpdate';
 import AdminView from './components/Actors/Admin/pages/AdminView';
+import ViewComplains from './components/Actors/Admin/pages/ViewComplains';
+
+
 
 //customer
 import CustomerFindpet from './components/Actors/customer/pages/CustomerFindpet';
@@ -64,8 +74,14 @@ import MoreDetails from './components/Actors/petstore/pages/MoreDetails';
 import ViewInventryInquiry from './components/Actors/petstore/inquiries/ViewInquiry';
 
 //Doctor
+//Doctor
 import DoctorHome from './components/Actors/doctor/pages/DoctorHome';
 import DoctorViewPetHistory from './components/Actors/doctor/pages/DoctorViewPetHistory';
+import DoctorInbox from './components/Actors/doctor/pages/DoctorInbox';
+import DoctorPrescription from './components/Actors/doctor/pages/DoctorPrescription';
+import DoctorPrescriptionUser from './components/Actors/doctor/pages/DoctorPrescriptionUser';
+import DoctorConsultation from './components/Actors/doctor/pages/DoctorConsultation';
+import DoctorAvailability from './components/Actors/doctor/pages/DoctorAvailability';
 
 
 
@@ -127,16 +143,24 @@ class App extends Component{
             <Route exact path='/donation' element={<Donate/>} />
             <Route exact path='/pharmacy' element={<PharmacyHome/>} />
             <Route exact path='/PetToolStore' element={<PetToolStoreHome/>} />
+            <Route exact path='/OTPverify' element={<OTP/>} />
 
             <Route exact path='/SignUp' element={<SignUp />} />
             <Route exact path='/SignIn' element={<SignIn />} />
             
              {/* Admin  */}
+            {/* <Route exact path='/AdminHome/Create' element={<AdminCreate />} /> 
+            <Route exact path='/AdminHome/Delete' element={<AdminDelete />} />
+            <Route exact path='/AdminHome/Update' element={<AdminUpdate />} />
+            <Route exact path='/AdminHome/View' element={<AdminView />} />
+            <Route exact path='/AdminHome' element={<AdminHome />} />   */}
+
             <Route exact path='/AdminHome/Create' element={<AdminCreate />} /> 
             <Route exact path='/AdminHome/Delete' element={<AdminDelete />} />
             <Route exact path='/AdminHome/Update' element={<AdminUpdate />} />
             <Route exact path='/AdminHome/View' element={<AdminView />} />
             <Route exact path='/AdminHome' element={<AdminHome />} />  
+            <Route exact path='/AdminHome/complains' element={<ViewComplains />} />
 
             {/* Pharmacy */}
             <Route exact path='/pharmacy/Prescription' element={<Prescription />} />
@@ -175,9 +199,14 @@ class App extends Component{
 
 
             {/* Doctor   */}
+           {/* Doctor   */}
            <Route exact path='/DoctorHome' element={<DoctorHome/>} />
            <Route exact path='/DoctorHome/History' element={<DoctorViewPetHistory/>} />
-
+           <Route exact path='/DoctorHome/Inbox' element={<DoctorInbox/>} />
+           <Route exact path='/DoctorHome/Prescription' element={<DoctorPrescription/>} />
+           <Route exact path='/DoctorHome/Prescription/DoctorPrescriptionUser' element={<DoctorPrescriptionUser/>} />
+           <Route exact path='/DoctorHome/available' element={<DoctorAvailability/>} />
+           <Route exact path='/DoctorHome/DoctorConsultation' element={<DoctorConsultation/>} />
 
 
 
@@ -191,8 +220,10 @@ class App extends Component{
             <Route exact path='staffmember/notifyadopter' element ={<NotifyAdopter/>} />
             <Route exact path='staffmember/viewdonation' element ={<ViewDonation/>} />
             <Route exact path='staffmember/viewfeedback' element ={<ViewFeedback/>} />
-            <Route exact path='staffmember/addnewpet' element ={<AddNewPet/>} />
-            <Route exact path='staffmember/viewadopterrequests' element ={<ViewAdopterRequests/>} />
+            <Route exact path='staffmember/viewpets/addnewpet' element ={<AddNewPet/>} />
+            <Route exact path='staffmember/viewadoptee/viewadopterrequests' element ={<ViewAdopterRequests/>} />
+            <Route exact path='staffmember/viewadoptee/notifyadopter' element ={<NotifyAdopter/>} />
+            <Route exact path='staffmember/viewpets/postpets' element ={<PostPet/>} />
            
         
         </Routes>
