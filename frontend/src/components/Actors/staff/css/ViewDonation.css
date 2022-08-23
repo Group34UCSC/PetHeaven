@@ -26,6 +26,10 @@
     position: absolute; */
 }
 
+.donationtext{
+    color: rgb(220, 48, 48);
+}
+
 /* 
 .table-fixed{
     width: 100%;

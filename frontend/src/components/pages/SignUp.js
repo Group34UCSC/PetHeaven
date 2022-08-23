@@ -1,6 +1,6 @@
 import React from "react";
 import {useRef, useEffect, useState } from "react"; 
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import Axios from 'axios';
 import Navbar from "../includes/Navbar";
 
@@ -12,6 +12,10 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SignUpImg from "../images/signup.jpg";
 import './SignUp.css';
+import Navbar from "../includes/Navbar";
+
+import { useNavigate } from "react-router-dom";
+
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
@@ -19,8 +23,11 @@ const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 const REGISTER_URL = "http://localhost:5000/SignUp";
 const SignUp = () => {
+    const Navigate = useNavigate();
     const userRef = useRef();
     const errRef = useRef();
+
+    const [type, setType] = useState('Pet Adopter');
 
     const [user, setUser] = useState('');
     const [validName, setValidName] = useState(false);
@@ -41,6 +48,7 @@ const SignUp = () => {
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
 
+    const [buttontext,setButtontext]=useState('Sign up');
     useEffect(() => {
         userRef.current.focus();
     }, [])
@@ -75,9 +83,12 @@ const SignUp = () => {
     
 
       const handleSubmit = async e => {
+        
+
         e.preventDefault();
+        // setButtontext('... We sent mail for you');
         try {
-          const body = { user, email, pwd };
+          const body = {type, user, email, pwd };
           const response = await fetch(
             "http://localhost:5000/SignUp",
             {
@@ -86,9 +97,12 @@ const SignUp = () => {
                 "Content-type": "application/json"
               },
               body: JSON.stringify(body)
-            }
+
+              }
+              
           );
           console.log(response);
+        //   Navigate("/OTPverify");
         }
         catch (err) {
             console.log("Falil");
@@ -268,13 +282,13 @@ const SignUp = () => {
                     </Link>
                 </div> */}
                                         <div id="dropDownMenu" className="mb-4">
-                                            <select class="form-control dropdown-toggle" data-bs-toggle="dropdown">
+                                            <select value={type} onChange={(e)=>setType(e.target.value)} class="form-control dropdown-toggle" data-bs-toggle="dropdown">
                                                 {/* <option selected>Select prescribed medicine</option> */}
-                                                <option value="1">Pet Adopter</option>
-                                                <option value="2">Veterinary Doctor</option>
-                                                <option value="3">Pharmacy</option>
-                                                <option value="4">Pet Tool Store</option>
-                                                <option value="5">Staff Member</option>
+                                                <option value = "Pet Adopter">Pet Adopter</option>
+                                                <option value="Doctor">Doctor</option>
+                                                <option value="pharmacy">Pharmacy</option>
+                                                <option value="Pet Tool Store">Pet Tool Store</option>
+                                                <option value="Staff Member">Staff Member</option>
                                             </select>
                                         </div>
 
@@ -389,8 +403,9 @@ const SignUp = () => {
 
                                                 {console.log(user)}
                                             <div className="d-flex justify-content-center">
-
-                                                <button className="mt-5"id="SignUpBtn" onClick={handleSubmit} >Sign Up</button>
+                                            
+                                                <button className="mt-5"id="SignUpBtn" onClick={handleSubmit} >{buttontext}</button>
+                                            
                                             </div>
                                             
 

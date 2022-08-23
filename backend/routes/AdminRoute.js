@@ -3,7 +3,8 @@ const express = require('express');
 const AdminRoute = express.Router();
 const Admin_controller = require('../controller/Admin_controller');
 AdminRoute.post("/Create",Admin_controller.Create_Accounts);
-AdminRoute.delete("/Delete",Admin_controller.Delete_Accounts);
+AdminRoute.post("/Delete",Admin_controller.Delete_Accounts);
+AdminRoute.get("/View",Admin_controller.View_Accounts);
 
 // SignUpRoute.route("/")
 //     .post( SignUp_controller.User_SignUp)

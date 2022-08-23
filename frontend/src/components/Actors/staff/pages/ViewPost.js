@@ -4,14 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 import '../css/ViewPost.css';
 
+
 import dog from '../img/dog.jpg';
 import dog2 from '../img/d4.jpg';
 import dog3 from '../img/d3.jpg';
 import dog5 from '../img/d5.jpg';
+import NavbarUsers from '../../../includes/NavbarUsers';
 
 function ViewPost(){
     return(
         <div>
+        <NavbarUsers/>
         <section className="section bg-c-light border-top">
             <h3 class="pageTitle">Pet Posts <i class="fa-solid fa-paw"></i></h3>
             <div class="container text-center">
@@ -33,6 +36,7 @@ function ViewPost(){
           <div className="container">
             <div className="row">
             <div class="admincard col-md-3">     
+<<<<<<< HEAD
                     <div className="card shadow cardpadding" id='cardone'>
                         <img src={dog} className="card-img-top petcardimg" alt="Services"/>
                         <div className="card-body" id='cardTitle'>
@@ -47,7 +51,7 @@ function ViewPost(){
                         </div>  
                         
                         </div>
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
+                        <button type="button" class="btn btn-success deleteBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
 
@@ -66,7 +70,7 @@ function ViewPost(){
                         </div>  
                         
                         </div>
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
+                        <button type="button" class="btn btn-success deleteBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
 
@@ -85,7 +89,7 @@ function ViewPost(){
                         </div>  
                         
                         </div>
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
+                        <button type="button" class="btn btn-success deleteBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
 
@@ -104,7 +108,7 @@ function ViewPost(){
                         </div>  
                         
                         </div>
-                        <button type="button" class="btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
+                        <button type="button" class="btn btn-success deleteBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
 

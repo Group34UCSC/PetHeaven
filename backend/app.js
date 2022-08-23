@@ -2,16 +2,19 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const PetAdopterRoute = require('./routes/PetAdopterRoute');
+const cookieParser = require('cookie-parser');
+// const PetAdopterRoute = require('./routes/PetAdopterRoute');
 const SignUpRoute = require('./routes/SignUpRoute');
-const StaffMemberRoute = require('./routes/staffMemberRoute');
+const PetStoreRoute = require('./routes/PetStoreRoute');
 const errorHandler = require('./utils/errorHandler');
 const AdminRoute = require('./routes/AdminRoute');
-
-
+const PetAdopterRoute=require('./routes/PetAdopterRoute');
+const staffMemberRoute=require('./routes/staffMemberRoute');
 
 app.use(express.json());
 app.use(cors());
+app.use(cookieParser());
+
 // parse request data content type application/x-www-form-rulencoded
 app.use(bodyParser.urlencoded({extended: false}));
 // app.use(cookieParser());
@@ -22,16 +25,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 // }));
 app.use(bodyParser.json()); 
 
-app.use('/staffmember',StaffMemberRoute);
-app.use("/SignUp",SignUpRoute);
-app.use("/PetAdopter",PetAdopterRoute);
-
-
-
-
-//admin
 app.use("/Admin",AdminRoute);
-// app.delete("/Admin",AdminRoute);
+app.use('/petadopter',PetAdopterRoute);
+app.use("/SignUp",SignUpRoute);
+app.use("/petstore",PetStoreRoute);
+app.use('/staffmember',staffMemberRoute);
 
 
 // app.use(cors());

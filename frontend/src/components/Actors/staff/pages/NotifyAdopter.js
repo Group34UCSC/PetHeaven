@@ -3,10 +3,13 @@ import {Link, Search} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 import '../css/NotifyAdopter.css';
+import NavbarUsers from '../../../includes/NavbarUsers';
+
 
 function NotifyAdopter() {
     return(
         <div>
+        <NavbarUsers/>
             <section className="py-4 ">
             <div className="container ">
                 <div className="row bg-success text-white titlebox"> 

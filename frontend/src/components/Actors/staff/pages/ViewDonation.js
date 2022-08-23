@@ -6,11 +6,14 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 import '../css/ViewDonation.css';
 
 
+
 import dog from '../img/dog.jpg';
+import NavbarUsers from '../../../includes/NavbarUsers';
 
 function ViewDonation(){
     return(
         <div>
+        <NavbarUsers/>
         <section className="section bg-c-light border-top">
             <h3 class="pageTitle">Donations <i class="fa-solid fa-paw"></i></h3>
             <div class="container text-center">
@@ -19,7 +22,7 @@ function ViewDonation(){
                     <div class="card card-body donationcard">
                       <h5 class="card-title">Received Donations</h5>
                       <h6 class="card-subtitle mb-2 text-muted">24 / 07 / 2020</h6>
-                      <p class="card-text">Today's Total Amount of Donations = Rs. 101000.00</p>
+                      <p class="card-text donationtext">Today's Total Amount of Donations = Rs. 101000.00</p>
                     </div>
                   </div>
                 </div>

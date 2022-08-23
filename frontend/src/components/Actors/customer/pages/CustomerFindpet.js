@@ -9,55 +9,50 @@ import kitties3 from '../images/kitties3.jfif';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 
-import CustomersubNavbar from './Customersubnavbar';
-
 import '../css/CustomerFindpet.css';
 import CustomerFeaturedAnimals from './CustomerFeaturedAnimals';
 import DoctorAppointment from './DoctorAppointment';
 import Pagination from './pagination';
 import Customerservices from './Customerservices';
 import Customerdocmessagetab from './CustomerDocmessagetab';
+import NavbarUsers from '../../../includes/NavbarUsers';
 function CustomerFindpet(){
     return(
             <div>
-                <CustomerSubNavbar></CustomerSubNavbar>
-                <div class=" bg-c-light border-bottom border-success searchpets">
-                    <p class="desc1">We have Dogs <i class="fa fa-dog"></i> and cats <i class="fa fa-cat"></i> who need space in your kind hearts. If you are interesting to adopt hit the request button and  
-                    add a new member to your home. <i class="fa fa-home"></i>
-                    </p>   
-                </div>
 
+                <NavbarUsers/>
+                <div class="border-bottom border-success">
+                    <div class="border-bottom border-success searchpets">
+                        <p class="desc1">We have Dogs <i class="fa fa-dog"></i> and cats <i class="fa fa-cat"></i> who need space in your kind hearts. If you are interesting to adopt hit the request button and  
+                        add a new member to your home. <i class="fa fa-home"></i>
+                        </p>   
+                    </div>
+                </div>
                 <CustomerFeaturedAnimals></CustomerFeaturedAnimals>
                 <h3 class="searchanimalsheader">Search pets <i class="fa-solid fa-paw"></i> from thousands of pets <i class="fa-solid fa-paw"></i>
                  in our petheaven  who will be<br></br>
                 perfect family member for you. Search cats and dogs with your favourite color and age  </h3>
                     <div class="dropdown" id ="findpetdropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            Type
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Dog</a></li>
-                            <li><a class="dropdown-item" href="#">cat</a></li>
-                        </ul>
+                        <select class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <option class="dropdown-item" >Type</option>
+                                <option class="dropdown-item" >Dog</option>
+                                <option class="dropdown-item" >cat</option>
+                        </select>
+                        
+                        <select class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <option class="dropdown-item" >Color</option>
+                                <option class="dropdown-item" >Black</option>
+                                <option class="dropdown-item" >White</option>
+                                <option class="dropdown-item" >Gold</option>
+                                <option class="dropdown-item" >Mixed</option>
+                        </select>
 
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            color
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#"></a>White</li>
-                            <li><a class="dropdown-item" href="#">Black</a></li>
-                            <li><a class="dropdown-item" href="#">Brown</a></li>
-                            <li><a class="dropdown-item" href="#">Mixed</a></li>
-                        </ul>
-
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            Age
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">baby</a></li>
-                            <li><a class="dropdown-item" href="#">Young</a></li>
-                            <li><a class="dropdown-item" href="#">adult</a></li>
-                        </ul>
+                        <select class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <option class="dropdown-item" >Age</option>
+                                <option class="dropdown-item" >less than 6mo</option>
+                                <option class="dropdown-item" >6mo - 2yrs</option>
+                                <option class="dropdown-item" >over 2yrs</option>
+                        </select>
                     </div>
 
                     <div class="searchbardiv">
@@ -70,53 +65,71 @@ function CustomerFindpet(){
                     </div>
 
                     <div class=" bg-c-light row" id="findpetimgarea"> 
-                        <div class="col col-sm-2 card">
+                        <div class="col-12 col-sm-2 card">
+                            <h5 class="text-success petname">Jill</h5>
+                            <div className="underline underlineJusty"></div>
                             <img src={puppy4} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
-                            <div class="card-body">
-                                <p class="card-text"></p>
-                                <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadopthbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                            <div class="petage  card-body">
+                            <h6 class="text-danger">2 months</h6>
+                            <h6 class="text-dark">Brown</h6>
+                                <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadopthbtn">View pet<i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                             
                         </div>
 
-                        <div class="col col-sm-2 card">
+                        <div class="col-12 col-md-2 card">
+                            <h5 class="text-success petname">Joggi</h5>
+                            <div className="underline underlineJusty"></div>
                             <img src={puppy1} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
-                            <div class="card-body">
-                                <p class="card-text"></p>
-                                <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadopthbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                            <div class="petage card-body">
+                            <h6 class="text-danger">2 months</h6>
+                            <h6 class="text-dark">Black and white</h6>
+                                <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadopthbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                         </div>
 
-                        <div class="col col-sm-2 card">
+                        <div class="col-12 col-md-2 card">
+                            <h5 class="text-success petname">Blacky</h5>
+                            <div className="underline underlineJusty"></div>
                             <img src={puppy2} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
-                            <div class="card-body">
-                                <p class="card-text"></p>
-                                <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                            <div class="petage card-body">
+                            <h6 class="text-danger">2 months</h6>
+                            <h6 class="text-dark">Black</h6>
+                                <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                         </div>
 
-                        <div class="col col-sm-2 card">
+                        <div class="col-12 col-md-2 card">
+                            <h5 class="text-success petname">Jenn</h5>
+                            <div className="underline underlineJusty"></div>
                             <img src={kitties3} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
-                            <div class="card-body">
-                                <p class="card-text"></p>
-                                <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                            <div class="petage card-body">
+                            <h6 class="text-danger">2 months</h6>
+                            <h6 class="text-dark">Grey</h6>
+                                <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                             
                         </div>
 
-                        <div class="col-sm-2 card">
+                        <div class="col-12 col-md-2 card">
+                            <h5 class="text-success petname">Ocky</h5>
+                            <div className="underline underlineJusty"></div>
                             <img src={puppy1} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
-                            <div class="card-body">
-                                <p class="card-text"></p>
-                                <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                            <div class="petage card-body">
+                            <h6 class="text-danger">2 months</h6>
+                            <h6 class="text-dark">Black and white</h6>
+                                <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                         </div>
 
-                        <div class="col-sm-2 card">
+                        <div class="col-12 col-md-2 card">
+                            <h5 class="text-success petname">Phil</h5>
+                            <div className="underline underlineJusty"></div>
                             <img src={kitties1} class="card-img-top" id="findpetimgs" alt="Tommy"></img>
-                            <div class="card-body">
-                                <p class="card-text"></p>
-                                <Link to="adoptrequestform"><button type="button" class="btn btn-success" id="petadoptbtn">Adopt <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                            <div class="petage card-body">
+                                <h6 class="text-danger">2 months</h6>
+                                <h6 class="text-dark">Brown</h6>
+                                <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                             </div>
                         </div>
                     </div>
@@ -125,7 +138,5 @@ function CustomerFindpet(){
                 <Customerdocmessagetab></Customerdocmessagetab>
             </div>
     )
-        
 }
-
 export default CustomerFindpet;

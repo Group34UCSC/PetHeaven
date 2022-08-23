@@ -5,10 +5,14 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 import '../css/ViewFeedback.css';
 
 import dog from '../img/dog.jpg';
+import NavbarUsers from '../../../includes/NavbarUsers';
+
+
 
 function ViewFeedback(){
         return(
             <div>
+            <NavbarUsers/>
             <section className="section bg-c-light border-top">
                 <h3 class="pageTitle">Feedback  <i class="fa-solid fa-comments"></i></h3>
                 <div class="container text-center">
@@ -34,7 +38,7 @@ function ViewFeedback(){
                                 How can I contact the owner of this chrity organization. Our organization happy to help your charity organization. We are expect to donate and also we are hope to do another programs. Can I contact the Head of this charity organization.
                             </div>
                         
-                            <button type="button" class="btn btn-success replyBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply <i class="fa-solid fa-reply"></i></button>
+                            <button type="button" class="btn btn-success replyBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply <i class="fa-solid fa-reply"></i></button>
                            
                         </div>
                     </div>    
@@ -48,7 +52,7 @@ function ViewFeedback(){
                             <div class="accordion-body">
                                 How can I contact the owner of this chrity organization. Our organization happy to help your charity organization. We are expect to donate and also we are hope to do another programs. Can I contact the Head of this charity organization.
                             </div>
-                                <button type="button" class="btn btn-success replyBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply <i class="fa-solid fa-reply"></i></button>
+                                <button type="button" class="btn btn-success replyBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply <i class="fa-solid fa-reply"></i></button>
                             </div>
                         </div>
                         <div class="accordion-item">
@@ -61,7 +65,7 @@ function ViewFeedback(){
                             <div class="accordion-body">
                             How can I contact the owner of this chrity organization. Our organization happy to help your charity organization. We are expect to donate and also we are hope to do another programs. Can I contact the Head of this charity organization.
                             </div>
-                                <button type="button" class="btn btn-success replyBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply <i class="fa-solid fa-reply"></i></button>
+                                <button type="button" class="btn btn-success replyBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply <i class="fa-solid fa-reply"></i></button>
                             </div>
                         </div>
                     </div>

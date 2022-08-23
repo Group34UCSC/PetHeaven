@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import { useEffect, useState } from "react";
 import './FinalizeOrder.css';
 import SelectTableComponent from "./select-table.component";
+import NavbarUsers from "../../includes/NavbarUsers";
 
 
 function FinalizeOrder()
@@ -10,6 +11,7 @@ function FinalizeOrder()
     const[show,setShow]=useState(false);
     return(
         <div>
+            <NavbarUsers/>
             <section className="py-4 ">
             <div className="container">
                 <div className="row bg-success text-white"> 

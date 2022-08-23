@@ -36,7 +36,7 @@ exports.Create_Accounts = (req,res,next)=>{
 
   
 
-           conn.query(REGISTER_USER, [ [ hashedValue, req.body.email , req.body.user, req.body.email, email_token, email_token, req.body.user ]], (err,data,feilds)=>{
+           conn.query(REGISTER_USER, [ [ hashedValue, req.body.email , req.body.user, req.body.type,req.body.email, email_token, req.body.user ,0]], (err,data,feilds)=>{
             if( err ) return next(new AppError(err,500));
 
             res.status(201).json({
@@ -63,27 +63,72 @@ exports.Create_Accounts = (req,res,next)=>{
  
                   
                   exports.Delete_Accounts = (req,res,next)=>{
- 
-                     if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
-                     console.log(req.body.email)
-                     try{
+                  //  console.log("sas")
+                  //    if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
+                  //    console.log(req.body.email)
+                  //    try{
                       
-                            conn.query(DELETE_USER,[req.body.email ], (err,data,feilds)=>{
-                             if( err ) return next(new AppError(err,500));
+                  //           conn.query(DELETE_USER,[req.body.email ], (err,data,feilds)=>{
+                  //            if( err ) return next(new AppError(err,500));
                  
-                             res.status(201).json({
-                                data: "User Delete Success!"
-                             })
+                  //            res.status(201).json({
+                  //               data: "User Delete Success!"
+                  //            })
                  
-                            })
+                  //           })
                    
                            
                       
-                      }
-                      catch( err )
-                      {
-                         res.status(500).json({
-                            error: err
+                  //     }
+                  //     catch( err )
+                  //     {
+                  //        res.status(500).json({
+                  //           error: err
+                  //        })
+                  //     }
+
+
+                  
+                  var SelectQuery= "UPDATE user SET is_deleted=0 WHERE Email =email";
+ 
+                  console.log(req.body)
+                   
+                         conn.query(SelectQuery, function (err,result){
+                          if( err ) {
+                           console.log(err);
+                           res.send("Unable to get the comments");
+                          }
+                          else{
+                           res.send("user delete");
+                          }
+              
                          })
-                      }
+
+
                  }
+
+
+
+
+
+
+       
+                 exports.View_Accounts = (req,res,next)=>{
+
+                  var SelectQuery= "SELECT * FROM user";
+ 
+                  
+                   
+                         conn.query(SelectQuery, function (err,result){
+                          if( err ) {
+                           console.log(err);
+                           res.send("Unable to get the comments");
+                          }
+                          else{
+                           res.send(result);
+                          }
+              
+                         })
+
+                   
+                  }

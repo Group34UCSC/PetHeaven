@@ -1,11 +1,13 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import NavbarUsers from "../../includes/NavbarUsers";
 import './PaidPrescription.css';
 
 function PaidPrescription()
 {
     return(
         <div>
+            <NavbarUsers/>
             {/* New prescription topic started  */}
             <section className="py-4 ">
             <div className="container">

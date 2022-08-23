@@ -12,10 +12,12 @@ import dog3 from '../img/d3.jpg';
 import dog5 from '../img/d5.jpg';
 import dog6 from '../img/d6.jpg';
 import dog7 from '../img/d7.jpg';
+import NavbarUsers from '../../../includes/NavbarUsers';
 
 function ViewPets(){
     return(
         <div>
+        <NavbarUsers/>
         <section className="section bg-c-light border-top">
             <h3 class="pageTitle">Our Pets <i class="fa-solid fa-paw"></i></h3>
             <div class="container text-center">
@@ -28,8 +30,8 @@ function ViewPets(){
                     </div>
 
                     <div class="col">
-                        <Link to="/addnewpet" class="nav-link active">
-                            <button type="button" class="btn btn-success addNewBtn" id="adoptbtn">Add New Pet <i class="fa-solid fa-paw"></i></button>
+                        <Link to="addnewpet" class="nav-link active">
+                            <button type="button" class="btn btn-success addNewBtn" id="postpetbtn">Add New Pet <i class="fa-solid fa-paw"></i></button>
                         </Link>
                     </div>
                     <div class="col viewtoggleBtn">
@@ -60,7 +62,7 @@ function ViewPets(){
                         </div>
 
                           <div class="d-grid gap-2 ">
-                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
+                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
                           </div>
                   
                         <h6 >Shadow is a calm, innocent and child friendly puppy. Its Vaccinations are up to date. Also It is in good health. </h6>
@@ -68,8 +70,8 @@ function ViewPets(){
                       
                     </div>
                     
-                    <Link to="/postpets" class="nav-link active d-grid gap-2">
-                      <button type="button" class="btn btn-success postpetBtn" id="adoptbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
+                    <Link to="postpets" class="nav-link active d-grid gap-2">
+                      <button type="button" class="btn btn-success postpetBtn" id="postpetbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
                   </Link>
                 </div>
               </div>
@@ -92,7 +94,7 @@ function ViewPets(){
                         </div>
 
                           <div class="d-grid gap-2 ">
-                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
+                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
                           </div>
                   
                         <h6 >Browny is a blowzy animal. Also it is best for security. Its Vaccinations are up to date. Also It is in good health. </h6>
@@ -100,8 +102,8 @@ function ViewPets(){
                       
                     </div>
                     
-                    <Link to="/postpets" class="nav-link active d-grid gap-2">
-                      <button type="button" class="btn btn-success postpetBtn" id="adoptbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
+                    <Link to="postpets" class="nav-link active d-grid gap-2">
+                      <button type="button" class="btn btn-success postpetBtn" id="postpetbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
                   </Link>
                 </div>
               </div>
@@ -121,7 +123,7 @@ function ViewPets(){
                         </div>
 
                           <div class="d-grid gap-2 ">
-                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
+                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
                           </div>
                   
                         <h6 >Shaily is a qute and calm. It is a child friendly puppy. Its Vaccinations are up to date. Also It is in good health. </h6>
@@ -129,8 +131,8 @@ function ViewPets(){
                       
                     </div>
                     
-                    <Link to="/postpets" class="nav-link active d-grid gap-2">
-                      <button type="button" class="btn btn-success postpetBtn" id="adoptbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
+                    <Link to="postpets" class="nav-link active d-grid gap-2">
+                      <button type="button" class="btn btn-success postpetBtn" id="postpetbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
                   </Link>
                 </div>
               </div>
@@ -150,7 +152,7 @@ function ViewPets(){
                         </div>
 
                           <div class="d-grid gap-2 ">
-                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
+                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
                           </div>
                   
                         <h6 >Blacky is a innocent pet. It is a child friendly pet and playful pet. Its Vaccinations are up to date. Also It is in good health. </h6>
@@ -158,8 +160,8 @@ function ViewPets(){
                       
                     </div>
                     
-                    <Link to="/postpets" class="nav-link active d-grid gap-2">
-                      <button type="button" class="btn btn-success postpetBtn" id="adoptbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
+                    <Link to="postpets" class="nav-link active d-grid gap-2">
+                      <button type="button" class="btn btn-success postpetBtn" id="postpetbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
                   </Link>
                 </div>
               </div>
@@ -179,7 +181,7 @@ function ViewPets(){
                         </div>
 
                           <div class="d-grid gap-2 ">
-                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
+                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
                           </div>
                   
                         <h6 >Tommy is a innocent and calm. It is a silent pet but better friend for loneliness. Its Vaccinations are up to date. Also It is in good health. </h6>
@@ -187,8 +189,8 @@ function ViewPets(){
                       
                     </div>
                     
-                    <Link to="/postpets" class="nav-link active d-grid gap-2">
-                      <button type="button" class="btn btn-success postpetBtn" id="adoptbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
+                    <Link to="postpets" class="nav-link active d-grid gap-2">
+                      <button type="button" class="btn btn-success postpetBtn" id="postpetbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
                   </Link>
                 </div>
               </div>
@@ -209,7 +211,7 @@ function ViewPets(){
                         </div>
 
                           <div class="d-grid gap-2 ">
-                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
+                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
                           </div>
                   
                         <h6 >Bobby is a very active and playful pet. It is a child friendly pet. Its Vaccinations are up to date. Also It is in good health. </h6>
@@ -217,8 +219,8 @@ function ViewPets(){
                       
                     </div>
                     
-                    <Link to="/postpets" class="nav-link active d-grid gap-2">
-                      <button type="button" class="btn btn-success postpetBtn" id="adoptbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
+                    <Link to="postpets" class="nav-link active d-grid gap-2">
+                      <button type="button" class="btn btn-success postpetBtn" id="postpetbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
                   </Link>
                 </div>
               </div>
@@ -233,9 +235,9 @@ function ViewPets(){
                     <div class="modal-content">
                       <div class="modal-header">
                           <div class="container-fluid justify-content-start">
-                            <button class="btn btn-outline-success me-2 medicalbtn" type="button"> Vaccination <i class="fa-solid fa-newspaper"></i></button>
-                            <button class="btn btn-outline-success me-2 medicalbtn" type="button"> Injuries <i class="fa-solid fa-newspaper"></i></button>
-                            <button class="btn btn-outline-success me-2 medicalbtn" type="button"> Others <i class="fa-solid fa-newspaper"></i></button>
+                            <button class="btn btn-outline-success me-2 medicalbtn" type="button"> Vaccines </button>
+                            <button class="btn btn-outline-success me-2 medicalbtn" type="button"> Injuries </button>
+                            <button class="btn btn-outline-success me-2 medicalbtn" type="button"> Others </button>
                           </div>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
@@ -288,7 +290,7 @@ function ViewPets(){
                                         <label className="mb-1">Type</label>
                                         <textarea rows="2" className="form-control" placeholder="">
                                           <select>
-                                            <label>Vaccination</label>
+                                            <label>Vaccinations</label>
                                             <label>Injuries</label>
                                             <label>Other</label>
                                           </select>

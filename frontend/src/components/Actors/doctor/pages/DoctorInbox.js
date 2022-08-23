@@ -15,6 +15,7 @@ function DoctorInbox() {
     return(
      
      <div> <NavbarUsers />
+     <div class="chatbox">
        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
         <div class="container">
         <div class="row clearfix">
@@ -126,6 +127,7 @@ function DoctorInbox() {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         </div>
         </div>

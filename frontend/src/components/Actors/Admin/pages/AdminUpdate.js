@@ -10,9 +10,10 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SignUpImg from "../../../images/both.jpg";
+import SignUpImg from "../../../images/both.jpeg";
 import '../css/AdminUpdate.css';
 import NavbarUsers from "../../../includes/NavbarUsers";
+import Table from "./Table";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
@@ -194,6 +195,7 @@ const AdminUpdate = () => {
         <>
         <div>
         <NavbarUsers/>
+        <Table />
             {/* <section className="py-4 ">
                 <div className="container">
                     <div className="row bg-success text-white"> 

@@ -5,14 +5,15 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 
 import '../css/ViewAdoptee.css';
 
-
 import ad1 from '../img/ad1.jpg';
 import ad2 from '../img/ad2.jpg';
 import ad3 from '../img/ad3.jpg';
+import NavbarUsers from '../../../includes/NavbarUsers';
 
 function ViewAdoptee(){
     return(
         <div>
+        <NavbarUsers/>
         <section className="section bg-c-light border-top">
             <h3 class="pageTitle">Adoptees <i class="fa-solid fa-paw"></i></h3>
             <div class="container text-center">
@@ -25,8 +26,8 @@ function ViewAdoptee(){
                     </div>
 
                     <div class="col">
-                        <Link to="/viewadopterrequests" class="nav-link active">
-                            <button type="button" class="btn btn-success addNewBtn" id="adoptbtn">Accept Adopt Request <i class="fa-solid fa-check"></i> 
+                        <Link to="viewadopterrequests" class="nav-link active">
+                            <button type="button" class="btn btn-success addNewBtn" id="postpetbtn">Accept Adopt Request <i class="fa-solid fa-check"></i> 
                               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger notfycount">
                                 10
                                 <span class="visually-hidden">unread messages</span>
@@ -68,8 +69,8 @@ function ViewAdoptee(){
                       </div>  
                       
                     </div>
-                  <Link to="/notifyadopter" class="nav-link active d-grid gap-2">
-                    <button type="button" class="btn btn-success notifyBtn" id="adoptbtn">Notify Adopter <i class="fa-solid fa-bell"></i></button>
+                  <Link to="notifyadopter" class="nav-link active d-grid gap-2">
+                    <button type="button" class="btn btn-success notifyBtn" id="postpetbtn">Notify Adopter <i class="fa-solid fa-bell"></i></button>
                   </Link>
                 </div>
               </div>
@@ -97,8 +98,8 @@ function ViewAdoptee(){
                       </div>  
                       
                     </div>
-                  <Link to="/notifyadopter" class="nav-link active d-grid gap-2">
-                    <button type="button" class="btn btn-success notifyBtn" id="adoptbtn">Notify Adopter <i class="fa-solid fa-bell"></i></button>
+                  <Link to="notifyadopter" class="nav-link active d-grid gap-2">
+                    <button type="button" class="btn btn-success notifyBtn" id="postpetbtn">Notify Adopter <i class="fa-solid fa-bell"></i></button>
                   </Link>
                 </div>
               </div>
@@ -126,8 +127,8 @@ function ViewAdoptee(){
                       </div>  
                       
                     </div>
-                  <Link to="/notifyadopter" class="nav-link active d-grid gap-2">
-                    <button type="button" class="btn btn-success notifyBtn" id="adoptbtn">Notify Adopter <i class="fa-solid fa-bell"></i></button>
+                  <Link to="notifyadopter" class="nav-link active d-grid gap-2">
+                    <button type="button" class="btn btn-success notifyBtn" id="postpetbtn">Notify Adopter <i class="fa-solid fa-bell"></i></button>
                   </Link>
                 </div>
               </div>
@@ -146,19 +147,19 @@ function ViewAdoptee(){
                         <div className="card card-body shadow ">
                             <div className="row">
                                 <div className="col-md-12 border-left">
-                                    <h6><i class="fa-solid fa-user"></i> P.K.S.Samarasinghe</h6>
+                                    <h6><i class="fa-solid fa-user"></i> L.H.S.P.Kahandawa</h6>
                                     <hr/> 
                                     <div className="form-group">
-                                        <h6>Elders : Two elders</h6>
+                                        <h6>Contact Number : 0758863044</h6>
                                     </div>
                                     <div className="form-group">
-                                        <h6>Kids : One kid</h6>
+                                        <h6>Rough Monthly Income : 92 000.00</h6>
                                     </div>
                                     <div className="form-group">
-                                        <h6>Purpose : Reduce loneliness for kid</h6>
+                                        <h6>Kids : 2 babies</h6>
                                     </div>   
                                     <div className="form-group">
-                                        <h6>Other Adopted Pets : Sheily</h6>
+                                        <h6>Other Pets : Have a cat</h6>
                                     </div>  
 
                                     <div className="form-group py-3">

@@ -1,17 +1,19 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import Navbar from "../includes/Navbar";
 import Slider from "../includes/Slider";
 import Navbar from "../includes/Navbar";
 import VetClinic from "../images/vet1.jpg";
 import Pharmacy from "../images/pharmacy1.jpg";
 import PetToolStore from "../images/petTool.jpg";
+import CustomerFeaturedAnimals from "../Actors/customer/pages/CustomerFeaturedAnimals";
 import './HomePage.css';
 
 function HomePage()
 {
     return(
         <div>
-            <Navbar/>
+            <Navbar />
             <Slider/>
             <section className="section">
                 <div className="container">
@@ -36,32 +38,32 @@ function HomePage()
                                 <div className="card-body">
                                     <h6>Vetrinary Clinic</h6>
                                     <div className="underline"></div>
-                                    <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
+                                    <p>PetHeaven offer online consultation from thousand of registered qualified doctors.</p>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-4">
                             <div className="card shadow">
-                            <Link to="/pharmacy" class="nav-link active">
+                            {/* <Link to="/pharmacy" class="nav-link active"> */}
                             <img src={Pharmacy} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
                                     <h6>Pet Pharmacy</h6>
                                     <div className="underline"></div>
-                                    <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
+                                    <p>Buy medicines for your pets online from registered petheaven pharmacies.</p>
                                 </div>
-                                </Link>
+                                {/* </Link> */}
                             </div>
                         </div>
                         <div className="col-md-4">
                             <div className="card shadow">
-                            <Link to="/PetToolStore" class="nav-link active">
+                            {/* <Link to="/PetToolStore" class="nav-link active"> */}
                             <img src={PetToolStore} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
                                     <h6>Pet Tool Store</h6>
                                     <div className="underline"></div>
-                                    <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
+                                    <p>Dream shopping for your pet with petheaven pet tool stores with unlimited pet products.</p>
                                 </div>
-                            </Link>
+                            {/* </Link> */}
                             </div>
                         </div>
                     </div>
@@ -79,8 +81,8 @@ function HomePage()
             </section>
             <section className="section bg-c-light border-top">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-md-2">
+                    {/* <div className="row"> */}
+                        {/* <div className="col-md-2">
                             <div className="card shadow">
                             <img src={VetClinic} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
@@ -89,8 +91,8 @@ function HomePage()
                                     <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-md-2">
+                        </div> */}
+                        {/* <div className="col-md-2">
                             <div className="card shadow">
                             <img src={Pharmacy} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
@@ -99,8 +101,8 @@ function HomePage()
                                     <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-md-2">
+                        </div> */}
+                        {/* <div className="col-md-2">
                             <div className="card shadow">
                             <img src={PetToolStore} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
@@ -109,8 +111,8 @@ function HomePage()
                                     <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-md-2">
+                        </div> */}
+                        {/* <div className="col-md-2">
                             <div className="card shadow">
                             <img src={VetClinic} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
@@ -119,8 +121,8 @@ function HomePage()
                                     <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-md-2">
+                        </div> */}
+                        {/* <div className="col-md-2">
                             <div className="card shadow">
                             <img src={Pharmacy} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
@@ -129,8 +131,8 @@ function HomePage()
                                     <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-md-2">
+                        </div> */}
+                        {/* <div className="col-md-2">
                             <div className="card shadow">
                             <img src={PetToolStore} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
@@ -139,8 +141,9 @@ function HomePage()
                                     <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </div> */}
+                    {/* </div> */}
+                    <CustomerFeaturedAnimals></CustomerFeaturedAnimals>
                 </div>
                 
             </section>

@@ -2,6 +2,10 @@
         width: 100%;
     }
     
+    .doctown {
+        text-align: center;
+    }
+    
     .carouseltitle {
         color: black;
         font-size: 40px;
@@ -27,8 +31,7 @@
     }
     
     #doctorsearchcararea {
-        margin-left: 200px;
-        margin-right: 100px;
+        margin-left: 40px;
     }
     
     #doctorform {
@@ -54,15 +57,14 @@
     }
     
     #channelbtn {
-        margin-left: 9px;
+        margin-left: 35px;
         align-items: center;
         justify-content: center;
     }
     
     #doctorcard {
         margin-top: 60px;
-        width: 18%;
-        margin-left: 43px;
+        width: 16%;
     }
     
     #docproimg {

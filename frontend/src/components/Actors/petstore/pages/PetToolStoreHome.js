@@ -2,16 +2,23 @@ import React from "react";
 import {Link} from 'react-router-dom';
 import '../css/PetToolStoreHome.css';
 
-import PaidPrescriptions from "../images/payment.png";
+import PaidOrders from "../images/payment.png";
 import Inquiries from "../images/inquiry.jpg";
 import Inventory from "../images/inventory.png";
+
+import Bathroom from "../images/bathroom.jpg";
+import Grooming from "../images/DogGrooming.jpg";
+import FurnitureCage from "../images/FurnitureCage.jpg";
+import PetCage from "../images/PetCage.jpg";
+import TractionBelt from "../images/TractionBelt.jpg";
+import NavbarUsers from "../../../includes/NavbarUsers";
 
 
 function PetToolStoreHome()
 {
     return(
         <div>
-            
+            <NavbarUsers/>
             {/* Topic started */}
             <section className="py-4 ">
             <div className="container">
@@ -30,8 +37,8 @@ function PetToolStoreHome()
                     <div className="row">
                         <div className="col-md-4">
                             <div className="card shadow">
-                            <Link to="/pharmacy/PaidPrescription" class="nav-link active">
-                            <img src={PaidPrescriptions} className="w-100 border-bottom" alt="Services"/>
+                            <Link to="/petstore/PaidOrders" class="nav-link active">
+                            <img src={PaidOrders} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
                                     <h6>Paid Orders</h6>
                                     <div className="underline"></div>
@@ -42,7 +49,7 @@ function PetToolStoreHome()
                         </div>
                         <div className="col-md-4">
                             <div className="card shadow">
-                            <Link to="/pharmacy/inquiries/ViewInquiry" class="nav-link active">
+                            <Link to="/petstore/inquiries/ViewInquiry" class="nav-link active">
                             <img src={Inquiries} className="w-100 border-bottom" alt="Services"/>
                                 <div className="card-body">
                                     <h6>Inquiries</h6>
@@ -73,7 +80,7 @@ function PetToolStoreHome()
             <section className="py-4 ">
             <div className="container">
                 <div className="d-flex justify-content-center mb-4">
-                    <Link to="/petstore/inventory/ViewInventory" class="nav-link active">
+                    <Link to="/petstore/addNewEquipment" class="nav-link active">
                         <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button>
                     </Link>
                 </div>
@@ -95,7 +102,7 @@ function PetToolStoreHome()
                 <div className="card-body">
 
                     {/* Check availability name started */}
-                <h5 className="main-heading text-center">Check availability to confirm the order</h5>
+                <h5 className="main-heading text-center">Advertisements list</h5>
                 <div className="underline mx-auto"></div>
                 {/* Check availability name ended */}
                 
@@ -109,7 +116,7 @@ function PetToolStoreHome()
 
                         {/* Search box started here         */}
                         <div class="col-md-10">
-                            <input type="text" class="form-control" id="petsearchby-name" aria-describedby="petsearch" placeholder="search prescriptions by prescription id or pet name"></input>
+                            <input type="text" class="form-control" id="petsearchby-name" aria-describedby="petsearch" placeholder="search advertisements by advertisement id or title"></input>
                             
                             </div>
                         {/* Search box ended here          */}
@@ -134,163 +141,157 @@ function PetToolStoreHome()
                 <div className="form-field">
 
                     {/* Prescription list started  */}
-        <label htmlFor="service">Prescription List</label>
+        {/* <label htmlFor="service">Prescription List</label> */}
 
-        {/* First prescription started */}
-        <div className="form-group mt-3">
-                <div className="card">
-                <Link to="/pharmacy/Prescription" class="nav-link active">
-                    <div className="card-body bg-c-light">
-                    <div className="row ">
-                <div class="col-md-2">
-                    <label for="option" class="form-label">Prescription No</label>
-                        <h4 className="main-heading">5</h4>
-                    
-                    </div>
-                    <div class="col-md-5">
-                        <label for="option" class="form-label">Doctor details</label>
-                        <h4 className="main-heading">Dr. Amal Silva <sub>BVSc(Pera)</sub></h4>
-                        <h6 class="slmc">Veterinary Consultant</h6>
-                        <h6 class="slmc">SLMC - 13245</h6>
-                    </div>
-                    <div class="col-md-5">
-                    <label for="option" class="form-label">Patient details</label> 
-                        <h4 className="main-heading">Shaggy</h4>
-                        <h6 class="slmc">Dog</h6>
-                        <h6 class="slmc">6 months</h6>
-                    </div>
-                </div>
-                    </div>
-                </Link>
-                </div>
-                    
-                    
-                </div>
-                {/* First prescription ended */}
+        <section className="section bg-c-light border-top">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-3">
+                            <div className="card shadow">
+                            
+                            <div className="card-body">
+                                <h6>Dog bath brush</h6>   
+                                <div className="underline"></div>       
+                            </div>
+                            
+                            <img src={Bathroom} className="w-100 border-bottom" alt="Services"/>
+                                <div className="card-body">
+                                <div className="form-group row ">
+                                        <div className="col-md-7">
+                                            <h4 id="price">Rs. 1630</h4>
+                                        </div>
+                                        <div className="col-md-5">
+                                        <Link to="/petstore/advertisement/MoreDetails" class="nav-link active">
+                                            <button type="button" id="view-btn" className="btn shadow w-100 ">See More</button>
+                                        </Link>
+                                        </div>
+                                </div>
+                                    {/* <h4 id="price">Rs. 1630</h4> */}
+                                    <div className="mb-2 mt-2 ">
+                                        <Link to="/petstore/EditAdvertisement" class="nav-link active">
+                                            {/* <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button> */}
+                                            <button type="button" id="submit-btn" className="btn shadow w-100 ">Edit</button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-3">
+                            <div className="card shadow">
+                            <div className="card-body">
+                                <h6>Dog grooming tools</h6>   
+                                <div className="underline"></div>       
+                            </div>
+                            <img src={Grooming} className="w-100 border-bottom" alt="Services"/>
+                                <div className="card-body">
+                                <div className="form-group row ">
+                                        <div className="col-md-7">
+                                            <h4 id="price">Rs. 890</h4>
+                                        </div>
+                                        <div className="col-md-5">
+                                        <Link to="/petstore/advertisement/MoreDetails" class="nav-link active">
+                                            <button type="button" id="view-btn" className="btn shadow w-100 ">See More</button>
+                                        </Link>
+                                        </div>
+                                </div>
+                                {/* <h4 id="price">Rs. 890</h4> */}
+                                    <div className="mb-2 mt-2 ">
+                                        <Link to="/petstore/EditAdvertisement" class="nav-link active">
+                                            {/* <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button> */}
+                                            <button type="button" id="submit-btn" className="btn shadow w-100 ">Edit</button>
+                                        </Link>
+                                    </div>
 
-                {/* Second prescription started */}
-                <div className="form-group mt-3">
-                    <div className="card">
-                        <div className="card-body bg-c-light">
-                        <div className="row ">
-                    <div class="col-md-2">
-                        <label for="option" class="form-label">Prescription No</label>
-                            <h4 className="main-heading">6</h4>
-                        
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-5">
-                            <label for="option" class="form-label">Doctor details</label>
-                            <h4 className="main-heading">Dr. Priyantha Perera <sub>BVSc(Pera)</sub></h4>
-                            <h6 class="slmc">Veterinary Consultant</h6>
-                            <h6 class="slmc">SLMC - 54328</h6>
+                        <div className="col-md-3">
+                            <div className="card shadow">
+                            <div className="card-body">
+                                <h6>Furniture Cage</h6>   
+                                <div className="underline"></div>       
+                            </div>
+                            <img src={FurnitureCage} className="w-100 border-bottom" alt="Services"/>
+                                <div className="card-body">
+                                <div className="form-group row ">
+                                        <div className="col-md-7">
+                                            <h4 id="price">Rs. 15200</h4>
+                                        </div>
+                                        <div className="col-md-5">
+                                        <Link to="/petstore/advertisement/MoreDetails" class="nav-link active">
+                                            <button type="button" id="view-btn" className="btn shadow w-100 ">See More</button>
+                                        </Link>
+                                        </div>
+                                </div>
+                                {/* <h4 id="price">Rs. 15200</h4> */}
+                                    <div className="mb-2 mt-2 ">
+                                        <Link to="/petstore/EditAdvertisement" class="nav-link active">
+                                            {/* <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button> */}
+                                            <button type="button" id="submit-btn" className="btn shadow w-100 ">Edit</button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-5">
-                        <label for="option" class="form-label">Patient details</label> 
-                            <h4 className="main-heading">Jerry</h4>
-                            <h6 class="slmc">Cat</h6>
-                            <h6 class="slmc">10 months</h6>
-                        </div>
-                    </div>
-                        </div>
-                        
-                    </div>
-                    
-                    
-                </div>
-                {/* Second prescription ended */}
+                        {/* <div className="col-md-3">
+                            <div className="card shadow">
+                            <div className="card-body">
+                                <h6>Dog bath brush</h6>   
+                                <div className="underline"></div>       
+                            </div>
+                            <img src={PetCage} className="w-100 border-bottom" alt="Services"/>
+                                <div className="card-body">
+                                    <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
+                                </div>
+                            </div>
+                        </div> */}
+                        <div className="col-md-3">
+                            <div className="card shadow">
+                            <div className="card-body">
+                                <h6>Traction Belt</h6>   
+                                <div className="underline"></div>       
+                            </div>
+                            <img src={TractionBelt} className="w-100 border-bottom" alt="Services"/>
+                                <div className="card-body">
 
-                {/* Third prescription started */}
-                <div className="form-group mt-3">
-                    <div className="card">
-                        <div className="card-body bg-c-light">
-                        <div className="row ">
-                    <div class="col-md-2">
-                        <label for="option" class="form-label">Prescription No</label>
-                            <h4 className="main-heading">7</h4>
-                        
-                        </div>
-                        <div class="col-md-5">
-                            <label for="option" class="form-label">Doctor details</label>
-                            <h4 className="main-heading">Dr. Amaya Fernando <sub>BVSc(London)</sub></h4>
-                            <h6 class="slmc">Veterinary Consultant</h6>
-                            <h6 class="slmc">SLMC - 43564</h6>
-                        </div>
-                        <div class="col-md-5">
-                        <label for="option" class="form-label">Patient details</label> 
-                            <h4 className="main-heading">Charlie</h4>
-                            <h6 class="slmc">Dog</h6>
-                            <h6 class="slmc">4 months</h6>
-                        </div>
-                    </div>
-                        </div>
-                        
-                    </div>
-                    
-                    
-                </div>
-                {/* Third prescription ended  */}
+                                <div className="form-group row ">
+                                        <div className="col-md-7">
+                                            <h4 id="price">Rs. 780</h4>
+                                        </div>
+                                        <div className="col-md-5">
+                                        <Link to="/petstore/advertisement/MoreDetails" class="nav-link active">
+                                            <button type="button" id="view-btn" className="btn shadow w-100 ">See More</button>
+                                        </Link>
+                                        </div>
+                                </div>
 
-                {/* Fourth prescription started  */}
-                <div className="form-group mt-3">
-                <div className="card">
-                    <div className="card-body bg-c-light">
-                    <div className="row ">
-                <div class="col-md-2">
-                    <label for="option" class="form-label">Prescription No</label>
-                        <h4 className="main-heading">8</h4>
-                    
-                    </div>
-                    <div class="col-md-5">
-                        <label for="option" class="form-label">Doctor details</label>
-                        <h4 className="main-heading">Dr. Amal Silva <sub>BVSc(Pera)</sub></h4>
-                        <h6 class="slmc">Veterinary Consultant</h6>
-                        <h6 class="slmc">SLMC - 13245</h6>
-                    </div>
-                    <div class="col-md-5">
-                    <label for="option" class="form-label">Patient details</label> 
-                        <h4 className="main-heading">Jimmy</h4>
-                        <h6 class="slmc">Dog</h6>
-                        <h6 class="slmc">1 year</h6>
-                    </div>
-                </div>
-                    </div>
-                     
-                </div>
-                    
-                    
-                </div>
-                {/* Fourth prescription ended  */}
 
-                {/* Fifth prescription started  */}
-                <div className="form-group mt-3">
-                    <div className="card">
-                        <div className="card-body bg-c-light">
-                        <div className="row ">
-                    <div class="col-md-2">
-                        <label for="option" class="form-label">Prescription No</label>
-                            <h4 className="main-heading">9</h4>
-                        
+                                {/* <h4 id="price">Rs. 780</h4> */}
+                                    <div className="mb-2 mt-2 ">
+                                        <Link to="/petstore/EditAdvertisement" class="nav-link active">
+                                            {/* <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button> */}
+                                            <button type="button" id="submit-btn" className="btn shadow w-100 ">Edit</button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-5">
-                            <label for="option" class="form-label">Doctor details</label>
-                            <h4 className="main-heading">Dr. Jehan Perera <sub>BVSc(Pera)</sub></h4>
-                            <h6 class="slmc">Veterinary Consultant</h6>
-                            <h6 class="slmc">SLMC - 76984</h6>
-                        </div>
-                        <div class="col-md-5">
-                        <label for="option" class="form-label">Patient details</label> 
-                            <h4 className="main-heading">Lily</h4>
-                            <h6 class="slmc">Cat</h6>
-                            <h6 class="slmc">8 months</h6>
-                        </div>
+                        {/* <div className="col-md-3">
+                            <div className="card shadow">
+                            <div className="card-body">
+                                <h6>Dog bath brush</h6>   
+                                <div className="underline"></div>       
+                            </div>
+                            <img src={Grooming} className="w-100 border-bottom" alt="Services"/>
+                                <div className="card-body">
+                                    <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
+                                </div>
+                            </div>
+                        </div> */}
                     </div>
-                        </div>
-                        
-                    </div>
-                    
-                    
                 </div>
-                {/* Fifth prescription ended  */}
+                
+            </section>
 
                
 
@@ -317,3 +318,4 @@ function PetToolStoreHome()
 }
 
 export default PetToolStoreHome;
+

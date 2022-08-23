@@ -1,10 +1,12 @@
 import React from "react";
+import NavbarUsers from "../../../includes/NavbarUsers";
 import './ViewInventory.css';
 
 function ViewInventory()
 {
     return(
         <div>
+            <NavbarUsers/>
             <section className="py-4 ">
             <div className="container">
                 <div className="row bg-success text-white"> 

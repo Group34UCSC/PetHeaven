@@ -1,22 +1,21 @@
 import React,{useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
+import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro' 
+import {Link} from 'react-router-dom'; 
 import '../css/CustomerDoctorappoint.css';
 import docvectors from  '../images/docvector.png';
 import CustomerDoctorCarousel from './Customerdoctorcarousel';
 import Pagination from  './pagination';
-
-import CustomersubNavbar from './Customersubnavbar';
-
 import Profile from '../images/profile.png';
 import medicinetin from '../images/medicinetin.jfif';
 import medicinebottle from '../images/medbottle.jfif';
 import '../css/Customerpharmacypage.css'
 import '../css/profileview.css';
+import NavbarUsers from '../../../includes/NavbarUsers';
 function Customerpharmacypage(){
     return (
         <div>
-            <CustomerSubNavbar></CustomerSubNavbar>
+            <NavbarUsers/>
             <div id="pharmacyprofilearea">
                 <div class="card" id="profileviewcard">
                     <div class="row">
@@ -31,28 +30,28 @@ function Customerpharmacypage(){
                                     <tbody>
                                         <tr>
                                             <th id="profilelabel">Shop name</th>
-                                            <td>Arogya Pharmacy</td>
+                                            <td id="profileitem">Arogya Pharmacy</td>
                                         
                                         </tr>
 
                                         <tr>
                                             <th id="profilelabel">Address</th>
-                                            <td>Arogya pharmacy, 29/B, Main street, Akuressa </td>
+                                            <td id="profileitem">Arogya pharmacy, 29/B, Main street, Akuressa </td>
                                         </tr>
 
                                         <tr>
                                             <th id="profilelabel">Telephone number</th>
-                                            <td>077-2357890</td>
+                                            <td id="profileitem">077-2357890</td>
                                         </tr>
 
                                         <tr>
                                             <th id="profilelabel">Email</th>
-                                            <td>absilva@gmail.com</td>
+                                            <td id="profileitem">absilva@gmail.com</td>
                                         </tr>
 
                                         <tr>
                                             <th id="profilelabel">Registration number</th>
-                                            <td>2017/A/RC/226</td>
+                                            <td id="profileitem">2017/A/RC/226</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -72,49 +71,67 @@ function Customerpharmacypage(){
             <h3 class="featuredanimalsheader">Medicine stock <i class="fa-solid fa-paw"></i></h3>
             <div class="row cardbody featuredanimalarea" > 
                 <div class="col-md-2 card"  id="card1" >
+                    <h5 class="text-success petname">Super allergy release</h5>
+                    <div className="underline underlineJusty"></div>
                     <img src={medicinetin} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                     <div class="card-body">
                         <p class="card-text"></p>
-                        <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                        <h6 class="petage text-danger">Rs 7550/=</h6>
+                        <Link to="medicinedetails"><button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                     </div>
                 </div>
 
                 <div class="col-md-2 card" id="card1">
+                    <h5 class="text-success petname">germicide Oil</h5>
+                    <div className="underline underlineJusty"></div>
                     <img src={medicinebottle} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                     <div class="card-body">
                         <p class="card-text"></p>
+                        <h6 class="petage text-danger">Rs 7550/=</h6>
                         <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                     </div>
                 </div>
 
                 <div class="col-md-2 card" id="card1">
+                    <h5 class="text-success petname">Super allergy release</h5>
+                    <div className="underline underlineJusty"></div>
                     <img src={medicinetin} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                     <div class="card-body">
                         <p class="card-text"></p>
+                        <h6 class="petage text-danger">Rs 7550/=</h6>
                         <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                     </div>
                 </div>
 
                 <div class="col-md-2 card" id="card1">
+                    <h5 class="text-success petname">germicide Oi</h5>
+                    <div className="underline underlineJusty"></div>
                     <img src={medicinebottle} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                     <div class="card-body">
                         <p class="card-text"></p>
+                        <h6 class="petage text-danger">Rs 7550/=</h6>
                         <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                     </div>
                 </div>
 
                 <div class="col-md-2 card"  id="card1" >
+                    <h5 class="text-success petname">germicide Oi</h5>
+                    <div className="underline underlineJusty"></div>
                     <img src={medicinebottle} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                     <div class="card-body">
                         <p class="card-text"></p>
+                        <h6 class="petage text-danger">Rs 7550/=</h6>
                         <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                     </div>
                 </div>
 
                 <div class="col-md-2 card" id="card1">
+                    <h5 class="text-success petname">germicide Oil</h5>
+                    <div className="underline underlineJusty"></div>
                     <img src={medicinebottle} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                     <div class="card-body">
                         <p class="card-text"></p>
+                        <h6 class="petage text-danger">Rs 7550/=</h6>
                         <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                     </div>
                 </div>

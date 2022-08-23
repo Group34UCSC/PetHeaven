@@ -27,6 +27,8 @@ const AdminCreate = () => {
     const [validName, setValidName] = useState(false);
     const [userFocus, setUserFocus] = useState(false);
 
+    const [type,setType]=useState('Pet Adopter')
+    const [buttontext,setButtontext]=useState('Create');
     const [email, setEmail] = useState('');
     const [validEmail, setValidEmail] = useState(false);
     const [emailFocus, setEmailFocus] = useState(false);
@@ -70,7 +72,58 @@ const AdminCreate = () => {
 
     useEffect(() => {
         setErrMsg('');
-    }, [user, pwd, matchPwd, email])
+    }, [user,type,pwd,matchPwd,email])
+
+
+    
+
+      const handleSubmit = async e => {
+        e.preventDefault();
+        setButtontext('Created..');
+        try {
+          const body = { user,type,email,pwd };
+          const response = await fetch(
+            "http://localhost:5000/Admin/Create",
+            {
+              method: "POST",
+              headers: {
+                "Content-type": "application/json"
+              },
+              body: JSON.stringify(body)
+            }
+          );
+          console.log(response);
+        }
+        catch (err) {
+            console.log("Falil12");
+          }
+      
+    }
+        
+          
+    
+
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
+    //   const data = { username: user, email: email, password: pwd };
+    //     console.log(data);
+    //     Axios.post("http://localhost:5000/SignUp", {
+
+    //                   User_name : user,
+    //                   Email: email, 
+    //                   Password: pwd,
+    //                 })
+    //                 // .then((response) => {
+    //                 //   if(response.data.error) {
+    //                 //     alert(response.data.error);}
+    //                 //   else{alert("successfully Logged in!");
+    //                 //   }
+    //                 // });
+
+
+    // };
+
 
 
     
@@ -242,13 +295,13 @@ const AdminCreate = () => {
                     </Link>
                 </div> */}
                                         <div id="dropDownMenu" className="mb-4">
-                                            <select class="form-control dropdown-toggle" data-bs-toggle="dropdown">
+                                            <select value={type} onChange={(e)=>setType(e.target.value)} class="form-control dropdown-toggle" data-bs-toggle="dropdown">
                                                 {/* <option selected>Select prescribed medicine</option> */}
-                                                <option value="1">Pet Adopter</option>
-                                                <option value="2">Veterinary Doctor</option>
-                                                <option value="3">Pharmacy</option>
-                                                <option value="4">Pet Tool Store</option>
-                                                <option value="5">Staff Member</option>
+                                                <option value="Pet Adopter">Pet Adopter</option>
+                                                <option value="Veterinary Doctor">Veterinary Doctor</option>
+                                                <option value="Pharmacy">Pharmacy</option>
+                                                <option value="Pet Tool Store">Pet Tool Store</option>
+                                                <option value="Staff Member">Staff Member</option>
                                             </select>
                                         </div>
 
@@ -364,7 +417,7 @@ const AdminCreate = () => {
                                                 {console.log(user)}
                                             <div className="d-flex justify-content-center">
 
-                                                <button className="mt-5"id="SignUpBtn" onClick={handleSubmit} >Create</button>
+                                                <button className="mt-5"id="SignUpBtn" onClick={handleSubmit} >{buttontext}</button>
                                             </div>
                                             
 

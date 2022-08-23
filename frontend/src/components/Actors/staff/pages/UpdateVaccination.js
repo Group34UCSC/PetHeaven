@@ -3,10 +3,12 @@ import {Link, Search} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 import '../css/UpdateVaccination.css';
+import NavbarUsers from '../../../includes/NavbarUsers';
 
 function UpdateVaccination() {
     return(
         <div>
+        <NavbarUsers/>
             <section className="py-4 ">
             <div className="container ">
                 <div className="row bg-success text-white titlebox"> 
@@ -31,13 +33,22 @@ function UpdateVaccination() {
                                     <hr/>
                                     <form>
                                         <div className="form-group">
-                                            <label className="mb-1">Registration Pet ID</label>
-                                            <input type="text" className="form-control" placeholder="Enter Pet ID"></input>
+                                            <label className="mb-1">Pet Name</label>
+                                            <input type="text" className="form-control" placeholder="Enter Pet name"></input>
                                         </div>
                                         <div className="form-group">
                                             <label className="mb-1">Apointed Date</label>
                                             <input type="date" className="form-control" placeholder="Select Saccinated Date"></input>
                                         </div>
+                                        <div className="form-group">
+                                            <label className="mb-1">Medical Status Type</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                            <option selected>Vaccination</option>
+                                            <option value="1">Vaccination</option>
+                                            <option value="2">Injuries</option>
+                                            <option value="2">Others</option>
+                                        </select>
+                                            </div>
                                         <div className="form-group">
                                             <label className="mb-1">Medical Status</label>
                                             <textarea rows="4" className="form-control" placeholder="Enter Medical Status"></textarea>
