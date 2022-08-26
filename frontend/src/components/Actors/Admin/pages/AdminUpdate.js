@@ -127,7 +127,7 @@ const AdminUpdate = () => {
                             </tbody>
                         </table>
 
-                        
+{/*                         
          <form>
          <div class="form-group">
     <label for="exampleInputPassword1">ID</label>
@@ -151,7 +151,162 @@ const AdminUpdate = () => {
  
   
   <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</form> */}
+
+
+
+
+<section className="section bg-c-light" >
+                    <div className="container">
+                        <div className="card shadow">
+                            <div className="card-body">
+                                <div className="row">
+
+
+
+
+                                    <div className="col-md-6 border-left">
+
+                                        {/* <img src={SignUpImg}  alt="Services"/> */}
+                                        <div className="col-md-12">
+                                            <div className="card shadow">
+                                                <div className="card-body">
+                                                    <div className="row bg-success text-white mb-3">
+                                                        <div className="col-md-4 my-auto"></div>
+                                                        <h3 className="text-center">UPDATE ACCOUNTS</h3>
+                                                    </div>
+
+                                                </div>
+                                                <img src={SignUpImg} alt="Services" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div className="col-md-6 border-start">
+                                 
+                                        <section id="SignUpSection">
+                                            
+                                            <form id="SignUpForm" >
+                     
+                                     
+                                              
+                                            <label htmlFor="username" class="labels">
+                                                    UserID:
+                                                   
+                                                </label>
+                                                <input class="inputFields"
+                                                    type="text"
+                                                    id="username"
+                                                    value={User_ID} onChange={(e)=>{setName(e.target.value)}}
+                                                    placeholder="Enter Your User Name"
+                                                    required
+                                               
+                                                />
+
+
+
+                                                 
+                                              <label htmlFor="username" class="labels">
+                                                    User Name
+                                                   
+                                                </label>
+                                                <input class="inputFields"
+                                                    type="text"
+                                                    id="username"
+                                                    value={User_name} onChange={(e)=>{setUserId(e.target.value)}}
+                                                    placeholder="Enter Your User Type"
+                                                    required
+                                               
+                                                />
+
+                                                
+                                              <label htmlFor="username" class="labels">
+                                                    User Type
+                                                   
+                                                </label>
+                                                <input class="inputFields"
+                                                    type="text"
+                                                    id="usertype"
+                                                    value={User_type} onChange={(e)=>{setuserType(e.target.value)}}
+                                                    placeholder="Enter Your User Type"
+                                                    required
+                                               
+                                                />
+                                               
+
+                                                <label htmlFor="emailre" class="labels">
+                                                    Email:
+                                                    
+                                                </label>
+                                                <input class="inputFields"
+                                                    type="email"
+                                                    id="emailre"
+                                                    value={Email} onChange={(e)=>{setEmail(e.target.value)}}
+                                                    placeholder="Enter Your Email"
+                                                    required
+                                                    
+                                                />
+                                               
+
+
+                                                <label htmlFor="password" class="labels">
+                                                    Password:
+                                                   
+                                                </label>
+                                                <input class="inputFields"
+                                                    type="password"
+                                                    id="password"
+                                                   
+                                                    placeholder="Enter Your Password"
+                                                    required
+                                                  
+                                                />
+                                            
+
+                                                <label htmlFor="confirm_pwd" class="labels">
+                                                    Confirm Password:
+                                                    
+                                                </label>
+                                                <input class="inputFields"
+                                                    type="password"
+                                                    id="confirm_pwd"
+                                                   
+                                                    placeholder="Enter Your Password Again"
+                                                    required
+                                                   
+                                                />
+                                               
+
+                                               
+                                                <div className="d-flex justify-content-center">
+
+                                                    <button className="mt-5" id="SignUpBtn" >Update</button>
+                                                </div>
+
+
+                                            </form>
+                                        </section>
+                                        {/* //    )}  */}
+
+                                    </div>
+
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
 
 
 
