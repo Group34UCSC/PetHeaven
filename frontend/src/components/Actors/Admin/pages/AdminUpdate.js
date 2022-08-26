@@ -74,12 +74,12 @@ const AdminUpdate = () => {
     }
 
     console.warn(users)
-    function UpdateUser(User_ID) {
-        // let item=users[User_ID-1];
-        // setUserId(item.User_ID)
-        // setName(item.User_name)
-        // setEmail(item.Email)
-        // setuserType(item.User_type)
+    function UpdateUser(item) {
+        console.log(item)
+        setUserId(item.User_ID)
+        setName(item.User_name)
+        setEmail(item.Email)
+        setuserType(item.User_type)
 
     }
 
@@ -118,7 +118,7 @@ const AdminUpdate = () => {
                                             <td>{item.User_name}</td>
                                             <td>{item.Email}</td>
                                             <td>{item.User_type}</td>
-                                            <td><button type="button" class="btn btn-warning" onClick={() => UpdateUser(item.User_ID)}>Update</button></td>
+                                            <td><button type="button" class="btn btn-warning" onClick={() => UpdateUser(item)}>Update</button></td>
                                         </tr>
                                     )
                                 }
@@ -126,6 +126,34 @@ const AdminUpdate = () => {
 
                             </tbody>
                         </table>
+
+                        
+         <form>
+         <div class="form-group">
+    <label for="exampleInputPassword1">ID</label>
+    <input type="text" value={User_ID} onChange={(e)=>{setName(e.target.value)}} class="form-control" id="ID" placeholder="ID"/>
+  </div>    
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input type="text" value={User_name} onChange={(e)=>{setUserId(e.target.value)}} class="form-control" id="name" aria-describedby="name" placeholder="Enter Name"/>
+  </div>     
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" value={Email} onChange={(e)=>{setEmail(e.target.value)}} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputEmail1">User Type</label>
+    <input type="text" value={User_type} onChange={(e)=>{setuserType(e.target.value)}} class="form-control" id="usertype" aria-describedby="emauserType" placeholder="Enter user Type"/>
+  </div>
+ 
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
 
 
                     </div>
