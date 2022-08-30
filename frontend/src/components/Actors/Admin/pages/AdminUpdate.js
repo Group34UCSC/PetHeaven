@@ -85,6 +85,34 @@ const AdminUpdate = () => {
 
 
 
+    
+    const DeleteUser = async e => {
+        // e.preventDefault();
+        
+        // try {
+        //     const body = { user, type, email, pwd };
+        //     const response = await fetch(
+        //         "http://localhost:5000/Admin/Delete",
+        //         {
+        //             method: "POST",
+        //             headers: {
+        //                 "Content-type": "application/json"
+        //             },
+        //             body: JSON.stringify(body)
+        //         }
+        //     );
+        //     console.log(response);
+        // }
+        // catch (err) {
+        //     console.log("Falil12");
+        // }
+
+    }
+
+
+
+
+
 
     return (
 
@@ -107,6 +135,7 @@ const AdminUpdate = () => {
                                     <th scope="col">Email</th>
                                     <th scope="col">User Type</th>
                                     <th scope="col">Operation</th>
+                                    <th scope="col">Operation</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -119,6 +148,7 @@ const AdminUpdate = () => {
                                             <td>{item.Email}</td>
                                             <td>{item.User_type}</td>
                                             <td><button type="button" class="btn btn-warning" onClick={() => UpdateUser(item)}>Update</button></td>
+                                            <td><button type="button" class="btn btn-danger" onClick={() => DeleteUser(item)}>Deactivated</button></td>
                                         </tr>
                                     )
                                 }
@@ -127,31 +157,6 @@ const AdminUpdate = () => {
                             </tbody>
                         </table>
 
-{/*                         
-         <form>
-         <div class="form-group">
-    <label for="exampleInputPassword1">ID</label>
-    <input type="text" value={User_ID} onChange={(e)=>{setName(e.target.value)}} class="form-control" id="ID" placeholder="ID"/>
-  </div>    
-
-  <div class="form-group">
-    <label for="exampleInputEmail1">Name</label>
-    <input type="text" value={User_name} onChange={(e)=>{setUserId(e.target.value)}} class="form-control" id="name" aria-describedby="name" placeholder="Enter Name"/>
-  </div>     
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" value={Email} onChange={(e)=>{setEmail(e.target.value)}} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  
-  <div class="form-group">
-    <label for="exampleInputEmail1">User Type</label>
-    <input type="text" value={User_type} onChange={(e)=>{setuserType(e.target.value)}} class="form-control" id="usertype" aria-describedby="emauserType" placeholder="Enter user Type"/>
-  </div>
- 
-  
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form> */}
 
 
 
