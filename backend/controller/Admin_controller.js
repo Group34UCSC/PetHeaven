@@ -115,7 +115,7 @@ exports.Create_Accounts = (req,res,next)=>{
        
                  exports.View_Accounts = (req,res,next)=>{
 
-                  var SelectQuery= "SELECT * FROM user";
+                  var SelectQuery= "SELECT * FROM user WHERE is_deleted=0";
  
                   
                    
