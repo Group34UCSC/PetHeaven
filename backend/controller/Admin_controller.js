@@ -63,48 +63,34 @@ exports.Create_Accounts = (req,res,next)=>{
  
                   
                   exports.Delete_Accounts = (req,res,next)=>{
-                  //  console.log("sas")
-                  //    if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
-                  //    console.log(req.body.email)
-                  //    try{
-                      
-                  //           conn.query(DELETE_USER,[req.body.email ], (err,data,feilds)=>{
-                  //            if( err ) return next(new AppError(err,500));
-                 
-                  //            res.status(201).json({
-                  //               data: "User Delete Success!"
-                  //            })
-                 
-                  //           })
+                
+                     const name = req.params.user_id;
+                     console.log(req.params)
+                     const sqlDelete = `UPDATE user SET is_deleted=1 WHERE User_ID =${name}`;
                    
-                           
-                      
-                  //     }
-                  //     catch( err )
-                  //     {
-                  //        res.status(500).json({
-                  //           error: err
-                  //        })
-                  //     }
-
-
-                  
-                  var SelectQuery= "UPDATE user SET is_deleted=0 WHERE Email =email";
- 
-                  console.log(req.body)
-                   
-                         conn.query(SelectQuery, function (err,result){
-                          if( err ) {
-                           console.log(err);
-                           res.send("Unable to get the comments");
-                          }
-                          else{
+                     conn.query(sqlDelete, name, (err, result)=>{
+                      if (err) {
+                        console.log(err);}
+                        else{
                            res.send("user delete");
-                          }
+                        }
+                  
+                  // var SelectQuery= "UPDATE user SET is_deleted=0 WHERE Email =email";
+ 
+                  // console.log(req.body)
+                   
+                  //        conn.query(SelectQuery, function (err,result){
+                  //         if( err ) {
+                  //          console.log(err);
+                  //          res.send("Unable to get the comments");
+                  //         }
+                  //         else{
+                  //          res.send("user delete");
+                  //         }
               
-                         })
+                  //        })
 
-
+               });
                  }
 
 

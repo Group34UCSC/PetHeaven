@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import Axios from 'axios';
+import axios from 'axios';
 
 
 
@@ -18,41 +18,11 @@ import NavbarUsers from "../../../includes/NavbarUsers";
 const REGISTER_URL = "http://localhost:5000/SignUp";
 const AdminUpdate = () => {
 
-    // const handleSubmit = async e => {
-    //     e.preventDefault();
-    //     try {
-    //         const body = { user, email, pwd };
-    //         const response = await fetch(
-    //             "http://localhost:5000/SignUp",
-    //             {
-    //                 method: "POST",
-    //                 headers: {
-    //                     "Content-type": "application/json"
-    //                 },
-    //                 body: JSON.stringify(body)
-    //             }
-    //         );
-    //         console.log(response);
-    //     }
-    //     catch (err) {
-    //         console.log("Falil");
-    //     }
-
-    // }
-
-
-
-
-
-
     const [users, setUser] = useState([])
     const [User_name, setName] = useState("");
     const [Email, setEmail] = useState("");
     const [User_type, setuserType] = useState("");
     const [User_ID, setUserId] = useState(null)
-
-
-
 
     useEffect(() => {
         getUsers();
@@ -86,26 +56,75 @@ const AdminUpdate = () => {
 
 
     
-    const DeleteUser = async e => {
-        // e.preventDefault();
+    // async  function  DeleteUser(item) {
         
-        // try {
-        //     const body = { user, type, email, pwd };
-        //     const response = await fetch(
-        //         "http://localhost:5000/Admin/Delete",
-        //         {
-        //             method: "POST",
-        //             headers: {
-        //                 "Content-type": "application/json"
-        //             },
-        //             body: JSON.stringify(body)
-        //         }
-        //     );
-        //     console.log(response);
-        // }
-        // catch (err) {
-        //     console.log("Falil12");
-        // }
+    
+       
+        
+       
+        
+    //     // axios({
+    //     //     method: 'post',
+    //     //     url: `localhost:5000/Admin/Delete/${UserID}`,
+    //     //     headers: { },
+    //     //     data : data
+    //     //   })
+    //     // .then(function (response) {
+    //     //   console.log(JSON.stringify(response.data));
+    //     // })
+    //     // .catch(function (error) {
+    //     //   console.log(error);
+    //     // });
+
+    //     try {
+    //           const UserID= item.User_ID ;
+    //         const response = await fetch(
+    //             `localhost:5000/Admin/Delete/${UserID}`,
+    //             {
+    //                 method: "POST",
+    //                 headers: {
+    //                     "Content-type": "application/json"
+    //                 },
+    //                 // body: JSON.stringify(body)
+    //             }
+    //         );
+    //         console.log(response);
+    //     }
+    //     catch (err) {
+    //         console.log("Falil12");
+    //     }
+
+        
+
+
+
+
+    // }
+
+
+
+    const  DeleteUser = async (item) => {
+      console.log("prasad")
+
+      var raw = "";
+
+var requestOptions = {
+  method: 'POST',
+  body: raw,
+  redirect: 'follow'
+};
+        try {
+            const body = { item };
+            const UserID= item.User_ID ;
+            const response = await fetch(
+                `localhost:5000/Admin/Delete/${UserID}`,
+                requestOptions)
+            ;
+            console.log(response);
+        }
+        catch (err) {
+            console.log(err);
+        }
 
     }
 
