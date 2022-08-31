@@ -18,41 +18,11 @@ import NavbarUsers from "../../../includes/NavbarUsers";
 const REGISTER_URL = "http://localhost:5000/SignUp";
 const AdminUpdate = () => {
 
-    // const handleSubmit = async e => {
-    //     e.preventDefault();
-    //     try {
-    //         const body = { user, email, pwd };
-    //         const response = await fetch(
-    //             "http://localhost:5000/SignUp",
-    //             {
-    //                 method: "POST",
-    //                 headers: {
-    //                     "Content-type": "application/json"
-    //                 },
-    //                 body: JSON.stringify(body)
-    //             }
-    //         );
-    //         console.log(response);
-    //     }
-    //     catch (err) {
-    //         console.log("Falil");
-    //     }
-
-    // }
-
-
-
-
-
-
     const [users, setUser] = useState([])
     const [User_name, setName] = useState("");
     const [Email, setEmail] = useState("");
     const [User_type, setuserType] = useState("");
     const [User_ID, setUserId] = useState(null)
-
-
-
 
     useEffect(() => {
         getUsers();
