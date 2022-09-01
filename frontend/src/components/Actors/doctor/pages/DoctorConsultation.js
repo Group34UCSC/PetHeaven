@@ -14,11 +14,90 @@ import  ConsultationPage from "./ConsultationPage";
 // import NavbarUsers from "../../../includes/NavbarUsers";
 
 function DoctorConsultation() {
+
+    const [users, setUser] = useState([])
+    const [Name, setName] = useState("");
+    const [Email, setEmail] = useState("");
+    const [Phone_number, setNumber] = useState("");
+    const [Service_type, setService] = useState("");
+
+    useEffect(() => {
+        getUsers();
+    }, [])
+
+    function getUsers() {
+        fetch("http://localhost:5000/Doctor/consultationView").then((result) => {
+            result.json().then((resp) => {
+                // console.warn(resp)
+
+                setUser(resp)
+                setName(resp[0].Name)
+                setEmail(resp[0].Email)
+                setNumber(resp[0].Phone_number)
+                setService(resp[0].Service_type)
+
+            })
+        })
+    }
+
+    // console.warn(users)
+    // function UpdateUser(item) {
+    //     console.log(item)
+    //     setUserId(item.User_ID)
+    //     setName(item.User_name)
+    //     setEmail(item.Email)
+    //     setuserType(item.User_type)
+
+    // }
+
+
+
+
+
+
     return(
      
      <div> 
       <NavbarUsers />
-     < ConsultationPage />
+     
+
+      <div>
+
+<div class="adminviewtable">
+
+    <table class="table view">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Service Type</th>
+                {/* <th scope="col">Operation</th>
+                <th scope="col">Operation</th> */}
+            </tr>
+        </thead>
+        <tbody>
+
+            {
+                users.map((item, i) =>
+                    <tr key={i}>
+                        <td>{item.Name}</td>
+                        <td>{item.Email}</td>
+                        <td>{item.Phone_number}</td>
+                        <td>{item.Service_type}</td>
+                        {/* <td><button type="button" class="btn btn-warning" onClick={() => UpdateUser(item)}>Update</button></td>
+                        <td><button type="button" class="btn btn-danger" onClick={() => DeleteUser(item)}>Deactivated</button></td> */}
+                    </tr>
+                )
+            }
+
+
+        </tbody>
+    </table>
+</div>
+</div>
+
+
 
 <div class="row m-md-5 m-3 ">
         
