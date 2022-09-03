@@ -40,15 +40,15 @@ function DoctorConsultation() {
         })
     }
 
-    // console.warn(users)
-    // function UpdateUser(item) {
-    //     console.log(item)
-    //     setUserId(item.User_ID)
-    //     setName(item.User_name)
-    //     setEmail(item.Email)
-    //     setuserType(item.User_type)
+    console.warn(users)
+    function UpdateUser(item) {
+        console.log(item)
+       setName(item.Name)
+        setEmail(item.Email)
+        setNumber(item.Phone_number)
+        setService(item.Service_type)
 
-    // }
+    }
 
 
 
@@ -60,7 +60,6 @@ function DoctorConsultation() {
      <div> 
       <NavbarUsers />
      
-
       <div>
 
 <div class="adminviewtable">
@@ -72,8 +71,7 @@ function DoctorConsultation() {
                 <th scope="col">Email</th>
                 <th scope="col">Phone Number</th>
                 <th scope="col">Service Type</th>
-                {/* <th scope="col">Operation</th>
-                <th scope="col">Operation</th> */}
+                <th scope="col">Operation</th>
             </tr>
         </thead>
         <tbody>
@@ -85,8 +83,7 @@ function DoctorConsultation() {
                         <td>{item.Email}</td>
                         <td>{item.Phone_number}</td>
                         <td>{item.Service_type}</td>
-                        {/* <td><button type="button" class="btn btn-warning" onClick={() => UpdateUser(item)}>Update</button></td>
-                        <td><button type="button" class="btn btn-danger" onClick={() => DeleteUser(item)}>Deactivated</button></td> */}
+                        <td><button type="button" class="btn btn-warning" onClick={() => UpdateUser(item)}>Update</button></td>
                     </tr>
                 )
             }
@@ -106,23 +103,18 @@ function DoctorConsultation() {
                 <h4 class="text-center text-white mb-4">confirm / reject consultation</h4>
                 <div class="row">
                     <div class="col-md-6 col-12 my-md-0 my-2">
-                        <input type="text" class="form-control bg-darkred" placeholder="customer Name"/>
+                        <input type="text" class="form-control bg-darkred "   value={Name} onChange={(e)=>{setName(e.target.value)}} placeholder="customer Name"/>
                     </div>
                     <div class="col-md-6 col-12 my-md-0 my-2 ">
-                        <input type="email" class="form-control bg-darkred" placeholder="customer Email"/>
+                        <input type="email" class="form-control bg-darkred"  value={Email} onChange={(e)=>{setEmail(e.target.value)}} placeholder="customer Email"/>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 col-12 my-2">
-                        <input type="text" class="form-control bg-darkred" placeholder="customer Phone Number"/>
+                        <input type="text" class="form-control bg-darkred"  value={Phone_number} onChange={(e)=>{setNumber(e.target.value)}} placeholder="customer Phone Number"/>
                     </div>
                     <div class="col-md-6 col-12 my-2">
-                        <select name="" id="dropDown" class="form-control bg-darkred shadow-none">
-                            <option value="" hidden selected>Services</option>
-                            <option value="service 1">About Cat</option>
-                            <option value="service 1">About dog</option>
-                            
-                        </select>
+                        <input type="text" class="form-control bg-darkred"  value={Service_type} onChange={(e)=>{setService(e.target.value)}} placeholder="Service Type"/>
                     </div>
                     <div class="">
                         <textarea cols="10" rows="3" class="form-control bg-darkred shadow-none"
