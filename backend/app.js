@@ -35,6 +35,8 @@ app.use('/staffmember',staffMemberRoute);
 // app.use(cors());
 app.use(errorHandler);
 
+// app.use('/images', express.static('/images'))
+
 // app.get("/",(req,res,next)=>
 // {
 //     console.log("Sandaruwan Gamage");

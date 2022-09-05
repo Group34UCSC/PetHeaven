@@ -33,7 +33,10 @@ const PostAdvertisement = () =>
     const [validPrice	, setValidPrice	] = useState(false);
     const [PriceFocus, setPriceFocus] = useState(false);
 
-    const [selectedImage, setSelectedImage] = useState('');
+    const [selectedImage, setSelectedImage] = useState({
+        file:[],
+        filepreview:null,
+       });
 
     const [Description	, setDescription	] = useState('');
     const [validDescription	, setValidDescription	] = useState(false);
@@ -86,27 +89,35 @@ const PostAdvertisement = () =>
         //     }
         // }
         // reader.readAsDataURL(e.target.files[0])
-        if (e.target.files && e.target.files.length > 0) {
-            setSelectedImage(URL.createObjectURL(e.target.files[0]));
-            // selectedImage(e.target.files[0]);
-          }
+        // if (e.target.files && e.target.files.length > 0) {
+        //     setSelectedImage(URL.createObjectURL(e.target.files[0]));
+        //     // selectedImage(e.target.files[0]);
+        //   }
+
+        setSelectedImage({
+            ...selectedImage,
+            file:e.target.files[0],
+            filepreview:URL.createObjectURL(e.target.files[0]),
+        })
+        
+
     }
 
     const HandlePost = (e) => {
         e.preventDefault()
-      const data = { Title: Title, Price: Price, Image:Image, Description: Description};
-        console.log(data);
+    //   const data = { Title: Title, Price: Price, Image:selectedImage.file, Description: Description};
+      const formdata = new FormData(); 
+        formdata.append('Image', selectedImage.file);
+        formdata.append('Title', Title);
+        formdata.append('Price', Price);
+        formdata.append('Description', Description);
+        console.log(formdata);
         // const {Title}=this.state;
         // const {Price}=this.state;
         // const {Image}=this.Image;
         // const {Description}=this.state;
-        Axios.post("http://localhost:5000/petstore/addNewEquipment", {
-    
-                        Title: Title, 
-                        Price: Price, 
-                        Image: selectedImage, 
-                        Description: Description
-                    })
+        Axios.post("http://localhost:5000/petstore/addNewEquipment", formdata,{   
+            headers: { "Content-Type": "multipart/form-data" }})
                     .then((response) => {
                         console.log(response.data)
                         
@@ -149,7 +160,7 @@ const PostAdvertisement = () =>
                                 
 
                                 <section>
-                                    <form className="row">
+                                    <form className="row" method="post" encType="multipart/form-data">
                                     <div className="col-md-1">
 
                                     </div>
@@ -223,7 +234,7 @@ const PostAdvertisement = () =>
                                                 {/* <h3 className="ImgHeading">Add Image of Equipment</h3> */}
                                                 <label className="mb-1 mt-2">Add Image of Equipment</label>
                                                 <div  className="PetTool-holder mt-1 mb-3" id="PetTool-holder">
-                                                    <img src={selectedImage} alt="" id="Pet-tool"></img> 
+                                                    <img src={selectedImage.filepreview} alt="" id="Pet-tool"></img> 
                                                     {/* <img src={PetToolImg} className="w-100 border-bottom" alt="Services"/> */}
                                                     {/* {/* <input type="file" name="petTool-upload" id="Pet-tool-img" accept="image/*"  className="form-control" placeholder="Input a Image"></input> */}
                                                 </div>
