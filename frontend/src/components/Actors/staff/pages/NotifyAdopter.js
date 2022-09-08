@@ -7,6 +7,36 @@ import NavbarUsers from '../../../includes/NavbarUsers';
 
 
 function NotifyAdopter() {
+    const [name, setName] = useState('');
+    const [contact,setDate]=useState('');
+    const [message,setType] = useState('');
+    const [status,setStatus] = useState('1');
+    const [buttonText, setButtonText] = useState('Notify ');
+
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+        setButtonText('Notified ... ');
+        try {
+            const body = {name,contact,message,status};
+            
+            const response = await fetch(
+            "http://localhost:5000/staffmember/notifyadopter",
+                {
+                    method: "POST",
+                    headers: {
+                    "Content-type": "application/json"
+                    },
+                    body: JSON.stringify(body)
+                }
+            );
+            console.log(response);
+        }
+        catch (err) {
+            console.log("Falil");
+        }
+    } 
+
     return(
         <div>
         <NavbarUsers/>
@@ -50,7 +80,7 @@ function NotifyAdopter() {
                                             <div class="container px-4 text-center">
                                                 <div class="row gx-5 ">
                                                         <div class="col ">
-                                                            <button type="submit" className="btn btn-success shadow w-100 postPetBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"><b>Send  <i class="fa-solid fa-paper-plane"></i></b></button>
+                                                            <button type="submit" className="btn btn-success shadow w-100 postPetBtn"onClick={handleSubmit}><b>{buttonText}  <i class="fa-solid fa-paper-plane"></i></b></button>
                                                         </div>
                                                         <div class="col ">
                                                             <button type="reset" className="btn btn-danger shadow w-100 postPetBtn"><b>Discard <i class="fa-solid fa-times"></i></b></button>
