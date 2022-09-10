@@ -132,12 +132,19 @@ var requestOptions = {
 
 
 
-
+const[searchTerm, setSearchTerm]=useState('')
     return (
 
    
             <div>
                 <NavbarUsers />
+
+                <input class="inputFields"
+                type="text"
+                placeholder="Search......"
+                onChange={(e)=>{setSearchTerm(e.target.value)}}
+                 />
+                                               
 
                 {/* table */}
 
@@ -160,7 +167,13 @@ var requestOptions = {
                             <tbody>
 
                                 {
-                                    users.map((item, i) =>
+                                    users.filter((item)=>{
+                                        if(searchTerm == ""){
+                                            return item
+                                        }else if (item.User_name.toLowerCase().includes(searchTerm.toLowerCase())){
+                                            return item
+                                        }
+                                    }).map((item, i) =>
                                         <tr key={i}>
                                             <td>{item.User_ID}</td>
                                             <td>{item.User_name}</td>
