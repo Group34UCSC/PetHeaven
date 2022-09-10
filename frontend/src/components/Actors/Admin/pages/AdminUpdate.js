@@ -108,16 +108,16 @@ const AdminUpdate = () => {
 
       var raw = "";
 
-var requestOptions = {
-  method: 'POST',
-  body: raw,
-  redirect: 'follow'
-};
+       var requestOptions = {
+            method: 'POST',
+            body: raw,
+            redirect: 'follow'
+          };
         try {
             const body = { item };
             const UserID= item.User_ID ;
             const response = await fetch(
-                `localhost:5000/Admin/Delete/${UserID}`,
+                `http://localhost:5000/Admin/Delete/${UserID}`,
                 requestOptions)
             ;
             console.log(response);
@@ -139,12 +139,27 @@ const[searchTerm, setSearchTerm]=useState('')
             <div>
                 <NavbarUsers />
 
-                <input class="inputFields"
-                type="text"
-                placeholder="Search......"
-                onChange={(e)=>{setSearchTerm(e.target.value)}}
-                 />
-                                               
+
+                 {/* search */}
+                 <div class="container">
+
+            <div class="row height d-flex justify-content-center align-items-center">
+
+              <div class="col-md-6">
+
+                <div class="form">
+                  <i class="fa fa-search"></i>
+                  <input type="text" class="form-control form-input" placeholder="Search Name , UserType or Email..." onChange={(e)=>{setSearchTerm(e.target.value)}} />
+                  <span class="left-pan"><i class="fa fa-microphone"></i></span>
+                </div>
+                
+              </div>
+              
+            </div>
+            
+          </div>
+
+
 
                 {/* table */}
 
@@ -170,7 +185,7 @@ const[searchTerm, setSearchTerm]=useState('')
                                     users.filter((item)=>{
                                         if(searchTerm == ""){
                                             return item
-                                        }else if (item.User_name.toLowerCase().includes(searchTerm.toLowerCase())){
+                                        }else if (item.User_name.toLowerCase().includes(searchTerm.toLowerCase()) || item.User_type.toLowerCase().includes(searchTerm.toLowerCase()) || item.Email.toLowerCase().includes(searchTerm.toLowerCase())){
                                             return item
                                         }
                                     }).map((item, i) =>
