@@ -18,7 +18,7 @@
 .bg-darkred {
     background-color: #f9e5e5;
     border: none;
-    color: #fff !important;
+    color: rgb(23, 22, 22) !important;
 }
 
 /* p {
