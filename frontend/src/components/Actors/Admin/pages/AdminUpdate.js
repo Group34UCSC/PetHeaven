@@ -252,7 +252,7 @@ const[searchTerm, setSearchTerm]=useState('')
                                                 <input class="inputFields"
                                                     type="text"
                                                     id="username"
-                                                    value={User_ID} onChange={(e)=>{setName(e.target.value)}}
+                                                    value={User_ID} onChange={(e)=>{setUserId(e.target.value)}}
                                                     placeholder="Enter Your User Name"
                                                     required
                                                
@@ -268,7 +268,7 @@ const[searchTerm, setSearchTerm]=useState('')
                                                 <input class="inputFields"
                                                     type="text"
                                                     id="username"
-                                                    value={User_name} onChange={(e)=>{setUserId(e.target.value)}}
+                                                    value={User_name} onChange={(e)=>{setName(e.target.value)}}
                                                     placeholder="Enter Your User Type"
                                                     required
                                                
