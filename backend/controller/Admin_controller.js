@@ -98,7 +98,7 @@ exports.Create_Accounts = (req,res,next)=>{
 
         if( error ) return next(new AppError(error.details[0].message,400)) ;
         console.log(req.body)
-        conn.query(CHECK_EMAIL_UPDATE , [req.body.email], async(err, data, feilds) =>{
+        conn.query(CHECK_EMAIL_UPDATE , [req.body.Email], async(err, data, feilds) =>{
            if( err ) return next(new AppError(err,500)) ;
            if( data.length ) return  next(new AppError("Email already used!",400)) ;
 
@@ -111,7 +111,7 @@ exports.Create_Accounts = (req,res,next)=>{
 
            const name = req.body.User_ID;
           
-           const sqlUpdate = `UPDATE user SET  Password='${hashedValue}', Email='${req.body.email}', User_name= '${req.body.user}', User_type='${req.body.type}'  WHERE User_ID ='${name}'`;
+           const sqlUpdate = `UPDATE user SET  Password='${hashedValue}', Email='${req.body.Email}', User_name= '${req.body.User_name}', User_type='${req.body.User_type}'  WHERE User_ID ='${name}'`;
          
            conn.query(sqlUpdate, name, (err, result)=>{
             if (err) {
