@@ -8,8 +8,11 @@ function ViewComplains() {
     const [User_name, setName] = useState("");
     const [complains, setComplains] = useState("");
     const [User_type, setuserType] = useState("");
+    const [Message, setMessage] = useState("");
     const [complain_ID, setComplainId] = useState(null)
 
+    const [buttontext, setButtontext] = useState('Send message to user');
+  
 
 
   useEffect(() => {
@@ -42,6 +45,34 @@ function UpdateUser(item) {
     setComplains(item.complains)
 
 }
+
+
+const fixError_form = async e => {
+  e.preventDefault();
+  setButtontext('Done...');
+  try {
+      const body = { Message,complain_ID};
+      const response = await fetch(
+          "http://localhost:5000/Admin/FixError",
+          {
+              method: "POST",
+              headers: {
+                  "Content-type": "application/json"
+              },
+              body: JSON.stringify(body)
+          }
+      );
+      console.log(response);
+  }
+  catch (err) {
+      console.log("Falil12");
+  }
+
+}
+
+
+
+
 
   
 const[searchTerm, setSearchTerm]=useState('')
@@ -82,7 +113,7 @@ const[searchTerm, setSearchTerm]=useState('')
               <table class="table view">
                   <thead class="thead-dark">
                       <tr>
-                          <th scope="col">ID</th>
+                          <th scope="col">Complaint ID</th>
                           <th scope="col">Name</th>
                           <th scope="col">User Type</th>
                           <th scope="col">Complains</th>
@@ -115,7 +146,44 @@ const[searchTerm, setSearchTerm]=useState('')
               </table>      
       </div>
       </div>
-      </div>
+    
+
+
+
+
+<div class="row m-md-5 m-3 ">
+        
+        <div class="lg-4 bg-red py-5 px-5">
+            <form action="">
+                <h4 class="text-center text-white mb-4">Fix User complaints</h4>
+                <div class="row">
+                    <div class="col-md-6 col-12 my-md-0 my-2">
+                        <input type="text" class="form-control bg-darkred "   value={complain_ID} onChange={(e)=>{setComplainId(e.target.value)}} placeholder="customer Name"/>
+                    </div>
+                    <div class="col-md-6 col-12 my-md-0 my-2 ">
+                        <input type="email" class="form-control bg-darkred"  value={User_name} onChange={(e)=>{setName(e.target.value)}} placeholder="customer Email"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-12 my-2">
+                        <input type="text" class="form-control bg-darkred"  value={User_type} onChange={(e)=>{setuserType(e.target.value)}} placeholder="customer Phone Number"/>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <input type="text" class="form-control bg-darkred"  value={complains} onChange={(e)=>{setComplains(e.target.value)}} placeholder="Service Type"/>
+                    </div>
+                    <div class="">
+                        <textarea cols="10" rows="3" value={Message} onChange={(e)=>{setMessage(e.target.value)}} class="form-control bg-darkred shadow-none"
+                            placeholder="Message"/>
+                    </div>
+                    <div class=" my-2"> <button class="btn w-100 shadow-none text-uppercase msg-btn" onClick={fixError_form} >{buttontext}</button> </div>
+
+                </div>
+            </form>
+        </div>
+
+</div>
+</div>
+
 
       
      
