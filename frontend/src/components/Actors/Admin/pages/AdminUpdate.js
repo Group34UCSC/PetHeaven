@@ -29,7 +29,7 @@ const AdminUpdate = () => {
    
 
 
-    const [buttontext, setButtontext] = useState('Create');
+    const [buttontext, setButtontext] = useState('Update');
   
     const [pwd, setPwd] = useState('');
   

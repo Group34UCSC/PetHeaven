@@ -196,3 +196,30 @@ exports.Create_Accounts = (req,res,next)=>{
 
                    
                   }
+
+
+
+                  exports.FixError = (req,res,next)=>{
+                     const name = req.body.complain_ID;  
+
+                     var FixError_Query=  `UPDATE complains SET  message='${req.body.Message}', fix_error=1 WHERE complain_ID ='${name}'`;
+    
+                     
+                      
+                            conn.query(FixError_Query, function (err,result){
+                             if( err ) {
+                              console.log(err);
+                              res.send("Unable to get the comments");
+                             }
+                             else{
+                              res.send(result);
+                             }
+                 
+                            })
+   
+                      
+                     }
+   
+
+
+                  
