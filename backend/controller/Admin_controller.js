@@ -170,3 +170,29 @@ exports.Create_Accounts = (req,res,next)=>{
 
                    
                   }
+
+
+
+
+
+
+                  
+                 exports.ComplainsView_Accounts = (req,res,next)=>{
+
+                  var Select_Complains_Query= "SELECT * FROM complains WHERE fix_error=0";
+ 
+                  
+                   
+                         conn.query(Select_Complains_Query, function (err,result){
+                          if( err ) {
+                           console.log(err);
+                           res.send("Unable to get the comments");
+                          }
+                          else{
+                           res.send(result);
+                          }
+              
+                         })
+
+                   
+                  }
