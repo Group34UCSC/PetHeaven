@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import '../css/AdminDelete.css';
 
+
 function AdminDelete() {
     return (
       <div>
