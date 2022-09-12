@@ -56,4 +56,49 @@ const CLIENT_URL = "http://localhost:3000/";
    
                       
                      }
+
+
+
+
+
+                     exports.Inbox_Table = (req,res,next)=>{
+                            var SelectQuery= "SELECT * FROM appointment WHERE accept=1 AND Done=0";
+ 
+                  
+                   
+                            conn.query(SelectQuery, function (err,result){
+                             if( err ) {
+                              console.log(err);
+                              res.send("Unable to get the comments");
+                             }
+                             else{
+                              res.send(result);
+                             }
+                 
+                            })
    
+          
+                             
+                            }
+   
+
+
+                            
+                  
+                  exports.Done = (req,res,next)=>{
+                
+                     const name = req.params.appointment_ID;
+                     console.log(req.params)
+                     const sqlDelete = `UPDATE appointment SET Done=1 WHERE appointmentID =${name}`;
+                   
+                     conn.query(sqlDelete, name, (err, result)=>{
+                      if (err) {
+                        console.log(err);}
+                        else{
+                           res.send("user delete");
+                        }
+                  
+                 
+
+               });
+                 }
