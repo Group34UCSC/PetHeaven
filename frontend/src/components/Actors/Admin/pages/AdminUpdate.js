@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import Axios from 'axios';
+import axios from 'axios';
 
 
 
@@ -18,33 +18,6 @@ import NavbarUsers from "../../../includes/NavbarUsers";
 const REGISTER_URL = "http://localhost:5000/SignUp";
 const AdminUpdate = () => {
 
-    // const handleSubmit = async e => {
-    //     e.preventDefault();
-    //     try {
-    //         const body = { user, email, pwd };
-    //         const response = await fetch(
-    //             "http://localhost:5000/SignUp",
-    //             {
-    //                 method: "POST",
-    //                 headers: {
-    //                     "Content-type": "application/json"
-    //                 },
-    //                 body: JSON.stringify(body)
-    //             }
-    //         );
-    //         console.log(response);
-    //     }
-    //     catch (err) {
-    //         console.log("Falil");
-    //     }
-
-    // }
-
-
-
-
-
-
     const [users, setUser] = useState([])
     const [User_name, setName] = useState("");
     const [Email, setEmail] = useState("");
@@ -53,6 +26,17 @@ const AdminUpdate = () => {
 
 
 
+   
+
+
+    const [buttontext, setButtontext] = useState('Update');
+  
+    const [pwd, setPwd] = useState('');
+  
+    const [matchPwd, setMatchPwd] = useState('');
+ 
+
+  
 
     useEffect(() => {
         getUsers();
@@ -84,13 +68,90 @@ const AdminUpdate = () => {
     }
 
 
+    const  DeleteUser = async (item) => {
+      console.log("prasad")
+
+      var raw = "";
+
+       var requestOptions = {
+            method: 'POST',
+            body: raw,
+            redirect: 'follow'
+          };
+        try {
+            const body = { item };
+            const UserID= item.User_ID ;
+            const response = await fetch(
+                `http://localhost:5000/Admin/Delete/${UserID}`,
+                requestOptions)
+            ;
+            console.log(response);
+        }
+        catch (err) {
+            console.log(err);
+        }
+
+    }
 
 
+
+ 
+    const UpdateUserform = async e => {
+        e.preventDefault();
+        setButtontext('Updated..');
+        try {
+            const body = { User_type,User_name,User_ID , Email, pwd };
+            const response = await fetch(
+                "http://localhost:5000/Admin/Update",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/json"
+                    },
+                    body: JSON.stringify(body)
+                }
+            );
+            console.log(response);
+        }
+        catch (err) {
+            console.log("Falil12");
+        }
+
+    }
+
+
+
+
+
+
+const[searchTerm, setSearchTerm]=useState('')
     return (
 
    
             <div>
                 <NavbarUsers />
+
+
+                 {/* search */}
+                 <div class="container">
+
+            <div class="row height d-flex justify-content-center align-items-center">
+
+              <div class="col-md-6">
+
+                <div class="form">
+                  <i class="fa fa-search"></i>
+                  <input type="text" class="form-control form-input" placeholder="Search Name , UserType or Email..." onChange={(e)=>{setSearchTerm(e.target.value)}} />
+                  <span class="left-pan"><i class="fa fa-microphone"></i></span>
+                </div>
+                
+              </div>
+              
+            </div>
+            
+          </div>
+
+
 
                 {/* table */}
 
@@ -107,18 +168,26 @@ const AdminUpdate = () => {
                                     <th scope="col">Email</th>
                                     <th scope="col">User Type</th>
                                     <th scope="col">Operation</th>
+                                    <th scope="col">Operation</th>
                                 </tr>
                             </thead>
                             <tbody>
 
                                 {
-                                    users.map((item, i) =>
+                                    users.filter((item)=>{
+                                        if(searchTerm == ""){
+                                            return item
+                                        }else if (item.User_name.toLowerCase().includes(searchTerm.toLowerCase()) || item.User_type.toLowerCase().includes(searchTerm.toLowerCase()) || item.Email.toLowerCase().includes(searchTerm.toLowerCase())){
+                                            return item
+                                        }
+                                    }).map((item, i) =>
                                         <tr key={i}>
                                             <td>{item.User_ID}</td>
                                             <td>{item.User_name}</td>
                                             <td>{item.Email}</td>
                                             <td>{item.User_type}</td>
                                             <td><button type="button" class="btn btn-warning" onClick={() => UpdateUser(item)}>Update</button></td>
+                                            <td><button type="button" class="btn btn-danger" onClick={() => DeleteUser(item)}>Deactivated</button></td>
                                         </tr>
                                     )
                                 }
@@ -127,31 +196,6 @@ const AdminUpdate = () => {
                             </tbody>
                         </table>
 
-{/*                         
-         <form>
-         <div class="form-group">
-    <label for="exampleInputPassword1">ID</label>
-    <input type="text" value={User_ID} onChange={(e)=>{setName(e.target.value)}} class="form-control" id="ID" placeholder="ID"/>
-  </div>    
-
-  <div class="form-group">
-    <label for="exampleInputEmail1">Name</label>
-    <input type="text" value={User_name} onChange={(e)=>{setUserId(e.target.value)}} class="form-control" id="name" aria-describedby="name" placeholder="Enter Name"/>
-  </div>     
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" value={Email} onChange={(e)=>{setEmail(e.target.value)}} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  
-  <div class="form-group">
-    <label for="exampleInputEmail1">User Type</label>
-    <input type="text" value={User_type} onChange={(e)=>{setuserType(e.target.value)}} class="form-control" id="usertype" aria-describedby="emauserType" placeholder="Enter user Type"/>
-  </div>
- 
-  
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form> */}
 
 
 
@@ -200,7 +244,7 @@ const AdminUpdate = () => {
                                                 <input class="inputFields"
                                                     type="text"
                                                     id="username"
-                                                    value={User_ID} onChange={(e)=>{setName(e.target.value)}}
+                                                    value={User_ID} onChange={(e)=>{setUserId(e.target.value)}}
                                                     placeholder="Enter Your User Name"
                                                     required
                                                
@@ -216,7 +260,7 @@ const AdminUpdate = () => {
                                                 <input class="inputFields"
                                                     type="text"
                                                     id="username"
-                                                    value={User_name} onChange={(e)=>{setUserId(e.target.value)}}
+                                                    value={User_name} onChange={(e)=>{setName(e.target.value)}}
                                                     placeholder="Enter Your User Type"
                                                     required
                                                
@@ -259,7 +303,8 @@ const AdminUpdate = () => {
                                                 <input class="inputFields"
                                                     type="password"
                                                     id="password"
-                                                   
+                                                    onChange={(e) => setPwd(e.target.value)}
+                                                    value={pwd}
                                                     placeholder="Enter Your Password"
                                                     required
                                                   
@@ -273,7 +318,8 @@ const AdminUpdate = () => {
                                                 <input class="inputFields"
                                                     type="password"
                                                     id="confirm_pwd"
-                                                   
+                                                    onChange={(e) => setMatchPwd(e.target.value)}
+                                                    value={matchPwd}
                                                     placeholder="Enter Your Password Again"
                                                     required
                                                    
@@ -283,7 +329,7 @@ const AdminUpdate = () => {
                                                
                                                 <div className="d-flex justify-content-center">
 
-                                                    <button className="mt-5" id="SignUpBtn" >Update</button>
+                                                    <button className="mt-5" id="SignUpBtn" onClick={UpdateUserform}>{buttontext}</button>
                                                 </div>
 
 
