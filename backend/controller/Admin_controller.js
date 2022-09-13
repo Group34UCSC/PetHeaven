@@ -67,18 +67,18 @@ exports.Create_Accounts = (req,res,next)=>{
                   //    if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
                   //    console.log(req.body.email)
                   //    try{
-                      
+                     
                   //           conn.query(DELETE_USER,[req.body.email ], (err,data,feilds)=>{
                   //            if( err ) return next(new AppError(err,500));
-                 
+               
                   //            res.status(201).json({
                   //               data: "User Delete Success!"
                   //            })
-                 
+               
                   //           })
-                   
+                  
                            
-                      
+                     
                   //     }
                   //     catch( err )
                   //     {
