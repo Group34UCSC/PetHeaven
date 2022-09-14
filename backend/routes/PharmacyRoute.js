@@ -1,3 +1,8 @@
 const express = require('express');
-const req = require('express/lib/request');
-const student_route = express.Router();
+const PharmacyRoute = express.Router();
+
+
+const Pharmacy_controller = require('../controller/Pharmacy_controller');
+PharmacyRoute.post('/inventory/AddStock',Pharmacy_controller.AddMedicine);
+
+module.exports = PharmacyRoute;
