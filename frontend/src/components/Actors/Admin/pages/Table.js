@@ -61,6 +61,7 @@ function UpdateUser(User_ID)
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">User Type</th>
+      <th scope="col">Operation</th>
     </tr>
   </thead>
   <tbody>

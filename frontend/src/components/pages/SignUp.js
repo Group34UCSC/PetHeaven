@@ -284,7 +284,7 @@ const SignUp = () => {
                                         <div id="dropDownMenu" className="mb-4">
                                             <select value={type} onChange={(e)=>setType(e.target.value)} class="form-control dropdown-toggle" data-bs-toggle="dropdown">
                                                 {/* <option selected>Select prescribed medicine</option> */}
-                                                <option value = "Pet Adopter">Pet Adopter</option>
+                                                <option value="Pet Adopter">Pet Adopter</option>
                                                 <option value="Doctor">Doctor</option>
                                                 <option value="pharmacy">Pharmacy</option>
                                                 <option value="Pet Tool Store">Pet Tool Store</option>
