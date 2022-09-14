@@ -5,11 +5,10 @@ const {ADD_MEDICINE} = require('../query/Pharmacy');
 const AppError = require('../utils/appError');
 
 exports.AddMedicine=(req,res,next) => {
-   //  console.log(req.file.filename)
     if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
     const { error } = PHARMACY_MODEL.validate(req.body);
     if( error ) return next(new AppError(error.details[0].message,400)) ;
-    console.log(req.body.Title);
+    
  
     try{
     //  console.log("Sasinduwaa 111");
