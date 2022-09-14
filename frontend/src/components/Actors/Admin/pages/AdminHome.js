@@ -32,7 +32,7 @@ function AdminHome() {
                             <div className="card shadow" id='cardone'>
                             <Link to="Delete"><img src={delete1} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
                                 <div className="card-body">
-                                    <h6>DELETE ACCOUNTS</h6>
+                                    <h6>GENERATE DONATION REPORTS</h6>
                                     <div className="underline"></div>
                                     <p>Delete PetHeaven user Accounts</p>
                                 </div>
@@ -45,7 +45,7 @@ function AdminHome() {
                             <div className="card shadow" id='cardone'>
                             <Link to="Update"><img src={update} className="w-50  border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
                                 <div className="card-body">
-                                    <h6>UPDATE ACCOUNTS</h6>
+                                    <h6>UPDATE & DELETE ACCOUNTS</h6>
                                     <div className="underline"></div>
                                     <p>Update PetHeaven user Accounts</p>
                                 </div>

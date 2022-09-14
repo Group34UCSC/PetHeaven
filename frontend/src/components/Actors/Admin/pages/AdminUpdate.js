@@ -1,7 +1,7 @@
 import React from "react";
-import {useRef, useEffect, useState } from "react"; 
-import {Link} from 'react-router-dom';
-import Axios from 'axios';
+import { useRef, useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 
@@ -13,417 +13,359 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SignUpImg from "../../../images/both.jpeg";
 import '../css/AdminUpdate.css';
 import NavbarUsers from "../../../includes/NavbarUsers";
-import Table from "./Table";
 
-const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
-const EMAIL_REGEX = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 const REGISTER_URL = "http://localhost:5000/SignUp";
 const AdminUpdate = () => {
-    const userRef = useRef();
-    const errRef = useRef();
 
-    const [user, setUser] = useState('');
-    const [validName, setValidName] = useState(false);
-    const [userFocus, setUserFocus] = useState(false);
+    const [users, setUser] = useState([])
+    const [User_name, setName] = useState("");
+    const [Email, setEmail] = useState("");
+    const [User_type, setuserType] = useState("");
+    const [User_ID, setUserId] = useState(null)
 
-    const [email, setEmail] = useState('');
-    const [validEmail, setValidEmail] = useState(false);
-    const [emailFocus, setEmailFocus] = useState(false);
 
+
+   
+
+
+    const [buttontext, setButtontext] = useState('Update');
+  
     const [pwd, setPwd] = useState('');
-    const [validPwd, setValidPwd] = useState(false);
-    const [pwdFocus, setPwdFocus] = useState(false);
-
+  
     const [matchPwd, setMatchPwd] = useState('');
-    const [validMatch, setValidMatch] = useState(false);
-    const [matchFocus, setMatchFocus] = useState(false);
+ 
 
-    const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState(false);
+  
 
     useEffect(() => {
-        userRef.current.focus();
+        getUsers();
     }, [])
 
-    useEffect(() => {
-        setValidName(USER_REGEX.test(user));
-        // console.log(result);
-        // console.log(user);
-        // setValidName(result);
-    }, [user])
+    function getUsers() {
+        fetch("http://localhost:5000/Admin/View").then((result) => {
+            result.json().then((resp) => {
+                // console.warn(resp)
 
-    useEffect(() => {
-        setValidEmail(EMAIL_REGEX.test(email));
-        // console.log(result);
-        // console.log(user);
-        // setValidName(result);
-    }, [email])
+                setUser(resp)
+                setName(resp[0].User_name)
+                setuserType(resp[0].User_type)
+                setEmail(resp[0].Email)
+                setUserId(resp[0].User_ID)
 
-    useEffect(() => {
-        setValidPwd(PWD_REGEX.test(pwd));
-        // console.log(result);
-        // console.log(pwd);
-        // setValidPwd(result);
-        setValidMatch(pwd === matchPwd);
-    }, [pwd, matchPwd])
+            })
+        })
+    }
 
-    useEffect(() => {
-        setErrMsg('');
-    }, [user, pwd, matchPwd, email])
+    console.warn(users)
+    function UpdateUser(item) {
+        console.log(item)
+        setUserId(item.User_ID)
+        setName(item.User_name)
+        setEmail(item.Email)
+        setuserType(item.User_type)
+
+    }
 
 
-    
+    const  DeleteUser = async (item) => {
+      console.log("prasad")
 
-      const handleSubmit = async e => {
-        e.preventDefault();
+      var raw = "";
+
+       var requestOptions = {
+            method: 'POST',
+            body: raw,
+            redirect: 'follow'
+          };
         try {
-          const body = { user, email, pwd };
-          const response = await fetch(
-            "http://localhost:5000/SignUp",
-            {
-              method: "POST",
-              headers: {
-                "Content-type": "application/json"
-              },
-              body: JSON.stringify(body)
-            }
-          );
-          console.log(response);
+            const body = { item };
+            const UserID= item.User_ID ;
+            const response = await fetch(
+                `http://localhost:5000/Admin/Delete/${UserID}`,
+                requestOptions)
+            ;
+            console.log(response);
         }
         catch (err) {
-            console.log("Falil");
-          }
-      
+            console.log(err);
+        }
+
     }
-        
-          
-    
 
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
-    //   const data = { username: user, email: email, password: pwd };
-    //     console.log(data);
-    //     Axios.post("http://localhost:5000/SignUp", {
 
-    //                   User_name : user,
-    //                   Email: email, 
-    //                   Password: pwd,
-    //                 })
-    //                 // .then((response) => {
-    //                 //   if(response.data.error) {
-    //                 //     alert(response.data.error);}
-    //                 //   else{alert("successfully Logged in!");
-    //                 //   }
-    //                 // });
-
-
-    // };
-
-
-    // const handleSubmit = async (e) => {
-    //     console.log("Sasidu");
-    //     e.preventDefault();
-    //     // if button enabled with JS hack
-    //     const v1 = USER_REGEX.test(user);
-    //     const v2 = PWD_REGEX.test(pwd);
-    //     const v3 = EMAIL_REGEX.test(email);
-    //     if (!v1 || !v2 || !v3) {
-    //         setErrMsg("Invalid Entry");
-    //         return;
-    //     }
-    //     try {
-    //         const response = await Axios.post(REGISTER_URL,
-    //             JSON.stringify({ user, pwd, email }),
-    //             {
-    //                 headers: { 'Content-Type': 'application/json' },
-    //                 withCredentials: true
-    //             }
-    //         );
-    //         // console.log(response?.data);
-    //         // console.log(response?.accessToken);
-    //         // console.log(JSON.stringify(response))
-    //         setSuccess(true);
-    //         //clear state and controlled inputs
-    //         //need value attrib on inputs for this
-    //         setUser('');
-    //         setEmail('');
-    //         setPwd('');
-    //         setMatchPwd('');
-    //     } catch (err) {
-    //         // if (!err?.response) {
-    //         //     setErrMsg('No Server Response');
-    //         // } else if (err.response?.status === 409) {
-    //         //     setErrMsg('Username Taken');
-    //         // } else {
-    //         //     setErrMsg('Registration Failed')
-    //         // }
-    //         // errRef.current.focus();
-    //     }
-    // }
-    // const handleSubmit = () => {
-    //     console.log(user);
-    // }
  
+    const UpdateUserform = async e => {
+        e.preventDefault();
+        setButtontext('Updated..');
+        try {
+            const body = { User_type,User_name,User_ID , Email, pwd };
+            const response = await fetch(
+                "http://localhost:5000/Admin/Update",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/json"
+                    },
+                    body: JSON.stringify(body)
+                }
+            );
+            console.log(response);
+        }
+        catch (err) {
+            console.log("Falil12");
+        }
+
+    }
 
 
 
-// function SignUp()
-// {
 
-//  const   handleSubmit = (value) => {
-//         this.props.sendNewMessage(value);
-//         console.log(value)
-//       }
 
-      
-// const submitData = (user) => {
-//     console.log(user);
-//     Axios.post("http://localhost:5000/Signup",{
-//         user:user,
-//         email:email,
-//         password:pwd,
-//     }).then(() => {
-//         alert("successfully added!");
-//     });
-// };
- 
-    return(
-     
-        <>
-        <div>
-        <NavbarUsers/>
-        <Table />
-            {/* <section className="py-4 ">
-                <div className="container">
-                    <div className="row bg-success text-white"> 
-                        <div className="col-md-4 my-auto"></div>
-                        <h3 className="text-center">Contact Us</h3>
-                    </div>
+
+const[searchTerm, setSearchTerm]=useState('')
+    return (
+
+   
+            <div>
+                <NavbarUsers />
+
+
+                 {/* search */}
+                 <div class="container">
+
+            <div class="row height d-flex justify-content-center align-items-center">
+
+              <div class="col-md-6">
+
+                <div class="form">
+                  <i class="fa fa-search"></i>
+                  <input type="text" class="form-control form-input" placeholder="Search Name , UserType or Email..." onChange={(e)=>{setSearchTerm(e.target.value)}} />
+                  <span class="left-pan"><i class="fa fa-microphone"></i></span>
                 </div>
-            </section> */}
+                
+              </div>
+              
+            </div>
             
-            <section className="section bg-c-light" >
-                <div className="container">
-                    <div className="card shadow">
-                        <div className="card-body">
-                            <div className="row">
+          </div>
 
-                                
-                                
+
+
+                {/* table */}
+
+
+                <div>
+
+                    <div class="adminviewtable">
+
+                        <table class="table view">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">User Type</th>
+                                    <th scope="col">Operation</th>
+                                    <th scope="col">Operation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {
+                                    users.filter((item)=>{
+                                        if(searchTerm == ""){
+                                            return item
+                                        }else if (item.User_name.toLowerCase().includes(searchTerm.toLowerCase()) || item.User_type.toLowerCase().includes(searchTerm.toLowerCase()) || item.Email.toLowerCase().includes(searchTerm.toLowerCase())){
+                                            return item
+                                        }
+                                    }).map((item, i) =>
+                                        <tr key={i}>
+                                            <td>{item.User_ID}</td>
+                                            <td>{item.User_name}</td>
+                                            <td>{item.Email}</td>
+                                            <td>{item.User_type}</td>
+                                            <td><button type="button" class="btn btn-warning" onClick={() => UpdateUser(item)}>Update</button></td>
+                                            <td><button type="button" class="btn btn-danger" onClick={() => DeleteUser(item)}>Deactivated</button></td>
+                                        </tr>
+                                    )
+                                }
+
+
+                            </tbody>
+                        </table>
+
+
+
+
+
+<section className="section bg-c-light" >
+                    <div className="container">
+                        <div className="card shadow">
+                            <div className="card-body">
+                                <div className="row">
+
+
+
 
                                     <div className="col-md-6 border-left">
-                                                                        
-                                    {/* <img src={SignUpImg}  alt="Services"/> */}
-                                    <div className="col-md-12">
-                                    <div className="card shadow">
-                                        <div className="card-body">
-                                            <div className="row bg-success text-white mb-3"> 
-                                                <div className="col-md-4 my-auto"></div>
-                                                <h3 className="text-center">UPDATE ACCOUNTS</h3>
+
+                                        {/* <img src={SignUpImg}  alt="Services"/> */}
+                                        <div className="col-md-12">
+                                            <div className="card shadow">
+                                                <div className="card-body">
+                                                    <div className="row bg-success text-white mb-3">
+                                                        <div className="col-md-4 my-auto"></div>
+                                                        <h3 className="text-center">UPDATE ACCOUNTS</h3>
+                                                    </div>
+
+                                                </div>
+                                                <img src={SignUpImg} alt="Services" />
                                             </div>
-                                    
                                         </div>
-                                    <img src={SignUpImg}  alt="Services"/>                               
-                                    </div>
-                                    </div>
-                                        {/* <h6>
-                                            Leave Us a Message
-                                        </h6>
-                                        <hr/>
-                                        <div className="form-group">
-                                            <label className="mb-1">Name</label>
-                                            <input type="text" className="form-control" placeholder="Enter Your Name"></input>
-                                        </div>
-                                        <div className="form-group">
-                                            <label className="mb-1 mt-1">Email</label>
-                                            <input type="text" className="form-control" placeholder="Enter Your Email"></input>
-                                        </div>
-                                        <div className="form-group">
-                                            <label className="mb-1">Message</label>
-                                            <textarea rows="4" className="form-control" placeholder="Enter Your Message"></textarea>
-                                        </div>
-                                        <div className="form-group py-3">
-                                            <button type="button" className="btn btn-success shadow w-100 ">Send</button>
-                                        </div> */}
+
                                     </div>
 
-                                
+
 
                                     <div className="col-md-6 border-start">
-                                    {/* { success? (
-                                    <section>
-                                        <h2>Successfully Registered!</h2>
-
-                                    </section>
-
-                                    ):( */}
-
-                                    <section id="SignUpSection">
-                                        <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                                        <form id="SignUpForm" >
-                                        {/* <div className="d-flex justify-content-center mb-4">
-                    <Link to="/petstore/inventory/ViewInventory" class="nav-link active">
-                        <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button>
-                    </Link>
-                </div> */}
-                                        <div id="dropDownMenu" className="mb-4">
-                                            <select class="form-control dropdown-toggle" data-bs-toggle="dropdown">
-                                                {/* <option selected>Select prescribed medicine</option> */}
-                                                <option value="1">Pet Adopter</option>
-                                                <option value="2">Veterinary Doctor</option>
-                                                <option value="3">Pharmacy</option>
-                                                <option value="4">Pet Tool Store</option>
-                                                <option value="5">Staff Member</option>
-                                            </select>
-                                        </div>
-
-                                  
+                                 
+                                        <section id="SignUpSection">
+                                            
+                                            <form id="SignUpForm" >
+                     
+                                     
+                                              
                                             <label htmlFor="username" class="labels">
-                                                Username:
-                                                <span className={validName ? "valid" : "hide"}>
-                                                    <FontAwesomeIcon icon={faCheck} />
-                                                </span>
-                                                <span  className={validName || !user ? "hide" : "invalid"}>
-                                                    <FontAwesomeIcon icon={faTimes}/>
-                                                </span>
-                                                {/* <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
-                                                <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} /> */}
-                                            </label>
-                                            <input class="inputFields"
-                                                type="text"
-                                                id="username"
-                                                ref={userRef}
-                                                autoComplete="off"
-                                                onChange={(e) => setUser(e.target.value)}
-                                                value={user}
-                                                placeholder="Enter Your User Name"
-                                                required
-                                                aria-invalid={validName ? "false" : "true"}
-                                                aria-describedby="uidnote"
-                                                onFocus={() => setUserFocus(true)}
-                                                onBlur={() => setUserFocus(false)}
-                                            />
-                                            <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
-                                                <FontAwesomeIcon icon={faInfoCircle} />
-                                                4 to 20 characters. Must begin with a letter. Letters, numbers, underscores, hyphens allowed.<br /> 
-                                            </p>
+                                                    UserID:
+                                                   
+                                                </label>
+                                                <input class="inputFields"
+                                                    type="text"
+                                                    id="username"
+                                                    value={User_ID} onChange={(e)=>{setUserId(e.target.value)}}
+                                                    placeholder="Enter Your User Name"
+                                                    required
+                                               
+                                                />
 
 
-                                            <label htmlFor="emailre" class="labels">
-                                                Email:
-                                                <span className={validEmail ? "valid" : "hide"}>
-                                                    <FontAwesomeIcon icon={faCheck} />
-                                                </span>
-                                                <span  className={validEmail || !email ? "hide" : "invalid"}>
-                                                    <FontAwesomeIcon icon={faTimes}/>
-                                                </span>
-                                                {/* <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
-                                                <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} /> */}
-                                            </label>
-                                            <input class="inputFields"
-                                                type="email"
-                                                id="emailre"
-                                                ref={userRef}
-                                                autoComplete="off"
-                                                onChange={(e) => setEmail(e.target.value)}
-                                                value={email}
-                                                placeholder="Enter Your Email"
-                                                required
-                                                aria-invalid={validEmail ? "false" : "true"}
-                                                aria-describedby="uidnote"
-                                                onFocus={() => setEmailFocus(true)}
-                                                onBlur={() => setEmailFocus(false)}
-                                            />
-                                            <p id="uidnote" className={emailFocus && email && !validEmail ? "instructions" : "offscreen"}>
-                                                <FontAwesomeIcon icon={faInfoCircle} />
-                                                Input a valid email address.<br /> 
-                                            </p>
+
+                                                 
+                                              <label htmlFor="username" class="labels">
+                                                    User Name
+                                                   
+                                                </label>
+                                                <input class="inputFields"
+                                                    type="text"
+                                                    id="username"
+                                                    value={User_name} onChange={(e)=>{setName(e.target.value)}}
+                                                    placeholder="Enter Your User Type"
+                                                    required
+                                               
+                                                />
+
+                                                
+                                              <label htmlFor="username" class="labels">
+                                                    User Type
+                                                   
+                                                </label>
+                                                <input class="inputFields"
+                                                    type="text"
+                                                    id="usertype"
+                                                    value={User_type} onChange={(e)=>{setuserType(e.target.value)}}
+                                                    placeholder="Enter Your User Type"
+                                                    required
+                                               
+                                                />
+                                               
+
+                                                <label htmlFor="emailre" class="labels">
+                                                    Email:
+                                                    
+                                                </label>
+                                                <input class="inputFields"
+                                                    type="email"
+                                                    id="emailre"
+                                                    value={Email} onChange={(e)=>{setEmail(e.target.value)}}
+                                                    placeholder="Enter Your Email"
+                                                    required
+                                                    
+                                                />
+                                               
 
 
-                                            <label htmlFor="password" class="labels">
-                                            Password:
-                                                <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
-                                                <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
-                                            </label>
-                                            <input class="inputFields"
-                                                type="password"
-                                                id="password"
-                                                onChange={(e) => setPwd(e.target.value)}
-                                                value={pwd}
-                                                placeholder="Enter Your Password"
-                                                required
-                                                aria-invalid={validPwd ? "false" : "true"}
-                                                aria-describedby="pwdnote"
-                                                onFocus={() => setPwdFocus(true)}
-                                                onBlur={() => setPwdFocus(false)}
-                                            />
-                                            <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
-                                                <FontAwesomeIcon icon={faInfoCircle} />
-                                                8 to 24 characters. Must include uppercase and lowercase letters, a number and a special character.
-                                                Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
-                                            </p>
-
-
-                                            <label htmlFor="confirm_pwd" class="labels">
-                                                Confirm Password:
-                                                <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
-                                                <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
-                                            </label>
-                                            <input class="inputFields"
-                                                type="password"
-                                                id="confirm_pwd"
-                                                onChange={(e) => setMatchPwd(e.target.value)}
-                                                value={matchPwd}
-                                                placeholder="Enter Your Password Again"
-                                                required
-                                                aria-invalid={validMatch ? "false" : "true"}
-                                                aria-describedby="confirmnote"
-                                                onFocus={() => setMatchFocus(true)}
-                                                onBlur={() => setMatchFocus(false)}
-                                            />
-                                            <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
-                                                <FontAwesomeIcon icon={faInfoCircle} />
-                                                Must match the first password input field.
-                                            </p>
-
-                                                {console.log(user)}
-                                            <div className="d-flex justify-content-center">
-
-                                                <button className="mt-5"id="SignUpBtn" onClick={handleSubmit} >Update</button>
-                                            </div>
+                                                <label htmlFor="password" class="labels">
+                                                    Password:
+                                                   
+                                                </label>
+                                                <input class="inputFields"
+                                                    type="password"
+                                                    id="password"
+                                                    onChange={(e) => setPwd(e.target.value)}
+                                                    value={pwd}
+                                                    placeholder="Enter Your Password"
+                                                    required
+                                                  
+                                                />
                                             
 
-                                        </form>
-                                    </section>
-                                {/* //    )}  */}
+                                                <label htmlFor="confirm_pwd" class="labels">
+                                                    Confirm Password:
+                                                    
+                                                </label>
+                                                <input class="inputFields"
+                                                    type="password"
+                                                    id="confirm_pwd"
+                                                    onChange={(e) => setMatchPwd(e.target.value)}
+                                                    value={matchPwd}
+                                                    placeholder="Enter Your Password Again"
+                                                    required
+                                                   
+                                                />
+                                               
+
+                                               
+                                                <div className="d-flex justify-content-center">
+
+                                                    <button className="mt-5" id="SignUpBtn" onClick={UpdateUserform}>{buttontext}</button>
+                                                </div>
+
+
+                                            </form>
+                                        </section>
+                                        {/* //    )}  */}
+
+                                    </div>
+
+
+
+
+
+
+
 
                                 </div>
-
-                                
-
-                                
-                                
-                                
-                                
-
                             </div>
                         </div>
                     </div>
+
+                </section>
+
+
+
+
+
+                    </div>
+
+
                 </div>
 
-            </section>
-        </div>
-        // </>
+            </div>
+       
     );
 }
 
 export default AdminUpdate;
 
-// onSubmit={submitData(user)}
-
-// onSubmit={handleSubmit} 
-// disabled={!validName || !validPwd || !validMatch || !validEmail ? true : false}
-// onClick={handleSubmit}
