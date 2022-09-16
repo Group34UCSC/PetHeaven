@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import './AddStock.css';
 import Axios from 'axios';
 import NavbarUsers from "../../../includes/NavbarUsers";
-import { v4 as uuidv4 } from 'uuid';
+import API from "../../../services/baseURL";
+import options from "../../../services/options";
+// import { v4 as uuidv4 } from 'uuid';
 
 // index: uuidv4(),
 function AddStock()
@@ -53,11 +55,52 @@ function AddStock()
     e.preventDefault();
     console.log("Medicine List", medicineList);
     
+    // const data = { Medicine: medicineList.Medicine, Quantity: medicineList.Quantity, Price: medicineList.Price};
+    // const data = medicineList;
+    // console.log("Data",data);
+
+    medicineList.map((item,index)=>{
+      // console.log("GGS")
+      console.log(item)
+      const Medicine = item.Medicine;
+    const Quantity = item.Quantity;
+    const Price = item.Price;
+    // console.log("Price",medicineList[0].Price);
+    const response = API.post(`pharmacy/inventory/AddStock`, {
+      params: {
+        Medicine: Medicine,
+        Quantity: Quantity,
+        Price : Price
+      }
+    }, options);
+    console.log("Data ",response);
+    })
     
+
+
+//     Axios.post("http://localhost:5000/pharmacy/inventory/AddStock",
+//       {
+//         params:{
+//           Medicine: Medicine,
+//           Quantity: Quantity,
+//            Price: Price
+//         }
+//       }
+// )
+//                 .then((response) => {
+//                     console.log(response.data)
+                    
+//                   if(response.data.error) {
+//                     alert(response.data.error);}
+//                   else{
+//                     alert("successfully added");
+//                   }
+                           
+//                 });
   //   try {
-  //     const body = { Message,appointmentID, roomID, roomname};
+  //     const body = { medicineList};
   //     const response = await fetch(
-  //         "http://localhost:5000/Doctor/Consultation_accept",
+  //         "http://localhost:5000/pharmacy/inventory/AddStock",
   //         {
   //             method: "POST",
   //             headers: {
