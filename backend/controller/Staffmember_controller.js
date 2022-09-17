@@ -141,3 +141,54 @@ exports.Staffmembernotifyadopter=(req,res,next) => {
     }
 
 }
+
+exports.Staffmemberviewdonation = (req,res,next)=>{
+
+  var SelectQuery= "SELECT * FROM dona";
+   
+         conn.query(SelectQuery, function (err,result){
+          if( err ) {
+           console.log(err);
+           res.send("Unable to get the comments");
+          }
+          else{
+           res.send(result);
+          }
+         })
+
+   
+  }
+  
+  exports.Staffmemberviewpets = (req,res,next)=>{
+
+    var SelectQuery= "SELECT * FROM pet";
+     
+           conn.query(SelectQuery, function (err,result){
+            if( err ) {
+             console.log(err);
+             res.send("Unable to get the comments");
+            }
+            else{
+             res.send(result);
+            }
+           })
+  
+     
+  }
+  
+  exports.Staffmemberviewposts = (req,res,next)=>{
+
+    var SelectQuery= "SELECT * FROM pet WHERE status=0";
+     
+           conn.query(SelectQuery, function (err,result){
+            if( err ) {
+             console.log(err);
+             res.send("Unable to get the comments");
+            }
+            else{
+             res.send(result);
+            }
+           })
+  
+     
+  }

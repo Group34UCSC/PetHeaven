@@ -11,6 +11,20 @@ import ad3 from '../img/ad3.jpg';
 import NavbarUsers from '../../../includes/NavbarUsers';
 
 function ViewAdoptee(){
+
+  const [adoptees,setAdoptees]=useState([])
+  useEffect(()=>{
+    fetch("http://localhost:5000/staffmember/viewadoptees").then((result)=>{
+      result.json().then((resp)=>{
+        // console.warn(resp)
+        setPets(resp)
+        console.log(resp);
+      })
+    })
+  },[])
+  console.warn(adoptees)
+  console.log(adoptees)
+
     return(
         <div>
         <NavbarUsers/>
@@ -46,7 +60,39 @@ function ViewAdoptee(){
           <div className="container">
             <div className="row">
 
-              <div class="admincard col-md-4">       
+              {adoptees.map((item,i)=>
+                <div class="admincard col-md-4">       
+                <div className="card shadow" id='cardone'>
+                    <img src={ad1} className="imgcover rounded" alt="Services"/>
+                    <div className="card-body" id='cardTitle'>
+                      <div className="petdetail">
+                        <div className='maindetails'>
+                          <h6 className="petName"><b>{item.name}</b></h6>
+                          <div className="underline"></div>
+                          <h6 className='ashtext'>{item.breed}</h6>
+                          <h6 className='ashtext'>{item.gender}</h6>
+                          <h6 className='ashtext'>{item.age}</h6>
+                          <h6 className='ashtext'>{item.color}</h6>
+                        </div>
+                        
+                        <div className='adopterdetail'></div>
+                          <h6 >Adopter Name  : <span className='adopterlink' data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-user"></i> L.H.S.P. Kahandawa</span></h6>
+                          <h6 >Address       : No 180, Jasen Rd, Maravila</h6>
+                          <h6 >Contact No    : 0717818933</h6>
+                          <h6 >Adoptted Date : 30.07.2022</h6>
+                          <h6 >Adoptted Age  : 2 months</h6>
+                      </div>  
+                      
+                    </div>
+                  <Link to="notifyadopter" class="nav-link active d-grid gap-2">
+                    <button type="button" class="btn btn-success notifyBtn" id="postpetbtn">Notify Adopter <i class="fa-solid fa-bell"></i></button>
+                  </Link>
+                </div>
+              </div>
+
+              )}
+
+              {/* <div class="admincard col-md-4">       
                 <div className="card shadow" id='cardone'>
                     <img src={ad1} className="imgcover rounded" alt="Services"/>
                     <div className="card-body" id='cardTitle'>
@@ -131,7 +177,7 @@ function ViewAdoptee(){
                     <button type="button" class="btn btn-success notifyBtn" id="postpetbtn">Notify Adopter <i class="fa-solid fa-bell"></i></button>
                   </Link>
                 </div>
-              </div>
+              </div> */}
          
 
                          
