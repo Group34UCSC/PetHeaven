@@ -1,0 +1,1 @@
+exports.ADD_MEDICINE = "INSERT INTO pharmacy VALUES (NULL, ?)";

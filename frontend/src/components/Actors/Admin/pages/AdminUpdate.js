@@ -24,6 +24,20 @@ const AdminUpdate = () => {
     const [User_type, setuserType] = useState("");
     const [User_ID, setUserId] = useState(null)
 
+
+
+   
+
+
+    const [buttontext, setButtontext] = useState('Update');
+  
+    const [pwd, setPwd] = useState('');
+  
+    const [matchPwd, setMatchPwd] = useState('');
+ 
+
+  
+
     useEffect(() => {
         getUsers();
     }, [])
@@ -54,70 +68,21 @@ const AdminUpdate = () => {
     }
 
 
-
-    
-    // async  function  DeleteUser(item) {
-        
-    
-       
-        
-       
-        
-    //     // axios({
-    //     //     method: 'post',
-    //     //     url: `localhost:5000/Admin/Delete/${UserID}`,
-    //     //     headers: { },
-    //     //     data : data
-    //     //   })
-    //     // .then(function (response) {
-    //     //   console.log(JSON.stringify(response.data));
-    //     // })
-    //     // .catch(function (error) {
-    //     //   console.log(error);
-    //     // });
-
-    //     try {
-    //           const UserID= item.User_ID ;
-    //         const response = await fetch(
-    //             `localhost:5000/Admin/Delete/${UserID}`,
-    //             {
-    //                 method: "POST",
-    //                 headers: {
-    //                     "Content-type": "application/json"
-    //                 },
-    //                 // body: JSON.stringify(body)
-    //             }
-    //         );
-    //         console.log(response);
-    //     }
-    //     catch (err) {
-    //         console.log("Falil12");
-    //     }
-
-        
-
-
-
-
-    // }
-
-
-
     const  DeleteUser = async (item) => {
       console.log("prasad")
 
       var raw = "";
 
-var requestOptions = {
-  method: 'POST',
-  body: raw,
-  redirect: 'follow'
-};
+       var requestOptions = {
+            method: 'POST',
+            body: raw,
+            redirect: 'follow'
+          };
         try {
             const body = { item };
             const UserID= item.User_ID ;
             const response = await fetch(
-                `localhost:5000/Admin/Delete/${UserID}`,
+                `http://localhost:5000/Admin/Delete/${UserID}`,
                 requestOptions)
             ;
             console.log(response);
@@ -130,14 +95,63 @@ var requestOptions = {
 
 
 
+ 
+    const UpdateUserform = async e => {
+        e.preventDefault();
+        setButtontext('Updated..');
+        try {
+            const body = { User_type,User_name,User_ID , Email, pwd };
+            const response = await fetch(
+                "http://localhost:5000/Admin/Update",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/json"
+                    },
+                    body: JSON.stringify(body)
+                }
+            );
+            console.log(response);
+        }
+        catch (err) {
+            console.log("Falil12");
+        }
+
+    }
 
 
 
+
+
+
+const[searchTerm, setSearchTerm]=useState('')
     return (
 
    
             <div>
                 <NavbarUsers />
+
+
+                 {/* search */}
+                 <div class="container">
+
+            <div class="row height d-flex justify-content-center align-items-center">
+
+              <div class="col-md-6">
+
+                <div class="form">
+                  <i class="fa fa-search"></i>
+                  <input type="text" class="form-control form-input" placeholder="Search Name , UserType or Email..." onChange={(e)=>{setSearchTerm(e.target.value)}} />
+                  <span class="left-pan"><i class="fa fa-microphone"></i></span>
+                </div>
+                
+              </div>
+              
+            </div>
+            
+          </div>
+
+
 
                 {/* table */}
 
@@ -160,7 +174,13 @@ var requestOptions = {
                             <tbody>
 
                                 {
-                                    users.map((item, i) =>
+                                    users.filter((item)=>{
+                                        if(searchTerm == ""){
+                                            return item
+                                        }else if (item.User_name.toLowerCase().includes(searchTerm.toLowerCase()) || item.User_type.toLowerCase().includes(searchTerm.toLowerCase()) || item.Email.toLowerCase().includes(searchTerm.toLowerCase())){
+                                            return item
+                                        }
+                                    }).map((item, i) =>
                                         <tr key={i}>
                                             <td>{item.User_ID}</td>
                                             <td>{item.User_name}</td>
@@ -224,7 +244,7 @@ var requestOptions = {
                                                 <input class="inputFields"
                                                     type="text"
                                                     id="username"
-                                                    value={User_ID} onChange={(e)=>{setName(e.target.value)}}
+                                                    value={User_ID} onChange={(e)=>{setUserId(e.target.value)}}
                                                     placeholder="Enter Your User Name"
                                                     required
                                                
@@ -240,7 +260,7 @@ var requestOptions = {
                                                 <input class="inputFields"
                                                     type="text"
                                                     id="username"
-                                                    value={User_name} onChange={(e)=>{setUserId(e.target.value)}}
+                                                    value={User_name} onChange={(e)=>{setName(e.target.value)}}
                                                     placeholder="Enter Your User Type"
                                                     required
                                                
@@ -283,7 +303,8 @@ var requestOptions = {
                                                 <input class="inputFields"
                                                     type="password"
                                                     id="password"
-                                                   
+                                                    onChange={(e) => setPwd(e.target.value)}
+                                                    value={pwd}
                                                     placeholder="Enter Your Password"
                                                     required
                                                   
@@ -297,7 +318,8 @@ var requestOptions = {
                                                 <input class="inputFields"
                                                     type="password"
                                                     id="confirm_pwd"
-                                                   
+                                                    onChange={(e) => setMatchPwd(e.target.value)}
+                                                    value={matchPwd}
                                                     placeholder="Enter Your Password Again"
                                                     required
                                                    
@@ -307,7 +329,7 @@ var requestOptions = {
                                                
                                                 <div className="d-flex justify-content-center">
 
-                                                    <button className="mt-5" id="SignUpBtn" >Update</button>
+                                                    <button className="mt-5" id="SignUpBtn" onClick={UpdateUserform}>{buttontext}</button>
                                                 </div>
 
 

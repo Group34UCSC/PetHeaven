@@ -11,6 +11,16 @@
   min-height: 100vh; 
   padding: 1rem 0.5rem;
 } */
+
+.search{
+    
+    margin-top: 10px;
+    border: #42ba96;
+    margin-left:10% ;
+}
+
+
+
 #SignUpForm
 {
     margin-left: 8%;
