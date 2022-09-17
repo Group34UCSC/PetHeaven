@@ -161,7 +161,7 @@ exports.Staffmemberviewdonation = (req,res,next)=>{
   
   exports.Staffmemberviewpets = (req,res,next)=>{
 
-    var SelectQuery= "SELECT * FROM pet";
+    var SelectQuery= "SELECT * FROM pet WHERE status='stay'";
      
            conn.query(SelectQuery, function (err,result){
             if( err ) {
@@ -178,7 +178,7 @@ exports.Staffmemberviewdonation = (req,res,next)=>{
   
   exports.Staffmemberviewposts = (req,res,next)=>{
 
-    var SelectQuery= "SELECT * FROM pet WHERE status=0";
+    var SelectQuery= "SELECT * FROM pet WHERE status='post'";
      
            conn.query(SelectQuery, function (err,result){
             if( err ) {
@@ -191,4 +191,34 @@ exports.Staffmemberviewdonation = (req,res,next)=>{
            })
   
      
+  }
+
+  exports.Staffmemberviewadoptees = (req,res,next)=>{
+
+    var SelectQuery= "SELECT * FROM pet WHERE status='adopt'";
+     
+           conn.query(SelectQuery, function (err,result){
+            if( err ) {
+             console.log(err);
+             res.send("Unable to get the comments");
+            }
+            else{
+             res.send(result);
+            }
+           })  
+  }
+
+  exports.Staffmemberviewfeebacks = (req,res,next)=>{
+
+    var SelectQuery= "SELECT * FROM adpnotification WHERE status='1'";
+     
+           conn.query(SelectQuery, function (err,result){
+            if( err ) {
+             console.log(err);
+             res.send("Unable to get the comments");
+            }
+            else{
+             res.send(result);
+            }
+           })  
   }

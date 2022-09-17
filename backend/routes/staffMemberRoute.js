@@ -11,5 +11,7 @@ staffMemberRoute.post('/notifyadopter',StaffMember_controller.Staffmembernotifya
 staffMemberRoute.get('/viewdonation',StaffMember_controller.Staffmemberviewdonation);
 staffMemberRoute.get('/viewpets',StaffMember_controller.Staffmemberviewpets);
 staffMemberRoute.get('/viewposts',StaffMember_controller.Staffmemberviewposts);
+staffMemberRoute.get('/viewadoptees',StaffMember_controller.Staffmemberviewadoptees);
+staffMemberRoute.get('/viewfeedback',StaffMember_controller.Staffmemberviewfeebacks);
 
 module.exports = staffMemberRoute;

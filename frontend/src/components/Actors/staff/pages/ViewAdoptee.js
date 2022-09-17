@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import {Link, Search} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
@@ -17,7 +17,7 @@ function ViewAdoptee(){
     fetch("http://localhost:5000/staffmember/viewadoptees").then((result)=>{
       result.json().then((resp)=>{
         // console.warn(resp)
-        setPets(resp)
+        setAdoptees(resp)
         console.log(resp);
       })
     })
