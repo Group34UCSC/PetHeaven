@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import {Link, Search} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
@@ -7,9 +7,21 @@ import '../css/ViewFeedback.css';
 import dog from '../img/dog.jpg';
 import NavbarUsers from '../../../includes/NavbarUsers';
 
-
-
 function ViewFeedback(){
+
+        const [feedback,setFeedback]=useState([])
+        useEffect(()=>{
+        fetch("http://localhost:5000/staffmember/viewfeedback").then((result)=>{
+            result.json().then((resp)=>{
+            // console.warn(resp)
+            setFeedback(resp)
+            console.log(resp);
+            })
+        })
+        },[])
+        console.warn(feedback)
+        console.log(feedback)
+
         return(
             <div>
             <NavbarUsers/>
@@ -26,8 +38,31 @@ function ViewFeedback(){
                     </div>
                 </div>
               <div className="container">
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
+                <div class="accordion" id="accordionExample">
+
+                    
+                        {feedback.map((item,i)=>
+                        
+                            <div class="accordion-item">
+                            
+                                <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="fa-solid fa-user"></i><b>{item.name}</b> 
+                                </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    {item.message}
+                                </div>
+
+                                <button type="button" class="btn btn-success replyBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply <i class="fa-solid fa-reply"></i></button>
+                                </div>
+                            </div>
+                                
+                        
+                        )}
+
+                        {/* <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 <i class="fa-solid fa-user"></i><b>H.P.T.K. Kasthuriarachchi</b> 
@@ -67,8 +102,9 @@ function ViewFeedback(){
                             </div>
                                 <button type="button" class="btn btn-success replyBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply <i class="fa-solid fa-reply"></i></button>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
+                    
               </div>
             </section>
 
