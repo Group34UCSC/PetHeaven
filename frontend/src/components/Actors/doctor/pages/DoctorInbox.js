@@ -23,10 +23,124 @@ function DoctorInbox() {
   };
 
 
+
+
+  const [users, setUser] = useState([])
+  const [fullname, setName] = useState("");
+  const [appointmentID, setappointmentID] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [room_name, setRoomName] = useState("");
+  const [room_ID, setRoomID] = useState("");
+
+  useEffect(() => {
+      getUsers();
+  }, [])
+
+  function getUsers() {
+      fetch("http://localhost:5000/Doctor/Inbox_Table").then((result) => {
+          result.json().then((resp) => {
+              // console.warn(resp)
+
+              setUser(resp)
+              setName(resp[0].fullname)
+              setappointmentID(resp[0].appointmentID)
+              setDate(resp[0].date)
+              setTime(resp[0].time)
+              setRoomName(resp[0].room_name)
+              setRoomID(resp[0].room_ID)
+
+          })
+      })
+  }
+
+
+      
+
+  const  Done = async (item) => {
+    console.log("prasad")
+
+    var raw = "";
+
+     var requestOptions = {
+          method: 'POST',
+          body: raw,
+          redirect: 'follow'
+        };
+      try {
+          const body = { item };
+          const appointment_ID= item.appointmentID ;
+          const response = await fetch(
+              `http://localhost:5000/Doctor/Done/${appointment_ID}`,
+              requestOptions)
+          ;
+          console.log(response);
+      }
+      catch (err) {
+          console.log(err);
+      }
+
+  }
+
+
+
+
+
+
   return (
 
     <div> <NavbarUsers />
 
+
+         
+<div>
+
+<div class="adminviewtable">
+
+    <table class="table view">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">Appointment_ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Room name</th>
+                <th scope="col">Room ID</th>
+                <th scope="col">Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {
+                users.map((item, i) =>
+                    <tr key={i}>
+                        <td>{item.appointmentID}</td>
+                        <td>{item.fullname}</td>
+                        <td>{item.date}</td>
+                        <td>{item.time}</td>
+                        <td>{item.room_name}</td>
+                        <td>{item.room_ID}</td>
+                        <td><button type="button" class="btn btn-warning" onClick={() => Done(item)}>Done</button></td>
+                    </tr>
+                )
+            }
+
+
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+      {/* room id and room name */}
       <div className="App">
         {!showChat ? (
           <div className="joinChatContainer">
