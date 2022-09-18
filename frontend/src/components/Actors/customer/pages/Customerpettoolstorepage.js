@@ -1,6 +1,6 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect,useSearchParams,Component}  from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {Link} from 'react-router-dom';
+import {Link,useLocation} from 'react-router-dom';
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 import '../css/CustomerDoctorappoint.css';
 import docvectors from  '../images/docvector.png';
@@ -16,126 +16,165 @@ import dogplate from '../images/dogplate.jfif';
 import '../css/Customerpharmacypage.css'
 import '../css/profileview.css';
 import NavbarUsers from '../../../includes/NavbarUsers';
+
 function Customerpettoolstorepage(){
+    const [users,setUsers]=useState([])
+    const [name,setName]=useState('')
+    const [phonenumber,setPhonenumber]=useState('')
+    const [email,setEmail]=useState('')
+    const [number,setNumber]=useState('')
+    const [street,setStreet]=useState('')
+    const [city,setCity]=useState('');
+    const [tool,setTool]=useState([]);
+    const [toolname,setToolname]=useState('');
+    const [itemname,setItemname]=useState('')
+    const [price,setPrice]=useState('')
+    const [brand,setBrand]=useState('')
+    const [country,setCountry]=useState('')
+    const [expirydate,setexpirydate]=useState('')
+    const [image,setImage]=useState('')
+    const [toolstore_id,setToolstoreid]=useState('')
+    // const [searchParams, setSearchParams] = useSearchParams();
+    // console.log(searchParams.get("id"))
+    // useEffect(()=>{
+    //     getUsers();
+    // },[])
+    const getUsers=async e=>{
+        try{
+            fetch("http://localhost:5000/petadopter/findapet/findpettoolstore/pettoolstorepage").then((result)=>
+            {
+                result.json().then((resp)=>{
+                    console.log(resp[0].type)
+                        setItemname(resp[0].item_name)
+                        setUsers(resp)
+                        setName(resp[0].name)
+                        setPhonenumber(resp[0].phonenumber)
+                        setEmail(resp[0].email)
+                        setNumber(resp[0].number)
+                        setStreet(resp[0].Street)
+                        setCity(resp[0].City)
+                    }
+                )
+            })
+
+        
+        }
+        catch (err) {
+            console.log("Faalil");
+        }
+    }
+
+    // const getItem=async e=>{
+    //     try{
+    //         e.preventDefault();
+    //         fetch("http://localhost:5000/petadopter/findapet/findpettoolstore/pettoolstorepage/items").then((result)=>
+    //         {
+    //             result.json().then((resp)=>{
+    //                 console.log(resp[0].type)
+    //                     setTool(resp)
+    //                     setItemname(resp[0].item_name)
+    //                     setPrice(resp[0].price)
+    //                     setImage(resp[0].Image)
+    //                     setBrand(resp[0].brand)
+    //                     setCountry(resp[0].manufacture_country)
+    //                     setexpirydate(resp[0].expiry_date)
+    //                     setToolstoreid(resp[0].Toolstore_ID)
+    //             })
+    //         })
+    //     }
+    //     catch (err) {
+    //         console.log("Faalil");
+    //     }
+    // }
+
+    useEffect(() => {
+        getUsers();
+
+    },[]);
+
     return (
+        
         <div>
             <NavbarUsers/>
-            <div id="pharmacyprofilearea">
-                <div class="card" id="profileviewcard">
-                    <div class="row">
-                        <div class="col col-sm-3 column">
-                            <img src={Profile} ></img>
-                        </div>
+            <div>
+                {
+                    users.map((item,i)=>{
+                        const queryString = window.location.search;
+                        console.log(queryString);
+                        const urlParams = new URLSearchParams(queryString);
+                        const id = urlParams.get('id');
+                        let url ="pettooldetails?id="+item.Tool_ID;
+                        if(item.Toolstore_ID==id){
+                            return(
+                                <div>
+                                    <div id="pharmacyprofilearea">
+                                        <div class="card" id="profileviewcard">
+                                            <div class="row">
+                                                <div class="col col-sm-3 column">
+                                                    <img src={Profile} ></img>
+                                                </div>
+                                                <div class="col col-sm-9 column">
+                                                    <div class="card-body">
+                                                        <table class="table" id="profiletable">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th id="profilelabel">Shop name</th>
+                                                                    <td id="profileitem">{item.name}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th id="profilelabel">Address</th>
+                                                                    <td id="profileitem">{item.number}, {item.Street}, {item.City}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th id="profilelabel">Telephone number</th>
+                                                                    <td id="profileitem">077-2357890</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th id="profilelabel">Email</th>
+                                                                    <td id="profileitem">absilva@gmail.com</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                        <div class="col col-sm-9 column">
-                            <div class="card-body">
-                                <table class="table" id="profiletable">
-                                
-                                    <tbody>
-                                        <tr>
-                                            <th id="profilelabel">Shop name</th>
-                                            <td id="profileitem">Paw n baw world</td>
-                                        </tr>
-
-                                        <tr>
-                                            <th id="profilelabel">Address</th>
-                                            <td id="profileitem"> Paw n baw,no 11, Old Tangalle road, Matara</td>
-                                        </tr>
-
-                                        <tr>
-                                            <th id="profilelabel">Telephone number</th>
-                                            <td id="profileitem">077-2357890</td>
-                                        </tr>
-
-                                        <tr>
-                                            <th id="profilelabel">Email</th>
-                                            <td id="profileitem">absilva@gmail.com</td>
-                                        </tr>
-
-                                        <tr>
-                                            <th id="profilelabel">Registration number</th>
-                                            <td id="profileitem">2017/A/RC/226</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                    <div>
+                                        <h3 class="featuredanimalsheader">Item stock <i class="fa-solid fa-paw"></i></h3>
+                                        <div class="row cardbody featuredanimalarea" >
+                                            <div class="col-md-2 card" id="card1">
+                                                <h4 class="text-success petname">{item.item_name}</h4>
+                                                <div className="underline underlineJusty"></div>
+                                                <img src={meo} class="card-img-top" id="featuredimg" alt="Tommy"></img>
+                                                <div class="card-body">
+                                                    <h6 class="petage text-danger">Rs.{item.Price}.00/=</h6>
+                                                    <Link to={url}><button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        }
+                    })
+                }
             </div>
-            <div class="searchbardiv">
-                    <form>
+                {/* <div class="searchbardiv">
+                    {/* <form>
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="petsearchbyname" aria-describedby="petsearch" placeholder="search item by name"></input>
-                            <button type="submit" class="btn btn-success " id="petsearchbtn">Search <i class="fa-solid fa-magnifying-glass"></i></button>
+                            <input type="text" class="form-control" id="petsearchbyname" value={toolname} onchange ={(e)=>setToolname(e.target.value)} aria-describedby="petsearch" placeholder="search item by name"></input>
+                            <button type="submit" class="btn btn-success " id="petsearchbtn" onClick={getItem}>Search <i class="fa-solid fa-magnifying-glass"></i></button>
                         </div>
-                    </form>
-            </div>
-            <h3 class="featuredanimalsheader">Item stock <i class="fa-solid fa-paw"></i></h3>
-            <div class="row cardbody featuredanimalarea" > 
-                <div class="col-md-2 card"  id="card1" >
-                    <h4 class="text-success petname">Iron cage</h4>
-                    <div className="underline underlineJusty"></div>
-                    <img src={cage} class="card-img-top" id="featuredimg" alt="Tommy"></img>
-                    <div class="card-body">
-                        <h6 class="petage text-danger">Rs 7550/=</h6>
-                        <Link to="pettooldetails"><button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
-                    </div>
-                </div>
-
-                <div class="col-md-2 card" id="card1">
-                    <h4 class="text-success petname">Steel chain</h4>
-                    <div className="underline underlineJusty"></div>
-                    <img src={dogchain} class="card-img-top" id="featuredimg" alt="Tommy"></img>
-                    <div class="card-body">
-                        <h6 class="petage text-danger">Rs 1,045/=</h6>
-                        <Link to="pettooldetails"><button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
-                    </div>
-                </div>
-
-                <div class="col-md-2 card" id="card1">
-                    <h4 class="text-success petname">Dog plate</h4>
-                    <div className="underline underlineJusty"></div>
-                    <img src={dogplate} class="card-img-top" id="featuredimg" alt="Tommy"></img>
-                    <div class="card-body">
-                        <h6 class="petage text-danger">Rs 560/=</h6>
-                        <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                    </div>
-                </div>
-
-                <div class="col-md-2 card" id="card1">
-                    <h4 class="text-success petname">Steel Pendant</h4>
-                    <div className="underline underlineJusty"></div>
-                    <img src={pendants} class="card-img-top" id="featuredimg" alt="Tommy"></img>
-                    <div class="card-body">
-                        <h6 class="petage text-danger">Rs 2,500/=</h6>
-                        <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                    </div>
-                </div>
-
-                <div class="col-md-2 card"  id="card1" >
-                    <h4 class="text-success petname">Cat Smitten</h4>
-                    <div className="underline underlineJusty"></div>
-                    <img src={catfood} class="card-img-top" id="featuredimg" alt="Tommy"></img>
-                    <div class="card-body">
-                        <h6 class="petage text-danger">Rs. 2,100/=</h6>
-                        <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                    </div>
-                </div>
-
-                <div class="col-md-2 card" id="card1">
-                    <h4 class="text-success petname">Me-o Biscuits</h4>
-                    <div className="underline underlineJusty"></div>
-                    <img src={meo} class="card-img-top" id="featuredimg" alt="Tommy"></img>
-                    <div class="card-body">
-                        <h6 class="petage text-danger">Rs 780/=</h6>
-                        <button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                    </div>
-                </div>
-            </div>
+                    </form> */}
+                {/*</div> */} 
+                
             <Pagination></Pagination>
         </div>
     )
+    
 }
+
 
 export default Customerpettoolstorepage;

@@ -11,39 +11,13 @@ import NavbarUsers from '../../../includes/NavbarUsers';
 function CustomerDoctorAppoint(){
     const [users,setUser] = useState([])
     const [doctorname,setDoctorname]=useState("");
+    const [doctorid,setDoctorid]=useState("");
     const [address,setAddress]=useState("");
     const [name,setName]=useState("");
     var axios = require('axios');
     var data = JSON.stringify({});
     
-    // const getUsers=async e=>{
-    //     e.preventDefault();
-    //     try{
-    //         var config = {
-    //             method: 'get',
-    //             url: 'http://localhost:5000/petadopter/findapet/finddoctors',
-    //             headers: { 
-    //                 'Content-Type': 'application/json'
-    //             },
-    //             data : data
-    //             };
-            
-    //             axios(config).then(function (response) {
-    //                 console.log(JSON.stringify(response.data));
-
-    //                 setUser(response);
-    //                 setDoctorname(response[0].User_name);
-                  
-    //             })
-    //             .catch(function (error) {
-    //                 console.log(error);
-    //             });
-    //     }
-    
-    //     catch (err) {
-    //         console.log("Faalil");
-    //     }
-    // }
+   
     const getUsers=async e=>{
         e.preventDefault();
         console.log("hiiii");
@@ -55,9 +29,9 @@ function CustomerDoctorAppoint(){
                 result.json().then((resp)=>{
                     setUser(resp)
                     setDoctorname(resp[0].fullname)
+                    setDoctorid(resp[0].doctorID);
                     setAddress(resp[0].address)
-                    
-                    console.log(resp[0].fullname);
+                    console.log(resp[0].address);
                 })
             })
         }
@@ -83,73 +57,9 @@ function CustomerDoctorAppoint(){
             
             
             <div class="row" id="doctorsearchcararea"> 
-                        {/* <div class="col-sm-2 card" id="doctorcard">
-                            <h5 class="text-success petname">Sanath Nandadewa</h5>
-                            <div className="underline underlineJusty"></div>
-                            <img src={docvectors} class="card-img-top"  id="docproimg" alt="Tommy"></img>
-                            <div class="card-body">
-                                <p class="card-text"></p>
-                                <h6 class="text-danger doctown">Kottawa</h6>
-                                <Link to="requestappoint"><button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-2 card" id="doctorcard">
-                            <h5 class="text-success petname">Upuli Rathnayake</h5>
-                            <div className="underline underlineJusty"></div>
-                            <img src={docvectors} class="card-img-top"  id="docproimg" alt="Tommy"></img>
-                            <div class="card-body">
-                                <p class="card-text"></p>
-                                <h6 class="text-danger doctown">Rathnapura</h6>
-                                <Link to="requestappoint"><button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-2 card" id="doctorcard">
-                            <h5 class="text-success petname">J.A.Arunasinghe</h5>
-                            <div className="underline underlineJusty"></div>
-                            <img src={docvectors} class="card-img-top" id="docproimg" alt="Tommy"></img>
-                            <div class="card-body">
-                                <p class="card-text"></p>
-                                <h6 class="text-danger doctown">Ahangama</h6>
-                                <Link to="requestappoint"><button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-2 card" id="doctorcard">
-                            <h5 class="text-success petname">Farhan Behardinne</h5>
-                            <div className="underline underlineJusty"></div>
-                            <img src={docvectors} class="card-img-top"  id="docproimg" alt="Tommy"></img>
-                            <div class="card-body">
-                                <p class="card-text"></p>
-                                <h6 class="text-danger doctown">Weligama</h6>
-                                <Link to="requestappoint"><button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-2 card" id="doctorcard">
-                            <h5 class="text-success petname">J.A.Arunasinghe</h5>
-                            <div className="underline underlineJusty"></div>
-                            <img src={docvectors} class="card-img-top" id="docproimg" alt="Tommy"></img>
-                            <div class="card-body">
-                                <p class="card-text"></p>
-                                <h6 class="text-danger doctown">Ahangama</h6>
-                                <Link to="requestappoint"><button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-2 card" id="doctorcard">
-                            <h5 class="text-success petname">Farhan Behardinne</h5>
-                            <div className="underline underlineJusty"></div>
-                            <img src={docvectors} class="card-img-top"  id="docproimg" alt="Tommy"></img>
-                            <div class="card-body">
-                                <p class="card-text"></p>
-                                <h6 class="text-danger doctown">Weligama</h6>
-                                <Link to="requestappoint"><button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
-                            </div>
-                        </div> */}
                 {
                     users.map((item,i)=>{
+                        let url="requestappoint?id="+item.doctorID;
                         if(item.fullname==name){
                             return(
                                 <div class="col col-sm-2 card" id="doctorcard">
@@ -159,7 +69,7 @@ function CustomerDoctorAppoint(){
                                     <div class="card-body">
                                         <p class="card-text"></p>
                                         <h6 class="text-danger doctown">{item.address}</h6>
-                                        <Link to="requestappoint"><button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                                        <Link to={url}><button type="button" class="btn btn-success" id="channelbtn">Channel <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                                     </div>
                                 </div>
                             )

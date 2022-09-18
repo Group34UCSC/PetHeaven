@@ -12,6 +12,7 @@ const errorHandler = require('./utils/errorHandler');
 const AdminRoute = require('./routes/AdminRoute');
 const PetAdopterRoute = require('./routes/PetAdopterRoute');
 const staffMemberRoute = require('./routes/staffMemberRoute');
+const DoctorRoute = require('./routes/DoctorRoute');
 
 app.use(express.json());
 app.use(cors());
@@ -27,6 +28,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // }));
 app.use(bodyParser.json());
 
+app.use('/Doctor', DoctorRoute);
 app.use("/Admin", AdminRoute);
 app.use('/petadopter', PetAdopterRoute);
 app.use("/SignUp", SignUpRoute);
