@@ -4,19 +4,7 @@
     color: #42ba96;
 }
 
-/* * {
-    box-sizing: border-box;
-  }
-   */
-  
-  
-  /* .form-field {
-    flex: 2;
-  } */
-  /* .output {
-    margin-left: 3rem;
-    flex: 1;
-  } */
+
   .form-field label,
   h2 {
     margin: 0;
@@ -24,20 +12,7 @@
     font-weight: 500;
     color: rgb(84, 84, 84);
   }
-  
-  /* input {
-    height: 35px;
-    width: 100%;
-    padding: 7px;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid rgb(220, 220, 220);
-  } */
-  
-  /* input:focus {
-    border: 1px solid rgb(0, 208, 255);
-  } */
-  
+
   .services {
     display: flex;
     justify-content: space-between;
@@ -117,6 +92,5 @@
   #reject-btn:hover
   {
     background: white;
-    /* color: rgb(0, 208, 255); */
     color:red;
   }

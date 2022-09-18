@@ -12,7 +12,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const { Cookie } = require('express-session');
-const CLIENT_URL = "http://localhost:3000/";
+// const CLIENT_URL = "http://localhost:3000/";
 
 
 
