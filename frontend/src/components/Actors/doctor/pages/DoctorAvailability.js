@@ -58,6 +58,31 @@ function DoctorAvailability() {
         setAllEvents([...allEvents, newEvent]);
     }
 
+    // const fixError_form = async e => {
+    //     e.preventDefault();
+    //     setButtontext('Done...');
+    //     try {
+    //         const body = { Message,appointmentID, roomID, roomname};
+    //         const response = await fetch(
+    //             "http://localhost:5000/Doctor/Consultation_accept",
+    //             {
+    //                 method: "POST",
+    //                 headers: {
+    //                     "Content-type": "application/json"
+    //                 },
+    //                 body: JSON.stringify(body)
+    //             }
+    //         );
+    //         console.log(response);
+    //     }
+    //     catch (err) {
+    //         console.log("Falil12");
+    //     }
+      
+    //   }
+      
+    
+
     return (
         <div className="App">
             <h1>Calendar</h1>
