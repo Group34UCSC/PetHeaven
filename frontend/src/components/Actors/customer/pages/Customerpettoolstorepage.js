@@ -44,9 +44,8 @@ function Customerpettoolstorepage(){
             fetch("http://localhost:5000/petadopter/findapet/findpettoolstore/pettoolstorepage").then((result)=>
             {
                 result.json().then((resp)=>{
-                    console.log(resp[0].type)
-                        setItemname(resp[0].item_name)
                         setUsers(resp)
+                        setItemname(resp[0].item_name)
                         setName(resp[0].name)
                         setPhonenumber(resp[0].phonenumber)
                         setEmail(resp[0].email)
@@ -64,28 +63,6 @@ function Customerpettoolstorepage(){
         }
     }
 
-    // const getItem=async e=>{
-    //     try{
-    //         e.preventDefault();
-    //         fetch("http://localhost:5000/petadopter/findapet/findpettoolstore/pettoolstorepage/items").then((result)=>
-    //         {
-    //             result.json().then((resp)=>{
-    //                 console.log(resp[0].type)
-    //                     setTool(resp)
-    //                     setItemname(resp[0].item_name)
-    //                     setPrice(resp[0].price)
-    //                     setImage(resp[0].Image)
-    //                     setBrand(resp[0].brand)
-    //                     setCountry(resp[0].manufacture_country)
-    //                     setexpirydate(resp[0].expiry_date)
-    //                     setToolstoreid(resp[0].Toolstore_ID)
-    //             })
-    //         })
-    //     }
-    //     catch (err) {
-    //         console.log("Faalil");
-    //     }
-    // }
 
     useEffect(() => {
         getUsers();

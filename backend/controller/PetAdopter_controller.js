@@ -111,7 +111,7 @@ exports.PetAdopter_FindPharmacy=(req,res,next) => {
 
 }
 
-exports.PetAdopter_FindPettoolstore=(req,res,next) => {
+exports.PetAdopter_FindPettoolstore_=(req,res,next) => {
    console.log('___CHECKPOINT___');
    // if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
    try{

@@ -29,7 +29,7 @@ PetAdopterRoute.get('/findapet/searchpet',PetAdopter_controller.PetAdopter_Finda
 PetAdopterRoute.get('findapet/findpharmacy',PetAdopter_controller.PetAdopter_FindPharmacy);
 PetAdopterRoute.get('/findapet/finddoctors',PetAdopter_controller.PetAdopter_FindDoctors);
 PetAdopterRoute.get('/findapet/findpharmacy',PetAdopter_controller.PetAdopter_FindPharmacy);
-PetAdopterRoute.get('/findapet/findpettoolstore',PetAdopter_controller.PetAdopter_FindPettoolstore);
+PetAdopterRoute.get('/findapet/findpettoolstore',PetAdopter_controller.PetAdopter_FindPettoolstore_);
 PetAdopterRoute.get('/findapet/findpettoolstore/pettoolstorepage',PetAdopter_controller.PetAdopter_Loadpettoolstore_);
 PetAdopterRoute.post('/findapet/channeldoctor/requestappoint',PetAdopter_controller.PetAdopter_makeappoint);
 PetAdopterRoute.get('/findapet/findpettoolstore/pettoolstorepage/items',PetAdopter_controller.PetAdopter_Loadtoolitem);
