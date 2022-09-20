@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
-import '../css/DoctorInbox.css';
+// import '../../doctor/css/DoctorInbox.css';
 import io from "socket.io-client";
 
 
@@ -29,6 +29,7 @@ function Chat({ socket, username, room }) {
   useEffect(() => {
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
+      
     });
   }, [socket]);
 

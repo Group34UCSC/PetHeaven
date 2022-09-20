@@ -7,7 +7,8 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 import NavbarUsers from '../../../includes/NavbarUsers';
 import '../css/Doctoravailable.css';
 
-
+import API from "../../../services/baseURL";
+import options from "../../../services/options";
 
 import format from "date-fns/format";
 import getDay from "date-fns/getDay";
@@ -18,6 +19,8 @@ import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+
+
 
 
 const locales = {
@@ -31,56 +34,62 @@ const localizer = dateFnsLocalizer({
     locales,
 });
 
-const events = [
-    {
-        title: "Big Meeting",
-        allDay: true,
-        start: new Date(2021, 6, 0),
-        end: new Date(2021, 6, 0),
-    },
-    {
-        title: "Vacation",
-        start: new Date(2021, 6, 7),
-        end: new Date(2021, 6, 10),
-    },
-    {
-        title: "Conference",
-        start: new Date(2021, 6, 20),
-        end: new Date(2021, 6, 23),
-    },
-];
+// const events = [
+//     {
+//         title: "Big Meeting",
+//         allDay: true,
+//         start: new Date(2021, 6, 0),
+//         end: new Date(2021, 6, 0),
+//     },
+//     {
+//         title: "Vacation",
+//         start: new Date(2021, 6, 7),
+//         end: new Date(2021, 6, 10),
+//     },
+//     {
+//         title: "Conference",
+//         start: new Date(2021, 6, 20),
+//         end: new Date(2021, 6, 23),
+//     },
+// ];
 
 function DoctorAvailability() {
     const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
-    const [allEvents, setAllEvents] = useState(events);
+    const [allEvents, setAllEvents] = useState();
 
-    function handleAddEvent() {
+    // function handleAddEvent() {
+    //     setAllEvents([...allEvents, newEvent]);
+    // }
+
+ 
+
+    const handleAddEvent = e => {
+        // e.preventDefault();
+        console.log("Medicine List", newEvent);
+        
+        // const data = { Medicine: medicineList.Medicine, Quantity: medicineList.Quantity, Price: medicineList.Price};
+        // const data = medicineList;
+        // console.log("Data",data);
+       
+        
+          // console.log("GGS")
+          console.log(newEvent.title)
+          const title = newEvent.title;
+        const start = newEvent.start;
+        const end = newEvent.end;
         setAllEvents([...allEvents, newEvent]);
+        // console.log("Price",medicineList[0].Price);
+       
+        const response = API.post(`Doctor/Available`, {
+          params: {
+            title: title,
+            start: start,
+            end : end
+          }
+        }, options);
+        console.log("Data ",response);
+       
     }
-
-    // const fixError_form = async e => {
-    //     e.preventDefault();
-    //     setButtontext('Done...');
-    //     try {
-    //         const body = { Message,appointmentID, roomID, roomname};
-    //         const response = await fetch(
-    //             "http://localhost:5000/Doctor/Consultation_accept",
-    //             {
-    //                 method: "POST",
-    //                 headers: {
-    //                     "Content-type": "application/json"
-    //                 },
-    //                 body: JSON.stringify(body)
-    //             }
-    //         );
-    //         console.log(response);
-    //     }
-    //     catch (err) {
-    //         console.log("Falil12");
-    //     }
-      
-    //   }
-      
     
 
     return (

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import {withCookies} from 'react-cookie';
 import jwt_decode from 'jwt-decode';
+import io from "socket.io-client";
 
 import './App.css';
 //Home
@@ -54,7 +55,8 @@ import CustomerRequestappoint from './components/Actors/customer/pages/CustomerR
 import DoctorCalender from './components/Actors/customer/pages/DoctorCalender';
 import CustomerBuymedicine from './components/Actors/customer/pages/CustomerBuymedicine';
 import CustomerBuypettool from './components/Actors/customer/pages/CustomerBuypettool';
-
+import CustomerInbox from './components/Actors/customer/pages/DoctorInbox';
+import CustomerChat from './components/Actors/customer/pages/Chat'
 
 //Pharmacy
 import Prescription from './components/Actors/pharmacy/Prescription';

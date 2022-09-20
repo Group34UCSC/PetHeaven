@@ -102,3 +102,25 @@ const CLIENT_URL = "http://localhost:3000/";
 
                });
                  }
+
+
+
+
+                     
+                 exports.Available = (req,res,next)=>{
+                
+                     const name = req.params.appointment_ID;
+                     console.log(req.params)
+                     const sqlDelete = `UPDATE appointment SET Done=1 WHERE appointmentID =${name}`;
+                   
+                     conn.query(sqlDelete, name, (err, result)=>{
+                      if (err) {
+                        console.log(err);}
+                        else{
+                           res.send("user delete");
+                        }
+                  
+                 
+
+               });
+                 }
