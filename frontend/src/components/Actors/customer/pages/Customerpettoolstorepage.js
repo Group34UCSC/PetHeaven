@@ -4,7 +4,7 @@ import {Link,useLocation} from 'react-router-dom';
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 import '../css/CustomerDoctorappoint.css';
 import docvectors from  '../images/docvector.png';
-import CustomerDoctorCarousel from './Customerdoctorcarousel';
+import CustomerDoctorCarousel from './CustomerDoctorcarousel';
 import Pagination from  './pagination';
 import Profile from '../images/profile.png';
 import cage from '../images/cage.jfif';
@@ -34,17 +34,18 @@ function Customerpettoolstorepage(){
     const [expirydate,setexpirydate]=useState('')
     const [image,setImage]=useState('')
     const [toolstore_id,setToolstoreid]=useState('')
-    // const [searchParams, setSearchParams] = useSearchParams();
-    // console.log(searchParams.get("id"))
-    // useEffect(()=>{
-    //     getUsers();
-    // },[])
+    const [searchParams, setSearchParams] = useSearchParams();
+    console.log(searchParams.get("id"))
+    useEffect(()=>{
+        getUsers();
+    },[])
     const getUsers=async e=>{
         try{
             fetch("http://localhost:5000/petadopter/findapet/findpettoolstore/pettoolstorepage").then((result)=>
             {
                 result.json().then((resp)=>{
                         setUsers(resp)
+                        setToolstoreid(resp[0].id)
                         setItemname(resp[0].item_name)
                         setName(resp[0].name)
                         setPhonenumber(resp[0].phonenumber)

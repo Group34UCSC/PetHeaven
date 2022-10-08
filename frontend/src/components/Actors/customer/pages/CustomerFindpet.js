@@ -10,10 +10,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 
 import '../css/CustomerFindpet.css';
-import CustomerFeaturedAnimals from './CustomerFeaturedAnimals';
+import CustomerFeaturedAnimals from './CustomerFeaturedanimals';
 import DoctorAppointment from './DoctorAppointment';
 import Pagination from './pagination';
-import Customerservices from './Customerservices';
+import Customerservices from './CustomerServices';
 import Customerdocmessagetab from './CustomerDocmessagetab';
 import NavbarUsers from '../../../includes/NavbarUsers';
 function CustomerFindpet(){
