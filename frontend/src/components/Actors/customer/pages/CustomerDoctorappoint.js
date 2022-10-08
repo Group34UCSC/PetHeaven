@@ -4,7 +4,7 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 import {Link} from 'react-router-dom';
 import '../css/CustomerDoctorappoint.css';
 import docvectors from  '../images/docvector.png';
-import CustomerDoctorCarousel from './Customerdoctorcarousel';
+import CustomerDoctorcarousel from './CustomerDoctorcarousel';
 import Pagination from  './pagination';
 import NavbarUsers from '../../../includes/NavbarUsers';
 
@@ -43,7 +43,7 @@ function CustomerDoctorAppoint(){
     return(
         <div>
             <NavbarUsers/>
-            <CustomerDoctorCarousel></CustomerDoctorCarousel>
+            <CustomerDoctorcarousel></CustomerDoctorcarousel>
 
 
             <h3 class="d-none d-md-block aboutsearchdoctorheading">Select best doctor for your pet among thousands of our registered qualified veteranians</h3>

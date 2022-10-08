@@ -5,7 +5,7 @@ import '../css/CustomerDoctorappoint.css';
 import dogvaccine from "../images/catmedic.png";
 import doctorcalls from '../images/doctorcalls.jpg';
 import texting from '../images/texting.jfif';
-function CustomerDoctorCarousel(){
+function CustomerDoctorcarousel(){
 
     return(
         <div class="d-none d-md-block" >
@@ -49,4 +49,4 @@ function CustomerDoctorCarousel(){
     
 }
 
-export default CustomerDoctorCarousel;
+export default CustomerDoctorcarousel;

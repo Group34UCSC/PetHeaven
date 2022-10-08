@@ -72,7 +72,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 
 import '../css/CustomerFeaturedAnimals.css';
-function CustomerFeaturedAnimals(){
+function CustomerFeaturedanimals(){
     return(
             <div class= "container">
                 <h3 class="featuredanimalsheader">Pets you may interested  <i class="fa-solid fa-paw"></i></h3>
@@ -148,4 +148,4 @@ function CustomerFeaturedAnimals(){
         )
 }
 
-export default CustomerFeaturedAnimals;
+export default CustomerFeaturedanimals;

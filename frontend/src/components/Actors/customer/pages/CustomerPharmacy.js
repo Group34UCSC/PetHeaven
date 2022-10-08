@@ -45,8 +45,8 @@ function CustomerPharmacy(){
             </div>
             <form>
                 <div class="mb-3" id="pharmacysearchdivs">
-                    <label for="Pharmacyname" class="form-label">Search by Area <i class="fa-solid fa-magnifying-glass"></i></label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" value={pharmacyname} onChange={(e)=>setPharmacyName(e.target.value)} placeholder="enter of area your Pharmacy"></input>
+                    <label for="Pharmacyname" class="form-label">Search by name <i class="fa-solid fa-magnifying-glass"></i></label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" value={pharmacyname} onChange={(e)=>setPharmacyName(e.target.value)} placeholder="enter of name your Pharmacy"></input>
                     <button class="btn btn-success" id="custsearchbtns" onClick={getUsers}>Search <i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
 

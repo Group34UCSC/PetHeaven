@@ -4,7 +4,7 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 import {Link} from 'react-router-dom'; 
 import '../css/CustomerDoctorappoint.css';
 import docvectors from  '../images/docvector.png';
-import CustomerDoctorCarousel from './Customerdoctorcarousel';
+import CustomerDoctorcarousel from './CustomerDoctorcarousel.js';
 import Pagination from  './pagination';
 import Profile from '../images/profile.png';
 import medicinetin from '../images/medicinetin.jfif';
@@ -12,7 +12,7 @@ import medicinebottle from '../images/medbottle.jfif';
 import '../css/Customerpharmacypage.css'
 import '../css/profileview.css';
 import NavbarUsers from '../../../includes/NavbarUsers';
-function Customerpharmacypage(){
+function CustomerPharmacypage(){
     const [users,setUsers]= useState([]);
     const [pharmacyid,setPharmacyID]= useState('')
     const [name,setName]= useState('')
@@ -164,4 +164,4 @@ function Customerpharmacypage(){
     )
 }
 
-export default Customerpharmacypage;
+export default CustomerPharmacypage;
