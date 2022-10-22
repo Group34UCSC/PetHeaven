@@ -3,8 +3,9 @@ import {useRef, useEffect, useState } from "react";
 import {Link} from 'react-router-dom';
 import '../css/PostAdvertisement.css';
 // import PetToolImg from "../images/Pet-tool.jpg";
-
-
+import { storage} from "../../../firebase";
+import {getDownloadURL, ref, uploadBytesResumable} from "firebase/storage";
+import {v4 as uuidv4} from "uuid"
 
 // import {Link, Navigate} from 'react-router-dom';
 // import { useNavigate } from "react-router-dom";
@@ -32,7 +33,7 @@ const PostAdvertisement = () =>
     const [Price	, setPrice	] = useState('');
     const [validPrice	, setValidPrice	] = useState(false);
     const [PriceFocus, setPriceFocus] = useState(false);
-
+    const [file, setFile] = useState("");
     const [selectedImage, setSelectedImage] = useState({
         file:[],
         filepreview:null,
@@ -42,6 +43,7 @@ const PostAdvertisement = () =>
     const [validDescription	, setValidDescription	] = useState(false);
     const [DescriptionFocus, setDescriptionFocus] = useState(false);
 
+    const [url	, seturl] = useState('');
     const [errMsg, setErrMsg] = useState('');
 
     useEffect(() => {
@@ -78,34 +80,33 @@ const PostAdvertisement = () =>
     //     PetToolImg : 'https://cdn.onlinewebfonts.com/svg/img_74492.png',
     // }
       
-
-    const ImgHandler = (e) =>{
-        // const reader = new FileReader();
-        // reader.onload = () =>
-        // {
-        //     if(reader.readyState === 2)
-        //     {
-        //         this.setState({PetToolImg:reader.result})
-        //     }
-        // }
-        // reader.readAsDataURL(e.target.files[0])
-        // if (e.target.files && e.target.files.length > 0) {
-        //     setSelectedImage(URL.createObjectURL(e.target.files[0]));
-        //     // selectedImage(e.target.files[0]);
-        //   }
-
-        setSelectedImage({
-            ...selectedImage,
-            file:e.target.files[0],
-            filepreview:URL.createObjectURL(e.target.files[0]),
-        })
-        
-
+    const ImgHandler = (event) => {
+        // setProfileImage(URL.createObjectURL(event));
+        console.log(event)
+        const fileRef = ref(storage, `/PetHeaven/${event.name + uuidv4()}`);
+        const uploadTask = uploadBytesResumable(fileRef, event);
+        uploadTask.on("state_changed", (snapshot) => {
+                const prog = Math.round(
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                );
+                // setProgress(prog)
+            },
+            (err) => console.log(err),
+            () => {
+                getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+                    // const user_id = user?.sub;
+                    console.log(url)
+                    seturl(url);
+                })
+            }
+        )
     }
+
 
     const HandlePost = (e) => {
         e.preventDefault()
-      const data = { Title: Title, Price: Price, Image:selectedImage.file, Description: Description};
+      const data = { Title: Title, Price: Price, Image:url, Description: Description};
+      console.log(data)
     //   const formdata = new FormData(); 
     //     formdata.append('Image', selectedImage.file);
     //     console.log("GGS",selectedImage.file)
@@ -234,12 +235,12 @@ const PostAdvertisement = () =>
                                             <div className="ImgContainer" id="ImgContainer">
                                                 {/* <h3 className="ImgHeading">Add Image of Equipment</h3> */}
                                                 <label className="mb-1 mt-2">Add Image of Equipment</label>
-                                                <div  className="PetTool-holder mt-1 mb-3" id="PetTool-holder">
-                                                    <img src={selectedImage.filepreview} alt="" id="Pet-tool"></img> 
+                                                {/* <div  className="PetTool-holder mt-1 mb-3" id="PetTool-holder"> */}
+                                                    {/* <img src={selectedImage.filepreview} alt="" id="Pet-tool"></img>  */}
                                                     {/* <img src={PetToolImg} className="w-100 border-bottom" alt="Services"/> */}
                                                     {/* {/* <input type="file" name="petTool-upload" id="Pet-tool-img" accept="image/*"  className="form-control" placeholder="Input a Image"></input> */}
-                                                </div>
-                                                <input type="file" name="petTool-upload" id="Pet-tool-img" accept="image/*"  className="form-control" placeholder="Input a Image" onChange={ImgHandler}></input>
+                                                {/* </div> */}
+                                                <input type="file" name="petTool-upload" id="Pet-tool-img" accept="image/*"  className="form-control" placeholder="Input a Image" onChange={(event) => ImgHandler(event.target.files[0])}></input>
                                             </div>
                                         </div>
 
