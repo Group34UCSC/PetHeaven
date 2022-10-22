@@ -74,6 +74,7 @@ function AddStock()
       }
     }, options);
     console.log("Data ",response);
+    alert("successfully Inserted");
     })
     
 

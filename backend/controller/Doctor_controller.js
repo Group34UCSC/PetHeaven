@@ -10,6 +10,8 @@ const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 const AppError = require('../utils/appError');
 const CLIENT_URL = "http://localhost:3000/";
+const { DOCTOR_MODEL } = require('../model/Doctor');
+const {ADD_MEDICINE} = require('../query/Doctor');
 
 
                  exports.View_Appointment = (req,res,next)=>{
@@ -102,3 +104,35 @@ const CLIENT_URL = "http://localhost:3000/";
 
                });
                  }
+
+                 exports.AddMedicine=(req,res,next) => {
+                     console.log(req.body.params.Medicine);
+                     console.log("Sasinduwaa 111");
+                      if( isEmpty( req.body.params )) return next(new AppError("form data not found ",400));
+                      const { error } = DOCTOR_MODEL.validate(req.body.params);
+                      if( error ) return next(new AppError(error.details[0].message,400)) ;
+                      
+                   
+                      try{
+                       console.log("Sasinduwaa 111");
+                        console.log(req.body.params.Medicine);
+                     //    const sqlUpdate = `UPDATE user SET Medicine='${req.body.Medicine}', Dosage= '${req.body.Dosage}', Duration='${req.body.Duration}'  `;
+                      conn.query(ADD_MEDICINE, [[ req.body.params.Medicine,req.body.params.Dosage,req.body.params.Duration]], (err,data,fields)=>{
+                         if(err) return next(new AppError(err,500));
+                         console.log("Sasinduwaa 111");
+                         res.status(201).json({
+                            data:"Submit successfull!!"
+                         })
+                      })
+                   
+                      }
+                   
+                      catch( err )
+                        {
+                           res.status(500).json({
+                              error: err
+                           })
+                        }
+                   
+                   }
+                  
