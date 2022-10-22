@@ -218,7 +218,7 @@ exports.Create_Accounts = (req,res,next)=>{
 
                      exports.DoctorView = (req,res,next)=>{
 
-                        var DoctorViewQuery= "SELECT * FROM doctor";
+                        var DoctorViewQuery= "SELECT * FROM doctor WHERE qualified=0";
        
                         
                          
@@ -236,6 +236,28 @@ exports.Create_Accounts = (req,res,next)=>{
                          
                         }
 
+
+
+                         
+                  exports.DoctorRegister = (req,res,next)=>{
+                
+                     const name = req.params.DocID;
+                     
+                     const sqlRegister = `UPDATE doctor SET qualified=1 WHERE doctorID =${name}`;
+                   
+                     conn.query(sqlRegister, name, (err, result)=>{
+                      if (err) {
+                        console.log(err);}
+                        else{
+                           res.send("Doctor Registered");
+                        }
+                  
+                 
+
+               });
+                 }
+
+                        
                     
    
 

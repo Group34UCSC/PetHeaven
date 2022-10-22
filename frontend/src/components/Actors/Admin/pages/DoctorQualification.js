@@ -25,7 +25,7 @@ const Admin_checkQualification = () => {
     const [DoctorNIC, setNIC] = useState("")
     const [address, setAddress] = useState("")
     const[Lisence,setLisence]= useState("")
-
+    const[Qualifications,setQualifications]= useState("")
 
    
 
@@ -54,6 +54,7 @@ const Admin_checkQualification = () => {
                 setDoctorId(resp[0].doctorID)
                 setNIC(resp[0].DoctorNIC)
                 setLisence(resp[0].lisence)
+                setQualifications(resp[0].qualification)
             })
         })
     }
@@ -68,33 +69,33 @@ const Admin_checkQualification = () => {
         setNIC(item.NIC)
         setAddress(item.address)
         setLisence(item.lisence)
+        setQualifications(item.qualification)
     }
 
 
-    // const  DeleteUser = async (item) => {
-    //   console.log("prasad")
+    const  DeleteUser = async (item) => {
+     
+      var raw = "";
 
-    //   var raw = "";
+       var requestOptions = {
+            method: 'POST',
+            body: raw,
+            redirect: 'follow'
+          };
+        try {
+            const body = { item };
+            const DocID= item.doctorID ;
+            const response = await fetch(
+                `http://localhost:5000/Admin/DoctorRegister/${DocID}`,
+                requestOptions)
+            ;
+            console.log(response);
+        }
+        catch (err) {
+            console.log(err);
+        }
 
-    //    var requestOptions = {
-    //         method: 'POST',
-    //         body: raw,
-    //         redirect: 'follow'
-    //       };
-    //     try {
-    //         const body = { item };
-    //         const UserID= item.User_ID ;
-    //         const response = await fetch(
-    //             `http://localhost:5000/Admin/Delete/${UserID}`,
-    //             requestOptions)
-    //         ;
-    //         console.log(response);
-    //     }
-    //     catch (err) {
-    //         console.log(err);
-    //     }
-
-    // }
+    }
 
 
 
@@ -144,7 +145,7 @@ const[searchTerm, setSearchTerm]=useState('')
 
                 <div class="form">
                   <i class="fa fa-search"></i>
-                  <input type="text" class="form-control form-input" placeholder="Search Name , UserType or Email..." onChange={(e)=>{setSearchTerm(e.target.value)}} />
+                  <input type="text" class="form-control form-input" placeholder="Search full Name..." onChange={(e)=>{setSearchTerm(e.target.value)}} />
                   <span class="left-pan"><i class="fa fa-microphone"></i></span>
                 </div>
                 
@@ -169,7 +170,8 @@ const[searchTerm, setSearchTerm]=useState('')
                                     <th scope="col">Full Name</th>
                                     <th scope="col" >Mobile</th>
                                     <th scope="col">Doctor ID</th>
-                                    
+                                    <th scope="col">Operation</th>
+                                    <th scope="col">Operation</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -178,7 +180,7 @@ const[searchTerm, setSearchTerm]=useState('')
                                     users.filter((item)=>{
                                         if(searchTerm == ""){
                                             return item
-                                        }else if (item.fullname.toLowerCase().includes(searchTerm.toLowerCase()) || item.mobile.toLowerCase().includes(searchTerm.toLowerCase()) || item.doctorID.toLowerCase().includes(searchTerm.toLowerCase())){
+                                        }else if (item.fullname.toLowerCase().includes(searchTerm.toLowerCase()) ){
                                             return item
                                         }
                                     }).map((item, i) =>
@@ -188,7 +190,7 @@ const[searchTerm, setSearchTerm]=useState('')
                                             <td>{item.mobile}</td>
                                             <td>{item.doctorID}</td>
                                             <td><button type="button" class="btn btn-warning" onClick={() => UpdateUser(item)}>View Qualities</button></td>
-                                            {/* <td><button type="button" class="btn btn-danger" onClick={() => DeleteUser(item)}>Deactivated</button></td> */}
+                                            <td><button type="button" class="btn btn-danger" onClick={() => DeleteUser(item)}>Register</button></td>
                                         </tr>
                                     )
                                 }
@@ -324,7 +326,7 @@ const[searchTerm, setSearchTerm]=useState('')
                                                 <input class="inputFields"
                                                     type="email"
                                                     id="emailre"
-                                                    value={DoctorNIC} onChange={(e)=>{setNIC(e.target.value)}}
+                                                    value={Qualifications} onChange={(e)=>{setQualifications(e.target.value)}}
                                                     placeholder="Enter Your NIC"
                                                     required
                                                     
