@@ -11,7 +11,8 @@ const path = require('path');
 
 
 exports.PostNewAdvertisement=(req,res,next) => {
-    console.log("GGSS",req.file.Image)
+   // console.log("nnnnnnnnnn");
+    console.log("GGSS",req.body.Image)
     console.log("kk",req.body.Title);
    //  if( isEmpty( req.body )) 
    //  {
