@@ -9,6 +9,7 @@ AdminRoute.post("/Update",Admin_controller.Update_Accounts);
 AdminRoute.get("/ComplainsView",Admin_controller.ComplainsView_Accounts);
 AdminRoute.post("/FixError",Admin_controller.FixError);
 AdminRoute.get("/DoctorView",Admin_controller.DoctorView);
+AdminRoute.post("/DoctorRegister/:DocID",Admin_controller.DoctorRegister);
 
 // SignUpRoute.route("/")
 //     .post( SignUp_controller.User_SignUp)
