@@ -95,9 +95,9 @@ function DoctorInbox() {
          
 <div>
 
-<div class="adminviewtable">
+<div class="adminviewtable"> 
 
-    <table class="table view">
+     <table class="table view">
         <thead class="thead-dark">
             <tr>
             <th scope="col">Appointment_ID</th>
@@ -141,7 +141,7 @@ function DoctorInbox() {
 
 
       {/* room id and room name */}
-      <div className="App">
+      <div className="App1">
         {!showChat ? (
           <div className="joinChatContainer">
             <h3>Join A Chat</h3>
