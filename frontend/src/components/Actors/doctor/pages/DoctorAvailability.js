@@ -34,62 +34,62 @@ const localizer = dateFnsLocalizer({
     locales,
 });
 
-// const events = [
-//     {
-//         title: "Big Meeting",
-//         allDay: true,
-//         start: new Date(2021, 6, 0),
-//         end: new Date(2021, 6, 0),
-//     },
-//     {
-//         title: "Vacation",
-//         start: new Date(2021, 6, 7),
-//         end: new Date(2021, 6, 10),
-//     },
-//     {
-//         title: "Conference",
-//         start: new Date(2021, 6, 20),
-//         end: new Date(2021, 6, 23),
-//     },
-// ];
+const events = [
+    {
+        title: "Big Meeting",
+        allDay: true,
+        start: new Date(2021, 6, 0),
+        end: new Date(2021, 6, 0),
+    },
+    {
+        title: "Vacation",
+        start: new Date(2021, 6, 7),
+        end: new Date(2021, 6, 10),
+    },
+    {
+        title: "Conference",
+        start: new Date(2021, 6, 20),
+        end: new Date(2021, 6, 23),
+    },
+];
 
 function DoctorAvailability() {
     const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
     const [allEvents, setAllEvents] = useState();
 
-    // function handleAddEvent() {
-    //     setAllEvents([...allEvents, newEvent]);
-    // }
+    function handleAddEvent() {
+        setAllEvents([...allEvents, newEvent]);
+    }
 
  
 
-    const handleAddEvent = e => {
-        // e.preventDefault();
-        console.log("Medicine List", newEvent);
+    // const handleAddEvent = e => {
+    //     // e.preventDefault();
+    //     console.log("Medicine List", newEvent);
         
-        // const data = { Medicine: medicineList.Medicine, Quantity: medicineList.Quantity, Price: medicineList.Price};
-        // const data = medicineList;
-        // console.log("Data",data);
+    //     // const data = { Medicine: medicineList.Medicine, Quantity: medicineList.Quantity, Price: medicineList.Price};
+    //     // const data = medicineList;
+    //     // console.log("Data",data);
        
         
-          // console.log("GGS")
-          console.log(newEvent.title)
-          const title = newEvent.title;
-        const start = newEvent.start;
-        const end = newEvent.end;
-        setAllEvents([...allEvents, newEvent]);
-        // console.log("Price",medicineList[0].Price);
+    //       // console.log("GGS")
+    //       console.log(newEvent.title)
+    //       const title = newEvent.title;
+    //     const start = newEvent.start;
+    //     const end = newEvent.end;
+    //     setAllEvents([...allEvents, newEvent]);
+    //     // console.log("Price",medicineList[0].Price);
        
-        const response = API.post(`Doctor/Available`, {
-          params: {
-            title: title,
-            start: start,
-            end : end
-          }
-        }, options);
-        console.log("Data ",response);
+    //     const response = API.post(`Doctor/Available`, {
+    //       params: {
+    //         title: title,
+    //         start: start,
+    //         end : end
+    //       }
+    //     }, options);
+    //     console.log("Data ",response);
        
-    }
+    // }
     
 
     return (

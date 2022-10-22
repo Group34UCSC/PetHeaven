@@ -118,24 +118,20 @@ exports.Create_Accounts = (req,res,next)=>{
                  res.send("user Update");
               }
         
+
+               });
+
   
 
-     });
+                 })
+             }
+             catch( err )
+             {
+                  res.status(500).json({
+                     error: err
+                })
+             }
 
-  
-
-          
-        })
-     }
-     catch( err )
-     {
-        res.status(500).json({
-           error: err
-        })
-     }
-
-
-       
                     }
 
 
@@ -217,6 +213,30 @@ exports.Create_Accounts = (req,res,next)=>{
    
                       
                      }
+
+                 
+
+                     exports.DoctorView = (req,res,next)=>{
+
+                        var DoctorViewQuery= "SELECT * FROM doctor";
+       
+                        
+                         
+                               conn.query(DoctorViewQuery, function (err,result){
+                                if( err ) {
+                                 console.log(err);
+                                 res.send("Unable to get the comments");
+                                }
+                                else{
+                                 res.send(result);
+                                }
+                    
+                               })
+      
+                         
+                        }
+
+                    
    
 
 

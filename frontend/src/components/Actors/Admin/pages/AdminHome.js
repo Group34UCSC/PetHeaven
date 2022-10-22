@@ -79,6 +79,20 @@ function AdminHome() {
                    </div>
 
 
+                   
+                   <div class="admincard col-md-6">
+                       
+                       <div className="card shadow" id='cardone'>
+                       <Link to="checkDoctor"><img src={update} className="w-50  border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
+                           <div className="card-body">
+                               <h6>CHECK DOCTOR QUALIFICATIONS</h6>
+                               <div className="underline"></div>
+                               <p>Check PetHeaven doctor details</p>
+                           </div>
+                       </div>
+                   </div>
+
+
                    {/* <div class="admincard col-md-6">
                        
                        <div className="card shadow" id='cardone'>

@@ -8,6 +8,7 @@ AdminRoute.get("/View",Admin_controller.View_Accounts);
 AdminRoute.post("/Update",Admin_controller.Update_Accounts);
 AdminRoute.get("/ComplainsView",Admin_controller.ComplainsView_Accounts);
 AdminRoute.post("/FixError",Admin_controller.FixError);
+AdminRoute.get("/DoctorView",Admin_controller.DoctorView);
 
 // SignUpRoute.route("/")
 //     .post( SignUp_controller.User_SignUp)

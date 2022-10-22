@@ -100,7 +100,7 @@ import ViewDonation from './components/Actors/staff/pages/ViewDonation';
 import ViewFeedback from './components/Actors/staff/pages/ViewFeedback';
 import AddNewPet from './components/Actors/staff/pages/AddNewPet';
 import ViewAdopterRequests from './components/Actors/staff/pages/ViewAdopterRequests';
-
+import AdminCheckDoctor from './components/Actors/Admin/pages/DoctorQualification';
 
 
 
@@ -156,13 +156,14 @@ class App extends Component{
             <Route exact path='/AdminHome/Update' element={<AdminUpdate />} />
             <Route exact path='/AdminHome/View' element={<AdminView />} />
             <Route exact path='/AdminHome' element={<AdminHome />} />   */}
-
+            <Route exact path='/AdminHome/checkDoctor' element={<AdminCheckDoctor />} />
             <Route exact path='/AdminHome/Create' element={<AdminCreate />} /> 
             <Route exact path='/AdminHome/Delete' element={<AdminDelete />} />
             <Route exact path='/AdminHome/Update' element={<AdminUpdate />} />
             <Route exact path='/AdminHome/View' element={<AdminView />} />
             <Route exact path='/AdminHome' element={<AdminHome />} />  
             <Route exact path='/AdminHome/complains' element={<ViewComplains />} />
+            
 
             {/* Pharmacy */}
             <Route exact path='/pharmacy/Prescription' element={<Prescription />} />
