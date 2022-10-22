@@ -105,18 +105,19 @@ const PostAdvertisement = () =>
 
     const HandlePost = (e) => {
         e.preventDefault()
-    //   const data = { Title: Title, Price: Price, Image:selectedImage.file, Description: Description};
-      const formdata = new FormData(); 
-        formdata.append('Image', selectedImage.file);
-        formdata.append('Title', Title);
-        formdata.append('Price', Price);
-        formdata.append('Description', Description);
-        console.log(formdata);
+      const data = { Title: Title, Price: Price, Image:selectedImage.file, Description: Description};
+    //   const formdata = new FormData(); 
+    //     formdata.append('Image', selectedImage.file);
+    //     console.log("GGS",selectedImage.file)
+    //     formdata.append('Title', Title);
+    //     formdata.append('Price', Price);
+    //     formdata.append('Description', Description);
+        console.log(data);
         // const {Title}=this.state;
         // const {Price}=this.state;
         // const {Image}=this.Image;
         // const {Description}=this.state;
-        Axios.post("http://localhost:5000/petstore/addNewEquipment", formdata,{   
+        Axios.post("http://localhost:5000/petstore/addNewEquipment", data,{   
             headers: { "Content-Type": "multipart/form-data" }})
                     .then((response) => {
                         console.log(response.data)
