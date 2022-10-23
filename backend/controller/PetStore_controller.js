@@ -78,6 +78,24 @@ exports.PostNewAdvertisement=(req,res,next) => {
     
    }
 
+   exports.Edit_Advertisement = (req,res,next)=>{
 
+      var EditQuery= "SELECT * FROM pettoolinventory where ";
+   
+      
+       
+             conn.query(EditQuery, function (err,result){
+              if( err ) {
+               console.log(err);
+               res.send("Unable to get the comments");
+              }
+              else{
+               res.send(result);
+              }
+   
+             })
+   
+       
+      }
 
  
