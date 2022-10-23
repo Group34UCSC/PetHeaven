@@ -45,7 +45,7 @@ function DoctorViewPetHistory() {
 
     <div class="form">
       <i class="fa fa-search"></i>
-      <input type="text" class="form-control form-input" placeholder="Search Name or Complain..." onChange={(e)=>{setSearchTerm(e.target.value)}} />
+      <input type="text" class="form-control form-input" placeholder="Search Name..." onChange={(e)=>{setSearchTerm(e.target.value)}} />
       <span class="left-pan"><i class="fa fa-microphone"></i></span>
     </div>
     
@@ -78,8 +78,8 @@ function DoctorViewPetHistory() {
                    }).map((item,i)=>
             <tr key={i}>
             <td>{item.User_ID}</td>
-          <td>{item.User_name}</td>
-          <td>{item.Email}</td>
+            <td>{item.User_name}</td>
+            <td>{item.Email}</td>
             <td>{item.User_type}</td>
           </tr>
           )
