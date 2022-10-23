@@ -29,6 +29,7 @@ const upload = multer({
 const PetStoreRoute = express.Router();
 const PetStore_controller = require('../controller/PetStore_controller');
 PetStoreRoute.post("/addNewEquipment",upload.single('Image'),PetStore_controller.PostNewAdvertisement);
+PetStoreRoute.get("/View",PetStore_controller.View_petTools);
 
 
 
