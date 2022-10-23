@@ -14,7 +14,9 @@ const {
    APPOINT_DOCTOR,
    GET_TOOLSTORE,
    GET_TOOLSTOREITEM,
-   GET_MEDICINE
+   GET_MEDICINE,
+   GET_PETDETAILS,
+   GET_USERDETAILS
 } = require('../query/PetAdopter');
 const { PETADOPTER_MODEL, PETADOPTER_ADOPTREQUESTMODEL, } = require('../model/PetAdopter');
 // const bcrypt = require('bcryptjs');
@@ -150,6 +152,25 @@ exports.PetAdopter_FindDoctors=(req,res,next) => {
    }
 
 }
+exports.PetAdopter_ViewPetdetails = (req,res,next) => {
+   console.log('_ __LOADED__ _');
+   // if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
+   try{
+      // if ( error ) return next(new AppError(error.details[0].message,400));
+      conn.query(GET_PETDETAILS, (err,result)=>{
+            console.log("__ CHECK HERE __FOR PET DETAILS");
+         res.send(result)
+      })
+   }
+   catch(err)
+   {
+      console.log("___ error ___")
+      res.status(500).json({
+         error: err
+      })
+   }
+
+}
 
 exports.PetAdopter_Loadtoolitem=(req,res,next) => {
    console.log('_ __LOADED__ _');
@@ -234,6 +255,24 @@ exports.PetAdopter_makeappoint=(req,res,next) => {
       }
 }
 
+exports.ViewProfileDetails=(req,res,next) => {
+   console.log("__PROFILE PAGE__");
+
+   try{
+      // if ( error ) return next(new AppError(error.details[0].message,400));
+      conn.query(GET_USERDETAILS, (err,result)=>{
+         console.log("this is here");
+         res.send(result)
+      })
+   }
+   catch(err)
+   {
+      console.log("___ error ___")
+      res.status(500).json({
+         error: err
+      })
+   }
+}
 
 exports.PetAdopter_FindPharmacy=(req,res,next) => {
    console.log('Destination reached');

@@ -43,14 +43,14 @@ import CustomerFindpet from './components/Actors/customer/pages/CustomerFindpet'
 import CustomerDoctorappoint from './components/Actors/customer/pages/CustomerDoctorappoint';
 import CustomerPharmacy from './components/Actors/customer/pages/CustomerPharmacy';
 import CustomerPettoolstore from './components/Actors/customer/pages/CustomerPettoolstore';
-import ProfilePage from './components/Actors/customer/pages/ProfilePage';
-import CustomerAdoptRequest from './components/Actors/customer/pages/CustomerAdoptrequest';
-import CustomerEditProfile from './components/Actors/customer/pages/CustomerEditprofile';
-import CustomerChangePassword from './components/Actors/customer/pages/CustomerChangepassword';
+import ProfilePage from './components/pages/ProfilePage';
+import CustomerAdoptRequest from './components/Actors/customer/pages/CustomerAdoptRequest';
+import CustomerEditProfile from './components/Actors/customer/pages/CustomerEditProfile';
+import CustomerChangePassword from './components/Actors/customer/pages/CustomerChangePassword';
 import CustomerDoctormessages from './components/Actors/customer/pages/CustomerDoctormessages';
-import Customerpharmacypage from './components/Actors/customer/pages/CustomerPharmacypage';
-import Customerpettoolstorepage from './components/Actors/customer/pages/CustomerPettoolstorepage';
-import Customerviewpetdetails from './components/Actors/customer/pages/CustomerViewpetdetails';
+import Customerpharmacypage from './components/Actors/customer/pages/Customerpharmacypage';
+import Customerpettoolstorepage from './components/Actors/customer/pages/Customerpettoolstorepage';
+import Customerviewpetdetails from './components/Actors/customer/pages/Customerviewpetdetails';
 import CustomerRequestappoint from './components/Actors/customer/pages/CustomerRequestappoint';
 import DoctorCalender from './components/Actors/customer/pages/DoctorCalender';
 import CustomerBuymedicine from './components/Actors/customer/pages/CustomerBuymedicine';
@@ -199,7 +199,7 @@ class App extends Component{
               <Route exact path='/petadopter/channeldoctor/requestappoint/calender' element={<DoctorCalender/>}/>
               <Route exact path='/petadopter/findpharmacy/pharmacystore/medicinedetails' element={<CustomerBuymedicine/>}/>
               <Route exact path='/petadopter/findpettoolstore/petstore/pettooldetails' element={<CustomerBuypettool/>}/>
-
+              <Route exact path='/petadopter/profilepage' element={<ProfilePage/>}/>
 
             {/* Doctor   */}
            {/* Doctor   */}
