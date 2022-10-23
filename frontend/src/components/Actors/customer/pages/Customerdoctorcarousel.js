@@ -5,10 +5,10 @@ import '../css/CustomerDoctorappoint.css';
 import dogvaccine from "../images/catmedic.png";
 import doctorcalls from '../images/doctorcalls.jpg';
 import texting from '../images/texting.jfif';
-function CustomerDoctorCarousel(){
+function CustomerDoctorcarousel(){
 
     return(
-        <div >
+        <div class="d-none d-md-block" >
             <div class="carousel slide" id="docappointcarousel" >
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -49,4 +49,4 @@ function CustomerDoctorCarousel(){
     
 }
 
-export default CustomerDoctorCarousel;
+export default CustomerDoctorcarousel;
