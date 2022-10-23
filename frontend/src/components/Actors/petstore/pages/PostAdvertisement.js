@@ -18,8 +18,9 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavbarUsers from "../../../includes/NavbarUsers";
 
-const TITLE_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
+const TITLE_REGEX = /^[A-z][A-z0-9-_ ,]{3,50}$/;
 const PRICE_REGEX = /^[0-9\b]+$/;
+const DESCR_REGEX = /(^[A-z][A-z0-9-_ ,]).{3,}$/;
 
 const PostAdvertisement = () =>
 {
@@ -65,7 +66,7 @@ const PostAdvertisement = () =>
     }, [Price])
 
     useEffect(() => {
-        setValidDescription(TITLE_REGEX.test(Description));
+        setValidDescription(DESCR_REGEX.test(Description));
         // console.log(result);
         // console.log(user);
         // setValidName(result);
@@ -275,7 +276,7 @@ const PostAdvertisement = () =>
                                             ></textarea>
                                             <p id="uidnote" className={DescriptionFocus && Description && !validDescription ? "instructions" : "offscreen"}>
                                             {/* <FontAwesomeIcon icon={faInfoCircle} /> */}
-                                            4 to 20 characters. Must begin with a letter. Letters, numbers, underscores, hyphens allowed.<br /> 
+                                             Must begin with a letter. Letters, numbers, underscores, hyphens allowed.<br /> 
                                             </p>
 
                                           
