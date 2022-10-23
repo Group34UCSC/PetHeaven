@@ -11,3 +11,5 @@ exports.GET_TOOLSTORE="SELECT * FROM pettoolstore INNER JOIN petstore ON pettool
 exports.GET_TOOLSTOREITEM="SELECT * FROM pettoolstore INNER JOIN petstore ON pettoolstore.Toolstore_ID = petstore.Toolstore_ID";
 exports.GET_TOOLSTORE="SELECT * FROM pharmacy INNER JOIN petstore ON pettoolstore.Toolstore_ID = petstore.Toolstore_ID";
 exports.GET_MEDICINE="SELECT * FROM pharmacy INNER JOIN medicinestore ON pharmacy.Pharmacy_ID =medicinestore.Pharmacy_ID";
+exports.GET_PETDETAILS="SELECT * FROM pet";
+exports.GET_USERDETAILS="SELECT * FROM user INNER JOIN adopter ON adopter.User_ID = user.User_ID;"

@@ -10,10 +10,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 
 import '../css/CustomerFindpet.css';
-import CustomerFeaturedAnimals from './CustomerFeaturedanimals';
+import CustomerFeaturedAnimals from './CustomerFeaturedAnimals';
 import DoctorAppointment from './DoctorAppointment';
 import Pagination from './pagination';
-import Customerservices from './CustomerServices';
+import Customerservices from './Customerservices';
 import Customerdocmessagetab from './CustomerDocmessagetab';
 import NavbarUsers from '../../../includes/NavbarUsers';
 function CustomerFindpet(){
@@ -142,8 +142,10 @@ function CustomerFindpet(){
                 <div class=" bg-c-light row" id="findpetimgarea"> 
                     {
                         users.map((item,i)=>{
-
+                            let url = "viewpetdetails?id="+item.petID;
+                            var index=0
                             if(petname.toLowerCase()==item.name.toLowerCase()){
+                                index=1;
                                 return(
                                     <div class="col-12 col-md-2 card">
                                         <h5 class="text-success petname">{item.name}</h5>
@@ -152,13 +154,13 @@ function CustomerFindpet(){
                                         <div class="petage card-body">
                                             <h6 class="text-danger">{item.age}</h6>
                                             <h6 class="text-dark">{item.color}</h6>
-                                            <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                                            <Link to={url}><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                                         </div>
                                     </div>
                                 )
                             }
 
-                            if(type=='' && petname=='' && petcolor==''){
+                            if(type=='' && petname=='' && petcolor=='' && index==0){
                                 return(
                                     <div class="col-12 col-md-2 card">
                                         <h5 class="text-success petname">{item.name}</h5>
@@ -167,13 +169,13 @@ function CustomerFindpet(){
                                         <div class="petage card-body">
                                             <h6 class="text-danger">{item.age}</h6>
                                             <h6 class="text-dark">{item.color}</h6>
-                                            <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                                            <Link to={url}><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                                         </div>
                                     </div>
                                 )
                             }
                         
-                            if(item.type==type && petname=='' && petcolor==''){
+                            if(item.type==type && petname=='' && petcolor=='' && index==0){
                                 return(
                                     <div class="col-12 col-md-2 card">
                                         <h5 class="text-success petname">{item.name}</h5>
@@ -182,13 +184,13 @@ function CustomerFindpet(){
                                         <div class="petage card-body">
                                             <h6 class="text-danger">{item.age}</h6>
                                             <h6 class="text-dark">{item.color}</h6>
-                                            <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                                            <Link to={url}><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                                         </div>
                                     </div>
                                 )
                             }
 
-                            else if(item.color.toLowerCase()==petcolor.toLowerCase() && item.type==type){
+                            else if(item.color.toLowerCase()==petcolor.toLowerCase() && item.type==type && index==0){
                                 return(
                                     <div class="col-12 col-md-2 card">
                                         <h5 class="text-success petname">{item.name}</h5>
@@ -197,13 +199,13 @@ function CustomerFindpet(){
                                         <div class="petage card-body">
                                             <h6 class="text-danger">{item.age}</h6>
                                             <h6 class="text-dark">{item.color}</h6>
-                                            <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                                            <Link to={url}><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                                         </div>
                                     </div>
                                 )
                             }
 
-                            if(item.name.toLowerCase()==petname.toLowerCase() && item.color==''){
+                            if(item.name.toLowerCase()==petname.toLowerCase() && item.color=='' && index==0){
                                 return(
                                     <div class="col-12 col-md-2 card">
                                         <h5 class="text-success petname">{item.name}</h5>
@@ -213,7 +215,7 @@ function CustomerFindpet(){
                                         <div class="petage card-body">
                                             <h6 class="text-danger">{item.age}</h6>
                                             <h6 class="text-dark">{item.color}</h6>
-                                            <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                                            <Link to={url}><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                                         </div>
                                     </div>
                                 )

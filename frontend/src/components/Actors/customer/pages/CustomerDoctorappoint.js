@@ -4,7 +4,7 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 import {Link} from 'react-router-dom';
 import '../css/CustomerDoctorappoint.css';
 import docvectors from  '../images/docvector.png';
-import CustomerDoctorcarousel from './CustomerDoctorcarousel';
+import CustomerDoctorcarousel from './Customerdoctorcarousel';
 import Pagination from  './pagination';
 import NavbarUsers from '../../../includes/NavbarUsers';
 

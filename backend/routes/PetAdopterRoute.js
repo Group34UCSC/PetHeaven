@@ -34,7 +34,8 @@ PetAdopterRoute.get('/findapet/findpettoolstore/pettoolstorepage',PetAdopter_con
 PetAdopterRoute.post('/findapet/channeldoctor/requestappoint',PetAdopter_controller.PetAdopter_makeappoint);
 PetAdopterRoute.get('/findapet/findpettoolstore/pettoolstorepage/items',PetAdopter_controller.PetAdopter_Loadtoolitem);
 PetAdopterRoute.get('/findapet/findpharmacy/pharmacypage',PetAdopter_controller.PetAdopter_Loadpharmacymedicines_);
-
+PetAdopterRoute.get('/findapet/petdetails',PetAdopter_controller.PetAdopter_ViewPetdetails);
+PetAdopterRoute.get('/profilepage',PetAdopter_controller.ViewProfileDetails);
 // PetAdopterRoute.post("/",PetAdopter_controller.PetAdopter_register);
 
 

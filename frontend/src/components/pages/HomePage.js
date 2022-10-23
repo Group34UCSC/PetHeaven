@@ -5,7 +5,7 @@ import Slider from "../includes/Slider";
 import VetClinic from "../images/vet1.jpg";
 import Pharmacy from "../images/pharmacy1.jpg";
 import PetToolStore from "../images/petTool.jpg";
-import CustomerFeaturedAnimals from "../Actors/customer/pages/CustomerFeaturedanimals";
+import CustomerFeaturedAnimals from "../Actors/customer/pages/CustomerFeaturedAnimals";
 import './HomePage.css';
 
 function HomePage()
