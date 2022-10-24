@@ -57,7 +57,6 @@ function ViewDonation(){
                     <th scope="col">Date</th>
                     <th scope="col">Time</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Contact Number</th>
                     <th scope="col">Amount(Rs)</th>
                   </tr>
                 </thead>
@@ -69,8 +68,7 @@ function ViewDonation(){
                           <tr key={i}>
                           <td>{item.date}</td>
                           <td>{item.time}</td>
-                          <td>{item.donater}</td>
-                          <td>{item.contact}</td>
+                          <td>{item.donator}</td>
                           <td>{item.amount}</td>
                         </tr>
                         )

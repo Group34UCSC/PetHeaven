@@ -43,3 +43,18 @@ exports.STAFFMEMBERNOTIFYADOPTER_MODEL = Joi.object({
    status: Joi.number().required(),
 })
 
+exports.STAFFMEMBERADDADOPTER_MODEL = Joi.object({
+   adopterID: Joi.number().integer(),
+   name:Joi.string().required(),
+   contact: Joi.string().required(),
+   income: Joi.number().required(),
+   pettype: Joi.string().required(),
+   petdetail:Joi.string().required(),
+   kids:Joi.string().required()
+})
+
+exports.STAFFMEMBERPOSTPETPOST_MODEL = Joi.object({
+   petID: Joi.number().integer(),
+   status:Joi.number().required()
+})
+

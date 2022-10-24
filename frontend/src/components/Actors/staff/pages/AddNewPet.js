@@ -72,7 +72,7 @@ function AddNewPet()
                                     <hr/>
                                     <div className="form-group">
                                         <label className="mb-1">Pet Name</label>
-                                        <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} placeholder="" required></input>
+                                        <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} placeholder="Pet Name" required></input>
                                     </div>
                                     <div className="form-group">
                                         <div class="mb-3">
@@ -83,19 +83,19 @@ function AddNewPet()
                                     <div className="form-group">
                                         <label className="mb-1">Pet Type</label>
                                         <select class="form-select" value={type} onChange={(e) => setType(e.target.value)} aria-label="Default select example" required>
-                                            <option value="1">Dog</option>
-                                            <option value="2">Cat</option>
+                                            <option value="Dog">Dog</option>
+                                            <option value="Cat">Cat</option>
                                         </select>
                                     </div>
                                     <div className="form-group">
                                         <label className="mb-1">Breed</label>
-                                        <input type="text" className="form-control" value={breed} onChange={(e) => setBreed(e.target.value)} placeholder="" required></input>
+                                        <input type="text" className="form-control" value={breed} onChange={(e) => setBreed(e.target.value)} placeholder="Breed" required></input>
                                     </div>
                                     <div className="form-group">
                                         <label className="mb-1">Gender</label>
                                         <select class="form-select" value={gender} onChange={(e) => setGender(e.target.value)} aria-label="Default select example">
-                                            <option value="1">Male</option>
-                                            <option value="2">Female</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
                                         </select>
                                     </div>
                                 
@@ -104,17 +104,17 @@ function AddNewPet()
 
                                     <div className="form-group">
                                         <label className="mb-1">Age</label>
-                                        <input type="text" className="form-control" value={age} onChange={(e) => setAge(e.target.value)} placeholder="" required></input>
+                                        <input type="text" className="form-control" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Pet's Age" required></input>
                                     </div>
                                    
                                     
                                     <div className="form-group">
                                         <label className="mb-1">Colour</label>
-                                        <input type="text" className="form-control" value={color} onChange={(e) => setColor(e.target.value)} placeholder="" required></input>
+                                        <input type="text" className="form-control" value={color} onChange={(e) => setColor(e.target.value)} placeholder="Pet's color" required></input>
                                     </div>
                                     <div className="form-group">
                                         <label className="mb-1">Received Date</label>
-                                        <input type="date" className="form-control" value={receivedate} onChange={(e) => setReceivedate(e.target.value)} placeholder="" required></input>
+                                        <input type="date" className="form-control" value={receivedate} onChange={(e) => setReceivedate(e.target.value)} placeholder="Received Date" required></input>
                                     </div>
                                     {/* <div className="form-group">
                                         <label className="mb-1">Medical Status</label>
@@ -122,7 +122,7 @@ function AddNewPet()
                                     </div> */}
                                     <div className="form-group">
                                         <label className="mb-1">About</label>
-                                        <textarea rows="4" className="form-control" value={about} onChange={(e) => setAbout(e.target.value)} placeholder="" required></textarea>
+                                        <textarea rows="4" className="form-control" value={about} onChange={(e) => setAbout(e.target.value)} placeholder="About Pet" required></textarea>
                                     </div>
                                     <div className="form-group py-3">
                                     <button type="button" className="btn btn-success shadow w-100 postPetBtn"  onClick={handleSubmit}><b>{buttonText} <i class="fa-solid fa-check"></i></b></button>
