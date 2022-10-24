@@ -33,7 +33,7 @@ import PetToolStoreHome from './components/Actors/petstore/pages/PetToolStoreHom
 import AdminHeader from './components/Actors/Admin/pages/AdminHeader';
 import AdminHome from './components/Actors/Admin/pages/AdminHome';
 import AdminCreate from './components/Actors/Admin/pages/AdminCreate';
-import AdminDelete from './components/Actors/Admin/pages/AdminDelete';
+import Post from './components/Actors/Admin/pages/Post';
 import AdminUpdate from './components/Actors/Admin/pages/AdminUpdate';
 import AdminView from './components/Actors/Admin/pages/AdminView';
 import ViewComplains from './components/Actors/Admin/pages/ViewComplains';
@@ -194,7 +194,7 @@ class App extends Component{
             <Route exact path='/AdminHome/checkDoctor' element={<AdminCheckDoctor />} />
             <Route exact path='/AdminHome/pharmacy' element={<AdminCheckPharmacy />} />
             <Route exact path='/AdminHome/Create' element={<AdminCreate />} /> 
-            <Route exact path='/AdminHome/Delete' element={<AdminDelete />} />
+            <Route exact path='/AdminHome/Delete' element={<Post />} />
             <Route exact path='/AdminHome/Update' element={<AdminUpdate />} />
             <Route exact path='/AdminHome/View' element={<AdminView />} />
             <Route exact path='/AdminHome' element={<AdminHome />} />  
