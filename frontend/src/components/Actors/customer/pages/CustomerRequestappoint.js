@@ -117,7 +117,7 @@ function CustomerRequestappoint(){
                         </div>
 
                         <div class="col-md-6 col-12 my-md-0 my-2">
-                            <input type="date" class="form-control bg-darkred" value={date} onChange={(e) => setDate(e.target.value)} placeholder="Booking date"></input>
+                            <input type="date" class="form-control bg-darkred" min="2022-10-26" value={date} onChange={(e) => setDate(e.target.value)} placeholder="Booking date"></input>
                         </div>
 
                         <div class="col-md-6 col-12 my-md-0 my-2">

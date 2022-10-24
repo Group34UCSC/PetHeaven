@@ -7,6 +7,7 @@ import '../css/CustomerFindpet.css';
 import cage from '../images/cage.jfif';
 import NavbarUsers from '../../../includes/NavbarUsers';
 
+
 function CustomerBuypettool() {
     const [users, setUser] = useState([])
     const [toolstoreid,setToolstoreid] = useState('');
@@ -114,6 +115,7 @@ function CustomerBuypettool() {
                     })
                 }    
             </section>
+            {/* <ShoppingCart/> */}
         </div>
     )
 }

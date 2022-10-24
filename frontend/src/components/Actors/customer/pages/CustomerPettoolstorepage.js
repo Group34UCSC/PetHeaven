@@ -1,4 +1,4 @@
-import React,{useState,useEffect,useSearchParams,Component}  from 'react';
+import React,{useState,useEffect,useSearchParams}  from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {Link,useLocation} from 'react-router-dom';
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
@@ -13,32 +13,32 @@ import catfood from '../images/catfood.jpg';
 import dogchain from '../images/dogchain.jpg';
 import meo from '../images/meo.jpg';
 import dogplate from '../images/dogplate.jfif';
-import '../css/Customerpharmacypage.css'
+import '../css/Customerpharmacypage.css';
 import '../css/profileview.css';
 import NavbarUsers from '../../../includes/NavbarUsers';
 
 function Customerpettoolstorepage(){
-    const [users,setUsers]=useState([])
-    const [name,setName]=useState('')
-    const [phonenumber,setPhonenumber]=useState('')
-    const [email,setEmail]=useState('')
-    const [number,setNumber]=useState('')
-    const [street,setStreet]=useState('')
+    const [users,setUsers]=useState([]);
+    const [name,setName]=useState('');
+    const [phonenumber,setPhonenumber]=useState('');
+    const [email,setEmail]=useState('');
+    const [number,setNumber]=useState('');
+    const [street,setStreet]=useState('');
     const [city,setCity]=useState('');
     const [tool,setTool]=useState([]);
     const [toolname,setToolname]=useState('');
-    const [itemname,setItemname]=useState('')
-    const [price,setPrice]=useState('')
-    const [brand,setBrand]=useState('')
-    const [country,setCountry]=useState('')
-    const [expirydate,setexpirydate]=useState('')
-    const [image,setImage]=useState('')
-    const [toolstore_id,setToolstoreid]=useState('')
+    const [itemname,setItemname]=useState('');
+    const [price,setPrice]=useState('');
+    const [brand,setBrand]=useState('');
+    const [country,setCountry]=useState('');
+    const [expirydate,setexpirydate]=useState('');
+    const [image,setImage]=useState('');
+    const [toolstore_id,setToolstoreid]=useState('');
     const [searchParams, setSearchParams] = useSearchParams();
-    console.log(searchParams.get("id"))
     useEffect(()=>{
         getUsers();
     },[])
+    
     const getUsers=async e=>{
         try{
             fetch("http://localhost:5000/petadopter/findapet/findpettoolstore/pettoolstorepage").then((result)=>
@@ -57,13 +57,11 @@ function Customerpettoolstorepage(){
                 )
             })
 
-        
         }
         catch (err) {
             console.log("Faalil");
         }
     }
-
 
     useEffect(() => {
         getUsers();
