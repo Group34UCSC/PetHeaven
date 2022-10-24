@@ -66,7 +66,7 @@ import AdminCheckPharmacy from './components/Actors/Admin/pages/PharmacyQualific
 import CustomerFindpet from './components/Actors/customer/pages/CustomerFindpet';
 import CustomerDoctorappoint from './components/Actors/customer/pages/CustomerDoctorappoint';
 import CustomerPharmacy from './components/Actors/customer/pages/CustomerPharmacy';
-import CustomerPettoolstore from './components/Actors/customer/pages/CustomerPettoolstore';
+import CustomerPettoolstore from './components/Actors/customer/pages/Customerpettoolstore';
 import ProfilePage from './components/pages/ProfilePage';
 import CustomerAdoptRequest from './components/Actors/customer/pages/CustomerAdoptrequest';
 import CustomerEditProfile from './components/Actors/customer/pages/CustomerEditprofile';
