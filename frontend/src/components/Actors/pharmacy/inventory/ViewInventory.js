@@ -1,9 +1,19 @@
-import React from "react";
+import React, {useEffect,useState}  from "react";
 import NavbarUsers from "../../../includes/NavbarUsers";
 import './ViewInventory.css';
 
 function ViewInventory()
 {
+    const [inventory,setInventory]=useState([])
+    useEffect(()=>{
+        fetch("http://localhost:5000/pharmacy/viewInventory").then((result)=>{
+        result.json().then((resp)=>{
+            console.warn(resp)
+            setInventory(resp)
+            console.log(resp)
+        })
+    })},[])
+    const[searchTerm, setSearchTerm]=useState('')
     return(
         <div>
             <NavbarUsers/>
@@ -34,16 +44,33 @@ function ViewInventory()
                             <div className="row ml-4">
 
                         {/* Search box started here         */}
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" id="petsearchby-name" aria-describedby="petsearch" placeholder="Search Medicine by Medicine Name or ID"></input>
+                       
+
+                            <div class="container">
+
+                            <div class="row height d-flex justify-content-center align-items-center">
+
+                            <div class="col-md-8">
+
+                            <div class="form">
+                                {/* <i class="fa fa-search"></i> */}
+                                <input type="text" class="form-control form-input" placeholder="Search by Medicine Name" onChange={(e)=>{setSearchTerm(e.target.value)}} />
+                                {/* <span class="left-pan"><i class="fa fa-microphone"></i></span> */}
+                                </div>
+                                
+                            </div>
                             
                             </div>
+
+                        </div>
+
+                        
                         {/* Search box ended here          */}
 
                         {/* Search button started here      */}
-                            <div class="col-md-2">
+                            {/* <div class="col-md-2">
                             <button type="submit" class="btn btn-success " id="petsearch-btn">Search <i class="fa-solid fa-magnifying-glass"></i></button>
-                            </div>
+                            </div> */}
                         {/* Search box ended here      */}
 
                         </div>
@@ -78,7 +105,26 @@ function ViewInventory()
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+
+                            {
+                                inventory.filter((item)=>{
+                                    if(searchTerm == ""){
+                                        return item
+                                    }else if (item.Medicine.toLowerCase().includes(searchTerm.toLowerCase())){
+                                        return item
+                                    }
+                                }).map((item,i)=>
+                                    <tr key={i}>
+                                <td>{i+1}</td>
+                                <td>{item.Medicine}</td>
+                                <td>{item.Quantity}</td>
+                                <td>{item.Price}</td>
+                                {/* <td>{item.Medicine}</td> */}
+                                </tr>
+                                )
+                            }
+
+                            {/* <tr>
                             <th scope="row">1</th>
                             <td>Cotrimaxazole 480 mg</td>
                             <td>623</td>
@@ -101,7 +147,7 @@ function ViewInventory()
                             <td>Ezo omeprazole 20 mg</td>
                             <td>57</td>
                             <td>960</td>
-                            </tr>
+                            </tr> */}
                         </tbody>
                     </table>
                 </div>

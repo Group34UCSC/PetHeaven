@@ -6,16 +6,17 @@ import PaidOrders from "../images/payment.png";
 import Inquiries from "../images/inquiry.jpg";
 import Inventory from "../images/inventory.png";
 
-import Bathroom from "../images/bathroom.jpg";
-import Grooming from "../images/DogGrooming.jpg";
-import FurnitureCage from "../images/FurnitureCage.jpg";
-import PetCage from "../images/PetCage.jpg";
-import TractionBelt from "../images/TractionBelt.jpg";
+// import Bathroom from "../images/bathroom.jpg";
+// import Grooming from "../images/DogGrooming.jpg";
+// import FurnitureCage from "../images/FurnitureCage.jpg";
+// import PetCage from "../images/PetCage.jpg";
+// import TractionBelt from "../images/TractionBelt.jpg";
 import NavbarUsers from "../../../includes/NavbarUsers";
 
 
 function PetToolStoreHome()
 {
+    const data = useState({});
     const [petTools,setPetTools]=useState([])
     useEffect(()=>{
         fetch("http://localhost:5000/petstore/View").then((result)=>{
@@ -311,7 +312,7 @@ function PetToolStoreHome()
     
                                     
                                         <div className="mb-2 mt-2 ">
-                                            <Link to="/petstore/EditAdvertisement" class="nav-link active">
+                                            <Link to="/petstore/EditAdvertisement" state = {{data: data}} class="nav-link active">
                                                 
                                                 <button type="button" id="submit-btn" className="btn shadow w-100 ">Edit</button>
                                             </Link>

@@ -8,3 +8,11 @@ exports.PETSTORE_MODEL = Joi.object({
     Description: Joi.required()
  
  })
+
+ exports.PETSTOREIN_MODEL = Joi.object({
+   
+    Item: Joi.string().required(),
+    Price: Joi.number().required(),
+    Quantity: Joi.number().required()
+ 
+ })
