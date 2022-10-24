@@ -31,7 +31,19 @@ function Prescription()
   const[show,setShow]=useState(false);
   const[showBill,setShowBill]=useState(false);
 // Confirm and send buttons ended here 
-
+    const [medicine,setMedicine]=useState([])
+    useEffect(()=>{
+        fetch("http://localhost:5000/pharmacy/viewPrescription").then((result)=>{
+        result.json().then((resp)=>{
+            // console.warn(resp)
+            console.log(resp)
+            setMedicine(resp)
+            
+        })
+        })
+    },[])
+    console.warn(medicine)
+    
     return(
         <div>
             <NavbarUsers/>
@@ -89,7 +101,20 @@ function Prescription()
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+
+                               
+                            {
+                            medicine.map((item,i)=>
+                                <tr key={i}>
+                            <td>{i+1}</td>
+                            <td>{item.Medicine}</td>
+                            <td>{item.Dosage}</td>
+                            <td>{item.Duration}</td>
+                            <td>{item.Medicine}</td>
+                            </tr>
+                            )
+                            }
+                            {/* <tr>
                             <th scope="row">1</th>
                             <td>Cotrimaxazole 480 mg</td>
                             <td>1 tab bd</td>
@@ -116,7 +141,7 @@ function Prescription()
                             <td>1 tab bd</td>
                             <td>5/365</td>
                             <td>489</td>
-                            </tr>
+                            </tr> */}
                         </tbody>
                     </table>
                 </div>

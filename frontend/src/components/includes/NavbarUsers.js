@@ -35,7 +35,7 @@ function NavbarUsers()
             </div>
             <div class="navbar-nav ms-auto">
             {/* <Link to="SignIn" class="nav-item nav-link"><div class="b"><i class="fa-solid fa-right-to-bracket"></i> Sign in</div></Link>   */}
-            <Link to="SignUp" class="nav-item nav-link"><div class="b"><i class="fa-solid fa-user-gear"></i> Profile</div></Link> 
+            <Link to="profilepage" class="nav-item nav-link"><div class="b"><i class="fa-solid fa-user-gear"></i> Profile</div></Link> 
             <Link to="/SignIn" class="nav-item nav-link"><div class="b"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</div></Link> 
             </div>
         </div>
