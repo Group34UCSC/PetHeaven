@@ -73,29 +73,29 @@ const Pharmacy_checkQualification = () => {
     }
 
 
-    const  DeleteUser = async (item) => {
+    // const  DeleteUser = async (item) => {
      
-      var raw = "";
+    //   var raw = "";
 
-       var requestOptions = {
-            method: 'POST',
-            body: raw,
-            redirect: 'follow'
-          };
-        try {
-            const body = { item };
-            const PhyID= item.Pharmacy_ID;
-            const response = await fetch(
-                `http://localhost:5000/Admin/PharmacyRegister/${PhyID}`,
-                requestOptions)
-            ;
-            console.log(response);
-        }
-        catch (err) {
-            console.log(err);
-        }
+    //    var requestOptions = {
+    //         method: 'POST',
+    //         body: raw,
+    //         redirect: 'follow'
+    //       };
+    //     try {
+    //         const body = { item };
+    //         const PhyID= item.Pharmacy_ID;
+    //         const response = await fetch(
+    //             `http://localhost:5000/Admin/PharmacyRegister/${PhyID}`,
+    //             requestOptions)
+    //         ;
+    //         console.log(response);
+    //     }
+    //     catch (err) {
+    //         console.log(err);
+    //     }
 
-    }
+    // }
 
 
 
@@ -143,8 +143,8 @@ const[searchTerm, setSearchTerm]=useState('')
                                     <th scope="col">Pharmacy ID</th>
                                     <th scope="col" >Pharmacy Name</th>
                                     <th scope="col">City</th>
-                                    <th scope="col">Operation</th>
-                                    <th scope="col">Operation</th>
+                                    {/* <th scope="col">Operation</th>
+                                    <th scope="col">Operation</th> */}
                                 </tr>
                             </thead>
                             <tbody>
@@ -162,8 +162,8 @@ const[searchTerm, setSearchTerm]=useState('')
                                             <td>{item.Pharmacy_ID}</td>
                                             <td>{item.Name}</td>
                                             <td>{item.City}</td>
-                                            <td><button type="button" class="btn btn-warning" onClick={() => UpdateUser(item)}>View Qualities</button></td>
-                                            <td><button type="button" class="btn btn-danger" onClick={() => DeleteUser(item)}>Register</button></td>
+                                            {/* <td><button type="button" class="btn btn-warning" onClick={() => UpdateUser(item)}>View Qualities</button></td>
+                                            <td><button type="button" class="btn btn-danger" onClick={() => DeleteUser(item)}>Register</button></td> */}
                                         </tr>
                                     )
                                 }

@@ -286,7 +286,7 @@ exports.Create_Accounts = (req,res,next)=>{
 
                
                 
-                      conn.query(PharmacyrViewQuery, function (err,result){
+                      conn.query(PharmacyViewQuery, function (err,result){
                        if( err ) {
                         console.log(err);
                         res.send("Unable to get the comments");
