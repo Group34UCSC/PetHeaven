@@ -32,7 +32,7 @@ exports.PetAdopter_adoptRequest=(req,res,next) => {
 
  //    if ( error ) return next(new AppError(error.details[0].message,400));
    
-   conn.query(ADOPT_REQUEST, [[ req.body.fullname,req.body.phonenumber,req.body.income,req.body.isanyPet,req.body.typeofPet,req.body.kidsinHome,req.body.additionalDetails]], (err,data,fields)=>{
+   conn.query(ADOPT_REQUEST, [[ req.body.fullname,req.body.phonenumber,req.body.income,req.body.isanyPet,req.body.typeofPet,req.body.kidsinHome,req.body.isanypatient,req.body.adoptexperience,req.body.additionalDetails]], (err,data,fields)=>{
       if(err) return next(new AppError(err,500));
          res.status(201).json({
             data:"Adopt request successfull!!"

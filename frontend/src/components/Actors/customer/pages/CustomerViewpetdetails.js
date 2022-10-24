@@ -49,6 +49,7 @@ function Customerviewpetdetails(){
                         setGender(resp[0].gender)
                         setBreed(resp[0].breed)
                         setAbout(resp[0].about)
+                        
                     }
                 )
             })
@@ -97,7 +98,7 @@ function Customerviewpetdetails(){
                                                                                 <th id="profilelabel">Pet Name</th>
                                                                                 <td>{item.name}</td>
                                                                             </tr>
-                                                                    
+
                                                                             <tr>
                                                                                 <th id="profilelabel">Breed</th>
                                                                                 <td>{item.breed}</td>
@@ -111,6 +112,17 @@ function Customerviewpetdetails(){
                                                                                 <th id="profilelabel">Age</th>
                                                                                 <td>{item.age}</td>
                                                                             </tr>
+
+                                                                            <tr>
+                                                                                <th id="profilelabel">Is Rabie vaccinated</th>
+                                                                                <td>{item.Rabiesvaccinated}</td>
+                                                                            </tr>
+
+                                                                            <tr>
+                                                                                <th id="profilelabel">Color</th>
+                                                                                <td>{item.color}</td>
+                                                                            </tr>
+
                                                                         </tbody>
                                                                     </table>
                                                                 <div class="col-sm-9 card " id="petdescription">{item.about} </div>
