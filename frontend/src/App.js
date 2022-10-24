@@ -74,7 +74,7 @@ import CustomerChangePassword from './components/Actors/customer/pages/CustomerC
 import CustomerDoctormessages from './components/Actors/customer/pages/CustomerDoctormessages';
 import Customerpharmacypage from './components/Actors/customer/pages/Customerpharmacypage';
 import Customerpettoolstorepage from './components/Actors/customer/pages/Customerpettoolstorepage';
-
+import Customerviewpetdetails from './components/Actors/customer/pages/Customerviewpetdetails';
 import CustomerRequestappoint from './components/Actors/customer/pages/CustomerRequestappoint';
 import DoctorCalender from './components/Actors/customer/pages/DoctorCalender';
 import CustomerBuymedicine from './components/Actors/customer/pages/CustomerBuymedicine';
@@ -230,6 +230,7 @@ class App extends Component{
               <Route exact path='/petadopter/findpharmacy' element ={<CustomerPharmacy/>}/>
               <Route exact path='/petadopter/findpettoolstore' element ={<CustomerPettoolstore/>}/>
               {/* <Route exact path='/petadopter/myprofile' element={<ProfilePage/>}/> */}
+              <Route exact path="/petadopter/viewpetdetails" element ={<Customerviewpetdetails />}/>
               <Route exact path='/petadopter/viewpetdetails/adoptrequestform' element={<CustomerAdoptRequest/>}/>
               <Route exact path='/petadopter/channeldoctor/requestappoint' element={<CustomerRequestappoint/>}/>
               <Route exact path='/petadopter/channeldoctor/requestappoint/calender' element={<DoctorCalender/>}/>
@@ -252,7 +253,7 @@ class App extends Component{
            {/* staff member */}
            <Route exact path='staffmember/' element ={<Staff/>} />
             <Route exact path='staffmember/viewpets' element ={<ViewPets/>} />
-            <Route exact path='staffmember/postpets' element ={<PostPet/>} />
+            <Route exact path='staffmember/addnewpet' element ={<AddNewPet/>} />
             <Route exact path='staffmember/viewpost' element ={<ViewPost/>} />
             <Route exact path='staffmember/viewadoptee' element ={<ViewAdoptee/>} />
             <Route exact path='staffmember/updatemedicalstatus' element ={<UpdateVaccination/>} />

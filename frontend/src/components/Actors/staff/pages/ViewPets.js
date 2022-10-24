@@ -7,11 +7,6 @@ import '../css/ViewPets.css';
 
 
 import dog from '../img/dog.jpg';
-import dog2 from '../img/d4.jpg';
-import dog3 from '../img/d3.jpg';
-import dog5 from '../img/d5.jpg';
-import dog6 from '../img/d6.jpg';
-import dog7 from '../img/d7.jpg';
 import NavbarUsers from '../../../includes/NavbarUsers';
 
 function ViewPets(){
@@ -27,6 +22,96 @@ function ViewPets(){
     },[])
     console.warn(pets)
     console.log(pets)
+
+    const [medicalstatus,setMedicalstatus]=useState([])
+    useEffect(()=>{
+      fetch("http://localhost:5000/staffmember/viewmedicalstatus").then((result)=>{
+        result.json().then((resp)=>{
+          // console.warn(resp)
+          setMedicalstatus(resp)
+          console.log(medicalstatus);
+        })
+      })
+    },[])
+
+    const [medicalstatusinjury,setMedicalstatusinjury]=useState([])
+    useEffect(()=>{
+      fetch("http://localhost:5000/staffmember/viewmedicalstatusinjury").then((result)=>{
+        result.json().then((resp)=>{
+          // console.warn(resp)
+          setMedicalstatusinjury(resp)
+          console.log(resp);
+        })
+      })
+    },[])
+
+    const [medicalstatusother,setMedicalstatusother]=useState([])
+    useEffect(()=>{
+      fetch("http://localhost:5000/staffmember/viewmedicalstatusother").then((result)=>{
+        result.json().then((resp)=>{
+          // console.warn(resp)
+          setMedicalstatusother(resp)
+          console.log(resp);
+        })
+      })
+    },[])
+
+     //onlick Vaccines button 
+     const Vaccines = ()=>{
+      return(
+        <div>
+          {medicalstatus.map((item,i)=>
+
+          <tbody className='text-center'>
+          <tr>
+            <td scope="row">{item.date}</td>
+            <td className='vaccineendalign'>{item.details}</td>
+          </tr>
+          </tbody>
+
+          )}
+
+      </div>
+      )
+    }
+
+    //onlick injury button 
+    const Injuries = ()=>{
+      return(
+        <div>
+          {medicalstatusinjury.map((item,i)=>
+
+          <tbody className='text-center'>
+          <tr>
+            <td scope="row">{item.date}</td>
+            <td className='vaccineendalign'>{item.details}</td>
+          </tr>
+          </tbody>
+
+        )}
+
+      </div>
+      )
+    }
+
+        //onlick Others button 
+        const Others = ()=>{
+          return(
+            <div>
+               {medicalstatusother.map((item,i)=>
+
+              <tbody className='text-center'>
+              <tr>
+                <td scope="row">{item.date}</td>
+                <td className='vaccineendalign'>{item.details}</td>
+              </tr>
+              </tbody>
+
+              )}
+    
+          </div>
+          )
+        }
 
     return(
         <div>
@@ -62,15 +147,15 @@ function ViewPets(){
                            <div class="admincard col-md-4">       
                            <div className="card shadow" id='cardone'>
                                <div >
-                                 <img src={dog} className="imgcover rounded" alt="Services"/>
+                                 <img src={item.image} className="imgcover rounded" alt="Services"/>
                                </div>
                                <div className="card-body" id='cardTitle'>
                                  <div className="petdetail">
                                    <div className='maindetails'>
                                      <h6 className="petName"><b>{item.name}</b></h6>
                                      <div className="underline"></div>
-                                     <h6 >{item.breed}</h6>
-                                     <h6 >{item.gender}</h6>
+                                     <h6>{item.breed}</h6>
+                                     <h6>{item.gender}</h6>
                                      <h6>{item.age}</h6>
                                      <h6>{item.color}</h6>
                                    </div>
@@ -100,32 +185,55 @@ function ViewPets(){
                     <div class="modal-content">
                       <div class="modal-header">
                           <div class="container-fluid justify-content-start">
-                            <button class="btn btn-outline-success me-2 medicalbtn" type="button"> Vaccines </button>
-                            <button class="btn btn-outline-success me-2 medicalbtn" type="button"> Injuries </button>
-                            <button class="btn btn-outline-success me-2 medicalbtn" type="button"> Others </button>
+                            <button class="btn btn-outline-success me-2 medicalbtn"  type="button" onClick={Vaccines}> Vaccines </button>
+                            <button class="btn btn-outline-success me-2 medicalbtn" type="button" onClick={Injuries} > Injuries </button>
+                            <button class="btn btn-outline-success me-2 medicalbtn" type="button" onClick={Others}> Others </button>
                           </div>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
+
+                      
+
                       <div class="modal-body">
                         <div className="container donationTable">
                           <div className="row ">
                             {/* <table class="table  table-stripped table-hover"> */}
                             <table class="table table-stripped table-hover">
+
+                            {medicalstatus.map((item,i)=>
+
+                                <tbody className='text-center'>
+                                <tr>
+                                  <td scope="row">{item.date}</td>
+                                  <td className='vaccineendalign'>{item.details}</td>
+                                </tr>
+                                </tbody>
+              
+                            )}
+
+                            {medicalstatusinjury.map((item,i)=>
+
+                            <tbody className='text-center'>
+                            <tr>
+                              <td scope="row">{item.date}</td>
+                              <td className='vaccineendalign'>{item.details}</td>
+                            </tr>
+                            </tbody>
+
+                            )}
+
+                            {medicalstatusother.map((item,i)=>
+
+                            <tbody className='text-center'>
+                            <tr>
+                              <td scope="row">{item.date}</td>
+                              <td className='vaccineendalign'>{item.details}</td>
+                            </tr>
+                            </tbody>
+
+                            )}
                              
-                              <tbody className='text-center'>
-                                <tr>
-                                  <td scope="row">18.07.2020</td>
-                                  <td className='vaccineendalign'>Vaccinated for Rabies</td>
-                                </tr>
-                                <tr>
-                                  <td scope="row">12.07.2020</td>
-                                  <td className='vaccineendalign'>Vaccinated for Distemper</td>
-                                </tr>
-                                <tr>
-                                  <td scope="row">8.06.2020</td>
-                                  <td className='vaccineendalign'>Vaccinated for Parainfluenza</td>
-                                </tr>
-                              </tbody>
+                             
                             </table>
                           </div> 
                         </div>

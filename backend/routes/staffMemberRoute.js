@@ -13,5 +13,13 @@ staffMemberRoute.get('/viewpets',StaffMember_controller.Staffmemberviewpets);
 staffMemberRoute.get('/viewposts',StaffMember_controller.Staffmemberviewposts);
 staffMemberRoute.get('/viewadoptees',StaffMember_controller.Staffmemberviewadoptees);
 staffMemberRoute.get('/viewfeedback',StaffMember_controller.Staffmemberviewfeebacks);
+staffMemberRoute.get('/viewmedicalstatus',StaffMember_controller.Staffmemberviewmedicalstatus);
+staffMemberRoute.get('/viewmedicalstatusinjury',StaffMember_controller.Staffmemberviewmedicalstatusinjuries);
+staffMemberRoute.get('/viewmedicalstatusother',StaffMember_controller.Staffmemberviewmedicalstatusother);
+staffMemberRoute.post('/addnewadopter',StaffMember_controller.Staffmemberaddnewadopter);
+staffMemberRoute.post('/deletepost/:post_id',StaffMember_controller.Staffmemberdeletepost);
+
+
+staffMemberRoute.post('/responsefeedback/:adopter_id',StaffMember_controller.Staffmemberresponsefeedback);
 
 module.exports = staffMemberRoute;

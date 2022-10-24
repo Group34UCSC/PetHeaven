@@ -1,11 +1,14 @@
-import React,{useState} from 'react';
+import React from 'react';
 import {Link, Search} from 'react-router-dom';
-import {useRef, useEffect } from "react"; 
+import {useRef, useEffect, useState}  from "react"; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
 import '../css/AddNewPet.css';
 import NavbarUsers from '../../../includes/NavbarUsers';
 
+import { storage} from "../../../firebase";
+import {getDownloadURL, ref, uploadBytesResumable} from "firebase/storage";
+import {v4 as uuidv4} from "uuid"
 
 function AddNewPet()
 {
@@ -21,11 +24,38 @@ function AddNewPet()
     const [receivedate,setReceivedate] = useState('');
     const [buttonText, setButtonText] = useState('Add Pet ');
 
+    const [url	, seturl] = useState('');
+    const [errMsg, setErrMsg] = useState('');
+
+
+    const ImgHandler = (event) => {
+        // setProfileImage(URL.createObjectURL(event));
+        console.log(event)
+        const fileRef = ref(storage, `/Pets/${event.name + uuidv4()}`);
+        const uploadTask = uploadBytesResumable(fileRef, event);
+        uploadTask.on("state_changed", (snapshot) => {
+                const prog = Math.round(
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                );
+                // setProgress(prog)
+            },
+            (err) => console.log(err),
+            () => {
+                getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+                    // const user_id = user?.sub;
+                    console.log(url)
+                    seturl(url);
+                })
+            }
+        )
+    }
+
+
     const handleSubmit = async e => {
         e.preventDefault();
         setButtonText('Pet Added ... ');
         try {
-            const body = {name,image,type,breed,color,gender,age,about,status,receivedate};
+            const body = {name,image:url,type,breed,color,gender,age,about,status,receivedate};
             console.log(image);
             
             const response = await fetch(
@@ -77,7 +107,8 @@ function AddNewPet()
                                     <div className="form-group">
                                         <div class="mb-3">
                                             <label for="formFile" class="form-label">Pet Image</label>
-                                            <input class="form-control" value={image} onChange={(e) => setImage(e.target.value)} type="file" id="formFile" required/>
+                                            {/* <input class="form-control" value={image} onChange={(e) => setImage(e.target.value)} type="file" id="formFile" required/> */}
+                                            <input type="file" name="formFile" id="formFile" accept="image/*"  className="form-control" placeholder="Input a Image" onChange={(event) => ImgHandler(event.target.files[0])}></input>
                                         </div>
                                     </div>
                                     <div className="form-group">

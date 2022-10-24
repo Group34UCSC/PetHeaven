@@ -109,7 +109,7 @@ exports.PostNewAdvertisement=(req,res,next) => {
           try{
           //  console.log("Sasinduwaa 111");
             console.log(req.body.params.Item);
-          conn.query(ADD_ITEM, [[ req.body.params.Item,req.body.params.Quantity,req.body.params.Price]], (err,data,fields)=>{
+            conn.query(ADD_ITEM, [[ req.body.params.Item,req.body.params.Quantity,req.body.params.Price]], (err,data,fields)=>{
              if(err) return next(new AppError(err,500));
              console.log("Sasinduwaa 111");
              res.status(201).json({

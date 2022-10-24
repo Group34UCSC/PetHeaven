@@ -21,7 +21,7 @@ function CustomerFindpet(){
     const [name,setName]=useState("");
     const [age,setAge]=useState("");
     const [color,setColor]=useState("");
-    const [image,setImage]=useState("");
+    // const [image,setImage]=useState("");
     const [petname,setPetname]=useState("");
     const [petcolor,setPetcolor]=useState("");
     const [type,setType]=useState('');
@@ -44,7 +44,8 @@ function CustomerFindpet(){
                         setAge(resp[0].age)
                         setColor(resp[0].color)
                         setName(resp[0].name)
-                        setImage(resp[0].image)
+                        console.log(resp[0].image)
+                        // setImage(resp[0].image)
                         setType(resp[0].type)
                     }
                 )
@@ -71,7 +72,7 @@ function CustomerFindpet(){
                     setAge(resp[0].age)
                     setColor(resp[0].color)
                     setName(resp[0].name)
-                    setImage(resp[0].image)
+                    // setImage(resp[0].image)
                 })
                     // const newfilter=result.filter((resp)=>{
                     //     return resp[0].name.toLowerCase().includes(searchword.toLowerCase());
@@ -150,7 +151,8 @@ function CustomerFindpet(){
                                     <div class="col-12 col-md-2 card">
                                         <h5 class="text-success petname">{item.name}</h5>
                                         <div className="underline underlineJusty"></div>
-                                        <img src="item.mimeType;base64,${b64}" class="card-img-top" id="findpetimgs"></img>
+                                        <img src={item.image} className="imgcover rounded" alt="Services"/>
+                                        
                                         <div class="petage card-body">
                                             <h6 class="text-danger">{item.age}</h6>
                                             <h6 class="text-dark">{item.color}</h6>
@@ -165,7 +167,7 @@ function CustomerFindpet(){
                                     <div class="col-12 col-md-2 card">
                                         <h5 class="text-success petname">{item.name}</h5>
                                         <div className="underline underlineJusty"></div>
-                                        <img src="item.mimeType;base64,${b64}" class="card-img-top" id="findpetimgs"></img>
+                                        <img src={item.image}  class="card-img-top" id="findpetimgs"></img>
                                         <div class="petage card-body">
                                             <h6 class="text-danger">{item.age}</h6>
                                             <h6 class="text-dark">{item.color}</h6>
@@ -180,7 +182,7 @@ function CustomerFindpet(){
                                     <div class="col-12 col-md-2 card">
                                         <h5 class="text-success petname">{item.name}</h5>
                                         <div className="underline underlineJusty"></div>
-                                        <img src="item.mimeType;base64,${b64}" class="card-img-top" id="findpetimgs"></img>
+                                        <img src={item.image}  class="card-img-top" id="findpetimgs"></img>
                                         <div class="petage card-body">
                                             <h6 class="text-danger">{item.age}</h6>
                                             <h6 class="text-dark">{item.color}</h6>
@@ -195,7 +197,7 @@ function CustomerFindpet(){
                                     <div class="col-12 col-md-2 card">
                                         <h5 class="text-success petname">{item.name}</h5>
                                         <div className="underline underlineJusty"></div>
-                                        <img src="item.mimeType;base64,${b64}" class="card-img-top" id="findpetimgs"></img>
+                                        <img src={item.image}  class="card-img-top" id="findpetimgs"></img>
                                         <div class="petage card-body">
                                             <h6 class="text-danger">{item.age}</h6>
                                             <h6 class="text-dark">{item.color}</h6>
@@ -211,7 +213,7 @@ function CustomerFindpet(){
                                         <h5 class="text-success petname">{item.name}</h5>
 
                                         <div className="underline underlineJusty"></div>
-                                        <img src="item.mimeType;base64,${b64}" class="card-img-top" id="findpetimgs"></img>
+                                        <img src={item.image}  class="card-img-top" id="findpetimgs"></img>
                                         <div class="petage card-body">
                                             <h6 class="text-danger">{item.age}</h6>
                                             <h6 class="text-dark">{item.color}</h6>
