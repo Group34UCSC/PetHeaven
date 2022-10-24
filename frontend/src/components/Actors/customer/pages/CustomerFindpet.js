@@ -1,5 +1,5 @@
 
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import puppy1 from '../images/puppy1.jfif';
 import puppy2 from '../images/puppy2.jfif';
@@ -17,9 +17,80 @@ import Customerservices from './Customerservices';
 import Customerdocmessagetab from './CustomerDocmessagetab';
 import NavbarUsers from '../../../includes/NavbarUsers';
 function CustomerFindpet(){
+    const [users, setUsers] = useState([])
+    const [name,setName]=useState("");
+    const [age,setAge]=useState("");
+    const [color,setColor]=useState("");
+    const [image,setImage]=useState("");
+    const [petname,setPetname]=useState("");
+    const [petcolor,setPetcolor]=useState("");
+    const [type,setType]=useState('');
+    const [filtereddata,setFiltereddata]=useState('');
+
+    // useEffect(()=>{
+    //     getUsers();
+    //    },[])
+    const getUsers=async e=>{
+        e.preventDefault();
+        
+        try{
+
+            fetch("http://localhost:5000/petadopter/findapet").then((result)=>
+            {
+                result.json().then((resp)=>{
+                    console.log(resp[0].type)
+                        setUsers(resp)
+                        console.log();
+                        setAge(resp[0].age)
+                        setColor(resp[0].color)
+                        setName(resp[0].name)
+                        setImage(resp[0].image)
+                        setType(resp[0].type)
+                    }
+                )
+            })
+
+          
+        }
+        catch (err) {
+            console.log("Faalil");
+        }
+
+       
+
+    }
+
+    const getSearches=async e=>{
+        try{
+             const body={name};
+            fetch("http://localhost:5000/findapet/searchpet").then((result)=>
+
+            {
+                result.json().then((resp)=>{
+                    setUsers(resp)
+                    setAge(resp[0].age)
+                    setColor(resp[0].color)
+                    setName(resp[0].name)
+                    setImage(resp[0].image)
+                })
+                    // const newfilter=result.filter((resp)=>{
+                    //     return resp[0].name.toLowerCase().includes(searchword.toLowerCase());
+                    // });
+                    // setFiltereddata(newfilter);
+                    // setAge(newfilter[0].age)
+                    // setColor(newfilter[0].color)
+                    // setPetname(newfilter[0].name)
+                    // setImage(newfilter[0].image)
+            })
+        }
+        catch (err) {
+            console.log("Faalil");
+        }
+    }
+    
+
     return(
             <div>
-
                 <NavbarUsers/>
                 <div class="border-bottom border-success">
                     <div class="border-bottom border-success searchpets">
@@ -30,109 +101,129 @@ function CustomerFindpet(){
                 </div>
                 <CustomerFeaturedAnimals></CustomerFeaturedAnimals>
                 <h3 class="searchanimalsheader">Search pets <i class="fa-solid fa-paw"></i> from thousands of pets <i class="fa-solid fa-paw"></i>
-                 in our petheaven  who will be<br></br>
+                in our petheaven  who will be<br></br>
                 perfect family member for you. Search cats and dogs with your favourite color and age  </h3>
+                <form>
                     <div class="dropdown" id ="findpetdropdown">
-                        <select class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                <option class="dropdown-item" >Type</option>
-                                <option class="dropdown-item" >Dog</option>
-                                <option class="dropdown-item" >cat</option>
+                        <select class="btn btn-secondary dropdown-toggle" type="button" value={type} onChange={(e)=>setType(e.target.value)} id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <option class="dropdown-item" value="" >Type</option>
+                                <option class="dropdown-item"  value="Dog">Dog</option>
+                                <option class="dropdown-item" value="Cat">cat</option>
                         </select>
                         
-                        <select class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                <option class="dropdown-item" >Color</option>
-                                <option class="dropdown-item" >Black</option>
-                                <option class="dropdown-item" >White</option>
-                                <option class="dropdown-item" >Gold</option>
-                                <option class="dropdown-item" >Mixed</option>
+                        <select class="btn btn-secondary dropdown-toggle" type="button" value={petcolor} onChange={(e)=>setPetcolor(e.target.value)} id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <option class="dropdown-item" value="" >Color</option>
+                                <option class="dropdown-item" value="black" >Black</option>
+                                <option class="dropdown-item"  value="white">White</option>
+                                <option class="dropdown-item" value="brown">brown</option>
+                                <option class="dropdown-item" value="mixed">Mixed</option>
                         </select>
 
-                        <select class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <select class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"  data-bs-toggle="dropdown" aria-expanded="false">
                                 <option class="dropdown-item" >Age</option>
                                 <option class="dropdown-item" >less than 6mo</option>
                                 <option class="dropdown-item" >6mo - 2yrs</option>
                                 <option class="dropdown-item" >over 2yrs</option>
                         </select>
                     </div>
+                    <button type="submit" class="btn btn-success " id="petsearchbtn" onClick={getUsers} >Search <i class="fa-solid fa-magnifying-glass"></i></button>
 
-                    <div class="searchbardiv">
-                        <form>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" id="petsearchbyname" aria-describedby="petsearch" placeholder="search pets by name"></input>
-                                <button type="submit" class="btn btn-success " id="petsearchbtn">Search <i class="fa-solid fa-magnifying-glass"></i></button>
-                            </div>
-                        </form>
-                    </div>
+                </form>
 
-                    <div class=" bg-c-light row" id="findpetimgarea"> 
-                        <div class="col-12 col-sm-2 card">
-                            <h5 class="text-success petname">Jill</h5>
-                            <div className="underline underlineJusty"></div>
-                            <img src={puppy4} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
-                            <div class="petage  card-body">
-                            <h6 class="text-danger">2 months</h6>
-                            <h6 class="text-dark">Brown</h6>
-                                <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadopthbtn">View pet<i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
-                            </div>
-                            
+                <div class="searchbardiv">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="petsearchbyname" aria-describedby="petsearch" placeholder="search pets by name" value={petname} onChange={(e) => setPetname(e.target.value)}></input>
+                            <button type="submit" class="btn btn-success " id="petsearchbtn" onClick={getUsers} >Search <i class="fa-solid fa-magnifying-glass"></i></button>
                         </div>
+                    </form>
+                </div>
 
-                        <div class="col-12 col-md-2 card">
-                            <h5 class="text-success petname">Joggi</h5>
-                            <div className="underline underlineJusty"></div>
-                            <img src={puppy1} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
-                            <div class="petage card-body">
-                            <h6 class="text-danger">2 months</h6>
-                            <h6 class="text-dark">Black and white</h6>
-                                <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadopthbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
-                            </div>
-                        </div>
+                <div class=" bg-c-light row" id="findpetimgarea"> 
+                    {
+                        users.map((item,i)=>{
+                            let url = "viewpetdetails?id="+item.petID;
+                            var index=0
+                            if(petname.toLowerCase()==item.name.toLowerCase()){
+                                index=1;
+                                return(
+                                    <div class="col-12 col-md-2 card">
+                                        <h5 class="text-success petname">{item.name}</h5>
+                                        <div className="underline underlineJusty"></div>
+                                        <img src="item.mimeType;base64,${b64}" class="card-img-top" id="findpetimgs"></img>
+                                        <div class="petage card-body">
+                                            <h6 class="text-danger">{item.age}</h6>
+                                            <h6 class="text-dark">{item.color}</h6>
+                                            <Link to={url}><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                                        </div>
+                                    </div>
+                                )
+                            }
 
-                        <div class="col-12 col-md-2 card">
-                            <h5 class="text-success petname">Blacky</h5>
-                            <div className="underline underlineJusty"></div>
-                            <img src={puppy2} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
-                            <div class="petage card-body">
-                            <h6 class="text-danger">2 months</h6>
-                            <h6 class="text-dark">Black</h6>
-                                <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
-                            </div>
-                        </div>
+                            if(type=='' && petname=='' && petcolor=='' && index==0){
+                                return(
+                                    <div class="col-12 col-md-2 card">
+                                        <h5 class="text-success petname">{item.name}</h5>
+                                        <div className="underline underlineJusty"></div>
+                                        <img src="item.mimeType;base64,${b64}" class="card-img-top" id="findpetimgs"></img>
+                                        <div class="petage card-body">
+                                            <h6 class="text-danger">{item.age}</h6>
+                                            <h6 class="text-dark">{item.color}</h6>
+                                            <Link to={url}><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        
+                            if(item.type==type && petname=='' && petcolor=='' && index==0){
+                                return(
+                                    <div class="col-12 col-md-2 card">
+                                        <h5 class="text-success petname">{item.name}</h5>
+                                        <div className="underline underlineJusty"></div>
+                                        <img src="item.mimeType;base64,${b64}" class="card-img-top" id="findpetimgs"></img>
+                                        <div class="petage card-body">
+                                            <h6 class="text-danger">{item.age}</h6>
+                                            <h6 class="text-dark">{item.color}</h6>
+                                            <Link to={url}><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                                        </div>
+                                    </div>
+                                )
+                            }
 
-                        <div class="col-12 col-md-2 card">
-                            <h5 class="text-success petname">Jenn</h5>
-                            <div className="underline underlineJusty"></div>
-                            <img src={kitties3} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
-                            <div class="petage card-body">
-                            <h6 class="text-danger">2 months</h6>
-                            <h6 class="text-dark">Grey</h6>
-                                <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
-                            </div>
-                            
-                        </div>
+                            else if(item.color.toLowerCase()==petcolor.toLowerCase() && item.type==type && index==0){
+                                return(
+                                    <div class="col-12 col-md-2 card">
+                                        <h5 class="text-success petname">{item.name}</h5>
+                                        <div className="underline underlineJusty"></div>
+                                        <img src="item.mimeType;base64,${b64}" class="card-img-top" id="findpetimgs"></img>
+                                        <div class="petage card-body">
+                                            <h6 class="text-danger">{item.age}</h6>
+                                            <h6 class="text-dark">{item.color}</h6>
+                                            <Link to={url}><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                                        </div>
+                                    </div>
+                                )
+                            }
 
-                        <div class="col-12 col-md-2 card">
-                            <h5 class="text-success petname">Ocky</h5>
-                            <div className="underline underlineJusty"></div>
-                            <img src={puppy1} class="card-img-top"  id="findpetimgs" alt="Tommy"></img>
-                            <div class="petage card-body">
-                            <h6 class="text-danger">2 months</h6>
-                            <h6 class="text-dark">Black and white</h6>
-                                <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
-                            </div>
-                        </div>
+                            if(item.name.toLowerCase()==petname.toLowerCase() && item.color=='' && index==0){
+                                return(
+                                    <div class="col-12 col-md-2 card">
+                                        <h5 class="text-success petname">{item.name}</h5>
 
-                        <div class="col-12 col-md-2 card">
-                            <h5 class="text-success petname">Phil</h5>
-                            <div className="underline underlineJusty"></div>
-                            <img src={kitties1} class="card-img-top" id="findpetimgs" alt="Tommy"></img>
-                            <div class="petage card-body">
-                                <h6 class="text-danger">2 months</h6>
-                                <h6 class="text-dark">Brown</h6>
-                                <Link to="viewpetdetails"><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
-                            </div>
-                        </div>
-                    </div>
+                                        <div className="underline underlineJusty"></div>
+                                        <img src="item.mimeType;base64,${b64}" class="card-img-top" id="findpetimgs"></img>
+                                        <div class="petage card-body">
+                                            <h6 class="text-danger">{item.age}</h6>
+                                            <h6 class="text-dark">{item.color}</h6>
+                                            <Link to={url}><button type="button" class="btn btn-success" id="petadoptbtn">View pet <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        })
+                    }
+                        
+                </div> 
                 <Pagination></Pagination>
                 <Customerservices></Customerservices>
                 <Customerdocmessagetab></Customerdocmessagetab>

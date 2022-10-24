@@ -7,20 +7,22 @@ import Pagination from  './pagination';
 import petdog from '../images/petdog.jpg';
 import NavbarUsers from '../../../includes/NavbarUsers';
 
-function CustomerAdoptRequest() {
+function CustomerAdoptrequest() {
     const [fullname, setFullname] = useState('');
     const [phonenumber,setPhonenumber] = useState('');
     const [income, setIncome] = useState('');
     const [isanyPet,setIsanyPet]=useState('1');
     const [typeofPet,setTypeofPet] = useState('1');
     const [kidsinHome,setKidsinHome] = useState('1');
+    const [isanypatient,setIsanypatient] = useState('1');
+    const [adoptexperience,setAdoptexperience]=useState('1');
     const [additionalDetails,setAdditionalDetails] = useState('');
     const [buttonText, setButtonText] = useState('Submit');
     const handleSubmit = async e => {
         e.preventDefault();
         setButtonText('Submitted . . .');
         try {
-          const body = {fullname,phonenumber,income,isanyPet,typeofPet,kidsinHome,additionalDetails};
+          const body = {fullname,phonenumber,income,isanyPet,typeofPet,kidsinHome,isanypatient,adoptexperience,additionalDetails};
           const response = await fetch(
             "http://localhost:5000/PetAdopter/findapet/adoptrequestform",
             {
@@ -42,7 +44,7 @@ function CustomerAdoptRequest() {
 
     return(
         <div>
-
+            <NavbarUsers/>
             <h1 class="bg-c-light col-sm-12 requestheader">Adopt Request form</h1>
             <h2 class="bg-c-light col-sm-12 requestdescription border-bottom border-success"> Fill this form with correct information.<br></br> PetHeaven team 
                 will send you a notification whether you can take this pet or not</h2>
@@ -61,8 +63,14 @@ function CustomerAdoptRequest() {
                         </div>
 
                         <div  id="reqrows">
-                            <label for="income" class="reqform-label  text-success" id="reqformlabels">Income</label>
-                            <input type="number" class="form-control" value={income} onChange={(e) => setIncome(e.target.value)}></input>
+                            <label for="income" class="reqform-label  text-success" id="reqformlabels">Select price range you can allocate</label>
+                            <select value={income} onChange={(e) => setIncome(e.target.value)}>
+                                <option value="1" >Less 5000</option>
+                                <option value="2" >5000 - 10000</option>
+                                <option value="3" >5000 - 10000</option>
+                                <option value="4" >10000 - 15000</option>
+                                <option value="5" >More 15000</option>
+                            </select>
                         </div>  
 
                         <div id="reqrows">
@@ -74,7 +82,7 @@ function CustomerAdoptRequest() {
                         </div>
 
                         <div id="reqrows">
-                            <label class="reqform-label" >Kind of pet in your home </label>
+                            <label class="reqform-label" >What Kind of pet in your home </label>
                             <select value={typeofPet} onChange={(e) => setTypeofPet(e.target.value)}>
                                 <option value="1" >Dog</option>
                                 <option value="2" >Cat</option>
@@ -83,8 +91,24 @@ function CustomerAdoptRequest() {
                         </div>
 
                         <div id="reqrows">
-                            <label class="reqform-label" >Is there any kid in your home </label>
+                            <label class="reqform-label" >Is there any kid in your home  </label>
                             <select value={kidsinHome} onChange={(e)=>setKidsinHome(e.target.value)}>
+                                <option value="1">yes</option>
+                                <option value="2">no</option>
+                            </select>
+                        </div>
+
+                        <div id="reqrows">
+                            <label class="reqform-label" >Is there any patient in your home ( ex :- wheeze)  </label>
+                            <select value={isanypatient} onChange={(e)=>setIsanypatient(e.target.value)}>
+                                <option value="1">yes</option>
+                                <option value="2">no</option>
+                            </select>
+                        </div>
+
+                        <div id="reqrows">
+                            <label class="reqform-label" >Have u any previous adoptees </label>
+                            <select value={adoptexperience} onChange={(e)=>setAdoptexperience(e.target.value)}>
                                 <option value="1">yes</option>
                                 <option value="2">no</option>
                             </select>
@@ -105,4 +129,4 @@ function CustomerAdoptRequest() {
     )
 }
 
-export default CustomerAdoptRequest;
+export default CustomerAdoptrequest;

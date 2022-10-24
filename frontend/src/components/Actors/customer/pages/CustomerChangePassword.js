@@ -10,7 +10,7 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 import '../css/CustomerChangePassword.css';
 import '../css/signup.css';
 
-function CustomerChangePassword(){
+function CustomerChangepassword(){
     return(
             <div>
                 <h3 id="changepasswordheader">Change Password</h3>
@@ -32,4 +32,4 @@ function CustomerChangePassword(){
     )
 }
 
-export default CustomerChangePassword;
+export default CustomerChangepassword;
