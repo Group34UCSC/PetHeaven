@@ -33,3 +33,44 @@ exports.AddMedicine=(req,res,next) => {
  
  }
 
+ exports.ViewPrescription = (req,res,next)=>{
+
+   var SelectQuery= "SELECT * FROM temppres";
+
+   // var SelectQuery = "SELECT temppres.Medicine, temppres.Dosage, temppres.Duration, SUM(pharmacyinventory.Quantity)
+   // FROM temppres
+   // INNER JOIN pharmacyinventory ON temppres.Medicine = pharmacyinventory.Medicine GROUP BY pharmacyinventory.Medicine";
+
+
+    
+          conn.query(SelectQuery, function (err,result){
+           if( err ) {
+            console.log(err);
+            res.send("Unable to get the comments");
+           }
+           else{
+            res.send(result);
+           }
+
+          })
+
+    
+   }
+
+   exports.viewInventory = (req,res,next)=>{
+
+      var SelectQuery= "SELECT * FROM pharmacyinventory";
+   
+             conn.query(SelectQuery, function (err,result){
+              if( err ) {
+               console.log(err);
+               res.send("Unable to get the comments");
+              }
+              else{
+               res.send(result);
+              }
+   
+             })
+   
+       
+      }

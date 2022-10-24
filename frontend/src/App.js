@@ -5,6 +5,8 @@ import jwt_decode from 'jwt-decode';
 import io from "socket.io-client";
 
 import './App.css';
+import {Helmet} from "react-helmet";
+
 //Home
 import Navbar from './components/includes/Navbar';
 import HomePage from './components/pages/HomePage';
@@ -162,6 +164,12 @@ class App extends Component{
 
       <div>
         {/* <Navbar/> */}
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>PetHeaven</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+                <meta name="description" content="Nested component" />
+        </Helmet>
 
         <Routes>
       

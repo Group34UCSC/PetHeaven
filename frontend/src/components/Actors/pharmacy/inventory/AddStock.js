@@ -63,8 +63,8 @@ function AddStock()
       // console.log("GGS")
       console.log(item)
       const Medicine = item.Medicine;
-    const Quantity = item.Quantity;
-    const Price = item.Price;
+      const Quantity = item.Quantity;
+      const Price = item.Price;
     // console.log("Price",medicineList[0].Price);
     const response = API.post(`pharmacy/inventory/AddStock`, {
       params: {
@@ -74,6 +74,7 @@ function AddStock()
       }
     }, options);
     console.log("Data ",response);
+    alert("successfully Inserted");
     })
     
 

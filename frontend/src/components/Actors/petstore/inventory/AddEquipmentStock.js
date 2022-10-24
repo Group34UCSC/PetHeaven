@@ -3,30 +3,54 @@ import {Link} from 'react-router-dom';
 import { useEffect, useState } from "react";
 import './AddEquipmentStock.css';
 import NavbarUsers from "../../../includes/NavbarUsers";
+import API from "../../../services/baseURL";
+import options from "../../../services/options";
 
 function AddEquipmentStock()
 {
      // Adding medicine functions started here
-     const [serviceList, setServiceList] = useState([{ service: "" }]);
-
+     const [itemList, setItemList] = useState([{ Item: '' ,Quantity: '',Price: '' },]);
      const handleServiceChange = (e, index) => {
        const { name, value } = e.target;
-       const list = [...serviceList];
+       const list = [...itemList];
        list[index][name] = value;
-       setServiceList(list);
+       setItemList(list);
      };
    
      const handleServiceRemove = (index) => {
-       const list = [...serviceList];
+       const list = [...itemList];
        list.splice(index, 1);
-       setServiceList(list);
+       setItemList(list);
      };
    
      const handleServiceAdd = () => {
-       setServiceList([...serviceList, { service: "" }]);
+      setItemList([...itemList, { Item: '' ,Quantity: '',Price: '' }]);
      };
    //   Adding medicine functions ended here
+   const HandleStock = e => {
+    e.preventDefault();
+    console.log("Item List", itemList);
 
+    itemList.map((item,index)=>{
+      console.log("GGS")
+      console.log(item)
+      const Item = item.Item;
+      const Quantity = item.Quantity;
+      const Price = item.Price;
+    // console.log("Price",medicineList[0].Price);
+    const response = API.post(`petstore/inventory/AddStock`, {
+      params: {
+        Item: Item,
+        Quantity: Quantity,
+        Price : Price
+      }
+    }, options);
+    console.log("Data ",response);
+    alert("successfully Inserted");
+    })
+
+
+  };
 
     return(
         <div>
@@ -89,7 +113,7 @@ function AddEquipmentStock()
         <label htmlFor="service">Equipment List</label>
 
         {/* Medicine input field started here */}
-        {serviceList.map((singleService, index) => (
+        {itemList.map((itemInput, index) => (
           <div key={index} className="services">
             <div className="first-division">
               {/* <input
@@ -108,26 +132,29 @@ function AddEquipmentStock()
                     <div className="row ">
                 <div class="col-md-6">
                     <label for="option" class="form-label">Item</label>
-                    {/* <select class="form-control" id="inputGroupSelect02">
-                        <option selected>Select item to be added</option>
-                        <option value="1">Cotrimaxazole 480 mg</option>
-                        <option value="2">Metronidazole 400 mg</option>
-                        <option value="3">Promethazine 10 mg</option>
-                        <option value="4">Ezo omeprazole 20 mg</option>
-                        <option value="5">Metronidazole 200 mg</option>
-                    </select> */}
-                     <input type="text" className="form-control" placeholder="Enter the title of item"></input>
+                    <select class="form-control" value={itemInput.Item}  onChange={(e)=>handleServiceChange(e,index)} name="Item" id="inputGroupSelect02">
+                        <option selected>Select Pet Tool to be Added</option>
+                        <option value="Furniture Cage">Furniture Cage</option>
+                        <option value="Dog grooming tools">Dog grooming tools</option>
+                        <option value="Traction belt">Traction belt</option>
+                        <option value="Cat collar">Cat collar</option>
+                        <option value="Cat nail cutter">Cat nail cutter</option>
+                        
+                    </select>
+                     {/* <input type="text" className="form-control" placeholder="Enter the title of item"></input> */}
                     </div>
                     <div class="col-md-3">
                         <div className="form-group">
                             <label className="mb-1">Quantity</label>
-                            <input type="text" className="form-control" placeholder="Enter newly added quantity"></input>
+                            <input type="text" value={itemInput.Quantity} className="form-control"name="Quantity"
+                             onChange={(e)=>handleServiceChange(e,index)} placeholder="Enter newly added quantity"></input>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div className="form-group">
                             <label className="mb-1">Unit Price</label>
-                            <input type="text" className="form-control" placeholder="Enter unit price"></input>
+                            <input type="text" value={itemInput.Price} className="form-control" name="Price" 
+                            onChange={(e)=>handleServiceChange(e,index)} placeholder="Enter unit price"></input>
                         </div>
                     </div>
                 </div>
@@ -138,7 +165,7 @@ function AddEquipmentStock()
                     
                 </div>
 
-              {serviceList.length - 1 === index && serviceList.length < 15 && (
+              {itemList.length - 1 === index && itemList.length < 15 && (
                 <button
                   type="button"
                   onClick={handleServiceAdd}
@@ -149,7 +176,7 @@ function AddEquipmentStock()
               )}
             </div>
             <div className="second-division">
-              {serviceList.length !== 1 && (
+              {itemList.length !== 1 && (
                 <button
                   type="button"
                   onClick={() => handleServiceRemove(index)}
@@ -178,7 +205,7 @@ function AddEquipmentStock()
       {/* Submit and View current availability buttons started here */}
       <div className="form-group py-3 row ">
             <div className="col-md-2">
-                <button type="button" id="submit-btn" className="btn shadow w-100 ">Submit</button>
+                <button type="button" id="submit-btn" onClick={HandleStock} className="btn shadow w-100 ">Submit</button>
             </div>
             <div className="col-md-3">
             <Link to="/petstore/inventory/ViewPetToolInventory" class="nav-link active">
