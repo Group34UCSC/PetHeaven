@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 import Profileview from './Profileview';
 import '../css/doctorAppointment.css';
-import CustomerEditProfile from './CustomerEditprofile';
-import CustomerChangePassword from './CustomerChangepassword';
+import CustomerEditProfile from './CustomerEditProfile';
+import CustomerChangePassword from './CustomerChangePassword';
 
 function ProfilePage(){
     return(

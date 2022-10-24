@@ -7,7 +7,7 @@ import Pagination from  './pagination';
 import petdog from '../images/petdog.jpg';
 import NavbarUsers from '../../../includes/NavbarUsers';
 
-function CustomerAdoptrequest() {
+function CustomerAdoptRequest() {
     const [fullname, setFullname] = useState('');
     const [phonenumber,setPhonenumber] = useState('');
     const [income, setIncome] = useState('');
@@ -105,4 +105,4 @@ function CustomerAdoptrequest() {
     )
 }
 
-export default CustomerAdoptrequest;
+export default CustomerAdoptRequest;

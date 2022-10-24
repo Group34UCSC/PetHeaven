@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import '../css/CustomerServices.css';
 
 
-function CustomerServices(){
+function Customerservices(){
     return(
         <div class="bg-c-light">
             <div class= "row col-sm-12 border-top border-success" id="servicedescription">
@@ -49,4 +49,4 @@ function CustomerServices(){
     )
 }
 
-export default CustomerServices;
+export default Customerservices;

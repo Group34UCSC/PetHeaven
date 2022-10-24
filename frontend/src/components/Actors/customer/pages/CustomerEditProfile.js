@@ -10,7 +10,7 @@ import editvector from '../images/editvector.png';
 import Profileview from './Profileview';
 import '../css/CustomerEditProfile.css';
 import '../css/signup.css';
-function CustomerEditprofile(){
+function CustomerEditProfile(){
     return(
         <div>
         
@@ -45,4 +45,4 @@ function CustomerEditprofile(){
     )
 }
 
-export default CustomerEditprofile;
+export default CustomerEditProfile;

@@ -15,43 +15,45 @@ const CLIENT_URL = "http://localhost:3000/";
 
 
 exports.Create_Accounts = (req,res,next)=>{
-
-   if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
-   
-   try{
+ 
+    if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
+    
+    try{
       console.log("hyyo")
-      const { error } = SIGNUP_MODEL.validate(req.body);
+        const { error } = SIGNUP_MODEL.validate(req.body);
 
-      if( error ) return next(new AppError(error.details[0].message,400)) ;
+        if( error ) return next(new AppError(error.details[0].message,400)) ;
 
-         conn.query(CHECK_EMAIL , [req.body.email], async(err, data, feilds) =>{
-            if( err ) return next(new AppError(err,500)) ;
-            if( data.length ) return  next(new AppError("Email already used!",400)) ;
+        conn.query(CHECK_EMAIL , [req.body.email], async(err, data, feilds) =>{
+           if( err ) return next(new AppError(err,500)) ;
+           if( data.length ) return  next(new AppError("Email already used!",400)) ;
 
 
-         
-            const salt = await bcrypt.genSalt(10);
-            const hashedValue = await bcrypt.hash(req.body.pwd, salt);
-            const email_token = crypto.randomBytes(64).toString('hex');
+           
+           const salt = await bcrypt.genSalt(10);
+           const hashedValue = await bcrypt.hash(req.body.pwd, salt);
+           const email_token = crypto.randomBytes(64).toString('hex');
 
-            conn.query(REGISTER_USER, [ [ hashedValue, req.body.email , req.body.user, req.body.type,req.body.email, email_token, req.body.user ,0]], (err,data,feilds)=>{
+  
+
+           conn.query(REGISTER_USER, [ [ hashedValue, req.body.email , req.body.user, req.body.type,req.body.email, email_token, req.body.user ,0]], (err,data,feilds)=>{
             if( err ) return next(new AppError(err,500));
 
             res.status(201).json({
                data: "User Registration Success!"
             })
 
-            })
-
-         
-         })
-      }
-      catch( err )
-      {
-         res.status(500).json({
-            error: err
-         })
-      }
+           })
+  
+          
+        })
+     }
+     catch( err )
+     {
+        res.status(500).json({
+           error: err
+        })
+     }
 }
 
 {/* <a href="http://localhost:3000/SignUp/{$token}">CLICK TO ACTIVATE YOUR ACCOUNT</a>
@@ -256,6 +258,49 @@ exports.Create_Accounts = (req,res,next)=>{
 
                });
                  }
+
+
+
+                 exports.PharmacyRegister = (req,res,next)=>{
+                
+                  const name = req.params.PhyID;
+                  
+                  const sqlRegister = `UPDATE  pharmacy SET qualified=1 WHERE Pharmacy_ID =${name}`;
+                
+                  conn.query(sqlRegister, name, (err, result)=>{
+                   if (err) {
+                     console.log(err);}
+                     else{
+                        res.send("Doctor Registered");
+                     }
+               
+              
+
+            });
+              }
+
+              
+              exports.PharmacyView = (req,res,next)=>{
+
+               var PharmacyViewQuery= "SELECT * FROM pharmacy WHERE qualified=0";
+
+               
+                
+                      conn.query(PharmacyrViewQuery, function (err,result){
+                       if( err ) {
+                        console.log(err);
+                        res.send("Unable to get the comments");
+                       }
+                       else{
+                        res.send(result);
+                       }
+           
+                      })
+
+                
+               }
+
+                 
 
                         
                     

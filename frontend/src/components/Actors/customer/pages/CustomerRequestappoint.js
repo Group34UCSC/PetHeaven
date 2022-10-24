@@ -8,41 +8,6 @@ import '../css/CustomerRequestappoint.css';
 import DoctorCalender from './DoctorCalender';
 import NavbarUsers from '../../../includes/NavbarUsers';
 function CustomerRequestappoint(){
-    const[fullname,setFullname] =useState('')
-    const[email,setEmail]=useState('')
-    const[phonenumber,setPhonenumber]=useState('')
-    const[petname,setPetname]=useState('')
-    const[symptoms,setSymptoms]=useState('')
-    const[date,setDate]=useState('')
-    const[time,setTime]=useState('')
-    const[doctorID,setDoctorID]=useState('')
-
-    const handleSubmit = async e => {
-        e.preventDefault();
-        try {
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            const id = urlParams.get('id');
-            console.log(id);
-            const body = {fullname,email,phonenumber,petname,symptoms,date,time,id};
-            const response = await fetch(
-                "http://localhost:5000/PetAdopter/findapet/channeldoctor/requestappoint",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-type": "application/json"
-                    },
-                    body: JSON.stringify(body)
-                }
-            );
-            console.log(response);
-        }
-        catch (err) {
-            console.log("Falil");
-        }
-    
-    }
-
     return (
 
         <div>
@@ -96,35 +61,35 @@ function CustomerRequestappoint(){
                     <h4 class="text-center text-white mb-4">Make An Appointment</h4>
                     <div class="row">
                         <div class="col-md-6 col-12 my-md-0 my-2">
-                            <input type="text" class="form-control bg-darkred" value={fullname} onChange={(e) => setFullname(e.target.value)} placeholder="Your Full Name"></input>
+                            <input type="text" class="form-control bg-darkred" placeholder="Your Full Name"></input>
                         </div>
                         <div class="col-md-6 col-12 my-md-0 my-2 ">
-                            <input type="email" class="form-control bg-darkred" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your Email"></input>
+                            <input type="email" class="form-control bg-darkred" placeholder="Your Email"></input>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-6 col-12 my-2">
-                            <input type="text" class="form-control bg-darkred" value={phonenumber} onChange={(e) => setPhonenumber(e.target.value)} placeholder="Your Phone Number"></input>
+                            <input type="text" class="form-control bg-darkred" placeholder="Your Phone Number"></input>
                         </div>
                         <div class="col-md-6 col-12 my-2">
-                            <input type="text" class="form-control bg-darkred" value={petname} onChange={(e) => setPetname(e.target.value)} placeholder="Your pet Name"></input>
+                            <input type="text" class="form-control bg-darkred" placeholder="Your pet Name"></input>
                         </div>
 
                         <div class="col-md-12 col-12 my-2">
-                            <textarea cols="10" rows="3" class="form-control bg-darkred shadow-none" value={symptoms} onChange={(e) => setSymptoms(e.target.value)}
+                            <textarea cols="10" rows="3" class="form-control bg-darkred shadow-none"
                                 placeholder="Briefly about pet symptoms"></textarea>
                         </div>
 
                         <div class="col-md-6 col-12 my-md-0 my-2">
-                            <input type="date" class="form-control bg-darkred" value={date} onChange={(e) => setDate(e.target.value)} placeholder="Booking date"></input>
+                            <input type="date" class="form-control bg-darkred" placeholder="Booking date"></input>
                         </div>
 
                         <div class="col-md-6 col-12 my-md-0 my-2">
-                            <input type="time" class="form-control bg-darkred" value={time} onChange={(e) => setTime(e.target.value)} placeholder="Booking time"></input>
+                            <input type="time" class="form-control bg-darkred" placeholder="Booking time"></input>
                         </div>
 
-                        <div class=" my-2"> <button class="btn w-100 shadow-none text-uppercase msg-btn" onClick={handleSubmit}>Send
+                        <div class=" my-2"> <button class="btn w-100 shadow-none text-uppercase msg-btn">Send
                             Message</button> 
                         </div>
                     </div>
