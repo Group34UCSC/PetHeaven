@@ -40,11 +40,32 @@ import AdminCheckPharmacy from './components/Actors/Admin/pages/PharmacyQualific
 
 
 //customer
+// import CustomerFindpet from './components/Actors/customer/pages/CustomerFindpet';
+// import CustomerDoctorappoint from './components/Actors/customer/pages/CustomerDoctorappoint';
+// import CustomerPharmacy from './components/Actors/customer/pages/CustomerPharmacy';
+// import CustomerPettoolstore from './components/Actors/customer/pages/CustomerPettoolstore';
+// import ProfilePage from './components/Actors/customer/pages/ProfilePage';
+// import CustomerAdoptRequest from './components/Actors/customer/pages/CustomerAdoptRequest';
+// import CustomerEditProfile from './components/Actors/customer/pages/CustomerEditProfile';
+// import CustomerChangePassword from './components/Actors/customer/pages/CustomerChangePassword';
+// import CustomerDoctormessages from './components/Actors/customer/pages/CustomerDoctormessages';
+// import Customerpharmacypage from './components/Actors/customer/pages/Customerpharmacypage';
+// import Customerpettoolstorepage from './components/Actors/customer/pages/Customerpettoolstorepage';
+// import Customerviewpetdetails from './components/Actors/customer/pages/Customerviewpetdetails';
+// import CustomerRequestappoint from './components/Actors/customer/pages/CustomerRequestappoint';
+// import DoctorCalender from './components/Actors/customer/pages/DoctorCalender';
+// import CustomerBuymedicine from './components/Actors/customer/pages/CustomerBuymedicine';
+// import CustomerBuypettool from './components/Actors/customer/pages/CustomerBuypettool';
+// import CustomerInbox from './components/Actors/customer/pages/DoctorInbox';
+// import CustomerChat from './components/Actors/customer/pages/Chat'
+
+
+
 import CustomerFindpet from './components/Actors/customer/pages/CustomerFindpet';
 import CustomerDoctorappoint from './components/Actors/customer/pages/CustomerDoctorappoint';
 import CustomerPharmacy from './components/Actors/customer/pages/CustomerPharmacy';
 import CustomerPettoolstore from './components/Actors/customer/pages/CustomerPettoolstore';
-import ProfilePage from './components/Actors/customer/pages/ProfilePage';
+// import ProfilePage from './components/pages/ProfilePage';
 import CustomerAdoptRequest from './components/Actors/customer/pages/CustomerAdoptRequest';
 import CustomerEditProfile from './components/Actors/customer/pages/CustomerEditProfile';
 import CustomerChangePassword from './components/Actors/customer/pages/CustomerChangePassword';
@@ -58,6 +79,11 @@ import CustomerBuymedicine from './components/Actors/customer/pages/CustomerBuym
 import CustomerBuypettool from './components/Actors/customer/pages/CustomerBuypettool';
 import CustomerInbox from './components/Actors/customer/pages/DoctorInbox';
 import CustomerChat from './components/Actors/customer/pages/Chat'
+
+
+
+
+
 
 //Pharmacy
 import Prescription from './components/Actors/pharmacy/Prescription';
@@ -195,7 +221,7 @@ class App extends Component{
               <Route exact path='/petadopter/channeldoctor' element={<CustomerDoctorappoint/>}/> 
               <Route exact path='/petadopter/findpharmacy' element ={<CustomerPharmacy/>}/>
               <Route exact path='/petadopter/findpettoolstore' element ={<CustomerPettoolstore/>}/>
-              <Route exact path='/petadopter/myprofile' element={<ProfilePage/>}/>
+              {/* <Route exact path='/petadopter/myprofile' element={<ProfilePage/>}/> */}
               <Route exact path='/petadopter/viewpetdetails/adoptrequestform' element={<CustomerAdoptRequest/>}/>
               <Route exact path="/petadopter/viewpetdetails" element ={<Customerviewpetdetails />}/>
               <Route exact path='/petadopter/channeldoctor/requestappoint' element={<CustomerRequestappoint/>}/>
