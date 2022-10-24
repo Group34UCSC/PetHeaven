@@ -74,9 +74,9 @@ function UpdateVaccination() {
                                         <div className="form-group">
                                             <label className="mb-1">Medical Status Type</label>
                                             <select class="form-select" value={type} onChange={(e) => setType(e.target.value)} aria-label="Default select example">
-                                            <option value="1">Vaccination</option>
-                                            <option value="2">Injuries</option>
-                                            <option value="3">Others</option>
+                                            <option value="V">Vaccination</option>
+                                            <option value="I">Injuries</option>
+                                            <option value="O">Others</option>
                                         </select>
                                             </div>
                                         <div className="form-group">

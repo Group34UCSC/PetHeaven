@@ -252,7 +252,7 @@ class App extends Component{
            {/* staff member */}
            <Route exact path='staffmember/' element ={<Staff/>} />
             <Route exact path='staffmember/viewpets' element ={<ViewPets/>} />
-            <Route exact path='staffmember/postpets' element ={<PostPet/>} />
+            <Route exact path='staffmember/addnewpet' element ={<AddNewPet/>} />
             <Route exact path='staffmember/viewpost' element ={<ViewPost/>} />
             <Route exact path='staffmember/viewadoptee' element ={<ViewAdoptee/>} />
             <Route exact path='staffmember/updatemedicalstatus' element ={<UpdateVaccination/>} />

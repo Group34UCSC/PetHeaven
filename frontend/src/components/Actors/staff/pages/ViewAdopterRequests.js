@@ -9,6 +9,40 @@ import NavbarUsers from '../../../includes/NavbarUsers';
 
 
 function ViewAdopterRequests(){
+
+    const [name, setName] = useState('');
+    const [contact,setContact]=useState('');
+    const [income,setIncome] = useState('');
+    const [type, setType] = useState('');
+    const [pettype, setPettype] = useState('');
+    const [petdetail,setPetdetail] = useState('');
+    const [kids,setKids] = useState('');
+    const [buttonText, setButtonText] = useState('Accept Request');
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+        setButtonText('Accepted ... ');
+        try {
+            const body = {name,contact,income,pettype,petdetail};
+            console.log(name);
+            
+            const response = await fetch(
+            "http://localhost:5000/staffmember/addnewadopter",
+                {
+                    method: "POST",
+                    headers: {
+                    "Content-type": "application/json"
+                    },
+                    body: JSON.stringify(body)
+                }
+            );
+            console.log(response);
+        }
+        catch (err) {
+            console.log("Falil");
+        }
+    } 
+
         return(
             <div>
             <NavbarUsers/>
@@ -135,25 +169,24 @@ function ViewAdopterRequests(){
                                                 <hr/>
                                                 <div className="form-group requestformfield">
                                                     <label className="mb-1 inputanswercolor">Full Name</label>
-                                                    <input type="text" className="form-control " placeholder="" value="K.S.I.M. Rathnayake"></input>
+                                                    <input type="text" className="form-control " placeholder="" value={name} onChange={(e) => setName(e.target.value)}></input>
                                                 </div>
 
                                                 <div className="form-group requestformfield">
                                                     <label className="mb-1 inputanswercolor">Contact Number</label>
-                                                    <input type="tel" className="form-control" placeholder="" pattern="[0-9]{3}-[0-9]{2}[0-9]{3}" value="0788963147"></input>
+                                                    <input type="tel" className="form-control" placeholder="" pattern="[0-9]{3}-[0-9]{2}[0-9]{3}" value={contact} onChange={(e) => setName(e.target.value)}></input>
                                                 </div>
 
                                                 <div className="form-group requestformfield">
                                                     <label className="mb-1 inputanswercolor">Rough Monthly Income</label>
-                                                    <input type="income" className="form-control" min="0.00" max="" step="0.01" value="250000"></input>
+                                                    <input type="income" className="form-control" min="0.00" max="" step="0.01" value={income} onChange={(e) => setName(e.target.value)}></input>
                                                 </div>
 
                                                 <div className="form-group requestformfield">
                                                     <label className="mb-1 inputanswercolor">Any pets in your home currently</label>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Yes</option>
+                                                    <select class="form-select" value={type} onChange={(e) => setType(e.target.value)} aria-label="Default select example">
                                                         <option value="1">Yes</option>
-                                                        <option value="1">No</option>
+                                                        <option value="2">No</option>
                                                     </select>
                                                      
                                                 </div>
@@ -167,13 +200,12 @@ function ViewAdopterRequests(){
                                                 
                                                 <div className="form-group requestformfield">
                                                     <label className="mb-1 inputanswercolor">If yes enter type of the pet</label>
-                                                    <input type="num" className="form-control" placeholder="" value="Dog"></input>
+                                                    <input type="num" className="form-control" placeholder="" value={pettype} onChange={(e) => setName(e.target.value)}></input>
                                                 </div>
 
                                                 <div className="form-group requestformfield">
                                                     <label className="mb-1 inputanswercolor">Any kids in your home</label>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Yes</option>
+                                                    <select class="form-select" value={kids} onChange={(e) => setType(e.target.value)} aria-label="Default select example">
                                                         <option value="1">Yes</option>
                                                         <option value="1">No</option>
                                                     </select>
@@ -182,13 +214,13 @@ function ViewAdopterRequests(){
                                                 
                                                 <div className="form-group requestformfield">
                                                     <label className="mb-1 inputanswercolor">Currently have pets' details</label>
-                                                    <textarea rows="2" className="form-control" placeholder="" value="Have a 2 years Mixed breed dog"></textarea>
+                                                    <textarea rows="2" className="form-control" placeholder="" value={petdetail} onChange={(e) => setName(e.target.value)}></textarea>
                                                 </div>
                                                
                                                 <div className='acceptMargin'>
                                                     <div class="row gx-5 ">
                                                         <div class="col ">
-                                                            <button type="button" className="btn btn-success shadow w-100 postPetBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"><b>Accepet Request  <i class="fa-solid fa-check"></i></b></button>
+                                                            <button type="button" className="btn btn-success shadow w-100 postPetBtn" onClick={handleSubmit}><b>{buttonText}  <i class="fa-solid fa-check"></i></b></button>
                                                         </div>
                                                         <div class="col ">
                                                             <button type="button" className="btn btn-danger shadow w-100 postPetBtn" data-bs-toggle="modal" data-bs-target="#exampleModalreject"><b>Reject Request  <i class="fa-solid fa-times"></i></b></button>

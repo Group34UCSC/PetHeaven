@@ -40,10 +40,10 @@ function Staff() {
             <div class="admincard col-md-3">
                        
               <div className="card shadow" id='cardone'>
-                <Link to="postpets" class="nav-link active">
+                <Link to="addnewpet" class="nav-link active">
                   <img src={post} className="card-img-top staffimg" alt="Services"/>
                   <div className="card-body" id='cardTitle'>
-                    <h6><b>POST PETS</b></h6>
+                    <h6><b>ADD NEW PETS</b></h6>
                     <div className="underline"></div>
                   </div>
                 </Link>
