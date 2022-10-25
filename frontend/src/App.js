@@ -39,7 +39,7 @@ import AdminView from './components/Actors/Admin/pages/AdminView';
 import ViewComplains from './components/Actors/Admin/pages/ViewComplains';
 import AdminCheckDoctor from './components/Actors/Admin/pages/DoctorQualification';
 import AdminCheckPharmacy from './components/Actors/Admin/pages/PharmacyQualification';
-
+import Donation from './components/Actors/Admin/pages/donation';
 
 //customer
 // import CustomerFindpet from './components/Actors/customer/pages/CustomerFindpet';
@@ -199,7 +199,7 @@ class App extends Component{
             <Route exact path='/AdminHome/View' element={<AdminView />} />
             <Route exact path='/AdminHome' element={<AdminHome />} />  
             <Route exact path='/AdminHome/complains' element={<ViewComplains />} />
-            
+            <Route exact path='/AdminHome/donation' element={<Donation />} />
             
 
             {/* Pharmacy */}
