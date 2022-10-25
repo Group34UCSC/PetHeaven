@@ -54,7 +54,7 @@ function AddStock()
         setErrMsg('');
     }, [Price, Quantity])
      // Adding medicine functions started here
-     const [medicineList, setMedicineList] = useState([{ Medicine: '' ,Quantity: '',Price: '' },]);
+     const [medicineList, setMedicineList] = useState([{ Medicine: '',MFD: '',EXP: '' ,Quantity: '',Price: '' },]);
 
      const handleServiceChange = (e, index) => {
        const { name, value } = e.target;
@@ -105,12 +105,16 @@ function AddStock()
       // console.log("GGS")
       console.log(item)
       const Medicine = item.Medicine;
+      const MFD = item.MFD;
+      const EXP = item.EXP;
       const Quantity = item.Quantity;
       const Price = item.Price;
     // console.log("Price",medicineList[0].Price);
     const response = API.post(`pharmacy/inventory/AddStock`, {
       params: {
         Medicine: Medicine,
+        MFD: MFD,
+        EXP: EXP,
         Quantity: Quantity,
         Price : Price
       }
@@ -224,7 +228,7 @@ function AddStock()
                 <div className="card">
                     <div className="card-body bg-c-light">
                     <div className="row ">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="option" class="form-label">Medicine</label>
                     <select class="form-control" value={medicineInput.Medicine} onChange={(e)=>handleServiceChange(e,index)} name="Medicine" id="inputGroupSelect02">
                         <option selected>Select medicine to be added</option>
@@ -237,9 +241,10 @@ function AddStock()
                     
                   
                     </div>
-                    <div class="col-md-3">
+                    
+                    <div class="col-md-2">
                         <div className="form-group">
-                            <label className="mb-1">Quantity
+                            <label className="mb-1">Manufacture Date
                             <span className={validQuantity ? "valid" : "hide"}>
                               <FontAwesomeIcon icon={faCheck} />
                             </span>
@@ -247,7 +252,7 @@ function AddStock()
                               <FontAwesomeIcon icon={faTimes}/>
                             </span>
                             </label>
-                            <input type="text" className="form-control" value={medicineInput.Quantity} name="Quantity"
+                            <input type="date" className="form-control" value={medicineInput.MFD} name="MFD"
                              onChange={(e)=>handleServiceChange(e,index)} 
                              ref={userRef}
                              autoComplete="off" 
@@ -262,7 +267,59 @@ function AddStock()
                                         </p>
                         </div>
                     </div>
-                    <div class="col-md-3">
+
+                    <div class="col-md-2">
+                        <div className="form-group">
+                            <label className="mb-1">Expiary Date
+                            <span className={validQuantity ? "valid" : "hide"}>
+                              <FontAwesomeIcon icon={faCheck} />
+                            </span>
+                            <span  className={validQuantity || !Quantity ? "hide" : "invalid"}>
+                              <FontAwesomeIcon icon={faTimes}/>
+                            </span>
+                            </label>
+                            <input type="date" className="form-control" value={medicineInput.EXP} name="EXP"
+                             onChange={(e)=>handleServiceChange(e,index)} 
+                             ref={userRef}
+                             autoComplete="off" 
+                             aria-invalid={validQuantity ? "false" : "true"}
+                             aria-describedby="uidnote"
+                             onFocus={() => setQuantityFocus(true)}
+                             onBlur={() => setQuantityFocus(false)}
+                             placeholder="Enter newly added quantity"></input>
+                             <p id="uidnote" className={QuantityFocus && Quantity && !validQuantity ? "instructions" : "offscreen"}>
+                                            <FontAwesomeIcon icon={faInfoCircle} />
+                                            You are allowed input only plus values<br /> 
+                                        </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div className="form-group">
+                            <label className="mb-1">Quantity
+                            <span className={validQuantity ? "valid" : "hide"}>
+                              <FontAwesomeIcon icon={faCheck} />
+                            </span>
+                            <span  className={validQuantity || !Quantity ? "hide" : "invalid"}>
+                              <FontAwesomeIcon icon={faTimes}/>
+                            </span>
+                            </label>
+                            <input type="text" className="form-control"  name="Quantity"
+                             onChange={(e)=>handleServiceChange(e,index)} 
+                             ref={userRef}
+                             autoComplete="off" 
+                             aria-invalid={validQuantity ? "false" : "true"}
+                             aria-describedby="uidnote"
+                             onFocus={() => setQuantityFocus(true)}
+                             onBlur={() => setQuantityFocus(false)}
+                             placeholder="Enter quantity"></input>
+                             <p id="uidnote" className={QuantityFocus && Quantity && !validQuantity ? "instructions" : "offscreen"}>
+                                            <FontAwesomeIcon icon={faInfoCircle} />
+                                            You are allowed input only plus values<br /> 
+                                        </p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
                         <div className="form-group">
                             <label className="mb-1">Unit Price
                             <span className={validPrice ? "valid" : "hide"}>
@@ -355,3 +412,4 @@ function AddStock()
 }
 
 export default AddStock;
+

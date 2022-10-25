@@ -1,3 +1,5 @@
+// import Axios from 'axios';
+
 const {isEmpty}  = require('../utils/is_empty');
 const conn = require('../service/db_service');
 const { PHARMACY_MODEL } = require('../model/Pharmacy');
@@ -14,7 +16,7 @@ exports.AddMedicine=(req,res,next) => {
     try{
     //  console.log("Sasinduwaa 111");
       console.log(req.body.params.Medicine);
-    conn.query(ADD_MEDICINE, [[ req.body.params.Medicine,req.body.params.Quantity,req.body.params.Price]], (err,data,fields)=>{
+    conn.query(ADD_MEDICINE, [[ req.body.params.Medicine,req.body.params.MFD,req.body.params.EXP,req.body.params.Quantity,req.body.params.Price]], (err,data,fields)=>{
        if(err) return next(new AppError(err,500));
        console.log("Sasinduwaa 111");
        res.status(201).json({
@@ -74,3 +76,16 @@ exports.AddMedicine=(req,res,next) => {
    
        
       }
+
+      exports.sendSMSNotifications = (receiver,body) => {
+         try{
+             Axios.get(`https://www.textit.biz/sendmsg?id=94765282976&pw=4772&to=${receiver}&text=${body}`).then(response => {
+                 console.log("Hello");
+             });     
+         }
+         catch (err){
+             res.status(500).json({
+                 error : err
+             })
+         }
+       }
