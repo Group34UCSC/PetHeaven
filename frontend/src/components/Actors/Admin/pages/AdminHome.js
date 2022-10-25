@@ -105,6 +105,20 @@ function AdminHome() {
                        </div>
                    </div>
 
+
+                   
+                   <div class="admincard col-md-6">
+                       
+                       <div className="card shadow" id='cardone'>
+                       <Link to="donation"><img src={view} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
+                           <div className="card-body">
+                               <h6>USER DONATIONS</h6>
+                               <div className="underline"></div>
+                               <p>View & Add user donation details</p>
+                           </div>
+                       </div>
+                   </div>
+
                         
                     </div>
                 </div>

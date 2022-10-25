@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PDF from './PDF';
-
+import NavbarUsers from "../../../includes/NavbarUsers";
 class Post extends Component {
     state = {
         title: '',
@@ -29,7 +29,9 @@ class Post extends Component {
 
     render(){
         return(
+            
             <>
+            <NavbarUsers />
                 {  !this.state.postSubmitted ? 
                     (<div className="container">
                         <div className="jumbotron mt-3">
