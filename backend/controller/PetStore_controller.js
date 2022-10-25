@@ -128,15 +128,15 @@ exports.PostNewAdvertisement=(req,res,next) => {
        
        }
 
-       exports.sendSMSNotifications = (receiver,body) => {
-         try{
-             axios.get(`https://www.textit.biz/sendmsg?id=94765282976&pw=4772&to=${receiver}&text=${body}`).then(response => {
-                 console.log("Hello");
-             });     
-         }
-         catch (err){
-             res.status(500).json({
-                 error : err
-             })
-         }
-       }
+      //  exports.sendSMSNotifications = (receiver,body) => {
+      //    try{
+      //        axios.get(`https://www.textit.biz/sendmsg?id=94765282976&pw=4772&to=${receiver}&text=${body}`).then(response => {
+      //            console.log("Hello");
+      //        });     
+      //    }
+      //    catch (err){
+      //        res.status(500).json({
+      //            error : err
+      //        })
+      //    }
+      //  }
