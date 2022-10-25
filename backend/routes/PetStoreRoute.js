@@ -6,7 +6,7 @@ const storage = multer.diskStorage({
     destination : '../backend/uploadedImges',
     filename: (req,file,cb)=>
     {
-       cb(null,`${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+      cb(null,`${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
     }
   })
 const upload = multer({
@@ -29,6 +29,7 @@ const upload = multer({
 const PetStoreRoute = express.Router();
 const PetStore_controller = require('../controller/PetStore_controller');
 PetStoreRoute.post("/addNewEquipment",upload.single('Image'),PetStore_controller.PostNewAdvertisement);
+PetStoreRoute.post("/inventory/AddItem",PetStore_controller.AddItem);
 PetStoreRoute.get("/View",PetStore_controller.View_petTools);
 PetStoreRoute.get("/Edit",PetStore_controller.Edit_Advertisement);
 

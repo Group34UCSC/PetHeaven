@@ -8,5 +8,20 @@ staffMemberRoute.post('/postpet',StaffMember_controller.Staffmemberpostpet);
 staffMemberRoute.post('/addnewpet',StaffMember_controller.Staffmemberaddpet);
 staffMemberRoute.post('/updatemedicalstatus',StaffMember_controller.Staffmemberupdatemedicalstatus);
 staffMemberRoute.post('/notifyadopter',StaffMember_controller.Staffmembernotifyadopter);
+staffMemberRoute.get('/viewdonation',StaffMember_controller.Staffmemberviewdonation);
+staffMemberRoute.get('/viewpets',StaffMember_controller.Staffmemberviewpets);
+staffMemberRoute.get('/viewposts',StaffMember_controller.Staffmemberviewposts);
+staffMemberRoute.get('/viewadoptees',StaffMember_controller.Staffmemberviewadoptees);
+staffMemberRoute.get('/viewfeedback',StaffMember_controller.Staffmemberviewfeebacks);
+staffMemberRoute.get('/viewmedicalstatus',StaffMember_controller.Staffmemberviewmedicalstatus);
+staffMemberRoute.get('/viewmedicalstatusinjury',StaffMember_controller.Staffmemberviewmedicalstatusinjuries);
+staffMemberRoute.get('/viewmedicalstatusother',StaffMember_controller.Staffmemberviewmedicalstatusother);
+staffMemberRoute.post('/addnewadopter',StaffMember_controller.Staffmemberaddnewadopter);
+staffMemberRoute.post('/deletepost/:Post_ID',StaffMember_controller.Staffmemberdeletepost);
+
+staffMemberRoute.post('/postpetpost',StaffMember_controller.Staffmemberpostpetpost);
+
+
+staffMemberRoute.post('/responsefeedback/:adopter_id',StaffMember_controller.Staffmemberresponsefeedback);
 
 module.exports = staffMemberRoute;

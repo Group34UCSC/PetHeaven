@@ -3,7 +3,7 @@ const {isEmpty}  = require('../utils/is_empty');
 const Joi = require('@hapi/joi');
 const JWT = require('jsonwebtoken');
 const conn = require('../service/db_service');
-const {CHECK_EMAIL,REGISTER_USER, DELETE_USER, CHECK_EMAIL_UPDATE } = require('../query/Admin');
+const {CHECK_EMAIL,REGISTER_USER, DELETE_USER, CHECK_EMAIL_UPDATE , DONATION } = require('../query/Admin');
 const { SIGNUP_MODEL , UPDATE_MODEL} = require('../model/Admin');
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
@@ -120,24 +120,20 @@ exports.Create_Accounts = (req,res,next)=>{
                  res.send("user Update");
               }
         
+
+               });
+
   
 
-     });
+                 })
+             }
+             catch( err )
+             {
+                  res.status(500).json({
+                     error: err
+                })
+             }
 
-  
-
-          
-        })
-     }
-     catch( err )
-     {
-        res.status(500).json({
-           error: err
-        })
-     }
-
-
-       
                     }
 
 
@@ -219,6 +215,148 @@ exports.Create_Accounts = (req,res,next)=>{
    
                       
                      }
+
+                 
+
+                     exports.DoctorView = (req,res,next)=>{
+
+                        var DoctorViewQuery= "SELECT * FROM doctor WHERE qualified=0";
+       
+                        
+                         
+                               conn.query(DoctorViewQuery, function (err,result){
+                                if( err ) {
+                                 console.log(err);
+                                 res.send("Unable to get the comments");
+                                }
+                                else{
+                                 res.send(result);
+                                }
+                    
+                               })
+      
+                         
+                        }
+
+
+
+                         
+                  exports.DoctorRegister = (req,res,next)=>{
+                
+                     const name = req.params.DocID;
+                     
+                     const sqlRegister = `UPDATE doctor SET qualified=1 WHERE doctorID =${name}`;
+                   
+                     conn.query(sqlRegister, name, (err, result)=>{
+                      if (err) {
+                        console.log(err);}
+                        else{
+                           res.send("Doctor Registered");
+                        }
+                  
+                 
+
+               });
+                 }
+
+
+
+                 exports.PharmacyRegister = (req,res,next)=>{
+                
+                  const name = req.params.PhyID;
+                  
+                  const sqlRegister = `UPDATE  pharmacy SET qualified=1 WHERE Pharmacy_ID =${name}`;
+                
+                  conn.query(sqlRegister, name, (err, result)=>{
+                   if (err) {
+                     console.log(err);}
+                     else{
+                        res.send("Doctor Registered");
+                     }
+               
+              
+
+            });
+              }
+
+              
+              exports.PharmacyView = (req,res,next)=>{
+
+               var PharmacyViewQuery= "SELECT * FROM pharmacy WHERE qualified=0";
+
+               
+                
+                      conn.query(PharmacyViewQuery, function (err,result){
+                       if( err ) {
+                        console.log(err);
+                        res.send("Unable to get the comments");
+                       }
+                       else{
+                        res.send(result);
+                       }
+           
+                      })
+
+                
+               }
+
+
+  
+
+                  exports.Donation = (req,res,next)=>{
+ 
+                     if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
+                     
+                     try{
+                                    
+                            conn.query(DONATION, [ [ req.body.UserName,req.body.Date,req.body.Amount,req.body.AccNO,req.body.Branch]], (err,data,feilds)=>{
+                             if( err ) return next(new AppError(err,500));
+                 
+                             res.status(201).json({
+                                data: "Donation Registration Success!"
+                             })
+                 
+                            })
+                   
+                           
+                         
+                      }
+                      catch( err )
+                      {
+                         res.status(500).json({
+                            error: err
+                         })
+                      }
+                 }
+
+
+
+            
+                               
+              exports.DonationView = (req,res,next)=>{
+
+               var donationViewQuery= "SELECT * FROM donation";
+
+               
+                
+                      conn.query(donationViewQuery, function (err,result){
+                       if( err ) {
+                        console.log(err);
+                        res.send("Unable to get the comments");
+                       }
+                       else{
+                        res.send(result);
+                       }
+           
+                      })
+
+                
+               }
+
+                 
+
+                        
+                    
    
 
 

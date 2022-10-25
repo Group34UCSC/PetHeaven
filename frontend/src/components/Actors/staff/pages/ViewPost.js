@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import {Link, Search} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
@@ -12,6 +12,53 @@ import dog5 from '../img/d5.jpg';
 import NavbarUsers from '../../../includes/NavbarUsers';
 
 function ViewPost(){
+
+    const [posts,setPosts]=useState([])
+    useEffect(()=>{
+      fetch("http://localhost:5000/staffmember/viewposts").then((result)=>{
+        result.json().then((resp)=>{
+          // console.warn(resp)
+          setPosts(resp)
+          console.log(resp);
+        })
+      })
+    },[])
+    console.warn(posts)
+    console.log(posts)
+
+    const  DeletePost = async (item) => {
+       
+  
+        var raw = "";
+  
+         var requestOptions = {
+              method: 'POST',
+              body: raw,
+              redirect: 'follow'
+            };
+          try {
+              const body = { item };
+              const Post_ID= item.postID ;
+              console.log(item.postID)
+              const response = await fetch(
+                  `http://localhost:5000/staffmember/deletepost/${Post_ID}`,
+                  requestOptions)
+              ;
+              console.log(response);
+          }
+          catch (err) {
+              console.log(err);
+          }
+  
+      }
+
+    //   const [tempId, setTempId] = useState();
+
+    //   const getData = (post_id) => {
+    //     let tempId = post_id;
+    //     setTempId(item => tempId);
+    //   }
+
     return(
         <div>
         <NavbarUsers/>
@@ -35,88 +82,33 @@ function ViewPost(){
             </div>
           <div className="container">
             <div className="row">
-            <div class="admincard col-md-3">     
+                {posts.map((item,i)=>
+                    <div class="admincard col-md-3">     
                     <div className="card shadow cardpadding" id='cardone'>
                         <img src={dog} className="card-img-top petcardimg" alt="Services"/>
                         <div className="card-body" id='cardTitle'>
                         <div className="petdetail">
-                            <h6 className="petName"><b>Shadow</b></h6>
+                            <h6 className="petName"><b>{item.name}</b></h6>
                             <div className="underline underlineJusty"></div>
-                            <h6 >Mix Breed</h6>
-                            <h6 >Male</h6>
-                            <h6 >2 Months</h6>
-                            <h6 >Brown and White</h6>
-                            <h6>Shadow is a calm, innocent and child friendly puppy. Its Vaccinations are up to date. Also It is in good health. </h6>
+                            <h6 >{item.breed}</h6>
+                            <h6 >{item.gender}</h6>
+                            <h6 >{item.age}</h6>
+                            <h6 >{item.color}</h6>
+                            <h6>{item.about}</h6>
+                            <h6 class="petpostIDHidden">{item.postID}</h6>
                         </div>  
                         
                         </div>
-                        <button type="button" class="btn btn-success deleteBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
+                        <button type="button" class="btn btn-success deleteBtn"  onClick={() => DeletePost(item)}>Delete Post <i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
-
-                <div class="admincard col-md-3">     
-                    <div className="card shadow cardpadding" id='cardone'>
-                        <img src={dog2} className="card-img-top petcardimg" alt="Services"/>
-                        <div className="card-body" id='cardTitle'>
-                        <div className="petdetail">
-                            <h6 className="petName"><b>Browny</b></h6>
-                            <div className="underline underlineJusty"></div>
-                            <h6 >Normal</h6>
-                            <h6 >Male</h6>
-                            <h6 >4 Years</h6>
-                            <h6 >Brown</h6>
-                            <h6>Browny is a blowzy animal. Also it is best for security. Its Vaccinations are up to date. Also It is in good health. </h6>
-                        </div>  
-                        
-                        </div>
-                        <button type="button" class="btn btn-success deleteBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
-                    </div>
-                </div>
-
-                <div class="admincard col-md-3">     
-                    <div className="card shadow cardpadding" id='cardone'>
-                        <img src={dog3} className="card-img-top petcardimg" alt="Services"/>
-                        <div className="card-body" id='cardTitle'>
-                        <div className="petdetail">
-                            <h6 className="petName"><b>Shaily</b></h6>
-                            <div className="underline underlineJusty"></div>
-                            <h6 >Normal</h6>
-                            <h6 >Female</h6>
-                            <h6 >3 Months</h6>
-                            <h6 >Brown, White, Black</h6>
-                            <h6>Shaily is a qute and calm. It is a child friendly puppy. Its Vaccinations are up to date. Also It is in good health. </h6>
-                        </div>  
-                        
-                        </div>
-                        <button type="button" class="btn btn-success deleteBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
-                    </div>
-                </div>
-
-                <div class="admincard col-md-3">     
-                    <div className="card shadow cardpadding" id='cardone'>
-                        <img src={dog5} className="card-img-top petcardimg" alt="Services"/>
-                        <div className="card-body" id='cardTitle'>
-                        <div className="petdetail">
-                            <h6 className="petName"><b>Blacky</b></h6>
-                            <div className="underline underlineJusty"></div>
-                            <h6 >Mix Breed</h6>
-                            <h6 >Male</h6>
-                            <h6 >2 Years</h6>
-                            <h6 >White, Light Brown</h6>
-                            <h6>Blacky is a innocent pet. It is child friendly, playful. Its Vaccinations are up to date. Also It is in good health. </h6>
-                        </div>  
-                        
-                        </div>
-                        <button type="button" class="btn btn-success deleteBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
-                    </div>
-                </div>
-
                 
-             
+                )}
+
             </div>
           </div>
         </section>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        {/* <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                                
@@ -132,7 +124,7 @@ function ViewPost(){
                                             <div class="row gx-5 ">
                                                     <div class="col ">
                                                         <Link to="/viewpets" class="nav-link active">
-                                                            <button type="button" className="btn btn-success shadow w-100 postPetBtn"><b>Yes  <i class="fa-solid fa-check"></i></b></button>
+                                                            <button type="button" className="btn btn-success shadow w-100 postPetBtn" onClick={() => DeletePost(tempId)}><b>Yes  <i class="fa-solid fa-check"></i></b></button>
                                                         </Link>
                                                     </div>
                                                     <div class="col ">
@@ -147,7 +139,9 @@ function ViewPost(){
                         </div>
                     </div>
                 </div>
-      </div>   
+      */}
+
+      </div>
     )
 }
 

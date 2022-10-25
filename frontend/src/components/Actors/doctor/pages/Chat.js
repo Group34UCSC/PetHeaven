@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 import '../css/DoctorInbox.css';
+import io from "socket.io-client";
 
 
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
+
+
+  useEffect(() => {
+    socket.on("receive_message", (data) => {
+      setMessageList((list) => [...list, data]);
+    });
+  }, [socket]);
 
   const sendMessage = async () => {
     if (currentMessage !== "") {
@@ -25,11 +33,7 @@ function Chat({ socket, username, room }) {
     }
   };
 
-  useEffect(() => {
-    socket.on("receive_message", (data) => {
-      setMessageList((list) => [...list, data]);
-    });
-  }, [socket]);
+ 
 
   return (
     <div className="chat-window">

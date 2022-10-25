@@ -7,7 +7,8 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 import NavbarUsers from '../../../includes/NavbarUsers';
 import '../css/Doctoravailable.css';
 
-
+import API from "../../../services/baseURL";
+import options from "../../../services/options";
 
 import format from "date-fns/format";
 import getDay from "date-fns/getDay";
@@ -18,6 +19,8 @@ import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+
+
 
 
 const locales = {
@@ -52,11 +55,42 @@ const events = [
 
 function DoctorAvailability() {
     const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
-    const [allEvents, setAllEvents] = useState(events);
+    const [allEvents, setAllEvents] = useState();
 
     function handleAddEvent() {
         setAllEvents([...allEvents, newEvent]);
     }
+
+ 
+
+    // const handleAddEvent = e => {
+    //     // e.preventDefault();
+    //     console.log("Medicine List", newEvent);
+        
+    //     // const data = { Medicine: medicineList.Medicine, Quantity: medicineList.Quantity, Price: medicineList.Price};
+    //     // const data = medicineList;
+    //     // console.log("Data",data);
+       
+        
+    //       // console.log("GGS")
+    //       console.log(newEvent.title)
+    //       const title = newEvent.title;
+    //     const start = newEvent.start;
+    //     const end = newEvent.end;
+    //     setAllEvents([...allEvents, newEvent]);
+    //     // console.log("Price",medicineList[0].Price);
+       
+    //     const response = API.post(`Doctor/Available`, {
+    //       params: {
+    //         title: title,
+    //         start: start,
+    //         end : end
+    //       }
+    //     }, options);
+    //     console.log("Data ",response);
+       
+    // }
+    
 
     return (
         <div className="App">

@@ -1,16 +1,26 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import kitty1 from '../images/kitties1.jfif';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 import Profileview from './Profileview';
 import '../css/doctorAppointment.css';
-import CustomerEditProfile from './CustomerEditProfile';
-import CustomerChangePassword from './CustomerChangePassword';
-
+import CustomerEditProfile from './CustomerEditprofile';
+import CustomerChangePassword from './CustomerChangepassword';
+import NavbarUsers from '../../../includes/NavbarUsers';
 function ProfilePage(){
+    useEffect(()=>{
+        getUsers();
+    },[])
+
+    const getUsers=async e=>{
+        console.log(window.loggedUserId);
+    }
+    
     return(
         <div>
+            
+            <NavbarUsers/>
             <Profileview></Profileview>
             <div class="cardbody" id="profilebtn"> 
                 <button class="btn btn-success " id="profilebtns" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa-solid fa-pen-to-square" ></i>Edit profile</button>

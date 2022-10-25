@@ -1,9 +1,19 @@
-import React from "react";
+import React, {useEffect,useState} from "react";
 import NavbarUsers from "../../../includes/NavbarUsers";
 import './ViewPetToolInventory.css';
 
 function ViewPetToolInventory()
 {
+    const [inventory,setInventory]=useState([])
+    useEffect(()=>{
+        fetch("http://localhost:5000/petstore/viewInventory").then((result)=>{
+        result.json().then((resp)=>{
+            console.warn(resp)
+            setInventory(resp)
+            console.log(resp)
+        })
+    })},[])
+
     return(
         <div>
             <NavbarUsers/>
@@ -78,30 +88,19 @@ function ViewPetToolInventory()
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                            <th scope="row">1</th>
-                            <td>Dog Cage</td>
-                            <td>6</td>
-                            <td>12500</td>
+                        {
+                            inventory.map((item,i)=>
+                                <tr key={i}>
+                            <td>{i+1}</td>
+                            <td>{item.Medicine}</td>
+                            <td>{item.Quantity}</td>
+                            <td>{item.Price}</td>
+                            {/* <td>{item.Medicine}</td> */}
                             </tr>
-                            <tr>
-                            <th scope="row">2</th>
-                            <td>Dog Grooming Tool</td>
-                            <td>20</td>
-                            <td>1630</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">3</th>
-                            <td>Dog bath brush</td>
-                            <td>29</td>
-                            <td>890</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">4</th>
-                            <td>Traction Belt</td>
-                            <td>19</td>
-                            <td>750</td>
-                            </tr>
+                            )
+                        }
+
+
                         </tbody>
                     </table>
                 </div>

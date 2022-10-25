@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import {Link, Search} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
@@ -7,14 +7,138 @@ import '../css/ViewPets.css';
 
 
 import dog from '../img/dog.jpg';
-import dog2 from '../img/d4.jpg';
-import dog3 from '../img/d3.jpg';
-import dog5 from '../img/d5.jpg';
-import dog6 from '../img/d6.jpg';
-import dog7 from '../img/d7.jpg';
 import NavbarUsers from '../../../includes/NavbarUsers';
 
 function ViewPets(){
+    const [pets,setPets]=useState([])
+    useEffect(()=>{
+      fetch("http://localhost:5000/staffmember/viewpets").then((result)=>{
+        result.json().then((resp)=>{
+          // console.warn(resp)
+          setPets(resp)
+          console.log(resp);
+        })
+      })
+    },[])
+    console.warn(pets)
+    console.log(pets)
+
+    const [medicalstatus,setMedicalstatus]=useState([])
+    useEffect(()=>{
+      fetch("http://localhost:5000/staffmember/viewmedicalstatus").then((result)=>{
+        result.json().then((resp)=>{
+          // console.warn(resp)
+          setMedicalstatus(resp)
+          console.log(medicalstatus);
+        })
+      })
+    },[])
+
+    const [medicalstatusinjury,setMedicalstatusinjury]=useState([])
+    useEffect(()=>{
+      fetch("http://localhost:5000/staffmember/viewmedicalstatusinjury").then((result)=>{
+        result.json().then((resp)=>{
+          // console.warn(resp)
+          setMedicalstatusinjury(resp)
+          console.log(resp);
+        })
+      })
+    },[])
+
+    const [medicalstatusother,setMedicalstatusother]=useState([])
+    useEffect(()=>{
+      fetch("http://localhost:5000/staffmember/viewmedicalstatusother").then((result)=>{
+        result.json().then((resp)=>{
+          // console.warn(resp)
+          setMedicalstatusother(resp)
+          console.log(resp);
+        })
+      })
+    },[])
+
+    const [buttonText, setButtonText] = useState('Post Pet ');
+
+    const handlepostpet = async (item) => {
+      // e.preventDefault();
+      setButtonText('Pet Posted ... ');
+      try {
+          const body = {item};
+          const PetID= item.petID ;
+          
+          const response = await fetch(
+          "http://localhost:5000/staffmember/postpetpost/${PetID}",
+              {
+                  method: "POST",
+                  headers: {
+                  "Content-type": "application/json"
+                  },
+                  // body: JSON.stringify(body)
+              }
+          );
+          console.log(response);
+      }
+      catch (err) {
+          console.log("Falil");
+      }
+  }
+
+     //onlick Vaccines button 
+     const Vaccines = ()=>{
+      return(
+        <div>
+          {medicalstatus.map((item,i)=>
+
+          <tbody className='text-center'>
+          <tr>
+            <td scope="row">{item.date}</td>
+            <td className='vaccineendalign'>{item.details}</td>
+          </tr>
+          </tbody>
+
+          )}
+
+      </div>
+      )
+    }
+
+    //onlick injury button 
+    const Injuries = ()=>{
+      return(
+        <div>
+          {medicalstatusinjury.map((item,i)=>
+
+          <tbody className='text-center'>
+          <tr>
+            <td scope="row">{item.date}</td>
+            <td className='vaccineendalign'>{item.details}</td>
+          </tr>
+          </tbody>
+
+        )}
+
+      </div>
+      )
+    }
+
+        //onlick Others button 
+        const Others = ()=>{
+          return(
+            <div>
+               {medicalstatusother.map((item,i)=>
+
+              <tbody className='text-center'>
+              <tr>
+                <td scope="row">{item.date}</td>
+                <td className='vaccineendalign'>{item.details}</td>
+              </tr>
+              </tbody>
+
+              )}
+    
+          </div>
+          )
+        }
+
     return(
         <div>
         <NavbarUsers/>
@@ -45,186 +169,38 @@ function ViewPets(){
           <div className="container ">
             <div className="row">
 
-              <div class="admincard col-md-4">       
-                <div className="card shadow" id='cardone'>
-                    <div >
-                      <img src={dog} className="imgcover rounded" alt="Services"/>
-                    </div>
-                    <div className="card-body" id='cardTitle'>
-                      <div className="petdetail">
-                        <div className='maindetails'>
-                          <h6 className="petName"><b>Shadow</b></h6>
-                          <div className="underline"></div>
-                          <h6 >Mix Breed</h6>
-                          <h6 >Male</h6>
-                          <h6>2 Months</h6>
-                          <h6>Brown and White</h6>
-                        </div>
-
-                          <div class="d-grid gap-2 ">
-                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
-                          </div>
-                  
-                        <h6 >Shadow is a calm, innocent and child friendly puppy. Its Vaccinations are up to date. Also It is in good health. </h6>
-                      </div>  
-                      
-                    </div>
-                    
-                    <Link to="postpets" class="nav-link active d-grid gap-2">
-                      <button type="button" class="btn btn-success postpetBtn" id="postpetbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
-                  </Link>
-                </div>
-              </div>
-
-              <div class="admincard col-md-4">       
-                <div className="card shadow" id='cardone'>
-                    <div className='dogimg'>
-                      <img src={dog2} className="imgcover rounded" alt="Services"/>
-                    </div>
-                    
-                    <div className="card-body" id='cardTitle'>
-                      <div className="petdetail">
-                        <div className='maindetails'>
-                          <h6 className="petName"><b>Browny</b></h6>
-                          <div className="underline"></div>
-                          <h6>Normal</h6>
-                          <h6>Male</h6>
-                          <h6>4 Years</h6>
-                          <h6>Brown, Light Brown</h6>
-                        </div>
-
-                          <div class="d-grid gap-2 ">
-                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
-                          </div>
-                  
-                        <h6 >Browny is a blowzy animal. Also it is best for security. Its Vaccinations are up to date. Also It is in good health. </h6>
-                      </div>  
-                      
-                    </div>
-                    
-                    <Link to="postpets" class="nav-link active d-grid gap-2">
-                      <button type="button" class="btn btn-success postpetBtn" id="postpetbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
-                  </Link>
-                </div>
-              </div>
-
-              <div class="admincard col-md-4">       
-                <div className="card shadow" id='cardone'>
-                    <img src={dog3} className="imgcover rounded" alt="Services"/>
-                    <div className="card-body" id='cardTitle'>
-                      <div className="petdetail">
-                        <div className='maindetails'>
-                          <h6 className="petName"><b>Shaily</b></h6>
-                          <div className="underline"></div>
-                          <h6>Normal</h6>
-                          <h6>Female</h6>
-                          <h6>3 Months</h6>
-                          <h6>Brown, White, Black</h6>
-                        </div>
-
-                          <div class="d-grid gap-2 ">
-                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
-                          </div>
-                  
-                        <h6 >Shaily is a qute and calm. It is a child friendly puppy. Its Vaccinations are up to date. Also It is in good health. </h6>
-                      </div>  
-                      
-                    </div>
-                    
-                    <Link to="postpets" class="nav-link active d-grid gap-2">
-                      <button type="button" class="btn btn-success postpetBtn" id="postpetbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
-                  </Link>
-                </div>
-              </div>
-
-              <div class="admincard col-md-4">       
-                <div className="card shadow" id='cardone'>
-                    <img src={dog5} className="imgcover rounded" alt="Services"/>
-                    <div className="card-body" id='cardTitle'>
-                      <div className="petdetail">
-                        <div className='maindetails'>
-                          <h6 className="petName"><b>Blacky</b></h6>
-                          <div className="underline"></div>
-                          <h6>Mix Breed</h6>
-                          <h6>Male</h6>
-                          <h6>2 Years</h6>
-                          <h6>Black, Light Brown</h6>
-                        </div>
-
-                          <div class="d-grid gap-2 ">
-                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
-                          </div>
-                  
-                        <h6 >Blacky is a innocent pet. It is a child friendly pet and playful pet. Its Vaccinations are up to date. Also It is in good health. </h6>
-                      </div>  
-                      
-                    </div>
-                    
-                    <Link to="postpets" class="nav-link active d-grid gap-2">
-                      <button type="button" class="btn btn-success postpetBtn" id="postpetbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
-                  </Link>
-                </div>
-              </div>
-
-              <div class="admincard col-md-4">       
-                <div className="card shadow" id='cardone'>
-                    <img src={dog6} className="imgcover rounded" alt="Services"/>
-                    <div className="card-body" id='cardTitle'>
-                      <div className="petdetail">
-                        <div className='maindetails'>
-                          <h6 className="petName"><b>Tommy</b></h6>
-                          <div className="underline"></div>
-                          <h6>Normal</h6>
-                          <h6>Male</h6>
-                          <h6>5 Years</h6>
-                          <h6>Brown, White</h6>
-                        </div>
-
-                          <div class="d-grid gap-2 ">
-                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
-                          </div>
-                  
-                        <h6 >Tommy is a innocent and calm. It is a silent pet but better friend for loneliness. Its Vaccinations are up to date. Also It is in good health. </h6>
-                      </div>  
-                      
-                    </div>
-                    
-                    <Link to="postpets" class="nav-link active d-grid gap-2">
-                      <button type="button" class="btn btn-success postpetBtn" id="postpetbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
-                  </Link>
-                </div>
-              </div>
-
-
-              <div class="admincard col-md-4">       
-                <div className="card shadow" id='cardone'>
-                    <img src={dog7} className="imgcover rounded" alt="Services"/>
-                    <div className="card-body" id='cardTitle'>
-                      <div className="petdetail">
-                        <div className='maindetails'>
-                          <h6 className="petName"><b>Bobby</b></h6>
-                          <div className="underline"></div>
-                          <h6>Normal</h6>
-                          <h6>Male</h6>
-                          <h6>3 month</h6>
-                          <h6>Brown, Black</h6>
-                        </div>
-
-                          <div class="d-grid gap-2 ">
-                            <button type="button" class="btn btn-outline-success editmedicalBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
-                          </div>
-                  
-                        <h6 >Bobby is a very active and playful pet. It is a child friendly pet. Its Vaccinations are up to date. Also It is in good health. </h6>
-                      </div>  
-                      
-                    </div>
-                    
-                    <Link to="postpets" class="nav-link active d-grid gap-2">
-                      <button type="button" class="btn btn-success postpetBtn" id="postpetbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
-                  </Link>
-                </div>
-              </div>
-
+              {pets.map((item,i)=>
+                           <div class="admincard col-md-4">       
+                           <div className="card shadow" id='cardone'>
+                               <div >
+                                 <img src={dog} className="imgcover rounded" alt="Services"/>
+                               </div>
+                               <div className="card-body" id='cardTitle'>
+                                 <div className="petdetail">
+                                   <div className='maindetails'>
+                                     <h6 className="petName"><b>{item.name}</b></h6>
+                                     <div className="underline"></div>
+                                     <h6>{item.breed}</h6>
+                                     <h6>{item.gender}</h6>
+                                     <h6>{item.age}</h6>
+                                     <h6>{item.color}</h6>
+                                   </div>
+         
+                                     <div class="d-grid gap-2 ">
+                                       <button type="button" class="btn btn-outline-success editmedicalBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
+                                     </div>
+                             
+                                   <h6 >{item.about}</h6>
+                                 </div>  
+                                 
+                               </div>
+                               
+                               <Link to="" class="nav-link active d-grid gap-2">
+                                 <button type="button" class="btn btn-success postpetBtn" id="postpetbtn" value={item.petID} onClick={(e) => handlepostpet(e.target.value)}>{buttonText} <i class="fa-solid fa-newspaper"></i></button>
+                             </Link>
+                           </div>
+                         </div>
+              )}
 
             </div>
           </div>
@@ -235,32 +211,55 @@ function ViewPets(){
                     <div class="modal-content">
                       <div class="modal-header">
                           <div class="container-fluid justify-content-start">
-                            <button class="btn btn-outline-success me-2 medicalbtn" type="button"> Vaccines </button>
-                            <button class="btn btn-outline-success me-2 medicalbtn" type="button"> Injuries </button>
-                            <button class="btn btn-outline-success me-2 medicalbtn" type="button"> Others </button>
+                            <button class="btn btn-outline-success me-2 medicalbtn"  type="button" onClick={Vaccines}> Vaccines </button>
+                            <button class="btn btn-outline-success me-2 medicalbtn" type="button" onClick={Injuries} > Injuries </button>
+                            <button class="btn btn-outline-success me-2 medicalbtn" type="button" onClick={Others}> Others </button>
                           </div>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
+
+                      
+
                       <div class="modal-body">
                         <div className="container donationTable">
                           <div className="row ">
                             {/* <table class="table  table-stripped table-hover"> */}
                             <table class="table table-stripped table-hover">
+
+                            {medicalstatus.map((item,i)=>
+
+                                <tbody className='text-center'>
+                                <tr>
+                                  <td scope="row">{item.date}</td>
+                                  <td className='vaccineendalign'>{item.details}</td>
+                                </tr>
+                                </tbody>
+              
+                            )}
+
+                            {medicalstatusinjury.map((item,i)=>
+
+                            <tbody className='text-center'>
+                            <tr>
+                              <td scope="row">{item.date}</td>
+                              <td className='vaccineendalign'>{item.details}</td>
+                            </tr>
+                            </tbody>
+
+                            )}
+
+                            {medicalstatusother.map((item,i)=>
+
+                            <tbody className='text-center'>
+                            <tr>
+                              <td scope="row">{item.date}</td>
+                              <td className='vaccineendalign'>{item.details}</td>
+                            </tr>
+                            </tbody>
+
+                            )}
                              
-                              <tbody className='text-center'>
-                                <tr>
-                                  <td scope="row">18.07.2020</td>
-                                  <td className='vaccineendalign'>Vaccinated for Rabies</td>
-                                </tr>
-                                <tr>
-                                  <td scope="row">12.07.2020</td>
-                                  <td className='vaccineendalign'>Vaccinated for Distemper</td>
-                                </tr>
-                                <tr>
-                                  <td scope="row">8.06.2020</td>
-                                  <td className='vaccineendalign'>Vaccinated for Parainfluenza</td>
-                                </tr>
-                              </tbody>
+                             
                             </table>
                           </div> 
                         </div>

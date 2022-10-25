@@ -1,13 +1,25 @@
 import React, {useEffect,useState} from "react";
-import {Link} from 'react-router-dom';
+import {Link,useLocation} from 'react-router-dom';
 import NavbarUsers from "../../../includes/NavbarUsers";
 import '../css/EditAdvertisement.css';
 
-function EditAdvertisement()
+export default function EditAdvertisement(props)
 {
+    const location = useLocation();
+    console.log(props,"props");
+    console.log(location, "Use location hook");
+    // const data = location.state?.data;
     const [editPetTools,setEditPetTools]=useState([])
+    const [users, setUser] = useState([])
+    const [Title, setTitle] = useState("");
+    const [Price, setPrice] = useState("");
+    const [Description, setDescription] = useState("");
+    
+
+
+
     useEffect(()=>{
-        fetch("http://localhost:5000/petstore/View").then((result)=>{
+        fetch("http://localhost:5000/petstore/Edit").then((result)=>{
         result.json().then((resp)=>{
             console.warn(resp)
             setEditPetTools(resp)
@@ -27,16 +39,7 @@ function EditAdvertisement()
             </section>
             <div>
 
-            {
-          editPetTools.map((item,i)=>
-            <tr key={i}>
-            <td>{item.User_ID}</td>
-          <td>{item.User_name}</td>
-          <td>{item.Email}</td>
-            <td>{item.User_type}</td>
-          </tr>
-          )
-        }
+            
 
                
             </div>
@@ -49,8 +52,8 @@ function EditAdvertisement()
                                 <div className="col-md-1">
 
                                 </div>
-                                {editPetTools.map((item,i)=>
-                                <div className="col-md-10 " key={i}>
+                                
+                                <div className="col-md-10 ">
                                     <h5 className="main-heading text-center">To Edit a Posted Advertisement</h5>
                                 <div className="underline mx-auto"></div>
                                     
@@ -60,11 +63,12 @@ function EditAdvertisement()
                                     
                                     <div className="form-group ">
                                         <label className="mb-1">Title</label>
-                                        <input type="text" className="form-control" value ={item.Title} placeholder="Enter Title"></input>
+                                        <input type="text" className="form-control" value ={Title} onChange={(e)=>{setTitle(e.target.value)}} placeholder="Enter Title"></input>
+
                                     </div>
                                     <div className="form-group">
                                         <label className="mb-1 mt-2">Price</label>
-                                        <input type="text" className="form-control" placeholder={item.Price}></input>
+                                        <input type="text" className="form-control" value ={Price} onChange={(e)=>{setPrice(e.target.value)}} placeholder="Enter Title"></input>
                                     </div>
                                     <div className="form-group">
                                         <label className="mb-1 mt-2">Image</label>
@@ -73,7 +77,7 @@ function EditAdvertisement()
                                     
                                     <div className="form-group">
                                         <label className="mb-1 mt-2">Description</label>
-                                        <textarea rows="4" className="form-control" placeholder={item.Description}></textarea>
+                                        <textarea rows="4" className="form-control" value ={Description} onChange={(e)=>{setDescription(e.target.value)}} placeholder="enter description"></textarea>
                                     </div>
                                     {/* <div className="form-group py-3">
                                         <button type="button" className="btn btn-success shadow w-100 ">Send</button>
@@ -86,9 +90,7 @@ function EditAdvertisement()
                                     </div>
                                     
                                 </div>
-                                        
-                                )
-                                }
+                                
                                 <div className="col-md-1">
                                     
                                 </div>
@@ -106,4 +108,4 @@ function EditAdvertisement()
     );
 }
 
-export default EditAdvertisement;
+// export default EditAdvertisement;
