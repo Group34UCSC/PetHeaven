@@ -49,7 +49,7 @@ function PostPet(){
             <div className="container ">
                 <div className="row bg-success text-white titlebox"> 
                     <div className="col-md-4 my-auto"></div>
-                    <h3 className="text-center ">Post New Pet <i class="fa-solid fa-paw"></i></h3>
+                    <h3 className="text-center ">Post New Pet <i className="fa-solid fa-paw"></i></h3>
                 </div>
             </div>
             </section>
