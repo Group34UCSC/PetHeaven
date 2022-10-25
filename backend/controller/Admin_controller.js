@@ -3,7 +3,7 @@ const {isEmpty}  = require('../utils/is_empty');
 const Joi = require('@hapi/joi');
 const JWT = require('jsonwebtoken');
 const conn = require('../service/db_service');
-const {CHECK_EMAIL,REGISTER_USER, DELETE_USER, CHECK_EMAIL_UPDATE } = require('../query/Admin');
+const {CHECK_EMAIL,REGISTER_USER, DELETE_USER, CHECK_EMAIL_UPDATE , DONATION } = require('../query/Admin');
 const { SIGNUP_MODEL , UPDATE_MODEL} = require('../model/Admin');
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
@@ -286,7 +286,60 @@ exports.Create_Accounts = (req,res,next)=>{
 
                
                 
-                      conn.query(PharmacyrViewQuery, function (err,result){
+                      conn.query(PharmacyViewQuery, function (err,result){
+                       if( err ) {
+                        console.log(err);
+                        res.send("Unable to get the comments");
+                       }
+                       else{
+                        res.send(result);
+                       }
+           
+                      })
+
+                
+               }
+
+
+  
+
+                  exports.Donation = (req,res,next)=>{
+ 
+                     if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
+                     
+                     try{
+                                    
+                            conn.query(DONATION, [ [ req.body.UserName,req.body.Date,req.body.Amount,req.body.AccNO,req.body.Branch]], (err,data,feilds)=>{
+                             if( err ) return next(new AppError(err,500));
+                 
+                             res.status(201).json({
+                                data: "Donation Registration Success!"
+                             })
+                 
+                            })
+                   
+                           
+                         
+                      }
+                      catch( err )
+                      {
+                         res.status(500).json({
+                            error: err
+                         })
+                      }
+                 }
+
+
+
+            
+                               
+              exports.DonationView = (req,res,next)=>{
+
+               var donationViewQuery= "SELECT * FROM donation";
+
+               
+                
+                      conn.query(donationViewQuery, function (err,result){
                        if( err ) {
                         console.log(err);
                         res.send("Unable to get the comments");

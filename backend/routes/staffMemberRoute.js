@@ -17,7 +17,9 @@ staffMemberRoute.get('/viewmedicalstatus',StaffMember_controller.Staffmemberview
 staffMemberRoute.get('/viewmedicalstatusinjury',StaffMember_controller.Staffmemberviewmedicalstatusinjuries);
 staffMemberRoute.get('/viewmedicalstatusother',StaffMember_controller.Staffmemberviewmedicalstatusother);
 staffMemberRoute.post('/addnewadopter',StaffMember_controller.Staffmemberaddnewadopter);
-staffMemberRoute.post('/deletepost/:post_id',StaffMember_controller.Staffmemberdeletepost);
+staffMemberRoute.post('/deletepost/:Post_ID',StaffMember_controller.Staffmemberdeletepost);
+
+staffMemberRoute.post('/postpetpost',StaffMember_controller.Staffmemberpostpetpost);
 
 
 staffMemberRoute.post('/responsefeedback/:adopter_id',StaffMember_controller.Staffmemberresponsefeedback);

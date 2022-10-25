@@ -53,3 +53,8 @@ exports.STAFFMEMBERADDADOPTER_MODEL = Joi.object({
    kids:Joi.string().required()
 })
 
+exports.STAFFMEMBERPOSTPETPOST_MODEL = Joi.object({
+   petID: Joi.number().integer(),
+   status:Joi.number().required()
+})
+

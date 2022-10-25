@@ -56,6 +56,122 @@ function ViewPets(){
       })
     },[])
 
+    const [buttonText, setButtonText] = useState('Post Pet ');
+
+    const handlepostpet = async (item) => {
+      // e.preventDefault();
+      setButtonText('Pet Posted ... ');
+      try {
+          const body = {item};
+          const PetID= item.petID ;
+          
+          const response = await fetch(
+          "http://localhost:5000/staffmember/postpetpost/${PetID}",
+              {
+                  method: "POST",
+                  headers: {
+                  "Content-type": "application/json"
+                  },
+                  // body: JSON.stringify(body)
+              }
+          );
+          console.log(response);
+      }
+      catch (err) {
+          console.log("Falil");
+      }
+  }
+
+     //onlick Vaccines button 
+     const Vaccines = ()=>{
+      return(
+        <div>
+          {medicalstatus.map((item,i)=>
+
+          <tbody className='text-center'>
+          <tr>
+            <td scope="row">{item.date}</td>
+            <td className='vaccineendalign'>{item.details}</td>
+          </tr>
+          </tbody>
+
+          )}
+
+      </div>
+      )
+    }
+
+    //onlick injury button 
+    const Injuries = ()=>{
+      return(
+        <div>
+          {medicalstatusinjury.map((item,i)=>
+
+          <tbody className='text-center'>
+          <tr>
+            <td scope="row">{item.date}</td>
+            <td className='vaccineendalign'>{item.details}</td>
+          </tr>
+          </tbody>
+
+        )}
+
+      </div>
+      )
+    }
+
+        //onlick Others button 
+        const Others = ()=>{
+          return(
+            <div>
+               {medicalstatusother.map((item,i)=>
+
+              <tbody className='text-center'>
+              <tr>
+                <td scope="row">{item.date}</td>
+                <td className='vaccineendalign'>{item.details}</td>
+              </tr>
+              </tbody>
+
+              )}
+    
+          </div>
+          )
+        }
+
+    const [medicalstatus,setMedicalstatus]=useState([])
+    useEffect(()=>{
+      fetch("http://localhost:5000/staffmember/viewmedicalstatus").then((result)=>{
+        result.json().then((resp)=>{
+          // console.warn(resp)
+          setMedicalstatus(resp)
+          console.log(medicalstatus);
+        })
+      })
+    },[])
+
+    const [medicalstatusinjury,setMedicalstatusinjury]=useState([])
+    useEffect(()=>{
+      fetch("http://localhost:5000/staffmember/viewmedicalstatusinjury").then((result)=>{
+        result.json().then((resp)=>{
+          // console.warn(resp)
+          setMedicalstatusinjury(resp)
+          console.log(resp);
+        })
+      })
+    },[])
+
+    const [medicalstatusother,setMedicalstatusother]=useState([])
+    useEffect(()=>{
+      fetch("http://localhost:5000/staffmember/viewmedicalstatusother").then((result)=>{
+        result.json().then((resp)=>{
+          // console.warn(resp)
+          setMedicalstatusother(resp)
+          console.log(resp);
+        })
+      })
+    },[])
+
      //onlick Vaccines button 
      const Vaccines = ()=>{
       return(
@@ -169,8 +285,8 @@ function ViewPets(){
                                  
                                </div>
                                
-                               <Link to="postpets" class="nav-link active d-grid gap-2">
-                                 <button type="button" class="btn btn-success postpetBtn" id="postpetbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
+                               <Link to="" class="nav-link active d-grid gap-2">
+                                 <button type="button" class="btn btn-success postpetBtn" id="postpetbtn" value={item.petID} onClick={(e) => handlepostpet(e.target.value)}>{buttonText} <i class="fa-solid fa-newspaper"></i></button>
                              </Link>
                            </div>
                          </div>
