@@ -13,6 +13,8 @@ AdminRoute.post("/DoctorRegister/:DocID",Admin_controller.DoctorRegister);
 AdminRoute.post("/PharmacyRegister/:PhyID",Admin_controller.PharmacyRegister);
 AdminRoute.get("/PharmacyView",Admin_controller.PharmacyView);
 AdminRoute.post("/Donation",Admin_controller.Donation);
+AdminRoute.get("/DonationView",Admin_controller.DonationView);
+
 
 // SignUpRoute.route("/")
 //     .post( SignUp_controller.User_SignUp)
