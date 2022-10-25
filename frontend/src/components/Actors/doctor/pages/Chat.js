@@ -8,6 +8,13 @@ function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
 
+
+  useEffect(() => {
+    socket.on("receive_message", (data) => {
+      setMessageList((list) => [...list, data]);
+    });
+  }, [socket]);
+
   const sendMessage = async () => {
     if (currentMessage !== "") {
       const messageData = {
@@ -26,11 +33,7 @@ function Chat({ socket, username, room }) {
     }
   };
 
-  useEffect(() => {
-    socket.on("receive_message", (data) => {
-      setMessageList((list) => [...list, data]);
-    });
-  }, [socket]);
+ 
 
   return (
     <div className="chat-window">

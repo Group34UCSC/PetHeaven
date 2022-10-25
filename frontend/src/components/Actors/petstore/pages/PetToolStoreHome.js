@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect,useState} from "react";
 import {Link} from 'react-router-dom';
 import '../css/PetToolStoreHome.css';
 
@@ -6,19 +6,32 @@ import PaidOrders from "../images/payment.png";
 import Inquiries from "../images/inquiry.jpg";
 import Inventory from "../images/inventory.png";
 
-import Bathroom from "../images/bathroom.jpg";
-import Grooming from "../images/DogGrooming.jpg";
-import FurnitureCage from "../images/FurnitureCage.jpg";
-import PetCage from "../images/PetCage.jpg";
-import TractionBelt from "../images/TractionBelt.jpg";
+// import Bathroom from "../images/bathroom.jpg";
+// import Grooming from "../images/DogGrooming.jpg";
+// import FurnitureCage from "../images/FurnitureCage.jpg";
+// import PetCage from "../images/PetCage.jpg";
+// import TractionBelt from "../images/TractionBelt.jpg";
 import NavbarUsers from "../../../includes/NavbarUsers";
 
 
 function PetToolStoreHome()
 {
+    const data = useState({});
+    const [petTools,setPetTools]=useState([])
+    useEffect(()=>{
+        fetch("http://localhost:5000/petstore/View").then((result)=>{
+        result.json().then((resp)=>{
+            console.warn(resp)
+            setPetTools(resp)
+            console.log(resp)
+        })
+    })},[])
+    // console.warn(petTools)
+    const[searchTerm, setSearchTerm]=useState('')
     return(
         <div>
             <NavbarUsers/>
+            
             {/* Topic started */}
             <section className="py-4 ">
             <div className="container">
@@ -115,27 +128,46 @@ function PetToolStoreHome()
                             <div className="row ml-4">
 
                         {/* Search box started here         */}
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" id="petsearchby-name" aria-describedby="petsearch" placeholder="search advertisements by advertisement id or title"></input>
+                        <div class="col-md-12">
+                            {/* <input type="text" class="form-control" id="petsearchby-name" aria-describedby="petsearch" placeholder="search advertisements by advertisement id or title"></input>
+                            
+                            </div> */}
+                             {/* search */}
+                        <div class="container">
+
+                            <div class="row height d-flex justify-content-center align-items-center">
+
+                            <div class="col-md-8">
+
+                                <div class="form">
+                                {/* <i class="fa fa-search"></i> */}
+                                <input type="text" class="form-control form-input" placeholder="Search by Tool item name" onChange={(e)=>{setSearchTerm(e.target.value)}} />
+                                {/* <span class="left-pan"><i class="fa fa-microphone"></i></span> */}
+                                </div>
+                                
+                            </div>
                             
                             </div>
+
+                        </div>
                         {/* Search box ended here          */}
 
                         {/* Search button started here      */}
-                            <div class="col-md-2">
+                            {/* <div class="col-md-2">
                             <button type="submit" class="btn btn-success " id="petsearch-btn">Search <i class="fa-solid fa-magnifying-glass"></i></button>
-                            </div>
+                            </div> */}
                         {/* Search box ended here      */}
 
                         </div>
                             </div>
                             
                         </div>
-                        
+                        </div>
                         
                         </div>
                     </form>
                 </div>
+                
                 {/* Search bar ended here */}
 
                 <div className="form-field">
@@ -146,7 +178,7 @@ function PetToolStoreHome()
         <section className="section bg-c-light border-top">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-3">
+                        {/* <div className="col-md-3">
                             <div className="card shadow">
                             
                             <div className="card-body">
@@ -166,17 +198,17 @@ function PetToolStoreHome()
                                         </Link>
                                         </div>
                                 </div>
-                                    {/* <h4 id="price">Rs. 1630</h4> */}
+                                   
                                     <div className="mb-2 mt-2 ">
                                         <Link to="/petstore/EditAdvertisement" class="nav-link active">
-                                            {/* <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button> */}
+                                            
                                             <button type="button" id="submit-btn" className="btn shadow w-100 ">Edit</button>
                                         </Link>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-md-3">
+                        </div> */}
+                        {/* <div className="col-md-3">
                             <div className="card shadow">
                             <div className="card-body">
                                 <h6>Dog grooming tools</h6>   
@@ -194,18 +226,18 @@ function PetToolStoreHome()
                                         </Link>
                                         </div>
                                 </div>
-                                {/* <h4 id="price">Rs. 890</h4> */}
+                                
                                     <div className="mb-2 mt-2 ">
                                         <Link to="/petstore/EditAdvertisement" class="nav-link active">
-                                            {/* <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button> */}
+                                            
                                             <button type="button" id="submit-btn" className="btn shadow w-100 ">Edit</button>
                                         </Link>
                                     </div>
 
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-md-3">
+                        </div> */}
+                        {/* <div className="col-md-3">
                             <div className="card shadow">
                             <div className="card-body">
                                 <h6>Furniture Cage</h6>   
@@ -223,16 +255,16 @@ function PetToolStoreHome()
                                         </Link>
                                         </div>
                                 </div>
-                                {/* <h4 id="price">Rs. 15200</h4> */}
+                                
                                     <div className="mb-2 mt-2 ">
                                         <Link to="/petstore/EditAdvertisement" class="nav-link active">
-                                            {/* <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button> */}
+                                            
                                             <button type="button" id="submit-btn" className="btn shadow w-100 ">Edit</button>
                                         </Link>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         {/* <div className="col-md-3">
                             <div className="card shadow">
                             <div className="card-body">
@@ -245,49 +277,53 @@ function PetToolStoreHome()
                                 </div>
                             </div>
                         </div> */}
-                        <div className="col-md-3">
-                            <div className="card shadow">
-                            <div className="card-body">
-                                <h6>Traction Belt</h6>   
-                                <div className="underline"></div>       
-                            </div>
-                            <img src={TractionBelt} className="w-100 border-bottom" alt="Services"/>
+
+
+                        {
+                            
+                            petTools.filter((item)=>{
+                                if(searchTerm == ""){
+                                    return item
+                                }else if (item.Title.toLowerCase().includes(searchTerm.toLowerCase())){
+                                    return item
+                                }
+                            }).map((item,i)=>
+                        
+                            <div className="col-md-3 mb-3" key={i}>
+                                <div className="card shadow">
                                 <div className="card-body">
-
-                                <div className="form-group row ">
-                                        <div className="col-md-7">
-                                            <h4 id="price">Rs. 780</h4>
-                                        </div>
-                                        <div className="col-md-5">
-                                        <Link to="/petstore/advertisement/MoreDetails" class="nav-link active">
-                                            <button type="button" id="view-btn" className="btn shadow w-100 ">See More</button>
-                                        </Link>
-                                        </div>
+                                    <h6>{item.Title}</h6>   
+                                    <div className="underline"></div>       
                                 </div>
-
-
-                                {/* <h4 id="price">Rs. 780</h4> */}
-                                    <div className="mb-2 mt-2 ">
-                                        <Link to="/petstore/EditAdvertisement" class="nav-link active">
-                                            {/* <button type="button" id="post-add-btn" className="btn shadow w-100 ">Post a New Advertisement</button> */}
-                                            <button type="button" id="submit-btn" className="btn shadow w-100 ">Edit</button>
-                                        </Link>
+                                <img src={item.Image} className="w-100 border-bottom" alt="Services"/>
+                                    <div className="card-body">
+    
+                                    <div className="form-group row ">
+                                            <div className="col-md-7">
+                                                <h4 id="price">Rs. {item.Price}</h4>
+                                            </div>
+                                            <div className="col-md-5">
+                                            <Link to="/petstore/advertisement/MoreDetails" class="nav-link active">
+                                                <button type="button" id="view-btn" className="btn shadow w-100 ">See More</button>
+                                            </Link>
+                                            </div>
+                                    </div>
+    
+    
+                                    
+                                        <div className="mb-2 mt-2 ">
+                                            <Link to="/petstore/EditAdvertisement" state = {{data: data}} class="nav-link active">
+                                                
+                                                <button type="button" id="submit-btn" className="btn shadow w-100 ">Edit</button>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        {/* <div className="col-md-3">
-                            <div className="card shadow">
-                            <div className="card-body">
-                                <h6>Dog bath brush</h6>   
-                                <div className="underline"></div>       
-                            </div>
-                            <img src={Grooming} className="w-100 border-bottom" alt="Services"/>
-                                <div className="card-body">
-                                    <p>PetHeaven is an online web based system to facilitate services for animals specially</p>
-                                </div>
-                            </div>
-                        </div> */}
+                            )}
+                        
+
+                        
                     </div>
                 </div>
                 

@@ -26,6 +26,39 @@ function ViewPost(){
     console.warn(posts)
     console.log(posts)
 
+    const  DeletePost = async (item) => {
+       
+  
+        var raw = "";
+  
+         var requestOptions = {
+              method: 'POST',
+              body: raw,
+              redirect: 'follow'
+            };
+          try {
+              const body = { item };
+              const Post_ID= item.postID ;
+              console.log(item.postID)
+              const response = await fetch(
+                  `http://localhost:5000/staffmember/deletepost/${Post_ID}`,
+                  requestOptions)
+              ;
+              console.log(response);
+          }
+          catch (err) {
+              console.log(err);
+          }
+  
+      }
+
+    //   const [tempId, setTempId] = useState();
+
+    //   const getData = (post_id) => {
+    //     let tempId = post_id;
+    //     setTempId(item => tempId);
+    //   }
+
     return(
         <div>
         <NavbarUsers/>
@@ -62,10 +95,11 @@ function ViewPost(){
                             <h6 >{item.age}</h6>
                             <h6 >{item.color}</h6>
                             <h6>{item.about}</h6>
+                            <h6 class="petpostIDHidden">{item.postID}</h6>
                         </div>  
                         
                         </div>
-                        <button type="button" class="btn btn-success deleteBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Post <i class="fa-solid fa-trash"></i></button>
+                        <button type="button" class="btn btn-success deleteBtn"  onClick={() => DeletePost(item)}>Delete Post <i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
                 
@@ -74,7 +108,7 @@ function ViewPost(){
             </div>
           </div>
         </section>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        {/* <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                                
@@ -90,7 +124,7 @@ function ViewPost(){
                                             <div class="row gx-5 ">
                                                     <div class="col ">
                                                         <Link to="/viewpets" class="nav-link active">
-                                                            <button type="button" className="btn btn-success shadow w-100 postPetBtn"><b>Yes  <i class="fa-solid fa-check"></i></b></button>
+                                                            <button type="button" className="btn btn-success shadow w-100 postPetBtn" onClick={() => DeletePost(tempId)}><b>Yes  <i class="fa-solid fa-check"></i></b></button>
                                                         </Link>
                                                     </div>
                                                     <div class="col ">
@@ -105,7 +139,9 @@ function ViewPost(){
                         </div>
                     </div>
                 </div>
-      </div>   
+      */}
+
+      </div>
     )
 }
 

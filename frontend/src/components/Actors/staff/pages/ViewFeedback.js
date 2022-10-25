@@ -52,7 +52,7 @@ function ViewFeedback(){
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    {item.message}
+                                    {item.comment}
                                 </div>
 
                                 <button type="button" class="btn btn-success replyBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply <i class="fa-solid fa-reply"></i></button>
@@ -61,52 +61,11 @@ function ViewFeedback(){
                                 
                         
                         )}
-
-                        {/* <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <i class="fa-solid fa-user"></i><b>H.P.T.K. Kasthuriarachchi</b> 
-                            </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                How can I contact the owner of this chrity organization. Our organization happy to help your charity organization. We are expect to donate and also we are hope to do another programs. Can I contact the Head of this charity organization.
-                            </div>
-                        
-                            <button type="button" class="btn btn-success replyBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply <i class="fa-solid fa-reply"></i></button>
-                           
-                        </div>
-                    </div>    
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <i class="fa-solid fa-user"></i><b>J.J.L.S. Adikari</b> 
-                            </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                How can I contact the owner of this chrity organization. Our organization happy to help your charity organization. We are expect to donate and also we are hope to do another programs. Can I contact the Head of this charity organization.
-                            </div>
-                                <button type="button" class="btn btn-success replyBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply <i class="fa-solid fa-reply"></i></button>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                <i class="fa-solid fa-user"></i><b>P.K.S.Samarasinghe</b> 
-                            </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                            How can I contact the owner of this chrity organization. Our organization happy to help your charity organization. We are expect to donate and also we are hope to do another programs. Can I contact the Head of this charity organization.
-                            </div>
-                                <button type="button" class="btn btn-success replyBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply <i class="fa-solid fa-reply"></i></button>
-                            </div>
-                        </div> */}
                     </div>
                     
               </div>
             </section>
+
 
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">

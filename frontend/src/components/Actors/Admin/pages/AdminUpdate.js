@@ -15,6 +15,19 @@ import '../css/AdminUpdate.css';
 import NavbarUsers from "../../../includes/NavbarUsers";
 
 
+
+// import React from 'react';
+// import Popup from 'reactjs-popup';
+
+// const PopupExample = () => (
+//   <Popup trigger={<button> Trigger</button>} position="right center">
+//     <div>Popup content here !!</div>
+//   </Popup>
+// );
+
+
+
+
 const REGISTER_URL = "http://localhost:5000/SignUp";
 const AdminUpdate = () => {
 

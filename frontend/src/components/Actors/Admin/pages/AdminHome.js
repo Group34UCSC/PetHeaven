@@ -79,17 +79,45 @@ function AdminHome() {
                    </div>
 
 
-                   {/* <div class="admincard col-md-6">
+                   
+                   <div class="admincard col-md-6">
                        
                        <div className="card shadow" id='cardone'>
-                       <Link to="View"><img src={view} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
+                       <Link to="checkDoctor"><img src={update} className="w-50  border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
                            <div className="card-body">
-                               <h6>VIEW REPORTS</h6>
+                               <h6>CHECK DOCTOR QUALIFICATIONS</h6>
                                <div className="underline"></div>
-                               <p>View PetHeaven user Accounts</p>
+                               <p>Check PetHeaven doctor details</p>
                            </div>
                        </div>
-                   </div> */}
+                   </div>
+
+
+                   <div class="admincard col-md-6">
+                       
+                       <div className="card shadow" id='cardone'>
+                       <Link to="pharmacy"><img src={view} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
+                           <div className="card-body">
+                               <h6>CHECK PHARMACY QUALIFICATIONS</h6>
+                               <div className="underline"></div>
+                               <p>View PetHeaven related Pharmacy Accounts</p>
+                           </div>
+                       </div>
+                   </div>
+
+
+                   
+                   <div class="admincard col-md-6">
+                       
+                       <div className="card shadow" id='cardone'>
+                       <Link to="donation"><img src={view} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
+                           <div className="card-body">
+                               <h6>USER DONATIONS</h6>
+                               <div className="underline"></div>
+                               <p>View & Add user donation details</p>
+                           </div>
+                       </div>
+                   </div>
 
                         
                     </div>

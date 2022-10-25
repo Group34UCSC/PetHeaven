@@ -8,6 +8,13 @@ AdminRoute.get("/View",Admin_controller.View_Accounts);
 AdminRoute.post("/Update",Admin_controller.Update_Accounts);
 AdminRoute.get("/ComplainsView",Admin_controller.ComplainsView_Accounts);
 AdminRoute.post("/FixError",Admin_controller.FixError);
+AdminRoute.get("/DoctorView",Admin_controller.DoctorView);
+AdminRoute.post("/DoctorRegister/:DocID",Admin_controller.DoctorRegister);
+AdminRoute.post("/PharmacyRegister/:PhyID",Admin_controller.PharmacyRegister);
+AdminRoute.get("/PharmacyView",Admin_controller.PharmacyView);
+AdminRoute.post("/Donation",Admin_controller.Donation);
+AdminRoute.get("/DonationView",Admin_controller.DonationView);
+
 
 // SignUpRoute.route("/")
 //     .post( SignUp_controller.User_SignUp)

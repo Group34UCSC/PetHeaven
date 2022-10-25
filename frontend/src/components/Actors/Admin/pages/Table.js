@@ -4,11 +4,16 @@ import '../css/AdminView.css';
 
 function Table() {
 
+
+ 
   const [users, setUser] = useState([])
   const [User_name, setName] = useState("");
   const [Email, setEmail] = useState("");
   const [User_type, setuserType] = useState("");
   const [User_ID,setUserId]=useState(null)
+
+
+
 
   useEffect(()=>{
    getUsers();
