@@ -301,31 +301,7 @@ exports.Create_Accounts = (req,res,next)=>{
                }
 
 
-               
-               // exports.Donation = (req,res,next)=>{
-               //    const name = req.body.AccNO;  
-               //        console.log(req.body)
-               //    // var Donation_Query=  `INSERT INTO donation  VALUES  UserName='${req.body.UserName}',Date='${req.body.Date}',Amount='${req.body.Amount}',AccNO='${req.body.AccNO}',Branch='${req.body.Branch}' WHERE AccNO ='${name}'`;
-               //    var Donation_Query=  "INSERT INTO donation  VALUES  (req.body.UserName,req.body.Date,req.body.Amount,req.body.AccNO,req.body.Branch)";
- 
-                  
-                   
-               //           conn.query(Donation_Query, name,function (err,result){
-               //            if( err ) {
-               //             console.log(err);
-               //             res.send("Unable to get the comments");
-               //            }
-               //            else{
-               //             res.send(result);
-               //            }
-              
-               //           })
-
-                   
-               //    }
-
-
-
+  
 
                   exports.Donation = (req,res,next)=>{
  
@@ -352,6 +328,30 @@ exports.Create_Accounts = (req,res,next)=>{
                          })
                       }
                  }
+
+
+
+            
+                               
+              exports.DonationView = (req,res,next)=>{
+
+               var donationViewQuery= "SELECT * FROM donation";
+
+               
+                
+                      conn.query(donationViewQuery, function (err,result){
+                       if( err ) {
+                        console.log(err);
+                        res.send("Unable to get the comments");
+                       }
+                       else{
+                        res.send(result);
+                       }
+           
+                      })
+
+                
+               }
 
                  
 

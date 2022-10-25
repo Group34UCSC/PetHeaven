@@ -10,7 +10,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SignUpImg from "../../../images/both.jpeg";
+import SignUpImg from "../../../images/donation.jpg";
 import '../css/AdminUpdate.css';
 import NavbarUsers from "../../../includes/NavbarUsers";
 
@@ -43,16 +43,17 @@ const donation = () => {
     // }, [])
 
     // function getUsers() {
-    //     fetch("http://localhost:5000/Admin/View").then((result) => {
+    //     fetch("http://localhost:5000/Admin/DonationView").then((result) => {
     //         result.json().then((resp) => {
     //             // console.warn(resp)
 
     //             setUser(resp)
-    //             setName(resp[0].User_name)
-    //             setuserType(resp[0].User_type)
-    //             setEmail(resp[0].Email)
-    //             setUserId(resp[0].User_ID)
-
+    //             setUserName(resp[0].UserName)
+    //             setAccNO(resp[0].AccNO)
+    //             setBranch(resp[0].Branch)
+    //             setDate(resp[0].Date)
+    //             setAmount(resp[0].Amount)
+    //             setdonationID(resp[0].donationID)
     //         })
     //     })
     // }
@@ -68,30 +69,30 @@ const donation = () => {
     // }
 
 
-    const  DeleteUser = async (item) => {
-      console.log("prasad")
+    // const  DeleteUser = async (item) => {
+    //   console.log("prasad")
 
-      var raw = "";
+    //   var raw = "";
 
-       var requestOptions = {
-            method: 'POST',
-            body: raw,
-            redirect: 'follow'
-          };
-        try {
-            const body = { item };
-            const UserID= item.User_ID ;
-            const response = await fetch(
-                `http://localhost:5000/Admin/Delete/${UserID}`,
-                requestOptions)
-            ;
-            console.log(response);
-        }
-        catch (err) {
-            console.log(err);
-        }
+    //    var requestOptions = {
+    //         method: 'POST',
+    //         body: raw,
+    //         redirect: 'follow'
+    //       };
+    //     try {
+    //         const body = { item };
+    //         const UserID= item.User_ID ;
+    //         const response = await fetch(
+    //             `http://localhost:5000/Admin/Delete/${UserID}`,
+    //             requestOptions)
+    //         ;
+    //         console.log(response);
+    //     }
+    //     catch (err) {
+    //         console.log(err);
+    //     }
 
-    }
+    // }
 
 
 
@@ -185,7 +186,7 @@ const[searchTerm, setSearchTerm]=useState('')
                                      
                                               
                                             <label htmlFor="username" class="labels">
-                                                    User Name
+                                                    Full Name
                                                    
                                                 </label>
                                                 <input class="inputFields"
@@ -234,7 +235,7 @@ const[searchTerm, setSearchTerm]=useState('')
                                                    
                                                 </label>
                                                 <input class="inputFields"
-                                                    type="text"
+                                                    type="date"
                                                     id="usertype"
                                                     value={Date} onChange={(e)=>{setDate(e.target.value)}}
                                                     placeholder="Enter Date"
@@ -296,7 +297,7 @@ const[searchTerm, setSearchTerm]=useState('')
 
                 <div class="form">
                   <i class="fa fa-search"></i>
-                  <input type="text" class="form-control form-input" placeholder="Search Name , UserType or Email..." onChange={(e)=>{setSearchTerm(e.target.value)}} />
+                  <input type="text" class="form-control form-input" placeholder="Search User Name ..." onChange={(e)=>{setSearchTerm(e.target.value)}} />
                   <span class="left-pan"><i class="fa fa-microphone"></i></span>
                 </div>
                 
@@ -318,37 +319,37 @@ const[searchTerm, setSearchTerm]=useState('')
                         <table class="table view">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col">ID</th>
+                                    <th scope="col">Donation ID</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">User Type</th>
-                                    <th scope="col">Operation</th>
-                                    <th scope="col">Operation</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Acc No</th>
+                                    <th scope="col">Branch</th>
                                 </tr>
                             </thead>
-                            {/* <tbody>
+                            <tbody>
 
                                 {
                                     users.filter((item)=>{
                                         if(searchTerm == ""){
                                             return item
-                                        }else if (item.User_name.toLowerCase().includes(searchTerm.toLowerCase()) || item.User_type.toLowerCase().includes(searchTerm.toLowerCase()) || item.Email.toLowerCase().includes(searchTerm.toLowerCase())){
+                                        }else if (item.UserName.toLowerCase().includes(searchTerm.toLowerCase()) ){
                                             return item
                                         }
                                     }).map((item, i) =>
                                         <tr key={i}>
-                                            <td>{item.User_ID}</td>
-                                            <td>{item.User_name}</td>
-                                            <td>{item.Email}</td>
-                                            <td>{item.User_type}</td>
-                                            <td><button type="button" class="btn btn-warning" onClick={() => UpdateUser(item)}>Update</button></td>
-                                            <td><button type="button" class="btn btn-danger" onClick={() => DeleteUser(item)}>Deactivated</button></td>
+                                            <td>{item.donationID}</td>
+                                            <td>{item.UserName}</td>
+                                            <td>{item.Date}</td>
+                                            <td>{item.Amount}</td>
+                                            <td>{item.AccNO}</td>
+                                            <td>{item.Branch}</td>
                                         </tr>
                                     )
                                 }
 
 
-                            </tbody> */}
+                            </tbody>
                         </table>
 
 

@@ -4,6 +4,8 @@ import NavbarUsers from "../../../includes/NavbarUsers";
 class Post extends Component {
     state = {
         title: '',
+        income:'',
+        expences:'',
         content: '',
         image: '',
         postSubmitted: false
@@ -40,11 +42,20 @@ class Post extends Component {
                                     <div className="well well-sm">
                                         <form className="form-horizontal" method="post">
                                             <fieldset>
-                                                <legend className="text-center header">Add new Post</legend>
+                                                <legend className="text-center header">Create New Report</legend>
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
                                                     <input onChange={this.onChange('title')} name="title" type="text" placeholder="Post Title" className="form-control" />
                                                 </div>
+                                                <div className="form-group">
+                                                    <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
+                                                    <input onChange={this.onChange('income')} name="income" type="text" placeholder="Post Income" className="form-control" />
+                                                </div>
+                                                <div className="form-group">
+                                                    <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
+                                                    <input onChange={this.onChange('expences')} name="expences" type="text" placeholder="Post Expences" className="form-control" />
+                                                </div>
+
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
                                                     <input onChange={this.onChange('image')} name="image" type="text" placeholder="https://" className="form-control" />
@@ -63,7 +74,7 @@ class Post extends Component {
                             </div>
                         </div>
                     </div>) : (
-                        <PDF title={this.state.title} content={this.state.content} image={this.state.image} />
+                        <PDF title={this.state.title} content={this.state.content} image={this.state.image} income={this.state.income} expences={this.state.expences}/>
                     )
                 }
             </>
