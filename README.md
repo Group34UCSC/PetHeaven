@@ -4,4 +4,4 @@ we provide online channeling for veterinary doctors and take their advice via vi
 an ability to communicate with the doctors regarding the medical advice and pet shops owners regarding the matters on available products.
 
 Technologies : 
-React | MySQL | Express | NodeJs | Bootstrap
+React | MySQL | Express | NodeJs | Bootstrap | React
