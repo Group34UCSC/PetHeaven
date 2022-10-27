@@ -8,6 +8,14 @@ This project time span is closely 6 months.
 Technologies : 
 React | MySQL | Express | NodeJs | Bootstrap 
 
+Version Control : 
+Github
+
+Collaborative tools :
+Trello
+
+
+
 
 
 
