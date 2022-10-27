@@ -27,6 +27,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "^2.1.8",
     "react-scroll-to-bottom": "^4.2.0",
+    "react-stripe-checkout": "^2.6.3",
     "react-to-pdf": "^0.0.14",
     "reactjs-popup": "^2.0.5",
     "socket.io-client": "^4.5.2",

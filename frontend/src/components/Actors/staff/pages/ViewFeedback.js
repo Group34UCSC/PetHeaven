@@ -77,10 +77,10 @@ function ViewFeedback(){
                                 <div className="col-md-12 border-left">
                                     <h6><i class="fa-solid fa-smile-beam"></i><b> Kindly Response Them..... </b></h6>
                                     <hr/> 
-                                    <div className="form-group">
+                                    {/* <div className="form-group">
                                         <label className="mb-1 mt-1">Recipient</label>
                                         <input type="text" className="form-control" placeholder=""></input>
-                                    </div>
+                                    </div> */}
                                     <div className="form-group">
                                         <label className="mb-1">Message</label>
                                         <textarea rows="4" className="form-control" placeholder="Enter Your Message"></textarea>

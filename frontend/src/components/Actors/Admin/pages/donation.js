@@ -288,30 +288,13 @@ const[searchTerm, setSearchTerm]=useState('')
 
 
 
-                 {/* search */}
-                 <div class="container">
-
-            <div class="row height d-flex justify-content-center align-items-center">
-
-              <div class="col-md-6">
-
-                <div class="form">
-                  <i class="fa fa-search"></i>
-                  <input type="text" class="form-control form-input" placeholder="Search User Name ..." onChange={(e)=>{setSearchTerm(e.target.value)}} />
-                  <span class="left-pan"><i class="fa fa-microphone"></i></span>
-                </div>
                 
-              </div>
-              
-            </div>
-            
-          </div>
 
 
 
                 {/* table */}
 
-
+{/* 
                 <div>
 
                     <div class="adminviewtable">
@@ -360,12 +343,11 @@ const[searchTerm, setSearchTerm]=useState('')
 
 
 
-                    </div>
+                    </div> */}
 
 
                 </div>
 
-            </div>
        
     );
 }

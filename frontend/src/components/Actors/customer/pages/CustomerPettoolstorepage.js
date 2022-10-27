@@ -17,6 +17,7 @@ import '../css/Customerpharmacypage.css';
 import '../css/profileview.css';
 import NavbarUsers from '../../../includes/NavbarUsers';
 
+
 function Customerpettoolstorepage(){
     const [users,setUsers]=useState([]);
     const [name,setName]=useState('');
@@ -104,7 +105,7 @@ function Customerpettoolstorepage(){
                                                                 </tr>
                                                                 <tr>
                                                                     <th id="profilelabel">Email</th>
-                                                                    <td id="profileitem">absilva@gmail.com</td>
+                                                                    <td id="profileitem">pawbawfairystore@gmail.com</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -120,9 +121,9 @@ function Customerpettoolstorepage(){
                                             <div class="col-md-2 card" id="card1">
                                                 <h4 class="text-success petname">{item.item_name}</h4>
                                                 <div className="underline underlineJusty"></div>
-                                                <img src={meo} class="card-img-top" id="featuredimg" alt="Tommy"></img>
+                                                <img src={cage} class="card-img-top" id="featuredimg" alt="Tommy"></img>
                                                 <div class="card-body">
-                                                    <h6 class="petage text-danger">Rs.{item.Price}.00/=</h6>
+                                                    <h6 class="petage text-danger">Rs.{item.Price}.00</h6>
                                                     <Link to={url}><button type="button" class="btn btn-success " id="adoptbtn">Buy <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link>
                                                 </div>
                                             </div>

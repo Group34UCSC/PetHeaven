@@ -42,7 +42,7 @@ function ViewPost(){
               console.log(item.postID)
               const response = await fetch(
                   `http://localhost:5000/staffmember/deletepost/${Post_ID}`,
-                  requestOptions)
+                  requestOptions).then(window.location.reload(true))
               ;
               console.log(response);
           }
@@ -72,7 +72,7 @@ function ViewPost(){
                             <button class="searchButton" type="submit"><i class="fa-solid fa-search"></i></button>
                         </div>
                     </div>
-                    <div class="col toggleBtn">
+                    <div class="col toggleBtnviewpostpet">
                         <label className="switch">
                             <input type="checkbox" checked/>
                             <span className="slider round"></span>
@@ -85,7 +85,7 @@ function ViewPost(){
                 {posts.map((item,i)=>
                     <div class="admincard col-md-3">     
                     <div className="card shadow cardpadding" id='cardone'>
-                        <img src={dog} className="card-img-top petcardimg" alt="Services"/>
+                        <img src={item.image} className="card-img-top petcardimg" alt="Services"/>
                         <div className="card-body" id='cardTitle'>
                         <div className="petdetail">
                             <h6 className="petName"><b>{item.name}</b></h6>
@@ -94,12 +94,13 @@ function ViewPost(){
                             <h6 >{item.gender}</h6>
                             <h6 >{item.age}</h6>
                             <h6 >{item.color}</h6>
-                            <h6>{item.about}</h6>
                             <h6 class="petpostIDHidden">{item.postID}</h6>
+                            <h6>{item.about}</h6>
+                           
                         </div>  
                         
                         </div>
-                        <button type="button" class="btn btn-success deleteBtn"  onClick={() => DeletePost(item)}>Delete Post <i class="fa-solid fa-trash"></i></button>
+                        <button type="button" class="btn btn-success deleteBtn" id="postpetbtn" onClick={() => DeletePost(item)}>Delete Post <i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
                 

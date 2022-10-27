@@ -68,10 +68,10 @@ function NotifyAdopter() {
                                             <label className="mb-1">Adopter Name</label>
                                             <input type="text" className="form-control" placeholder="Adopter Name" required></input>
                                         </div>
-                                        <div className="form-group">
+                                        {/* <div className="form-group">
                                             <label className="mb-1 mt-1">Mobile Number</label>
                                             <input type="text" className="form-control" placeholder="Adopter's Contact Number" required></input>
-                                        </div>
+                                        </div> */}
                                         <div className="form-group">
                                             <label className="mb-1">Message</label>
                                             <textarea rows="4" className="form-control" placeholder="Enter Your Message" required></textarea>

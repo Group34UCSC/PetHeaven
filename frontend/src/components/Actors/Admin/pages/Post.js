@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import PDF from './PDF';
 import NavbarUsers from "../../../includes/NavbarUsers";
+import AdvanceDonation from "./AdvanceDonation";
 class Post extends Component {
     state = {
         title: '',
         income:'',
-        expences:'',
+        Vaccineexpences:'',
+        Foodexpences:'',
+        Transportexpences:'',
+        Otherexpences:'',
         content: '',
         image: '',
         postSubmitted: false
@@ -34,6 +38,7 @@ class Post extends Component {
             
             <>
             <NavbarUsers />
+            <AdvanceDonation />
                 {  !this.state.postSubmitted ? 
                     (<div className="container">
                         <div className="jumbotron mt-3">
@@ -49,17 +54,32 @@ class Post extends Component {
                                                 </div>
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
-                                                    <input onChange={this.onChange('income')} name="income" type="text" placeholder="Post Income" className="form-control" />
+                                                    <input onChange={this.onChange('income')} name="income" type="text" placeholder="Enter Income" className="form-control" />
                                                 </div>
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
-                                                    <input onChange={this.onChange('expences')} name="expences" type="text" placeholder="Post Expences" className="form-control" />
+                                                    <input onChange={this.onChange('Foodexpences')} name="Foodexpences" type="text" placeholder="Enter Food Expences" className="form-control" />
                                                 </div>
 
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
-                                                    <input onChange={this.onChange('image')} name="image" type="text" placeholder="https://" className="form-control" />
+                                                    <input onChange={this.onChange('Vaccineexpences')} name="Vaccineexpences" type="text" placeholder="Enter Vaccine Expences" className="form-control" />
                                                 </div>
+
+                                                <div className="form-group">
+                                                    <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
+                                                    <input onChange={this.onChange('Transportexpences')} name="Transportexpences" type="text" placeholder="Enter Transport Expences" className="form-control" />
+                                                </div>
+
+                                                <div className="form-group">
+                                                    <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
+                                                    <input onChange={this.onChange('Otherexpences')} name="Otherexpences" type="text" placeholder="Enter Other Expences" className="form-control" />
+                                                </div>
+
+                                                {/* <div className="form-group">
+                                                    <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
+                                                    <input onChange={this.onChange('image')} name="image" type="text" placeholder="https://" className="form-control" />
+                                                </div> */}
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-pencil-square-o bigicon"></i></span>
                                                     <textarea onChange={this.onChange('content')} className="form-control" name="content" placeholder="Enter your text here" rows="7"></textarea>
@@ -74,7 +94,8 @@ class Post extends Component {
                             </div>
                         </div>
                     </div>) : (
-                        <PDF title={this.state.title} content={this.state.content} image={this.state.image} income={this.state.income} expences={this.state.expences}/>
+                        <PDF title={this.state.title} content={this.state.content} image={this.state.image} income={this.state.income} Foodexpences={this.state.Foodexpences}
+                        Vaccineexpences={this.state.Vaccineexpences} Transportexpences={this.state.Transportexpences} Otherexpences={this.state.Otherexpences}/>
                     )
                 }
             </>

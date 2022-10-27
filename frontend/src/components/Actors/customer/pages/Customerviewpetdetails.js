@@ -115,7 +115,7 @@ function Customerviewpetdetails(){
 
                                                                             <tr>
                                                                                 <th id="profilelabel">Is Rabie vaccinated</th>
-                                                                                <td>{item.Rabiesvaccinated}</td>
+                                                                                <td>{item.Rabiesvaccinated}yes</td>
                                                                             </tr>
 
                                                                             <tr>

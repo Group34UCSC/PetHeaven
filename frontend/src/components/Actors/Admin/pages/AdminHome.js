@@ -27,17 +27,7 @@ function AdminHome() {
                             </div>
                         </div>
 
-                        <div class="admincard col-md-6">
                     
-                            <div className="card shadow" id='cardone'>
-                            <Link to="Delete"><img src={delete1} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
-                                <div className="card-body">
-                                    <h6>GENERATE DONATION REPORTS</h6>
-                                    <div className="underline"></div>
-                                    <p>Delete PetHeaven user Accounts</p>
-                                </div>
-                            </div>
-                        </div>
                         
 
                         <div class="admincard col-md-6">
@@ -51,6 +41,21 @@ function AdminHome() {
                                 </div>
                             </div>
                         </div>
+
+
+                                               
+                        <div class="admincard col-md-6">
+                       
+                       <div className="card shadow" id='cardone'>
+                       <Link to="complains"><img src={view} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
+                           <div className="card-body">
+                               <h6>VIEW & FIX COMPLAINS</h6>
+                               <div className="underline"></div>
+                               <p>View PetHeaven user Accounts</p>
+                           </div>
+                       </div>
+                   </div>
+
                         
 
                         <div class="admincard col-md-6">
@@ -65,18 +70,6 @@ function AdminHome() {
                             </div>
                         </div>
 
-                       
-                        <div class="admincard col-md-6">
-                       
-                       <div className="card shadow" id='cardone'>
-                       <Link to="complains"><img src={view} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
-                           <div className="card-body">
-                               <h6>VIEW & FIX COMPLAINS</h6>
-                               <div className="underline"></div>
-                               <p>View PetHeaven user Accounts</p>
-                           </div>
-                       </div>
-                   </div>
 
 
                    
@@ -118,6 +111,19 @@ function AdminHome() {
                            </div>
                        </div>
                    </div>
+
+
+                   <div class="admincard col-md-6">
+                    
+                    <div className="card shadow" id='cardone'>
+                    <Link to="Delete"><img src={delete1} className="w-50 border-bottom mx-auto d-block img-fluid" alt="Services"/></Link>
+                        <div className="card-body">
+                            <h6>GENERATE DONATION REPORTS</h6>
+                            <div className="underline"></div>
+                            <p>Delete PetHeaven user Accounts</p>
+                        </div>
+                    </div>
+                </div>
 
                         
                     </div>

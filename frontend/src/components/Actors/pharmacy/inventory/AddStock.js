@@ -252,7 +252,7 @@ function AddStock()
                               <FontAwesomeIcon icon={faTimes}/>
                             </span>
                             </label>
-                            <input type="date" className="form-control" value={medicineInput.MFD} name="MFD"
+                            <input type="date" className="form-control" max="2022-10-26" value={medicineInput.MFD} name="MFD"
                              onChange={(e)=>handleServiceChange(e,index)} 
                              ref={userRef}
                              autoComplete="off" 
@@ -278,7 +278,7 @@ function AddStock()
                               <FontAwesomeIcon icon={faTimes}/>
                             </span>
                             </label>
-                            <input type="date" className="form-control" value={medicineInput.EXP} name="EXP"
+                            <input type="date" className="form-control" min="2022-10-26" value={medicineInput.EXP} name="EXP"
                              onChange={(e)=>handleServiceChange(e,index)} 
                              ref={userRef}
                              autoComplete="off" 

@@ -9,6 +9,7 @@ DoctorRoute.post("/Consultation_accept",Doctor_controller.Consultation_accept);
 DoctorRoute.get("/Inbox_Table",Doctor_controller.Inbox_Table);
 DoctorRoute.post("/Done/:appointment_ID",Doctor_controller.Done);
 DoctorRoute.post('/DoctorPrescription',Doctor_controller.AddMedicine);
+DoctorRoute.get("/ViewPet",Doctor_controller.ViewPet);
 
 module.exports = DoctorRoute;
 

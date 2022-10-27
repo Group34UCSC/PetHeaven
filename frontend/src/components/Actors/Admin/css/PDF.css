@@ -6,6 +6,12 @@
     padding: 20px 50px;
   }
 
-  .btn btn-primary{
-    margin-left: 150px;
+  #bb{
+    margin-left: 450px;
+    margin-bottom: 20px;
+  }
+  #pdfContent
+  {
+    font-size: medium;
+    margin-top: 15px;
   }

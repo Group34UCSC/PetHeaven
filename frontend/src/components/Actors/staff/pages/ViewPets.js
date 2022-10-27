@@ -55,123 +55,28 @@ function ViewPets(){
         })
       })
     },[])
-
     const [buttonText, setButtonText] = useState('Post Pet ');
 
     const handlepostpet = async (item) => {
       // e.preventDefault();
+      
       setButtonText('Pet Posted ... ');
       try {
-          const body = {item};
-          const PetID= item.petID ;
+          const body = item;
+          const PetID= item;
           
-          const response = await fetch(
-          "http://localhost:5000/staffmember/postpetpost/${PetID}",
+          const response = await fetch(`http://localhost:5000/staffmember/postpetpost/${PetID}`,
               {
-                  method: "POST",
-                  headers: {
-                  "Content-type": "application/json"
-                  },
-                  // body: JSON.stringify(body)
+                  method: "POST" , headers: {"Content-type": "application/json"},
+                  body: JSON.stringify(body)
               }
           );
-          console.log(response);
+          console.log(item);
       }
       catch (err) {
-          console.log("Falil");
+          console.log("hey");
       }
   }
-
-     //onlick Vaccines button 
-     const Vaccines = ()=>{
-      return(
-        <div>
-          {medicalstatus.map((item,i)=>
-
-          <tbody className='text-center'>
-          <tr>
-            <td scope="row">{item.date}</td>
-            <td className='vaccineendalign'>{item.details}</td>
-          </tr>
-          </tbody>
-
-          )}
-
-      </div>
-      )
-    }
-
-    //onlick injury button 
-    const Injuries = ()=>{
-      return(
-        <div>
-          {medicalstatusinjury.map((item,i)=>
-
-          <tbody className='text-center'>
-          <tr>
-            <td scope="row">{item.date}</td>
-            <td className='vaccineendalign'>{item.details}</td>
-          </tr>
-          </tbody>
-
-        )}
-
-      </div>
-      )
-    }
-
-        //onlick Others button 
-        const Others = ()=>{
-          return(
-            <div>
-               {medicalstatusother.map((item,i)=>
-
-              <tbody className='text-center'>
-              <tr>
-                <td scope="row">{item.date}</td>
-                <td className='vaccineendalign'>{item.details}</td>
-              </tr>
-              </tbody>
-
-              )}
-    
-          </div>
-          )
-        }
-
-    const [medicalstatus,setMedicalstatus]=useState([])
-    useEffect(()=>{
-      fetch("http://localhost:5000/staffmember/viewmedicalstatus").then((result)=>{
-        result.json().then((resp)=>{
-          // console.warn(resp)
-          setMedicalstatus(resp)
-          console.log(medicalstatus);
-        })
-      })
-    },[])
-
-    const [medicalstatusinjury,setMedicalstatusinjury]=useState([])
-    useEffect(()=>{
-      fetch("http://localhost:5000/staffmember/viewmedicalstatusinjury").then((result)=>{
-        result.json().then((resp)=>{
-          // console.warn(resp)
-          setMedicalstatusinjury(resp)
-          console.log(resp);
-        })
-      })
-    },[])
-
-    const [medicalstatusother,setMedicalstatusother]=useState([])
-    useEffect(()=>{
-      fetch("http://localhost:5000/staffmember/viewmedicalstatusother").then((result)=>{
-        result.json().then((resp)=>{
-          // console.warn(resp)
-          setMedicalstatusother(resp)
-          console.log(resp);
-        })
-      })
-    },[])
-
      //onlick Vaccines button 
      const Vaccines = ()=>{
       return(
@@ -277,17 +182,27 @@ function ViewPets(){
                                    </div>
          
                                      <div class="d-grid gap-2 ">
-                                       <button type="button" class="btn btn-outline-success editmedicalBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button>
+                                     <div class="container-fluid justify-content-start">
+                                          <button class="btn btn-outline-success me-2 medicalbtn"  type="button" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" onClick={Vaccines}> Vaccines </button>
+                                          <button class="btn btn-outline-success me-2 medicalbtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalToggle2" onClick={Injuries} > Injuries </button>
+                                          <button class="btn btn-outline-success me-2 medicalbtn" type="button" onClick={Others} data-bs-toggle="modal" data-bs-target="#exampleModalToggle1"> Others </button>
+                                      </div>
+                                       {/* <button type="button" class="btn btn-outline-success editmedicalBtn" id="postpetbtn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Medical Status <i class="fa-solid fa-stethoscope"></i></button> */}
                                      </div>
+                                     <h6 class="visibilityhidden">hhhh</h6>
                              
                                    <h6 >{item.about}</h6>
                                  </div>  
                                  
                                </div>
-                               
+
                                <Link to="" class="nav-link active d-grid gap-2">
-                                 <button type="button" class="btn btn-success postpetBtn" id="postpetbtn" value={item.petID} onClick={(e) => handlepostpet(e.target.value)}>{buttonText} <i class="fa-solid fa-newspaper"></i></button>
+                                 <button type="button" class="btn btn-success postpetBtn" id="postpetbtn" value={item.petID} onClick={(e) => handlepostpet(e.target.value)}>Post Pet <i class="fa-solid fa-newspaper"></i></button>
                              </Link>
+
+                               {/* <Link to="postpets" class="nav-link active d-grid gap-2">
+                                 <button type="button" class="btn btn-success postpetBtn" id="postpetbtn">Post Pet <i class="fa-solid fa-newspaper"></i></button>
+                             </Link> */}
                            </div>
                          </div>
               )}
@@ -295,16 +210,11 @@ function ViewPets(){
             </div>
           </div>
         </section>
-         
-                <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
                   <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                       <div class="modal-header">
-                          <div class="container-fluid justify-content-start">
-                            <button class="btn btn-outline-success me-2 medicalbtn"  type="button" onClick={Vaccines}> Vaccines </button>
-                            <button class="btn btn-outline-success me-2 medicalbtn" type="button" onClick={Injuries} > Injuries </button>
-                            <button class="btn btn-outline-success me-2 medicalbtn" type="button" onClick={Others}> Others </button>
-                          </div>
+                          <h4><b>  Vaccination Details <i class="fa fa-ambulance"></i>	</b></h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
 
@@ -313,7 +223,6 @@ function ViewPets(){
                       <div class="modal-body">
                         <div className="container donationTable">
                           <div className="row ">
-                            {/* <table class="table  table-stripped table-hover"> */}
                             <table class="table table-stripped table-hover">
 
                             {medicalstatus.map((item,i)=>
@@ -326,6 +235,32 @@ function ViewPets(){
                                 </tbody>
               
                             )}
+                             
+                            </table>
+                          </div> 
+                        </div>
+                      <div class="modal-footer">
+                        </div>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+
+                  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggle2Label" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                          <h4><b>  Vaccination Details <i class="fa fa-ambulance"></i>	</b></h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+
+                      
+
+                      <div class="modal-body">
+                        <div className="container donationTable">
+                          <div className="row ">
+                            <table class="table table-stripped table-hover">
+
 
                             {medicalstatusinjury.map((item,i)=>
 
@@ -337,6 +272,31 @@ function ViewPets(){
                             </tbody>
 
                             )}
+                             
+                            </table>
+                          </div> 
+                        </div>
+                      <div class="modal-footer">
+                        </div>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+
+                
+
+              <div class="modal fade" id="exampleModalToggle1" aria-hidden="true" aria-labelledby="exampleModalToggle1Label" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                          <h4><b>  Other Details <i class="fa fa-ambulance"></i>	</b></h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+
+                      <div class="modal-body">
+                        <div className="container donationTable">
+                          <div className="row ">
+                            <table class="table table-stripped table-hover">
 
                             {medicalstatusother.map((item,i)=>
 
@@ -354,67 +314,14 @@ function ViewPets(){
                           </div> 
                         </div>
                       <div class="modal-footer">
-                        {/* <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button> */}
-                        <button type="button" class="btn btn-success" data-bs-target="#exampleModal" data-bs-toggle="modal">  Update Status <i class="fa-solid fa-edit"></i></button>
-                      </div>
+                        </div>
                     </div>
                   </div>
                 </div>
-          
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                               
-                                            
-                        <div className="card card-body shadow">
-                            <div className="row">
-                                <div className="col-md-12 border-left">
-                                    <h6><i class="fa-solid fa-smile-beam"></i><b> Update correctly..... </b></h6>
-                                    <hr/> 
-                                    <div className="form-group">
-                                        <label className="mb-1 mt-1">Pet Id</label>
-                                        <input type="text" className="form-control" placeholder=""></input>
-                                    </div>
-                                    <div className="form-group">
-                                        <label className="mb-1">Type</label>
-                                        <textarea rows="2" className="form-control" placeholder="">
-                                          <select>
-                                            <label>Vaccinations</label>
-                                            <label>Injuries</label>
-                                            <label>Other</label>
-                                          </select>
-                                        </textarea>
-                                    </div>  
-                                    <div className="form-group">
-                                        <label className="mb-1 mt-1">Date</label>
-                                        <input type="text" className="form-control" placeholder=""></input>
-                                    </div>
-                                    <div className="form-group">
-                                        <label className="mb-1">Medical Status</label>
-                                        <textarea rows="2" className="form-control" placeholder="Enter Your Medical Status"></textarea>
-                                    </div>                    
-                                    <div className="form-group py-3">
-                                        <div class="container px-4 text-center">
-                                            <div class="row gx-5 ">
-                                                    <div class="col ">
-                                                        <Link to="/viewpets" class="nav-link active">
-                                                            <button type="button" className="btn btn-success shadow w-100 postPetBtn"><b>Update Status  <i class="fa-solid fa-edit"></i></b></button>
-                                                        </Link>
-                                                    </div>
-                                                    <div class="col ">
-                                                        <button type="button" className="btn btn-danger shadow w-100 postPetBtn" data-bs-dismiss="modal"><b>Discard <i class="fa-solid fa-times"></i></b></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>       
-                        </div>
-                    </div>
                 </div>
+                
             </div>  
-          </div>     
+            
     )
 }
 

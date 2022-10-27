@@ -50,11 +50,11 @@ function CustomerPharmacy(){
                     <button class="btn btn-success" id="custsearchbtns" onClick={getUsers}>Search <i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
 
-                <div class="mb-3" id="pharmacysearchdivs">
+                {/* <div class="mb-3" id="pharmacysearchdivs">
                     <label for="Pharmacyname" class="form-label">Search by Medicine <i class="fa-solid fa-magnifying-glass"></i></label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter of name your Medicine"></input>
                     <button class="btn btn-success" id="custsearchbtns">Search <i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
+                </div> */}
             </form>
             <div class=" row"> 
                     {

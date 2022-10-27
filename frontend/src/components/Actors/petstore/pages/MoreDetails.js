@@ -60,9 +60,12 @@ function MoreDetails()
                     platform. 
                     </p> */}
                 </div>
-                <div className="col-md-6 text-center border-start">
+                <div className="col-md-6 text-start border-start">
                     <p id="header" class="fw-bold">Dog Bath Brush - Soft Silicone Dog Shampoo Brush, Pet Grooming Bath Massage Brush Shampoo Dispenser, Dog Brush Dog Shower Pet Bath Brush, Long Short Haired Dogs and Bath for Cats (Lightblue)</p>
-                    <p class="para text-start">
+                    <p class="para text-start" id="header">
+                    Maximum retail price  :	Rs. 1560
+                    </p>
+                    {/* <p class="para text-start">
                     Brand  :	Cookfree
                     </p>
                     <p class="para text-start">
@@ -87,7 +90,7 @@ function MoreDetails()
 
                     <p class="para text-start">
                         Shipping: Online
-                    </p>
+                    </p> */}
                 </div>
                 </div>
                     </div>

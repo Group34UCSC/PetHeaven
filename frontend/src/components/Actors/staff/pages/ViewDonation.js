@@ -3,6 +3,7 @@ import {Link, Search} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
 
+
 import '../css/ViewDonation.css';
 
 
@@ -12,6 +13,8 @@ import NavbarUsers from '../../../includes/NavbarUsers';
 
 function ViewDonation(){
     const [donations,setDonations]=useState([])
+    const current = new Date();
+    const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
     useEffect(()=>{
       fetch("http://localhost:5000/staffmember/viewdonation").then((result)=>{
         result.json().then((resp)=>{
@@ -33,8 +36,8 @@ function ViewDonation(){
                     <div class="col">
                     <div class="card card-body donationcard">
                       <h5 class="card-title">Received Donations</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">24 / 07 / 2020</h6>
-                      <p class="card-text donationtext">Today's Total Amount of Donations = Rs. 101000.00</p>
+                      <h4 class="card-subtitle mb-2 text-muted">{date}</h4>
+                      <p class="card-text donationtext">Today's Total Amount of Donations = Rs. 6500.00</p>
                     </div>
                   </div>
                 </div>
@@ -52,7 +55,7 @@ function ViewDonation(){
               {/* <table class="table  table-stripped table-hover"> */}
               <table class="table table-stripped table-hover">
                 <thead>
-                  <tr className='text-center'>
+                  <tr className='text-center donationtablerow'>
 
                     <th scope="col">Date</th>
                     <th scope="col">Time</th>

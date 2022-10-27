@@ -180,8 +180,8 @@ const[searchTerm, setSearchTerm]=useState('')
                                     <th scope="col">Name</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">User Type</th>
-                                    <th scope="col">Operation</th>
-                                    <th scope="col">Operation</th>
+                                    <th scope="col">Update</th>
+                                    <th scope="col">Deactivate</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -200,7 +200,7 @@ const[searchTerm, setSearchTerm]=useState('')
                                             <td>{item.Email}</td>
                                             <td>{item.User_type}</td>
                                             <td><button type="button" class="btn btn-warning" onClick={() => UpdateUser(item)}>Update</button></td>
-                                            <td><button type="button" class="btn btn-danger" onClick={() => DeleteUser(item)}>Deactivated</button></td>
+                                            <td><button type="button" class="btn btn-danger" onClick={() => DeleteUser(item)}>Deactivate</button></td>
                                         </tr>
                                     )
                                 }

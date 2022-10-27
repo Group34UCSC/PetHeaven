@@ -15,6 +15,7 @@ function ProfilePage(){
     const [color,setUsername]=useState("");
     const [image,setImage]=useState("");
     const [email,setEmail]=useState("");
+    const [adopterID,setadopterID]=useState("");
 
     const getUsers=async e=>{
     
@@ -27,10 +28,12 @@ function ProfilePage(){
                     console.log(resp[0].type)
                         setUsers(resp)
                         console.log();
+
                         setFirstname(resp[0].firstname)
                         setLastname(resp[0].lastname)
                         setUsername(resp[0].username)
                         setEmail(resp[0].email)
+                        setadopterID(resp[0].adopterID)
                     }
                 )
             })
@@ -43,6 +46,7 @@ function ProfilePage(){
     return(
         <div>
             <NavbarUsers/>
+            
             <Profileview></Profileview>
             <div class="cardbody" id="profilebtn"> 
                 <button class="btn btn-success " id="profilebtns" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa-solid fa-pen-to-square" ></i>Edit profile</button>
@@ -51,6 +55,7 @@ function ProfilePage(){
             <div class="row">
                 <div class="collapse column  profilecollapse col-md-6" id="collapseExample">
                     <div class="card card-body">
+                        
                         <CustomerEditProfile></CustomerEditProfile>
                     </div>
                 </div>

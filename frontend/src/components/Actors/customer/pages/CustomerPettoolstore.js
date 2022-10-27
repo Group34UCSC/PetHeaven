@@ -51,11 +51,11 @@ function CustomerPettoolstore(){
                     <button class="btn btn-success" id="petstoresearchbtn" onClick={getUsers}>Search <i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
 
-                <div class="mb-3" id="petstoresearchbars">
+                {/* <div class="mb-3" id="petstoresearchbars">
                     <label for="Pharmacyname" class="form-label">Search by Item <i class="fa fa-magnifying-glass"></i></label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter of name your Medicine"></input>
                     <button class="btn btn-success"id="petstoresearchbtn">Search <i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
+                </div> */}
             
                 <div class="row">
                     {
