@@ -3,5 +3,5 @@ Through our system we gave a chance to adopt an animal with our adoption process
 we provide online channeling for veterinary doctors and take their advice via video conferences and messaging. Not only that, the users of the web system have
 an ability to communicate with the doctors regarding the medical advice and pet shops owners regarding the matters on available products.
 
-Technologies
+Technologies : 
 React | MySQL | Express | NodeJs | Bootstrap
