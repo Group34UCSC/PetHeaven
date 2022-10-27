@@ -84,6 +84,7 @@ const PostAdvertisement = () =>
     const ImgHandler = (event) => {
         // setProfileImage(URL.createObjectURL(event));
         console.log(event)
+
         const fileRef = ref(storage, `/PetHeaven/${event.name + uuidv4()}`);
         const uploadTask = uploadBytesResumable(fileRef, event);
         uploadTask.on("state_changed", (snapshot) => {
@@ -197,7 +198,7 @@ const PostAdvertisement = () =>
                                             ></input>
                                             <p id="uidnote" className={TitleFocus && Title && !validTitle ? "instructions" : "offscreen"}>
                                             <FontAwesomeIcon icon={faInfoCircle} />
-                                            4 to 20 characters. Must begin with a letter. Letters, numbers, underscores, hyphens allowed.<br /> 
+                                            Must begin with a letter. Letters, numbers, underscores, hyphens allowed.<br /> 
                                         </p>
                                         </div>
                                         <div className="form-group">
@@ -228,7 +229,7 @@ const PostAdvertisement = () =>
                                             </input>
                                             <p id="uidnote" className={PriceFocus && Price && !validPrice ? "instructions" : "offscreen"}>
                                             <FontAwesomeIcon icon={faInfoCircle} />
-                                            Must begin a amount. Numbers allowed.<br /> 
+                                            Must begin a amount. Minus values are not allowed.<br /> 
                                             </p>
                                         </div>
 

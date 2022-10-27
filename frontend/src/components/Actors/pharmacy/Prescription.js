@@ -110,7 +110,7 @@ function Prescription()
                             <td>{item.Medicine}</td>
                             <td>{item.Dosage}</td>
                             <td>{item.Duration}</td>
-                            <td>{item.Medicine}</td>
+                            <td>{"Yes"}</td>
                             </tr>
                             )
                             }

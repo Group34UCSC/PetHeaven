@@ -19,7 +19,11 @@ staffMemberRoute.get('/viewmedicalstatusother',StaffMember_controller.Staffmembe
 staffMemberRoute.post('/addnewadopter',StaffMember_controller.Staffmemberaddnewadopter);
 staffMemberRoute.post('/deletepost/:Post_ID',StaffMember_controller.Staffmemberdeletepost);
 
-staffMemberRoute.post('/postpetpost',StaffMember_controller.Staffmemberpostpetpost);
+staffMemberRoute.get('/viewadopterrequests',StaffMember_controller.Staffmemberviewadopterrequests);
+
+staffMemberRoute.post('/acceptrequest/:Adopter_name',StaffMember_controller.Staffmemberacceptrequest);
+
+staffMemberRoute.post('/postpetpost/:PetID',StaffMember_controller.Staffmemberpostpetpost);
 
 
 staffMemberRoute.post('/responsefeedback/:adopter_id',StaffMember_controller.Staffmemberresponsefeedback);

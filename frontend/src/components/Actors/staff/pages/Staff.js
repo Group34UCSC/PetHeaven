@@ -119,10 +119,10 @@ function Staff() {
                        
               <div className="card shadow" id='cardone'>
                 <Link to="viewfeedback" class="nav-link active">
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {/* <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                     14+
                     <span class="visually-hidden">unread messages</span>
-                  </span>
+                  </span> */}
                   <img src={feedback} className="card-img-top staffimg" alt="Services"/>
                   <div className="card-body" id='cardTitle'>
                     <h6><b>VIEW FEEDBACK</b></h6>

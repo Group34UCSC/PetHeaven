@@ -6,8 +6,10 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 import '../css/CustomerFindpet.css';
 import cage from '../images/cage.jfif';
 import NavbarUsers from '../../../includes/NavbarUsers';
-
-
+import StripeCheckout from "react-stripe-checkout";
+async function handleToken(token, addresses) {
+    console.log(token)
+   }
 function CustomerBuypettool() {
     const [users, setUser] = useState([])
     const [toolstoreid,setToolstoreid] = useState('');
@@ -53,7 +55,7 @@ function CustomerBuypettool() {
 
     useEffect(() => {
         getUsers()
-    })
+    },[])
 
     const queryString = window.location.search;
     console.log(queryString);
@@ -67,6 +69,7 @@ function CustomerBuypettool() {
             <section className="section bg-c-light border-top">
                 {
                     users.map((item,i)=>{
+                        let url ="payments?id="+item.Tool_ID;
                         return(
                             <div>
                             <h4 class="col-sm-12 petdetailsheader text-success">{item.name}<i class="fa-solid fa-paw"></i></h4>
@@ -96,6 +99,11 @@ function CustomerBuypettool() {
                                                             <td id="profileitem">{item.manufacture_country}</td>
                                                         </tr>
 
+                                                        <tr>
+                                                            <th id="profilelabel">Price</th>
+                                                            <td id="profileitem">{item.Price}/=</td>
+                                                        </tr>
+
                                                         <tr id ="expirydaterow">
                                                             <th  class="text-warning">Expiry date</th>
                                                             <td>{item.expiry_date}</td>
@@ -105,7 +113,12 @@ function CustomerBuypettool() {
                                                 <div class="col-sm-9" id="petdescription">{item.Description}</div>
                                             </div>
                                         </div>
-                                        <button type="button" class=" col-sm-10 btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                                        <StripeCheckout
+                                            stripeKey="pk_test_51LgXJdSDmFBknNFOqB2kq2HzScVWiF4IKKH8fNHQDPLbhwQbhgvfPCibmDR8tH0YlkZuZAkzb0wnboLGVIdPAOg600hRJpjBTp"
+                                            token={handleToken}
+                                            amount= {item.price}          
+                                            name="Payment details"/>
+                                        {/* <Link to={url} ><button type="button" class=" col-sm-10 btn btn-success deleteBtn" id="adoptbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart <i class="fa-solid fa-arrow-up-right-from-square"></i></button></Link> */}
                                     </div>
                                 </div>
                             </div>   

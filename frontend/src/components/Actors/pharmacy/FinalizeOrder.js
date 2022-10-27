@@ -4,11 +4,21 @@ import { useEffect, useState } from "react";
 import './FinalizeOrder.css';
 import SelectTableComponent from "./select-table.component";
 import NavbarUsers from "../../includes/NavbarUsers";
-
+import Axios from 'axios';
 
 function FinalizeOrder()
 {
     const[show,setShow]=useState(false);
+
+    // const HandleSend = (e) => {
+    //     e.preventDefault()
+      
+    //   Axios.post("http://localhost:5000/pharmacy/inventory/SendMsg", {
+    //     receiver:0714547383 , body: Hello
+                      
+    //                 })
+    // }
+
     return(
         <div>
             <NavbarUsers/>
@@ -124,7 +134,7 @@ function FinalizeOrder()
                 <hr/>
                 <div className="form-group py-3 row ">
             <div className="col-md-2">
-                <button type="button" id="submit-btn" className="btn shadow w-100 ">Send</button>
+                <button type="button" id="submit-btn"  className="btn shadow w-100 ">Send</button>
             </div>
             <div className="col-md-2">
                 <button onClick={()=>setShow(false)} type="button" id="reject-btn" className="btn shadow w-100 ">Discard</button>

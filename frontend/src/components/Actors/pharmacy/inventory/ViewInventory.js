@@ -10,10 +10,12 @@ function ViewInventory()
         result.json().then((resp)=>{
             console.warn(resp)
             setInventory(resp)
+            console.log("Hellooo")
             console.log(resp)
         })
     })},[])
     const[searchTerm, setSearchTerm]=useState('')
+    
     return(
         <div>
             <NavbarUsers/>
@@ -89,6 +91,7 @@ function ViewInventory()
 
                 
                 </div>
+                
 
                 {/* Stock details started here */}
                 <div className="container mb-3">
@@ -100,13 +103,16 @@ function ViewInventory()
                             <tr>
                             <th scope="col"></th>
                             <th scope="col">Medicine Name</th>
+                            <th scope="col">Manufacture Date</th>
+                            <th scope="col">Expiary Date</th>
                             <th scope="col">Quantity(Units)</th>
                             <th scope="col">Unit Price(LKR)</th>
+                            {/* <th scope="col">Operation</th> */}
                             </tr>
                         </thead>
                         <tbody>
-
                             {
+                                
                                 inventory.filter((item)=>{
                                     if(searchTerm == ""){
                                         return item
@@ -115,10 +121,14 @@ function ViewInventory()
                                     }
                                 }).map((item,i)=>
                                     <tr key={i}>
+                                        
                                 <td>{i+1}</td>
                                 <td>{item.Medicine}</td>
+                                <td>{item.MFD}</td>
+                                <td>{item.EXP}</td>
                                 <td>{item.Quantity}</td>
                                 <td>{item.Price}</td>
+                                
                                 {/* <td>{item.Medicine}</td> */}
                                 </tr>
                                 )

@@ -135,4 +135,28 @@ const {ADD_MEDICINE} = require('../query/Doctor');
                         }
                    
                    }
+
+
+
+                   exports.ViewPet = (req,res,next)=>{
+
+                     var petQuery= "SELECT * FROM pet";
+    
+                    
+                      
+                            conn.query(petQuery, function (err,result){
+                             if( err ) {
+                              console.log(err);
+                              res.send("Unable to get the comments");
+                             }
+                             else{
+                              res.send(result);
+                             }
+                 
+                            })
+   
+                      
+                     }
+
+                   
                   

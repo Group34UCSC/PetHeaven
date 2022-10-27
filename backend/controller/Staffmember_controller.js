@@ -1,8 +1,8 @@
 const {isEmpty}  = require('../utils/is_empty');
 const Joi = require('@hapi/joi');
 const conn = require('../service/db_service');
-const {POST_PET, ADD_PET, UPDATE_MEDSTATUS, NOTIFY_ADOPTER, ADD_ADOPTER, POST_PETPOST } = require('../query/StaffMember');
-const {STAFFMEMBERPOSTPET_MODEL, STAFFMEMBERADDPET_MODEL, STAFFMEMBERUPDATEMEDICAL_MODEL, STAFFMEMBERNOTIFYADOPTER_MODEL, STAFFMEMBERADDADOPTER_MODEL, STAFFMEMBERPOSTPETPOST_MODEL} = require('../model/Staffmember');
+const {POST_PET, ADD_PET, UPDATE_MEDSTATUS, NOTIFY_ADOPTER,ADD_ADOPTER, POST_PETPOST,STAFFMEMBERADDADOPTER_MODEL, STAFFMEMBERPOSTPETPOST_MODEL } = require('../query/StaffMember');
+const {STAFFMEMBERPOSTPET_MODEL, STAFFMEMBERADDPET_MODEL, STAFFMEMBERUPDATEMEDICAL_MODEL, STAFFMEMBERNOTIFYADOPTER_MODEL} = require('../model/Staffmember');
 // const bcrypt = require('bcryptjs');
 const AppError = require('../utils/appError');
 
@@ -16,10 +16,10 @@ exports.Staffmemberpostpet=(req,res,next) => {
       //   const { error } = STAFFMEMBERPOSTPET_MODEL.validate(req.body);
 
       console.log('checkpoint');
-      console.log(req.body.name);
+      console.log(req.body.name)
+      console.log(req.body.file);
       console.log(req.body.type);
       console.log(req.body.breed);
-      console.log(req.body.image);
       //   if ( error ) return next(new AppError(error.details[0].message,400));
         conn.query(POST_PET, [[req.body.name,req.body.image,req.body.type,req.body.breed,req.body.color,req.body.gender,req.body.age,req.body.about,1,"2021.03.11"]], (err,data,fields)=>{
         if(err) return next(new AppError(err,500));
@@ -144,7 +144,7 @@ exports.Staffmembernotifyadopter=(req,res,next) => {
 
 exports.Staffmemberviewdonation = (req,res,next)=>{
 
-  var SelectQuery= "SELECT * FROM donation";
+  var SelectQuery= "SELECT * FROM donationstaff ORDER BY date DESC";
    
          conn.query(SelectQuery, function (err,result){
           if( err ) {
@@ -199,7 +199,7 @@ exports.Staffmemberviewdonation = (req,res,next)=>{
 
     // var SelectQuery= "SELECT * FROM pet WHERE status='3'";
 
-    var SelectQuery= "SELECT pet.name, pet.image, pet.breed, pet.color, pet.gender, pet.age, adopter.firstName, adopter.lastName, adopter.address, adopter.mobile, adopter.kids, adopter.income, adopter.adoptees, adoptee.adoptedDate, adoptee.adoptedAge FROM adoptee INNER JOIN pet ON adoptee.petID = pet.petID INNER JOIN adopter ON adopter.adopterID = adoptee.adopterID";
+    var SelectQuery= "SELECT pet.name, pet.image, pet.breed, pet.color, pet.gender, pet.age, adopterdetails.firstName, adopterdetails.lastName, adopterdetails.address, adopterdetails.mobile, adopterdetails.kids, adopterdetails.income, adopterdetails.adoptees, adoptee.adoptedDate, adoptee.adoptedAge FROM adoptee INNER JOIN pet ON adoptee.petID = pet.petID INNER JOIN adopterdetails ON adopterdetails.adopterID = adoptee.adopterID";
      
            conn.query(SelectQuery, function (err,result){
             if( err ) {
@@ -343,7 +343,7 @@ exports.Staffmemberdeletepost = (req,res,next)=>{
 exports.Staffmemberpostpetpost = (req,res,next)=>{
                 
   if( isEmpty( req.body )) return next(new AppError("form data not found ",400));
-
+  
   try{
     
     //   const { error } = STAFFMEMBERPOSTPET_MODEL.validate(req.body);
@@ -354,7 +354,7 @@ exports.Staffmemberpostpetpost = (req,res,next)=>{
     // console.log(req.body.type);
     // console.log(req.body.breed);
     //   if ( error ) return next(new AppError(error.details[0].message,400));
-      conn.query(POST_PETPOST, [[req.body.petID,0]], (err,data,fields)=>{
+      conn.query(POST_PETPOST, [[req.params.PetID,0]], (err,data,fields)=>{
       if(err) return next(new AppError(err,500));
 
       res.status(201).json({
@@ -370,4 +370,38 @@ exports.Staffmemberpostpetpost = (req,res,next)=>{
           error: err
        })
     }
+}
+
+
+exports.Staffmemberviewadopterrequests = (req,res,next)=>{
+
+  var SelectQuery= "SELECT * FROM adoptrequests";
+   
+         conn.query(SelectQuery, function (err,result){
+          if( err ) {
+           console.log(err);
+           res.send("Unable to get the comments");
+          }
+          else{
+           res.send(result);
+          }
+         })  
+}
+
+exports.Staffmemberacceptrequest = (req,res,next)=>{
+                
+  const name = req.params.Adopter_name;
+  console.log(req.params)
+  const sqlDelete = `UPDATE adoptrequests SET status=0 WHERE fullname =${name}`;
+
+  conn.query(sqlDelete, name, (err, result)=>{
+   if (err) {
+     console.log(err);}
+     else{
+        res.send("Accept Request");
+     }
+
+
+
+});
 }

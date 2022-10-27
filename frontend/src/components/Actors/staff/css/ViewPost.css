@@ -2,6 +2,7 @@
     width: 38%;
     position: relative;
     display: flex;
+    visibility: hidden;
 }
 
 .cardpadding{
@@ -28,6 +29,11 @@
 
 .toggleBtn{
     margin-right: -26%;
+    visibility: hidden;
+}
+
+.toggleBtnviewpostpet{
+    visibility: hidden;
 }
 
 

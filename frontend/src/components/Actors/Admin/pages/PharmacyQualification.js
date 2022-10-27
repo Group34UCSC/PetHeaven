@@ -143,6 +143,8 @@ const[searchTerm, setSearchTerm]=useState('')
                                     <th scope="col">Pharmacy ID</th>
                                     <th scope="col" >Pharmacy Name</th>
                                     <th scope="col">City</th>
+                                    <th scope="col">Operation</th>
+                                    <th scope="col">Operation</th>
                                     {/* <th scope="col">Operation</th>
                                     <th scope="col">Operation</th> */}
                                 </tr>
@@ -162,6 +164,8 @@ const[searchTerm, setSearchTerm]=useState('')
                                             <td>{item.Pharmacy_ID}</td>
                                             <td>{item.Name}</td>
                                             <td>{item.City}</td>
+                                            <td><button type="button" class="btn btn-warning" >View Qualities</button></td>
+                                            <td><button type="button" class="btn btn-danger" >Register</button></td>
                                             {/* <td><button type="button" class="btn btn-warning" onClick={() => UpdateUser(item)}>View Qualities</button></td>
                                             <td><button type="button" class="btn btn-danger" onClick={() => DeleteUser(item)}>Register</button></td> */}
                                         </tr>

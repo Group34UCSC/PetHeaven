@@ -20,11 +20,10 @@
     overflow-y: scroll;
 }
 
-.amountcell{
-    /* text-align: end;
-    padding-left: 2%;
-    position: absolute; */
+.donationtablerow{
+    background-color: rgb(178, 181, 181);
 }
+
 
 .donationtext{
     color: rgb(220, 48, 48);

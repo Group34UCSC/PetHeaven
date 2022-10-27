@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import {Link, Search} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'  
@@ -18,6 +18,8 @@ function ViewAdopterRequests(){
     const [petdetail,setPetdetail] = useState('');
     const [kids,setKids] = useState('');
     const [buttonText, setButtonText] = useState('Accept Request');
+
+
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -43,6 +45,45 @@ function ViewAdopterRequests(){
         }
     } 
 
+    const  AcceptAdopterRequest = async (item) => {
+       
+        console.log(item);
+        var raw = "";
+        console.log("___test data arrived___");
+         var requestOptions = {
+              method: 'POST',
+              body: raw,
+              redirect: 'follow'
+            };
+          try {
+              const body = { item };
+              const Adopter_name= item.fullname ;
+              console.log(item.fullname)
+              const response = await fetch(
+                  `http://localhost:5000/staffmember/acceptrequest/${Adopter_name}`,
+                  requestOptions).then(window.location.reload(true))
+              ;
+              console.log(response);
+          }
+          catch (err) {
+              console.log(err);
+          }
+  
+      }
+
+    const [adopterrequest,setAdopterrequest]=useState([])
+        useEffect(()=>{
+        fetch("http://localhost:5000/staffmember/viewadopterrequests").then((result)=>{
+            result.json().then((resp)=>{
+            // console.warn(resp)
+            setAdopterrequest(resp)
+            console.log(resp);
+            })
+        })
+        },[])
+        console.warn(adopterrequest)
+        console.log(adopterrequest)
+
         return(
             <div>
             <NavbarUsers/>
@@ -61,186 +102,17 @@ function ViewAdopterRequests(){
               <div className="container">
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <i class="fa-solid fa-user"></i><b>H.P.T.K. Kasthuriarachchi</b> 
-                            </button>
-                            </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
                             
-                            <div className="container">
-                                <div className="card shadow">
-                                    <div className="card-body">
-                                        <div className="row">
-                                            <div className="col-md-6 border-left">
-                                                <h6>
-                                                <i class="fa-solid fa-grin-alt"></i><b> Request to adopt pet.....</b>
-                                                </h6>
-                                                <hr/>
-                                                <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Full Name</label>
-                                                    <input type="text" className="form-control " placeholder="" value="H.P.T.K. Kasthuriarachchi"></input>
-                                                </div>
-
-                                                <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Contact Number</label>
-                                                    <input type="tel" className="form-control" placeholder="" pattern="[0-9]{3}-[0-9]{2}[0-9]{3}" value="0786925033"></input>
-                                                </div>
-
-                                                <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Rough Monthly Income</label>
-                                                    <input type="income" className="form-control" min="0.00" max="" step="0.01" value="95000"></input>
-                                                </div>
-
-                                                <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Any pets in your home currently</label>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Yes</option>
-                                                        <option value="1">Yes</option>
-                                                        <option value="1">No</option>
-                                                    </select>
-                                                     
-                                                </div>
-                                                
-                                                
-                                            
-                                            </div>
-                                            <div className="col-md-6 border-start">
-
-                                                
-                                                
-                                                <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">If yes enter type of the pet</label>
-                                                    <input type="num" className="form-control" placeholder="" value="Cat"></input>
-                                                </div>
-
-                                                <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Any kids in your home</label>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected>No</option>
-                                                        <option value="1">Yes</option>
-                                                        <option value="1">No</option>
-                                                    </select>
-                                                     
-                                                </div>
-                                                
-                                                <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Currently have pets' details</label>
-                                                    <textarea rows="2" className="form-control" placeholder="" value="Have a kitten"></textarea>
-                                                </div>
-                                                <div className='acceptMargin'>
-                                                    <div class="row gx-5 ">
-                                                        <div class="col ">
-                                                                <button type="button" className="btn btn-success shadow w-100 postPetBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"><b>Accepet Request  <i class="fa-solid fa-check"></i></b></button>
-                                                        </div>
-                                                        <div class="col ">
-                                                            <button type="button" className="btn btn-danger shadow w-100 postPetBtn" data-bs-toggle="modal" data-bs-target="#exampleModalreject"><b>Reject Request  <i class="fa-solid fa-times"></i></b></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            </div>
                         </div>
                         </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <i class="fa-solid fa-user"></i><b>K.S.I.M. Rathnayake</b> 
-                            </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                            <div className="container">
-                                <div className="card shadow">
-                                    <div className="card-body">
-                                        <div className="row">
-                                            <div className="col-md-6 border-left">
-                                                <h6>
-                                                <i class="fa-solid fa-grin-alt"></i><b> Request to adopt pet.....</b>
-                                                </h6>
-                                                <hr/>
-                                                <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Full Name</label>
-                                                    <input type="text" className="form-control " placeholder="" value={name} onChange={(e) => setName(e.target.value)}></input>
-                                                </div>
+                        
 
-                                                <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Contact Number</label>
-                                                    <input type="tel" className="form-control" placeholder="" pattern="[0-9]{3}-[0-9]{2}[0-9]{3}" value={contact} onChange={(e) => setName(e.target.value)}></input>
-                                                </div>
-
-                                                <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Rough Monthly Income</label>
-                                                    <input type="income" className="form-control" min="0.00" max="" step="0.01" value={income} onChange={(e) => setName(e.target.value)}></input>
-                                                </div>
-
-                                                <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Any pets in your home currently</label>
-                                                    <select class="form-select" value={type} onChange={(e) => setType(e.target.value)} aria-label="Default select example">
-                                                        <option value="1">Yes</option>
-                                                        <option value="2">No</option>
-                                                    </select>
-                                                     
-                                                </div>
-                                                
-                                                
-                                            
-                                            </div>
-                                            <div className="col-md-6 border-start">
-
-                                                
-                                                
-                                                <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">If yes enter type of the pet</label>
-                                                    <input type="num" className="form-control" placeholder="" value={pettype} onChange={(e) => setName(e.target.value)}></input>
-                                                </div>
-
-                                                <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Any kids in your home</label>
-                                                    <select class="form-select" value={kids} onChange={(e) => setType(e.target.value)} aria-label="Default select example">
-                                                        <option value="1">Yes</option>
-                                                        <option value="1">No</option>
-                                                    </select>
-                                                     
-                                                </div>
-                                                
-                                                <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Currently have pets' details</label>
-                                                    <textarea rows="2" className="form-control" placeholder="" value={petdetail} onChange={(e) => setName(e.target.value)}></textarea>
-                                                </div>
-                                               
-                                                <div className='acceptMargin'>
-                                                    <div class="row gx-5 ">
-                                                        <div class="col ">
-                                                            <button type="button" className="btn btn-success shadow w-100 postPetBtn" onClick={handleSubmit}><b>{buttonText}  <i class="fa-solid fa-check"></i></b></button>
-                                                        </div>
-                                                        <div class="col ">
-                                                            <button type="button" className="btn btn-danger shadow w-100 postPetBtn" data-bs-toggle="modal" data-bs-target="#exampleModalreject"><b>Reject Request  <i class="fa-solid fa-times"></i></b></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
+                        {adopterrequest.map((item,i)=>
+                            <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                <i class="fa-solid fa-user"></i><b>A.P.L.M. Adikari</b> 
+                                <i class="fa-solid fa-user"></i><b>{item.fullname}</b> 
                             </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -256,25 +128,25 @@ function ViewAdopterRequests(){
                                                 <hr/>
                                                 <div className="form-group requestformfield">
                                                     <label className="mb-1 inputanswercolor">Full Name</label>
-                                                    <input type="text" className="form-control " placeholder="" value="A.P.L.M. Adikari"></input>
+                                                    <input type="text" className="form-control " placeholder="" value={item.fullname}></input>
                                                 </div>
 
                                                 <div className="form-group requestformfield">
                                                     <label className="mb-1 inputanswercolor">Contact Number</label>
-                                                    <input type="tel" className="form-control" placeholder="" pattern="[0-9]{3}-[0-9]{2}[0-9]{3}" value="0788347833"></input>
+                                                    <input type="tel" className="form-control" placeholder="" pattern="[0-9]{3}-[0-9]{2}[0-9]{3}" value={item.phonenumber}></input>
                                                 </div>
 
                                                 <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Rough Monthly Income</label>
-                                                    <input type="income" className="form-control" min="0.00" max="" step="0.01" value="500000"></input>
+                                                    <label className="mb-1 inputanswercolor">Spend for Pet</label>
+                                                    <input type="income" className="form-control" min="0.00" max="" step="0.01" value={item.income}></input>
                                                 </div>
 
                                                 <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Any pets in your home currently</label>
+                                                    <label className="mb-1 inputanswercolor">Any pets in home currently</label>
                                                     <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Yes</option>
-                                                        <option value="1">Yes</option>
-                                                        <option value="1">No</option>
+                                                        <option selected value={item.isanyPet}>Yes</option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
                                                     </select>
                                                      
                                                 </div>
@@ -287,14 +159,14 @@ function ViewAdopterRequests(){
                                                 
                                                 
                                                 <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">If yes enter type of the pet</label>
-                                                    <input type="num" className="form-control" placeholder="" value="Cat"></input>
+                                                    <label className="mb-1 inputanswercolor">Type of the pet</label>
+                                                    <input type="num" className="form-control" placeholder="" value={item.typeofPet}></input>
                                                 </div>
 
                                                 <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Any kids in your home</label>
+                                                    <label className="mb-1 inputanswercolor">Kids in home</label>
                                                     <select class="form-select" aria-label="Default select example">
-                                                        <option selected>No</option>
+                                                        <option selected value={item.kidsinHome}>No</option>
                                                         <option value="1">Yes</option>
                                                         <option value="1">No</option>
                                                     </select>
@@ -302,13 +174,13 @@ function ViewAdopterRequests(){
                                                 </div>
                                                 
                                                 <div className="form-group requestformfield">
-                                                    <label className="mb-1 inputanswercolor">Currently have pets' details</label>
-                                                    <textarea rows="2" className="form-control" placeholder="" value="Have a cat"></textarea>
+                                                    <label className="mb-1 inputanswercolor">Other details</label>
+                                                    <textarea rows="2" className="form-control" placeholder="" value={item.additionalDetails}></textarea>
                                                 </div>
                                                 <div className='acceptMargin'>
                                                     <div class="row gx-5 ">
                                                         <div class="col ">
-                                                            <button type="button" className="btn btn-success shadow w-100 postPetBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"><b>Accepet Request  <i class="fa-solid fa-check"></i></b></button>
+                                                            <button type="button" className="btn btn-success shadow w-100 postPetBtn" onclick={()=>AcceptAdopterRequest(item)}><b>{buttonText} <i class="fa-solid fa-check"></i></b></button>
                                                         </div>
                                                         <div class="col ">
                                                             <button type="button" className="btn btn-danger shadow w-100 postPetBtn" data-bs-toggle="modal" data-bs-target="#exampleModalreject"><b>Reject Request  <i class="fa-solid fa-times"></i></b></button>
@@ -325,6 +197,11 @@ function ViewAdopterRequests(){
                             </div>
                             </div>
                         </div>
+                    
+                    )}
+                    
+
+                        
                     </div>
               </div>
             </section>
@@ -370,10 +247,10 @@ function ViewAdopterRequests(){
                                 <div className="col-md-12 border-left">
                                     <h6><i class="fa-solid fa-smile-beam"></i><b> Kindly Response Them..... </b></h6>
                                     <hr/> 
-                                    <div className="form-group">
+                                    {/* <div className="form-group">
                                         <label className="mb-1 mt-1">Recipient</label>
                                         <input type="text" className="form-control" placeholder=""></input>
-                                    </div>
+                                    </div> */}
                                     <div className="form-group">
                                         <label className="mb-1">Message</label>
                                         <textarea rows="4" className="form-control" placeholder="Enter Your Message"></textarea>

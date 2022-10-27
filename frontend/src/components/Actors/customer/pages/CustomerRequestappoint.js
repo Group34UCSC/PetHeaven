@@ -56,7 +56,7 @@ function CustomerRequestappoint(){
                         <p class="fw-bold">Name:</p>
                     </div>
                     <div class=" col-lg-8 col-md-5 col-8">
-                        <p>J.A.Athapaththu</p>
+                        <p>Srimal Janaka</p>
                     </div>
 
                     <div class=" col-lg-4 col-md-5 offset-lg-0 offset-md-2 col-4 ">
@@ -71,7 +71,7 @@ function CustomerRequestappoint(){
                     </div>
 
                     <div class=" col-lg-8 col-md-5 col-8">
-                        <p>No 33,Kolonnawa road,Gotatuwa</p>
+                        <p>23A,Kotte Road,Rajagiriya</p>
                     </div>
 
                     <div class=" col-lg-4 col-md-5 offset-lg-0 offset-md-2 col-4">

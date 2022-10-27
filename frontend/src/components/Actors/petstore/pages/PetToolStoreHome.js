@@ -37,7 +37,7 @@ function PetToolStoreHome()
             <div className="container">
                 <div className="row bg-success text-white"> 
                     <div className="col-md-4 my-auto"></div>
-                    <h3 className="text-center">Baw Baw Pets Paradise</h3>
+                    <h3 className="text-center">Paw Baw Fairy Store</h3>
                 </div>
             </div>
             </section>

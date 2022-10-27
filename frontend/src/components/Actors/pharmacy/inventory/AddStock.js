@@ -1,18 +1,60 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import { useEffect, useState } from "react";
+import {useRef, useEffect, useState } from "react";
 import './AddStock.css';
 import Axios from 'axios';
 import NavbarUsers from "../../../includes/NavbarUsers";
 import API from "../../../services/baseURL";
 import options from "../../../services/options";
-// import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
+
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const PRICE_REGEX = /^[0-9\b]+$/;
 
 // index: uuidv4(),
 function AddStock()
 {
+    const userRef = useRef();
+    const errRef = useRef();
+
+    const [Price	, setPrice	] = useState('');
+    const [validPrice	, setValidPrice	] = useState(false);
+    const [PriceFocus, setPriceFocus] = useState(false);
+
+    const [Quantity	, setQuantity] = useState('');
+    const [validQuantity	, setValidQuantity	] = useState(false);
+    const [QuantityFocus, setQuantityFocus] = useState(false);
+
+    const [url	, seturl] = useState('');
+    const [errMsg, setErrMsg] = useState('');
+
+    useEffect(() => {
+      userRef.current.focus();
+    }, [])
+
+    useEffect(() => {
+    setValidPrice(PRICE_REGEX.test(Price));
+    // console.log(result);
+    // console.log(user);
+    // setValidName(result);
+    }, [Price])
+
+    useEffect(() => {
+      setValidQuantity(PRICE_REGEX.test(Quantity));
+      // console.log(result);
+      // console.log(user);
+      // setValidName(result);
+      }, [Quantity])
+
+      useEffect(() => {
+        setErrMsg('');
+    }, [Price, Quantity])
      // Adding medicine functions started here
-     const [medicineList, setMedicineList] = useState([{ Medicine: '' ,Quantity: '',Price: '' },]);
+     const [medicineList, setMedicineList] = useState([{ Medicine: '',MFD: '',EXP: '' ,Quantity: '',Price: '' },]);
 
      const handleServiceChange = (e, index) => {
        const { name, value } = e.target;
@@ -63,12 +105,16 @@ function AddStock()
       // console.log("GGS")
       console.log(item)
       const Medicine = item.Medicine;
+      const MFD = item.MFD;
+      const EXP = item.EXP;
       const Quantity = item.Quantity;
       const Price = item.Price;
     // console.log("Price",medicineList[0].Price);
     const response = API.post(`pharmacy/inventory/AddStock`, {
       params: {
         Medicine: Medicine,
+        MFD: MFD,
+        EXP: EXP,
         Quantity: Quantity,
         Price : Price
       }
@@ -182,7 +228,7 @@ function AddStock()
                 <div className="card">
                     <div className="card-body bg-c-light">
                     <div className="row ">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="option" class="form-label">Medicine</label>
                     <select class="form-control" value={medicineInput.Medicine} onChange={(e)=>handleServiceChange(e,index)} name="Medicine" id="inputGroupSelect02">
                         <option selected>Select medicine to be added</option>
@@ -195,18 +241,107 @@ function AddStock()
                     
                   
                     </div>
-                    <div class="col-md-3">
+                    
+                    <div class="col-md-2">
                         <div className="form-group">
-                            <label className="mb-1">Quantity</label>
-                            <input type="text" className="form-control" value={medicineInput.Quantity} name="Quantity"
-                             onChange={(e)=>handleServiceChange(e,index)}  placeholder="Enter newly added quantity"></input>
+                            <label className="mb-1">Manufacture Date
+                            <span className={validQuantity ? "valid" : "hide"}>
+                              <FontAwesomeIcon icon={faCheck} />
+                            </span>
+                            <span  className={validQuantity || !Quantity ? "hide" : "invalid"}>
+                              <FontAwesomeIcon icon={faTimes}/>
+                            </span>
+                            </label>
+                            <input type="date" className="form-control" max="2022-10-26" value={medicineInput.MFD} name="MFD"
+                             onChange={(e)=>handleServiceChange(e,index)} 
+                             ref={userRef}
+                             autoComplete="off" 
+                             aria-invalid={validQuantity ? "false" : "true"}
+                             aria-describedby="uidnote"
+                             onFocus={() => setQuantityFocus(true)}
+                             onBlur={() => setQuantityFocus(false)}
+                             placeholder="Enter newly added quantity"></input>
+                             <p id="uidnote" className={QuantityFocus && Quantity && !validQuantity ? "instructions" : "offscreen"}>
+                                            <FontAwesomeIcon icon={faInfoCircle} />
+                                            You are allowed input only plus values<br /> 
+                                        </p>
                         </div>
                     </div>
-                    <div class="col-md-3">
+
+                    <div class="col-md-2">
                         <div className="form-group">
-                            <label className="mb-1">Unit Price</label>
+                            <label className="mb-1">Expiary Date
+                            <span className={validQuantity ? "valid" : "hide"}>
+                              <FontAwesomeIcon icon={faCheck} />
+                            </span>
+                            <span  className={validQuantity || !Quantity ? "hide" : "invalid"}>
+                              <FontAwesomeIcon icon={faTimes}/>
+                            </span>
+                            </label>
+                            <input type="date" className="form-control" min="2022-10-26" value={medicineInput.EXP} name="EXP"
+                             onChange={(e)=>handleServiceChange(e,index)} 
+                             ref={userRef}
+                             autoComplete="off" 
+                             aria-invalid={validQuantity ? "false" : "true"}
+                             aria-describedby="uidnote"
+                             onFocus={() => setQuantityFocus(true)}
+                             onBlur={() => setQuantityFocus(false)}
+                             placeholder="Enter newly added quantity"></input>
+                             <p id="uidnote" className={QuantityFocus && Quantity && !validQuantity ? "instructions" : "offscreen"}>
+                                            <FontAwesomeIcon icon={faInfoCircle} />
+                                            You are allowed input only plus values<br /> 
+                                        </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div className="form-group">
+                            <label className="mb-1">Quantity
+                            <span className={validQuantity ? "valid" : "hide"}>
+                              <FontAwesomeIcon icon={faCheck} />
+                            </span>
+                            <span  className={validQuantity || !Quantity ? "hide" : "invalid"}>
+                              <FontAwesomeIcon icon={faTimes}/>
+                            </span>
+                            </label>
+                            <input type="text" className="form-control"  name="Quantity"
+                             onChange={(e)=>handleServiceChange(e,index)} 
+                             ref={userRef}
+                             autoComplete="off" 
+                             aria-invalid={validQuantity ? "false" : "true"}
+                             aria-describedby="uidnote"
+                             onFocus={() => setQuantityFocus(true)}
+                             onBlur={() => setQuantityFocus(false)}
+                             placeholder="Enter quantity"></input>
+                             <p id="uidnote" className={QuantityFocus && Quantity && !validQuantity ? "instructions" : "offscreen"}>
+                                            <FontAwesomeIcon icon={faInfoCircle} />
+                                            You are allowed input only plus values<br /> 
+                                        </p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div className="form-group">
+                            <label className="mb-1">Unit Price
+                            <span className={validPrice ? "valid" : "hide"}>
+                              <FontAwesomeIcon icon={faCheck} />
+                            </span>
+                            <span  className={validPrice || !Price ? "hide" : "invalid"}>
+                              <FontAwesomeIcon icon={faTimes}/>
+                            </span>
+                            </label>
                             <input type="text" className="form-control" value={medicineInput.Price} name="Price"
-                             onChange={(e)=>handleServiceChange(e,index)}  placeholder="Enter unit price"></input>
+                             onChange={(e)=>handleServiceChange(e,index)}  
+                             ref={userRef}
+                             autoComplete="off" 
+                             aria-invalid={validPrice ? "false" : "true"}
+                             aria-describedby="uidnote"
+                             onFocus={() => setPriceFocus(true)}
+                             onBlur={() => setPriceFocus(false)}
+                             placeholder="Enter unit price"></input>
+                             <p id="uidnote" className={PriceFocus && Price && !validPrice ? "instructions" : "offscreen"}>
+                                <FontAwesomeIcon icon={faInfoCircle} />
+                                You are allowed input only plus values<br /> 
+                             </p>
                         </div>
                     </div>
                 </div>
@@ -277,3 +412,4 @@ function AddStock()
 }
 
 export default AddStock;
+

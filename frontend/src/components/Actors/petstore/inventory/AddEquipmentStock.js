@@ -2,14 +2,17 @@ import React from "react";
 import {Link} from 'react-router-dom';
 import { useEffect, useState } from "react";
 import './AddEquipmentStock.css';
+import Axios from 'axios';
 import NavbarUsers from "../../../includes/NavbarUsers";
 import API from "../../../services/baseURL";
 import options from "../../../services/options";
+
 
 function AddEquipmentStock()
 {
      // Adding medicine functions started here
      const [itemList, setItemList] = useState([{ Item: '' ,Quantity: '',Price: '' },]);
+
      const handleServiceChange = (e, index) => {
        const { name, value } = e.target;
        const list = [...itemList];

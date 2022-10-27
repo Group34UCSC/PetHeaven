@@ -42,10 +42,10 @@ function ViewAdoptee(){
                     <div class="col">
                         <Link to="viewadopterrequests" class="nav-link active">
                             <button type="button" class="btn btn-success addNewBtn" id="postpetbtn">Accept Adopt Request <i class="fa-solid fa-check"></i> 
-                              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger notfycount">
+                              {/* <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger notfycount">
                                 10
                                 <span class="visually-hidden">unread messages</span>
-                              </span>
+                              </span> */}
                             </button>
                         </Link>
                     </div>
@@ -63,7 +63,7 @@ function ViewAdoptee(){
               {adoptees.map((item,i)=>
                 <div class="admincard col-md-4">       
                 <div className="card shadow" id='cardone'>
-                    <img src={ad1} className="imgcover rounded" alt="Services"/>
+                    <img src={item.image} className="imgcover rounded" alt="Services"/>
                     <div className="card-body" id='cardTitle'>
                       <div className="petdetail">
                         <div className='maindetails'>
@@ -103,13 +103,13 @@ function ViewAdoptee(){
                         <div className="card card-body shadow ">
                             <div className="row">
                                 <div className="col-md-12 border-left">
-                                    <h6><i class="fa-solid fa-user"></i> L.H.S.P.Kahandawa</h6>
+                                    <h6><i class="fa-solid fa-user"></i> Lasantha Karunanayake</h6>
                                     <hr/> 
                                     <div className="form-group">
                                         <h6>Contact Number : 0758863044</h6>
                                     </div>
                                     <div className="form-group">
-                                        <h6>Rough Monthly Income : 92 000.00</h6>
+                                        <h6>Spend Cost : 25 000.00</h6>
                                     </div>
                                     <div className="form-group">
                                         <h6>Kids : 2 babies</h6>

@@ -60,7 +60,9 @@ function CustomerDoctorAppoint(){
                 {
                     users.map((item,i)=>{
                         let url="requestappoint?id="+item.doctorID;
-                        if(item.fullname==name){
+                        console.log(item.fullname);
+                        console.log(name);
+                        if(item.fullname.toLowerCase()==name.toLowerCase()){
                             return(
                                 <div class="col col-sm-2 card" id="doctorcard">
                                 <h5 class="text-success petname">{item.fullname}</h5>

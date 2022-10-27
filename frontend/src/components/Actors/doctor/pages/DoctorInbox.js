@@ -33,26 +33,26 @@ function DoctorInbox() {
   const [room_name, setRoomName] = useState("");
   const [room_ID, setRoomID] = useState("");
 
-  useEffect(() => {
-      getUsers();
-  }, [])
+  // useEffect(() => {
+  //     getUsers();
+  // }, [])
 
-  function getUsers() {
-      fetch("http://localhost:5000/Doctor/Inbox_Table").then((result) => {
-          result.json().then((resp) => {
-              // console.warn(resp)
+  // function getUsers() {
+  //     fetch("http://localhost:5000/Doctor/Inbox_Table").then((result) => {
+  //         result.json().then((resp) => {
+  //             // console.warn(resp)
 
-              setUser(resp)
-              setName(resp[0].fullname)
-              setappointmentID(resp[0].appointmentID)
-              setDate(resp[0].date)
-              setTime(resp[0].time)
-              setRoomName(resp[0].room_name)
-              setRoomID(resp[0].room_ID)
+  //             setUser(resp)
+  //             setName(resp[0].fullname)
+  //             setappointmentID(resp[0].appointmentID)
+  //             setDate(resp[0].date)
+  //             setTime(resp[0].time)
+  //             setRoomName(resp[0].room_name)
+  //             setRoomID(resp[0].room_ID)
 
-          })
-      })
-  }
+  //         })
+  //     })
+  // }
 
 
       
@@ -96,7 +96,7 @@ function DoctorInbox() {
 <div>
 
 <div class="adminviewtable"> 
-
+{/* 
      <table class="table view">
         <thead class="thead-dark">
             <tr>
@@ -127,7 +127,7 @@ function DoctorInbox() {
 
 
         </tbody>
-    </table>
+    </table> */}
 </div>
 </div>
 

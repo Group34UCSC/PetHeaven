@@ -63,12 +63,12 @@ export default function EditAdvertisement(props)
                                     
                                     <div className="form-group ">
                                         <label className="mb-1">Title</label>
-                                        <input type="text" className="form-control" value ={Title} onChange={(e)=>{setTitle(e.target.value)}} placeholder="Enter Title"></input>
+                                        <input type="text" className="form-control" value ={Title} onChange={(e)=>{setTitle(e.target.value)}} placeholder="Enter New Title"></input>
 
                                     </div>
                                     <div className="form-group">
                                         <label className="mb-1 mt-2">Price</label>
-                                        <input type="text" className="form-control" value ={Price} onChange={(e)=>{setPrice(e.target.value)}} placeholder="Enter Title"></input>
+                                        <input type="text" className="form-control" value ={Price} onChange={(e)=>{setPrice(e.target.value)}} placeholder="Enter New Price"></input>
                                     </div>
                                     <div className="form-group">
                                         <label className="mb-1 mt-2">Image</label>
@@ -77,7 +77,7 @@ export default function EditAdvertisement(props)
                                     
                                     <div className="form-group">
                                         <label className="mb-1 mt-2">Description</label>
-                                        <textarea rows="4" className="form-control" value ={Description} onChange={(e)=>{setDescription(e.target.value)}} placeholder="enter description"></textarea>
+                                        <textarea rows="4" className="form-control" value ={Description} onChange={(e)=>{setDescription(e.target.value)}} placeholder="Enter New Description"></textarea>
                                     </div>
                                     {/* <div className="form-group py-3">
                                         <button type="button" className="btn btn-success shadow w-100 ">Send</button>

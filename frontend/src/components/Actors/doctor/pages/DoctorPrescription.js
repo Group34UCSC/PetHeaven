@@ -80,7 +80,7 @@ function DoctorPrescription()
     return(
         <div>
         <NavbarUsers/>
-        <PrescriptionTable />
+        {/* <PrescriptionTable /> */}
 
    
 
